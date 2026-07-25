@@ -278,17 +278,6 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 }
 .regle-jeu{font-family:var(--licence);font-size:clamp(17px,2.4vw,24px);color:#E4D5A8;max-width:34ch;margin:0 0 34px}
 .prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:rgba(201,162,39,.22);margin-top:44px}
-.scan{display:none}
-@media (min-width:760px){
-  .scan{display:flex;align-items:center;gap:28px;margin-top:1px;padding:26px 22px;
-    background:var(--noir-2);border-top:1px solid rgba(201,162,39,.22)}
-  .scan img{flex:none;width:150px;height:150px;display:block;border-radius:4px}
-  .scan-sur{display:block;font-family:var(--util);font-size:10px;letter-spacing:.18em;
-    text-transform:uppercase;color:#8C846F;margin-bottom:10px}
-  .scan h4{font-family:var(--licence);font-weight:600;font-size:19px;letter-spacing:.05em;margin-bottom:9px}
-  .scan p{font-size:15px;color:#9B9384;margin-bottom:14px;max-width:38ch}
-  .scan-adr{font-family:var(--util);font-size:11px;letter-spacing:.05em;color:#D9CDAE}
-}
 .prod{background:var(--noir-2);padding:26px 22px 20px;display:flex;flex-direction:column;text-decoration:none;transition:background .35s}
 .prod:hover,.prod:focus-visible{background:#17161A}
 .prod .haut{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;font-family:var(--util);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8C846F}
@@ -353,6 +342,20 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
   .halo{animation:none}
   .remplissage,.niveau,.division .marque-div{transition:none}
 }
+
+/* ---- QR ÉQUILIBRE ---- */
+.qr-eq{padding:40px 0 80px}
+.qr-eq-carte{display:flex;gap:32px;align-items:center;flex-wrap:wrap;justify-content:center;
+  background:linear-gradient(135deg,rgba(201,162,39,0.08),rgba(10,7,17,0.4));
+  border:1px solid rgba(201,162,39,0.35);border-radius:20px;padding:32px;max-width:720px;margin:0 auto}
+.qr-eq-visuel{width:180px;height:180px;flex-shrink:0;border-radius:12px;overflow:hidden;
+  box-shadow:0 0 30px rgba(240,208,96,0.25)}
+.qr-eq-txt{flex:1;min-width:220px}
+.qr-eq-txt h3{font-size:32px;margin:6px 0 12px;color:var(--or,#F0D060);letter-spacing:1px}
+.qr-eq-txt p{color:#c9c2d8;line-height:1.5;margin:0 0 16px}
+.qr-eq-lien{color:var(--or,#F0D060);text-decoration:none;font-weight:700;letter-spacing:0.5px}
+.qr-eq-lien:hover{text-decoration:underline}
+@media(max-width:560px){.qr-eq-carte{flex-direction:column;text-align:center}.qr-eq-txt{text-align:center}}
 </style>
 </head>
 <body>
@@ -496,18 +499,21 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 
       <p class="regle-jeu rev">« On ne vous jugera pas sur votre plus haut pilier, mais sur le plus bas. »</p>
       <div class="prods rev rev-2" id="productions"></div>
+    </div>
+  </section>
 
-      <!-- Scanner un QR depuis le telephone qu'on tient dans la main n'a aucun sens :
-           ce bloc ne s'affiche qu'au-dessus de 760px, c'est-a-dire sur ordinateur. -->
-      <aside class="scan rev rev-3" aria-label="Jouer sur mobile">
-        <img src="qr-piliers-parchemin-logo.png" alt="QR code vers piliers.khalam.app" width="150" height="150" loading="lazy"/>
-        <div class="scan-txt">
-          <span class="scan-sur">Sur ton téléphone</span>
-          <h4>Les Quatre Piliers</h4>
+  <!-- ============ QR ÉQUILIBRE ============ -->
+  <section class="qr-eq" id="jouer-equilibre" aria-label="Jouer à ÉQUILIBRE">
+    <div class="wrap">
+      <div class="qr-eq-carte rev">
+        <div class="qr-eq-visuel"><svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect width="33" height="33" fill="#0A0711"/><path d="M2 2h1v1h-1z M3 2h1v1h-1z M4 2h1v1h-1z M5 2h1v1h-1z M6 2h1v1h-1z M7 2h1v1h-1z M8 2h1v1h-1z M16 2h1v1h-1z M19 2h1v1h-1z M20 2h1v1h-1z M21 2h1v1h-1z M24 2h1v1h-1z M25 2h1v1h-1z M26 2h1v1h-1z M27 2h1v1h-1z M28 2h1v1h-1z M29 2h1v1h-1z M30 2h1v1h-1z M2 3h1v1h-1z M8 3h1v1h-1z M10 3h1v1h-1z M12 3h1v1h-1z M15 3h1v1h-1z M19 3h1v1h-1z M21 3h1v1h-1z M22 3h1v1h-1z M24 3h1v1h-1z M30 3h1v1h-1z M2 4h1v1h-1z M4 4h1v1h-1z M5 4h1v1h-1z M6 4h1v1h-1z M8 4h1v1h-1z M11 4h1v1h-1z M12 4h1v1h-1z M13 4h1v1h-1z M17 4h1v1h-1z M20 4h1v1h-1z M21 4h1v1h-1z M22 4h1v1h-1z M24 4h1v1h-1z M26 4h1v1h-1z M27 4h1v1h-1z M28 4h1v1h-1z M30 4h1v1h-1z M2 5h1v1h-1z M4 5h1v1h-1z M5 5h1v1h-1z M6 5h1v1h-1z M8 5h1v1h-1z M13 5h1v1h-1z M14 5h1v1h-1z M15 5h1v1h-1z M18 5h1v1h-1z M20 5h1v1h-1z M24 5h1v1h-1z M26 5h1v1h-1z M27 5h1v1h-1z M28 5h1v1h-1z M30 5h1v1h-1z M2 6h1v1h-1z M4 6h1v1h-1z M5 6h1v1h-1z M6 6h1v1h-1z M8 6h1v1h-1z M10 6h1v1h-1z M11 6h1v1h-1z M12 6h1v1h-1z M13 6h1v1h-1z M14 6h1v1h-1z M15 6h1v1h-1z M18 6h1v1h-1z M20 6h1v1h-1z M21 6h1v1h-1z M24 6h1v1h-1z M26 6h1v1h-1z M27 6h1v1h-1z M28 6h1v1h-1z M30 6h1v1h-1z M2 7h1v1h-1z M8 7h1v1h-1z M13 7h1v1h-1z M16 7h1v1h-1z M17 7h1v1h-1z M18 7h1v1h-1z M19 7h1v1h-1z M21 7h1v1h-1z M24 7h1v1h-1z M30 7h1v1h-1z M2 8h1v1h-1z M3 8h1v1h-1z M4 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M7 8h1v1h-1z M8 8h1v1h-1z M10 8h1v1h-1z M12 8h1v1h-1z M14 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M20 8h1v1h-1z M22 8h1v1h-1z M24 8h1v1h-1z M25 8h1v1h-1z M26 8h1v1h-1z M27 8h1v1h-1z M28 8h1v1h-1z M29 8h1v1h-1z M30 8h1v1h-1z M13 9h1v1h-1z M14 9h1v1h-1z M17 9h1v1h-1z M19 9h1v1h-1z M20 9h1v1h-1z M22 9h1v1h-1z M2 10h1v1h-1z M4 10h1v1h-1z M6 10h1v1h-1z M8 10h1v1h-1z M12 10h1v1h-1z M14 10h1v1h-1z M18 10h1v1h-1z M19 10h1v1h-1z M21 10h1v1h-1z M22 10h1v1h-1z M26 10h1v1h-1z M29 10h1v1h-1z M4 11h1v1h-1z M6 11h1v1h-1z M9 11h1v1h-1z M11 11h1v1h-1z M13 11h1v1h-1z M14 11h1v1h-1z M15 11h1v1h-1z M17 11h1v1h-1z M18 11h1v1h-1z M24 11h1v1h-1z M27 11h1v1h-1z M30 11h1v1h-1z M3 12h1v1h-1z M5 12h1v1h-1z M7 12h1v1h-1z M8 12h1v1h-1z M11 12h1v1h-1z M12 12h1v1h-1z M13 12h1v1h-1z M14 12h1v1h-1z M16 12h1v1h-1z M17 12h1v1h-1z M18 12h1v1h-1z M24 12h1v1h-1z M25 12h1v1h-1z M26 12h1v1h-1z M28 12h1v1h-1z M29 12h1v1h-1z M30 12h1v1h-1z M2 13h1v1h-1z M3 13h1v1h-1z M4 13h1v1h-1z M5 13h1v1h-1z M6 13h1v1h-1z M10 13h1v1h-1z M15 13h1v1h-1z M16 13h1v1h-1z M18 13h1v1h-1z M19 13h1v1h-1z M21 13h1v1h-1z M22 13h1v1h-1z M29 13h1v1h-1z M2 14h1v1h-1z M3 14h1v1h-1z M5 14h1v1h-1z M6 14h1v1h-1z M8 14h1v1h-1z M9 14h1v1h-1z M10 14h1v1h-1z M11 14h1v1h-1z M12 14h1v1h-1z M14 14h1v1h-1z M16 14h1v1h-1z M17 14h1v1h-1z M19 14h1v1h-1z M22 14h1v1h-1z M23 14h1v1h-1z M24 14h1v1h-1z M27 14h1v1h-1z M29 14h1v1h-1z M30 14h1v1h-1z M3 15h1v1h-1z M5 15h1v1h-1z M7 15h1v1h-1z M9 15h1v1h-1z M11 15h1v1h-1z M12 15h1v1h-1z M13 15h1v1h-1z M14 15h1v1h-1z M16 15h1v1h-1z M17 15h1v1h-1z M19 15h1v1h-1z M22 15h1v1h-1z M24 15h1v1h-1z M27 15h1v1h-1z M30 15h1v1h-1z M2 16h1v1h-1z M4 16h1v1h-1z M6 16h1v1h-1z M7 16h1v1h-1z M8 16h1v1h-1z M9 16h1v1h-1z M10 16h1v1h-1z M11 16h1v1h-1z M12 16h1v1h-1z M13 16h1v1h-1z M15 16h1v1h-1z M20 16h1v1h-1z M22 16h1v1h-1z M23 16h1v1h-1z M24 16h1v1h-1z M27 16h1v1h-1z M29 16h1v1h-1z M30 16h1v1h-1z M2 17h1v1h-1z M4 17h1v1h-1z M6 17h1v1h-1z M10 17h1v1h-1z M12 17h1v1h-1z M14 17h1v1h-1z M17 17h1v1h-1z M19 17h1v1h-1z M20 17h1v1h-1z M26 17h1v1h-1z M27 17h1v1h-1z M29 17h1v1h-1z M2 18h1v1h-1z M5 18h1v1h-1z M6 18h1v1h-1z M8 18h1v1h-1z M9 18h1v1h-1z M10 18h1v1h-1z M11 18h1v1h-1z M12 18h1v1h-1z M18 18h1v1h-1z M19 18h1v1h-1z M23 18h1v1h-1z M24 18h1v1h-1z M27 18h1v1h-1z M29 18h1v1h-1z M30 18h1v1h-1z M4 19h1v1h-1z M9 19h1v1h-1z M11 19h1v1h-1z M12 19h1v1h-1z M15 19h1v1h-1z M17 19h1v1h-1z M18 19h1v1h-1z M22 19h1v1h-1z M23 19h1v1h-1z M24 19h1v1h-1z M27 19h1v1h-1z M28 19h1v1h-1z M30 19h1v1h-1z M2 20h1v1h-1z M6 20h1v1h-1z M8 20h1v1h-1z M10 20h1v1h-1z M12 20h1v1h-1z M13 20h1v1h-1z M14 20h1v1h-1z M16 20h1v1h-1z M17 20h1v1h-1z M18 20h1v1h-1z M22 20h1v1h-1z M25 20h1v1h-1z M29 20h1v1h-1z M30 20h1v1h-1z M3 21h1v1h-1z M6 21h1v1h-1z M9 21h1v1h-1z M10 21h1v1h-1z M12 21h1v1h-1z M13 21h1v1h-1z M14 21h1v1h-1z M15 21h1v1h-1z M16 21h1v1h-1z M18 21h1v1h-1z M19 21h1v1h-1z M20 21h1v1h-1z M26 21h1v1h-1z M27 21h1v1h-1z M29 21h1v1h-1z M2 22h1v1h-1z M4 22h1v1h-1z M5 22h1v1h-1z M6 22h1v1h-1z M7 22h1v1h-1z M8 22h1v1h-1z M12 22h1v1h-1z M13 22h1v1h-1z M16 22h1v1h-1z M17 22h1v1h-1z M18 22h1v1h-1z M19 22h1v1h-1z M20 22h1v1h-1z M22 22h1v1h-1z M23 22h1v1h-1z M24 22h1v1h-1z M25 22h1v1h-1z M26 22h1v1h-1z M10 23h1v1h-1z M11 23h1v1h-1z M12 23h1v1h-1z M13 23h1v1h-1z M16 23h1v1h-1z M17 23h1v1h-1z M21 23h1v1h-1z M22 23h1v1h-1z M26 23h1v1h-1z M28 23h1v1h-1z M29 23h1v1h-1z M30 23h1v1h-1z M2 24h1v1h-1z M3 24h1v1h-1z M4 24h1v1h-1z M5 24h1v1h-1z M6 24h1v1h-1z M7 24h1v1h-1z M8 24h1v1h-1z M13 24h1v1h-1z M14 24h1v1h-1z M15 24h1v1h-1z M18 24h1v1h-1z M19 24h1v1h-1z M21 24h1v1h-1z M22 24h1v1h-1z M24 24h1v1h-1z M26 24h1v1h-1z M27 24h1v1h-1z M29 24h1v1h-1z M30 24h1v1h-1z M2 25h1v1h-1z M8 25h1v1h-1z M11 25h1v1h-1z M12 25h1v1h-1z M13 25h1v1h-1z M17 25h1v1h-1z M19 25h1v1h-1z M22 25h1v1h-1z M26 25h1v1h-1z M27 25h1v1h-1z M30 25h1v1h-1z M2 26h1v1h-1z M4 26h1v1h-1z M5 26h1v1h-1z M6 26h1v1h-1z M8 26h1v1h-1z M10 26h1v1h-1z M11 26h1v1h-1z M12 26h1v1h-1z M13 26h1v1h-1z M19 26h1v1h-1z M22 26h1v1h-1z M23 26h1v1h-1z M24 26h1v1h-1z M25 26h1v1h-1z M26 26h1v1h-1z M29 26h1v1h-1z M2 27h1v1h-1z M4 27h1v1h-1z M5 27h1v1h-1z M6 27h1v1h-1z M8 27h1v1h-1z M11 27h1v1h-1z M15 27h1v1h-1z M18 27h1v1h-1z M19 27h1v1h-1z M25 27h1v1h-1z M26 27h1v1h-1z M28 27h1v1h-1z M2 28h1v1h-1z M4 28h1v1h-1z M5 28h1v1h-1z M6 28h1v1h-1z M8 28h1v1h-1z M10 28h1v1h-1z M11 28h1v1h-1z M14 28h1v1h-1z M16 28h1v1h-1z M18 28h1v1h-1z M20 28h1v1h-1z M25 28h1v1h-1z M26 28h1v1h-1z M27 28h1v1h-1z M30 28h1v1h-1z M2 29h1v1h-1z M8 29h1v1h-1z M11 29h1v1h-1z M12 29h1v1h-1z M13 29h1v1h-1z M15 29h1v1h-1z M17 29h1v1h-1z M19 29h1v1h-1z M20 29h1v1h-1z M21 29h1v1h-1z M22 29h1v1h-1z M24 29h1v1h-1z M25 29h1v1h-1z M29 29h1v1h-1z M2 30h1v1h-1z M3 30h1v1h-1z M4 30h1v1h-1z M5 30h1v1h-1z M6 30h1v1h-1z M7 30h1v1h-1z M8 30h1v1h-1z M10 30h1v1h-1z M12 30h1v1h-1z M19 30h1v1h-1z M21 30h1v1h-1z M22 30h1v1h-1z M24 30h1v1h-1z M25 30h1v1h-1z M26 30h1v1h-1z M27 30h1v1h-1z M29 30h1v1h-1z M30 30h1v1h-1z" fill="#F0D060"/></svg></div>
+        <div class="qr-eq-txt">
+          <p class="oeil">Sur ton téléphone</p>
+          <h3>ÉQUILIBRE</h3>
           <p>Scanne le code : le jeu s'ouvre directement, sans rien installer.</p>
-          <span class="scan-adr">equilibre.khalam.app</span>
+          <a class="qr-eq-lien" href="https://tonequilibre.khalam.app">tonequilibre.khalam.app →</a>
         </div>
-      </aside>
+      </div>
     </div>
   </section>
 
@@ -591,7 +597,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 
 <script>
 /* =========================================================
-   KHALAM.app — BUILD_TAG : khalam-site-v4.5
+   KHALAM.app — BUILD_TAG : khalam-site-v4.2
    Palette : indigo = la maison. Or = ÉQUILIBRE, nulle part ailleurs.
    Contenu piloté par DIVISIONS / PRODUCTIONS / VALEURS / MAISON.
    ========================================================= */
@@ -623,9 +629,9 @@ const DIVISIONS = [
 ];
 
 const PRODUCTIONS = [
-  { nom:"ÉQUILIBRE", sous:"", type:"Jeu complet", dispo:false,
+  { nom:"ÉQUILIBRE", sous:"tonequilibre.khalam.app", type:"Jeu complet", dispo:true,
     desc:"Solo, duel en ligne et La Voie des Quatre Maîtres avec ses quinze Gardiens." },
-  { nom:"Les Quatre Piliers", sous:"equilibre.khalam.app", type:"Jeu court · 10 min", dispo:true,
+  { nom:"Les Quatre Piliers", sous:"piliers.khalam.app", type:"Jeu court · 10 min", dispo:true,
     desc:"Onze cartes, trois au maximum par pilier. Une marge d'une seule carte." },
   { nom:"L'Édition", sous:"edition.khalam.app", type:"Jeu imprimé", dispo:false,
     desc:"Le jeu physique, dos doré et symboles gravés. Première série limitée." }
@@ -785,7 +791,7 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   PRODUCTIONS.forEach(function(p){
     const el = document.createElement(p.dispo ? "a" : "article");
     el.className = "prod " + (p.dispo ? "ouvert" : "ferme");
-    if (p.dispo){ el.href = "https://" + p.sous; el.rel = "noopener"; el.target = "_blank"; }
+    if (p.dispo){ el.href = "https://" + p.sous; el.rel = "noopener"; }
     el.innerHTML =
       '<div class="haut"><span class="type"></span><span class="' + (p.dispo ? "dispo" : "") + '"></span></div>' +
       '<h4></h4><p></p><span class="adresse"></span>';
