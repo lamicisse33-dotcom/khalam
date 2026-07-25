@@ -1,5 +1,5 @@
-/* KHALAM.app — VERSION : khalam-site-v4.4 */
-const VERSION = "khalam-site-v4.4";
+/* KHALAM.app — VERSION : khalam-site-v4.5 */
+const VERSION = "khalam-site-v4.5";
 const CACHE = "khalam-" + VERSION;
 const SOCLE = ["./", "./index.html", "./manifest.webmanifest"];
 
