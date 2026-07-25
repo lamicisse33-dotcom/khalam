@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KHALAM — Nous créons des univers | Applications, jeux, animation, IA</title>
+<meta name="description" content="KHALAM est une entreprise indépendante de création numérique : applications, jeux vidéo, production audiovisuelle, animation, intelligence artificielle et technologies immersives.">
+<meta name="theme-color" content="#07070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icone-192.png">
+<link rel="canonical" href="https://khalam.app/">
+<meta property="og:title" content="KHALAM — Nous créons des univers">
+<meta property="og:description" content="Entreprise indépendante de création numérique : applications, jeux vidéo, audiovisuel, animation, intelligence artificielle.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://khalam.app/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Cinzel:wght@600&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* maison */
+  --noir:#07070A;
+  --noir-2:#0D0E14;
+  --noir-3:#12131C;
+  --trait:#1D1F2B;
+  --indigo:#2E3F9E;
+  --indigo-clair:#8497F0;
+  --indigo-nuit:#16204F;
+  --violet:#7B5EA7;
+  --blanc:#F2EFE9;
+  --cendre:#8B8A93;
+  --cendre-2:#5E5D68;
+  /* licence ÉQUILIBRE, nulle part ailleurs */
+  --or:#C9A227;
+  --or-clair:#E5C34A;
+  --p-spiritualite:#7B5EA7;
+  --p-amour:#B3384E;
+  --p-sante:#3E8E6E;
+  --p-argent:#A9602E;
+
+  --display:"Archivo", system-ui, sans-serif;
+  --corps:"Spectral", Georgia, serif;
+  --util:"Archivo", system-ui, sans-serif;
+  --licence:"Cinzel", Georgia, serif;
+  --marge:clamp(20px, 5vw, 80px);
+  --lg:1280px;
+}
+*{box-sizing:border-box}
+html{
+  scroll-behavior:smooth;color-scheme:dark;
+  background-color:#07070A;
+}
+/* fond verrouillé : certains lecteurs/aperçus imposent un fond blanc */
+body{
+  margin:0;background-color:#07070A !important;color:var(--blanc);
+  font-family:var(--corps);font-weight:300;font-size:17px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body.verrou{overflow:hidden}
+a{color:inherit}
+h1,h2,h3,h4{
+  font-family:var(--display);font-weight:600;line-height:1.05;margin:0;
+  letter-spacing:-.025em;font-stretch:expanded;
+}
+p{margin:0 0 1em}
+main{background-color:#07070A}
+.wrap{max-width:var(--lg);margin:0 auto;padding:0 var(--marge)}
+.oeil{
+  font-family:var(--util);font-size:11px;font-weight:500;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--cendre-2);margin:0 0 20px;
+}
+.oeil::before{content:"";display:inline-block;width:22px;height:1px;background:var(--indigo-clair);vertical-align:middle;margin-right:12px;opacity:.7}
+
+/* ===================== intro ===================== */
+#intro{
+  position:fixed;inset:0;z-index:100;background:var(--noir);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:opacity .9s ease, visibility .9s;
+}
+#intro.parti{opacity:0;visibility:hidden;pointer-events:none}
+#intro canvas{position:absolute;inset:0;width:100%;height:100%}
+.intro-contenu{position:relative;text-align:center;padding:0 24px;max-width:760px}
+.intro-logo{opacity:0;transform:translateY(8px);transition:opacity .9s ease,transform .9s ease}
+.intro-logo.on{opacity:1;transform:none}
+.intro-logo svg{width:74px;height:74px;display:block;margin:0 auto 22px}
+.intro-mot{
+  font-family:var(--display);font-weight:700;font-size:clamp(30px,7vw,54px);
+  letter-spacing:.34em;text-indent:.34em;font-stretch:expanded;
+}
+.intro-phrase{
+  font-family:var(--corps);font-size:clamp(16px,2.4vw,21px);color:#C9C7D2;
+  margin:26px auto 0;max-width:30ch;opacity:0;transform:translateY(10px);
+  transition:opacity .9s ease,transform .9s ease;
+}
+.intro-phrase.on{opacity:1;transform:none}
+.intro-phrase em{font-style:italic;color:var(--indigo-clair)}
+.intro-cta{
+  margin-top:34px;opacity:0;transform:translateY(10px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.intro-cta.on{opacity:1;transform:none}
+.passer{
+  position:absolute;right:clamp(16px,4vw,34px);top:clamp(16px,4vw,30px);
+  background:none;border:0;color:var(--cendre-2);cursor:pointer;
+  font-family:var(--util);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  padding:10px 4px;transition:color .3s;
+}
+.passer:hover,.passer:focus-visible{color:var(--blanc)}
+
+/* ===================== boutons ===================== */
+.btn{
+  display:inline-block;cursor:pointer;text-decoration:none;
+  font-family:var(--util);font-size:13px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;padding:16px 30px;border:1px solid transparent;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),background .35s,color .35s,border-color .35s,box-shadow .35s;
+}
+.btn-plein{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.btn-plein:hover,.btn-plein:focus-visible{
+  background:#3B50C4;transform:translateY(-2px);box-shadow:0 12px 40px -14px var(--indigo-clair);
+}
+.btn-vide{color:var(--blanc);border-color:#2A2D3C;background:none}
+.btn-vide:hover,.btn-vide:focus-visible{border-color:var(--indigo-clair);color:var(--indigo-clair);transform:translateY(-2px)}
+.btn-or{background:var(--or);color:#14110A;border-color:var(--or)}
+.btn-or:hover,.btn-or:focus-visible{background:var(--or-clair);transform:translateY(-2px)}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+
+/* ===================== en-tête ===================== */
+.tete{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  background:linear-gradient(180deg,rgba(7,7,10,.92),rgba(7,7,10,0));
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px var(--marge);border-bottom:1px solid transparent;
+  transition:background .4s,backdrop-filter .4s,border-color .4s;
+}
+.tete.pose{background:rgba(7,7,10,.88);backdrop-filter:blur(14px);border-bottom-color:var(--trait)}
+.logo-lien{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-lien svg{width:26px;height:26px}
+.logo-mot{
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.34em;
+  text-indent:.34em;color:var(--blanc);font-stretch:expanded;
+}
+.nav{display:flex;gap:26px;font-family:var(--util);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.nav a{color:var(--cendre);text-decoration:none;padding:6px 0;position:relative;transition:color .3s}
+.nav a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
+  background:var(--indigo-clair);transition:right .35s cubic-bezier(.22,1,.36,1);
+}
+.nav a:hover,.nav a:focus-visible{color:var(--blanc)}
+.nav a:hover::after,.nav a:focus-visible::after{right:0}
+@media(max-width:860px){.nav{display:none}}
+
+/* ===================== héros ===================== */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  padding:130px 0 90px;overflow:hidden;
+}
+.halo{position:absolute;border-radius:50%;filter:blur(90px);opacity:.42;pointer-events:none}
+.halo-1{width:52vw;height:52vw;background:var(--indigo);top:-14vw;left:-10vw;animation:derive 22s ease-in-out infinite}
+.halo-2{width:38vw;height:38vw;background:var(--indigo-nuit);bottom:-12vw;right:-6vw;animation:derive 28s ease-in-out infinite reverse}
+.halo-3{width:26vw;height:26vw;background:var(--violet);top:32%;right:18%;opacity:.20;animation:derive 34s ease-in-out infinite}
+@keyframes derive{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(4vw,3vw,0) scale(1.12)}
+}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(38px,7.6vw,88px);max-width:16ch}
+.hero h1 span{display:block;color:var(--cendre)}
+.hero h1 strong{font-weight:700;color:var(--blanc)}
+.hero-sous{
+  margin:30px 0 38px;font-size:clamp(16px,2.1vw,20px);color:#B9B7C4;max-width:52ch;
+}
+.compteur{
+  margin-top:56px;display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,60px);
+  border-top:1px solid var(--trait);padding-top:26px;
+}
+.compteur div{font-family:var(--util);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cendre-2)}
+.compteur b{display:block;font-size:26px;font-weight:600;letter-spacing:-.02em;color:var(--blanc);text-transform:none;margin-bottom:4px}
+
+/* ===================== sections ===================== */
+section{padding:clamp(80px,13vh,160px) 0;position:relative}
+.borde{border-top:1px solid #14151E}
+.titre{font-size:clamp(30px,5vw,58px);max-width:18ch;margin-bottom:22px}
+.chapo{color:#B0AEBB;max-width:60ch;font-size:clamp(16px,1.9vw,19px)}
+.duo{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,6vw,90px);align-items:start}
+@media(max-width:900px){.duo{grid-template-columns:1fr;gap:26px}}
+
+/* mission : quatre verbes */
+.verbes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait);margin-top:56px}
+@media(max-width:780px){.verbes{grid-template-columns:repeat(2,1fr)}}
+.verbe{background:var(--noir);padding:38px 26px 32px;position:relative;overflow:hidden}
+.verbe .pt{
+  width:7px;height:7px;border-radius:50%;background:var(--indigo-clair);
+  box-shadow:0 0 18px 3px rgba(132,151,240,.55);margin-bottom:26px;
+}
+.verbe h3{font-size:clamp(20px,2.6vw,28px);margin-bottom:10px}
+.verbe p{font-size:15px;color:#96949F;margin:0}
+
+/* divisions */
+.divisions{margin-top:60px;border-top:1px solid var(--trait)}
+.division{
+  display:grid;grid-template-columns:auto minmax(200px,1fr) 1.25fr auto;
+  gap:clamp(16px,3vw,44px);align-items:baseline;
+  padding:clamp(28px,4vw,46px) 0;border-bottom:1px solid var(--trait);
+  position:relative;transition:background .4s;
+}
+.division::before{
+  content:"";position:absolute;left:calc(var(--marge) * -1);right:calc(var(--marge) * -1);top:0;bottom:0;
+  background:linear-gradient(90deg,rgba(46,63,158,.14),transparent 60%);
+  opacity:0;transition:opacity .45s;pointer-events:none;
+}
+.division:hover::before,.division:focus-within::before{opacity:1}
+.division .marque-div{
+  width:34px;height:34px;color:var(--accent,var(--indigo-clair));
+  transition:transform .5s cubic-bezier(.22,1,.36,1);align-self:center;
+}
+.division:hover .marque-div{transform:rotate(45deg)}
+.division h3{font-size:clamp(21px,2.7vw,30px)}
+.division h3 small{
+  display:block;font-family:var(--util);font-weight:500;font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent,var(--indigo-clair));margin-bottom:9px;letter-spacing:.22em;
+}
+.division .desc{color:#98969F;font-size:16px;margin:0 0 14px}
+.division .liste{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.division .liste li{
+  font-family:var(--util);font-size:11px;font-weight:400;letter-spacing:.06em;color:#7E7C88;
+  border:1px solid #23252F;padding:6px 11px;border-radius:1px;
+}
+.statut{
+  font-family:var(--util);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  white-space:nowrap;color:var(--cendre-2);align-self:center;
+}
+.statut.actif{color:var(--indigo-clair)}
+.statut.actif::before{
+  content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--indigo-clair);margin-right:8px;vertical-align:middle;
+  box-shadow:0 0 10px 2px rgba(132,151,240,.6);
+}
+@media(max-width:940px){
+  .division{grid-template-columns:auto 1fr;gap:14px 18px}
+  .division .marque-div{grid-row:span 2;width:28px;height:28px}
+  .statut{grid-column:2;order:-1}
+}
+
+/* ÉQUILIBRE — seul endroit doré */
+.licence{
+  background:
+    radial-gradient(80% 120% at 50% 0%, rgba(201,162,39,.10), transparent 62%),
+    var(--noir-2);
+  border-top:1px solid rgba(201,162,39,.28);border-bottom:1px solid rgba(201,162,39,.28);
+}
+.licence .oeil{color:rgba(201,162,39,.75)}
+.licence .oeil::before{background:var(--or)}
+.licence h2{font-family:var(--licence);font-weight:600;letter-spacing:.1em;font-size:clamp(34px,7vw,76px);font-stretch:normal}
+.licence .chapo{color:#C3B48A}
+.piliers{
+  position:relative;height:clamp(150px,22vh,210px);display:flex;align-items:flex-end;
+  gap:clamp(6px,1.6vw,20px);margin:50px 0 22px;
+}
+.pilier{
+  position:relative;flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
+  background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;
+}
+.colonne{position:relative;width:100%;height:100%;display:flex;align-items:flex-end;background:rgba(255,255,255,.035)}
+.remplissage{width:100%;height:12%;background:var(--teinte);transition:height 1s cubic-bezier(.22,1,.36,1);box-shadow:0 0 34px -8px var(--teinte)}
+.pilier:hover .remplissage,.pilier:focus-visible .remplissage{filter:brightness(1.3)}
+.pilier:focus-visible{outline:1px solid var(--or);outline-offset:4px}
+.socle b{
+  display:block;padding-top:12px;font-family:var(--util);font-weight:400;font-size:10px;
+  letter-spacing:.18em;text-transform:uppercase;color:#9A917C;text-align:center;
+}
+.niveau{position:absolute;left:0;right:0;bottom:12%;height:1px;background:var(--or);opacity:.9;pointer-events:none;transition:bottom 1s cubic-bezier(.22,1,.36,1)}
+.niveau::after{
+  content:attr(data-libelle);position:absolute;right:0;bottom:9px;
+  font-family:var(--util);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);
+}
+.regle-jeu{font-family:var(--licence);font-size:clamp(17px,2.4vw,24px);color:#E4D5A8;max-width:34ch;margin:0 0 34px}
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:rgba(201,162,39,.22);margin-top:44px}
+.prod{background:var(--noir-2);padding:26px 22px 20px;display:flex;flex-direction:column;text-decoration:none;transition:background .35s}
+.prod:hover,.prod:focus-visible{background:#17161A}
+.prod .haut{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;font-family:var(--util);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8C846F}
+.prod .haut .dispo{color:var(--or)}
+.prod h4{font-family:var(--licence);font-weight:600;font-size:19px;letter-spacing:.05em;margin-bottom:9px;font-stretch:normal}
+.prod p{font-size:15px;color:#9B9384;margin-bottom:18px}
+.prod .adresse{margin-top:auto;font-family:var(--util);font-size:11px;letter-spacing:.05em;color:#7A7365;border-top:1px solid rgba(201,162,39,.16);padding-top:14px}
+.prod.ouvert .adresse{color:#D9CDAE}
+.prod.ouvert .adresse::after{content:" →";color:var(--or)}
+
+/* différence */
+.croise{margin-top:50px;border-top:1px solid var(--trait)}
+.croise div{
+  display:flex;flex-wrap:wrap;align-items:center;gap:clamp(10px,2.4vw,26px);
+  padding:clamp(20px,3vw,32px) 0;border-bottom:1px solid var(--trait);
+  font-family:var(--display);font-weight:500;font-size:clamp(19px,3.2vw,34px);
+  letter-spacing:-.02em;color:var(--cendre);transition:color .4s;
+}
+.croise div:hover{color:var(--blanc)}
+.croise i{font-style:normal;color:var(--indigo-clair);font-size:.8em;opacity:.75}
+
+/* valeurs */
+.valeurs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait);margin-top:56px}
+@media(max-width:900px){.valeurs{grid-template-columns:repeat(2,1fr)}}
+.valeur{
+  background:var(--noir);padding:34px 24px;position:relative;overflow:hidden;
+  transition:background .45s;
+}
+.valeur::after{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .45s;pointer-events:none;
+  background:radial-gradient(120% 100% at 50% 100%, rgba(46,63,158,.34), transparent 68%);
+}
+.valeur:hover{background:var(--noir-3)}
+.valeur:hover::after{opacity:1}
+.valeur h3{font-size:clamp(17px,2.1vw,23px);position:relative;z-index:2}
+.valeur p{position:relative;z-index:2;margin:8px 0 0;font-size:14px;color:#8E8C97}
+
+/* contact */
+.contact{text-align:center}
+.contact .titre{margin:0 auto 22px}
+.contact .chapo{margin:0 auto 40px}
+.contact .actions{justify-content:center}
+
+.pied{
+  background-color:#07070A;border-top:1px solid #14151E;padding:34px var(--marge);
+  display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;
+  font-family:var(--util);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A5964;
+}
+.pied a{text-decoration:none;color:#5A5964;transition:color .3s}
+.pied a:hover,.pied a:focus-visible{color:var(--indigo-clair)}
+.pied .devise{letter-spacing:.1em;color:var(--indigo-clair);text-transform:none;font-size:12px}
+
+/* révélations */
+.rev{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+.rev.vu{opacity:1;transform:none}
+.rev-2{transition-delay:.09s}
+.rev-3{transition-delay:.18s}
+:focus-visible{outline:2px solid var(--indigo-clair);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rev{opacity:1;transform:none;transition:none}
+  .halo{animation:none}
+  .remplissage,.niveau,.division .marque-div{transition:none}
+}
+
+/* ---- QR ÉQUILIBRE ---- */
+.qr-eq{padding:40px 0 80px}
+.qr-eq-carte{display:flex;gap:32px;align-items:center;flex-wrap:wrap;justify-content:center;
+  background:linear-gradient(135deg,rgba(201,162,39,0.08),rgba(10,7,17,0.4));
+  border:1px solid rgba(201,162,39,0.35);border-radius:20px;padding:32px;max-width:720px;margin:0 auto}
+.qr-eq-visuel{width:180px;height:180px;flex-shrink:0;border-radius:12px;overflow:hidden;
+  box-shadow:0 0 30px rgba(240,208,96,0.25)}
+.qr-eq-txt{flex:1;min-width:220px}
+.qr-eq-txt h3{font-size:32px;margin:6px 0 12px;color:var(--or,#F0D060);letter-spacing:1px}
+.qr-eq-txt p{color:#c9c2d8;line-height:1.5;margin:0 0 16px}
+.qr-eq-lien{color:var(--or,#F0D060);text-decoration:none;font-weight:700;letter-spacing:0.5px}
+.qr-eq-lien:hover{text-decoration:underline}
+@media(max-width:560px){.qr-eq-carte{flex-direction:column;text-align:center}.qr-eq-txt{text-align:center}}
+</style>
+</head>
+<body>
+
+<!-- ============ intro ============ -->
+<div id="intro" role="dialog" aria-label="Ouverture">
+  <canvas id="toile-intro" aria-hidden="true"></canvas>
+  <button class="passer" id="passer" type="button">Passer</button>
+  <div class="intro-contenu">
+    <div class="intro-logo" id="intro-logo">
+      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <g stroke="#8497F0" stroke-width="3" stroke-linecap="round">
+          <path d="M18 12 C30 46, 44 56, 50 88"/>
+          <path d="M39 7 C44 42, 48 56, 50 88"/>
+          <path d="M61 7 C56 42, 52 56, 50 88"/>
+          <path d="M82 12 C70 46, 56 56, 50 88"/>
+        </g>
+      </svg>
+      <p class="intro-mot">KHALAM</p>
+    </div>
+    <p class="intro-phrase" id="phrase-1">Nous ne créons pas des produits.<br>Nous créons des <em>univers</em>.</p>
+    <p class="intro-phrase" id="phrase-2" style="font-size:.9em;color:#8B8A93">« L'imagination est notre matière première. »</p>
+    <div class="intro-cta" id="intro-cta">
+      <button class="btn btn-plein" id="entrer" type="button">Découvrir notre univers</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ en-tête ============ -->
+<header class="tete" id="tete">
+  <a class="logo-lien" href="#haut" aria-label="KHALAM, accueil">
+    <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <g stroke="#8497F0" stroke-width="6" stroke-linecap="round">
+        <path d="M18 12 C30 46, 44 56, 50 88"/>
+        <path d="M39 7 C44 42, 48 56, 50 88"/>
+        <path d="M61 7 C56 42, 52 56, 50 88"/>
+        <path d="M82 12 C70 46, 56 56, 50 88"/>
+      </g>
+    </svg>
+    <span class="logo-mot">KHALAM</span>
+  </a>
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="#divisions">Divisions</a>
+    <a href="#equilibre">ÉQUILIBRE</a>
+    <a href="#difference">Notre différence</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="haut">
+
+  <!-- ============ héros ============ -->
+  <section class="hero">
+    <div class="halo halo-1"></div>
+    <div class="halo halo-2"></div>
+    <div class="halo halo-3"></div>
+    <div class="wrap">
+      <p class="oeil">Entreprise indépendante de création numérique</p>
+      <h1><span>Nous ne créons pas des produits.</span><strong>Nous créons des univers.</strong></h1>
+      <p class="hero-sous">Six divisions, un seul atelier : applications, jeux vidéo, audiovisuel, animation, intelligence artificielle et recherche. De l'idée à la livraison, sans intermédiaire.</p>
+      <div class="actions">
+        <a class="btn btn-plein" href="#contact">Parler d'un projet</a>
+        <a class="btn btn-vide" href="#divisions">Voir nos divisions</a>
+      </div>
+      <div class="compteur">
+        <div><b>6</b>Divisions</div>
+        <div><b>1</b>Licence originale</div>
+        <div><b>2</b>Jeux jouables aujourd'hui</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ histoire ============ -->
+  <section class="borde" id="histoire">
+    <div class="wrap duo">
+      <div class="rev">
+        <p class="oeil">Notre histoire</p>
+        <h2 class="titre">L'imagination est notre matière première.</h2>
+      </div>
+      <div class="rev rev-2">
+        <p>KHALAM est une entreprise indépendante qui rassemble sous un même toit des disciplines que l'industrie sépare d'ordinaire : le code, l'image, le son, le récit.</p>
+        <p>Nous transformons des idées en expériences numériques, artistiques et interactives. Pas des livrables : des univers, qui continuent d'exister après la mise en ligne et qui appellent une suite.</p>
+        <p>Nous ne sous-traitons rien de ce qui compte. Ce que nous concevons, nous le construisons.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ mission ============ -->
+  <section class="borde" id="mission">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Notre mission</p>
+        <h2 class="titre">Quatre gestes, dans cet ordre.</h2>
+        <p class="chapo">Chaque création est conçue pour raconter une histoire et provoquer une émotion. Le reste — la technologie, les outils, les plateformes — n'est qu'un moyen.</p>
+      </div>
+      <div class="verbes rev rev-2">
+        <div class="verbe"><div class="pt"></div><h3>Imaginer</h3><p>Partir d'une intention, jamais d'un cahier de fonctionnalités.</p></div>
+        <div class="verbe"><div class="pt"></div><h3>Créer</h3><p>Écrire, dessiner, coder, monter — dans le même atelier.</p></div>
+        <div class="verbe"><div class="pt"></div><h3>Innover</h3><p>Chercher la solution que personne n'a encore essayée.</p></div>
+        <div class="verbe"><div class="pt"></div><h3>Inspirer</h3><p>Laisser au visiteur quelque chose qu'il n'avait pas en arrivant.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ divisions ============ -->
+  <section class="borde" id="divisions">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Nos divisions</p>
+        <h2 class="titre">Six métiers, une seule maison.</h2>
+        <p class="chapo">Chaque division a son domaine, son équipe et sa propre adresse. Toutes partagent le même atelier — c'est ce qui permet à un jeu d'avoir un vrai film, et à une application d'avoir une vraie direction artistique.</p>
+      </div>
+      <div class="divisions rev rev-2" id="liste-divisions"></div>
+    </div>
+  </section>
+
+  <!-- ============ ÉQUILIBRE ============ -->
+  <section class="licence" id="equilibre">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Notre licence</p>
+        <h2>ÉQUILIBRE</h2>
+        <p class="chapo" style="margin-top:22px">Un univers complet bâti sur les quatre piliers fondamentaux de la vie. Plusieurs jeux complémentaires, des expériences mobiles et des projets interactifs appelés à grandir.</p>
+      </div>
+
+      <div class="piliers rev rev-2" id="piliers" role="group" aria-label="Les quatre piliers d'ÉQUILIBRE">
+        <div class="niveau" id="niveau" data-libelle="Équilibre"></div>
+        <button class="pilier" data-nom="Spiritualité" data-val="62" style="--teinte:var(--p-spiritualite)" aria-label="Pilier Spiritualité">
+          <div class="colonne"><div class="remplissage"></div></div><div class="socle"><b>Spiritualité</b></div>
+        </button>
+        <button class="pilier" data-nom="Amour" data-val="78" style="--teinte:var(--p-amour)" aria-label="Pilier Amour">
+          <div class="colonne"><div class="remplissage"></div></div><div class="socle"><b>Amour</b></div>
+        </button>
+        <button class="pilier" data-nom="Santé" data-val="41" style="--teinte:var(--p-sante)" aria-label="Pilier Santé">
+          <div class="colonne"><div class="remplissage"></div></div><div class="socle"><b>Santé</b></div>
+        </button>
+        <button class="pilier" data-nom="Argent" data-val="70" style="--teinte:var(--p-argent)" aria-label="Pilier Argent">
+          <div class="colonne"><div class="remplissage"></div></div><div class="socle"><b>Argent</b></div>
+        </button>
+      </div>
+
+      <p class="regle-jeu rev">« On ne vous jugera pas sur votre plus haut pilier, mais sur le plus bas. »</p>
+      <div class="prods rev rev-2" id="productions"></div>
+    </div>
+  </section>
+
+  <!-- ============ QR ÉQUILIBRE ============ -->
+  <section class="qr-eq" id="jouer-equilibre" aria-label="Jouer à ÉQUILIBRE">
+    <div class="wrap">
+      <div class="qr-eq-carte rev">
+        <div class="qr-eq-visuel"><svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect width="33" height="33" fill="#0A0711"/><path d="M2 2h1v1h-1z M3 2h1v1h-1z M4 2h1v1h-1z M5 2h1v1h-1z M6 2h1v1h-1z M7 2h1v1h-1z M8 2h1v1h-1z M16 2h1v1h-1z M19 2h1v1h-1z M20 2h1v1h-1z M21 2h1v1h-1z M24 2h1v1h-1z M25 2h1v1h-1z M26 2h1v1h-1z M27 2h1v1h-1z M28 2h1v1h-1z M29 2h1v1h-1z M30 2h1v1h-1z M2 3h1v1h-1z M8 3h1v1h-1z M10 3h1v1h-1z M12 3h1v1h-1z M15 3h1v1h-1z M19 3h1v1h-1z M21 3h1v1h-1z M22 3h1v1h-1z M24 3h1v1h-1z M30 3h1v1h-1z M2 4h1v1h-1z M4 4h1v1h-1z M5 4h1v1h-1z M6 4h1v1h-1z M8 4h1v1h-1z M11 4h1v1h-1z M12 4h1v1h-1z M13 4h1v1h-1z M17 4h1v1h-1z M20 4h1v1h-1z M21 4h1v1h-1z M22 4h1v1h-1z M24 4h1v1h-1z M26 4h1v1h-1z M27 4h1v1h-1z M28 4h1v1h-1z M30 4h1v1h-1z M2 5h1v1h-1z M4 5h1v1h-1z M5 5h1v1h-1z M6 5h1v1h-1z M8 5h1v1h-1z M13 5h1v1h-1z M14 5h1v1h-1z M15 5h1v1h-1z M18 5h1v1h-1z M20 5h1v1h-1z M24 5h1v1h-1z M26 5h1v1h-1z M27 5h1v1h-1z M28 5h1v1h-1z M30 5h1v1h-1z M2 6h1v1h-1z M4 6h1v1h-1z M5 6h1v1h-1z M6 6h1v1h-1z M8 6h1v1h-1z M10 6h1v1h-1z M11 6h1v1h-1z M12 6h1v1h-1z M13 6h1v1h-1z M14 6h1v1h-1z M15 6h1v1h-1z M18 6h1v1h-1z M20 6h1v1h-1z M21 6h1v1h-1z M24 6h1v1h-1z M26 6h1v1h-1z M27 6h1v1h-1z M28 6h1v1h-1z M30 6h1v1h-1z M2 7h1v1h-1z M8 7h1v1h-1z M13 7h1v1h-1z M16 7h1v1h-1z M17 7h1v1h-1z M18 7h1v1h-1z M19 7h1v1h-1z M21 7h1v1h-1z M24 7h1v1h-1z M30 7h1v1h-1z M2 8h1v1h-1z M3 8h1v1h-1z M4 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M7 8h1v1h-1z M8 8h1v1h-1z M10 8h1v1h-1z M12 8h1v1h-1z M14 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M20 8h1v1h-1z M22 8h1v1h-1z M24 8h1v1h-1z M25 8h1v1h-1z M26 8h1v1h-1z M27 8h1v1h-1z M28 8h1v1h-1z M29 8h1v1h-1z M30 8h1v1h-1z M13 9h1v1h-1z M14 9h1v1h-1z M17 9h1v1h-1z M19 9h1v1h-1z M20 9h1v1h-1z M22 9h1v1h-1z M2 10h1v1h-1z M4 10h1v1h-1z M6 10h1v1h-1z M8 10h1v1h-1z M12 10h1v1h-1z M14 10h1v1h-1z M18 10h1v1h-1z M19 10h1v1h-1z M21 10h1v1h-1z M22 10h1v1h-1z M26 10h1v1h-1z M29 10h1v1h-1z M4 11h1v1h-1z M6 11h1v1h-1z M9 11h1v1h-1z M11 11h1v1h-1z M13 11h1v1h-1z M14 11h1v1h-1z M15 11h1v1h-1z M17 11h1v1h-1z M18 11h1v1h-1z M24 11h1v1h-1z M27 11h1v1h-1z M30 11h1v1h-1z M3 12h1v1h-1z M5 12h1v1h-1z M7 12h1v1h-1z M8 12h1v1h-1z M11 12h1v1h-1z M12 12h1v1h-1z M13 12h1v1h-1z M14 12h1v1h-1z M16 12h1v1h-1z M17 12h1v1h-1z M18 12h1v1h-1z M24 12h1v1h-1z M25 12h1v1h-1z M26 12h1v1h-1z M28 12h1v1h-1z M29 12h1v1h-1z M30 12h1v1h-1z M2 13h1v1h-1z M3 13h1v1h-1z M4 13h1v1h-1z M5 13h1v1h-1z M6 13h1v1h-1z M10 13h1v1h-1z M15 13h1v1h-1z M16 13h1v1h-1z M18 13h1v1h-1z M19 13h1v1h-1z M21 13h1v1h-1z M22 13h1v1h-1z M29 13h1v1h-1z M2 14h1v1h-1z M3 14h1v1h-1z M5 14h1v1h-1z M6 14h1v1h-1z M8 14h1v1h-1z M9 14h1v1h-1z M10 14h1v1h-1z M11 14h1v1h-1z M12 14h1v1h-1z M14 14h1v1h-1z M16 14h1v1h-1z M17 14h1v1h-1z M19 14h1v1h-1z M22 14h1v1h-1z M23 14h1v1h-1z M24 14h1v1h-1z M27 14h1v1h-1z M29 14h1v1h-1z M30 14h1v1h-1z M3 15h1v1h-1z M5 15h1v1h-1z M7 15h1v1h-1z M9 15h1v1h-1z M11 15h1v1h-1z M12 15h1v1h-1z M13 15h1v1h-1z M14 15h1v1h-1z M16 15h1v1h-1z M17 15h1v1h-1z M19 15h1v1h-1z M22 15h1v1h-1z M24 15h1v1h-1z M27 15h1v1h-1z M30 15h1v1h-1z M2 16h1v1h-1z M4 16h1v1h-1z M6 16h1v1h-1z M7 16h1v1h-1z M8 16h1v1h-1z M9 16h1v1h-1z M10 16h1v1h-1z M11 16h1v1h-1z M12 16h1v1h-1z M13 16h1v1h-1z M15 16h1v1h-1z M20 16h1v1h-1z M22 16h1v1h-1z M23 16h1v1h-1z M24 16h1v1h-1z M27 16h1v1h-1z M29 16h1v1h-1z M30 16h1v1h-1z M2 17h1v1h-1z M4 17h1v1h-1z M6 17h1v1h-1z M10 17h1v1h-1z M12 17h1v1h-1z M14 17h1v1h-1z M17 17h1v1h-1z M19 17h1v1h-1z M20 17h1v1h-1z M26 17h1v1h-1z M27 17h1v1h-1z M29 17h1v1h-1z M2 18h1v1h-1z M5 18h1v1h-1z M6 18h1v1h-1z M8 18h1v1h-1z M9 18h1v1h-1z M10 18h1v1h-1z M11 18h1v1h-1z M12 18h1v1h-1z M18 18h1v1h-1z M19 18h1v1h-1z M23 18h1v1h-1z M24 18h1v1h-1z M27 18h1v1h-1z M29 18h1v1h-1z M30 18h1v1h-1z M4 19h1v1h-1z M9 19h1v1h-1z M11 19h1v1h-1z M12 19h1v1h-1z M15 19h1v1h-1z M17 19h1v1h-1z M18 19h1v1h-1z M22 19h1v1h-1z M23 19h1v1h-1z M24 19h1v1h-1z M27 19h1v1h-1z M28 19h1v1h-1z M30 19h1v1h-1z M2 20h1v1h-1z M6 20h1v1h-1z M8 20h1v1h-1z M10 20h1v1h-1z M12 20h1v1h-1z M13 20h1v1h-1z M14 20h1v1h-1z M16 20h1v1h-1z M17 20h1v1h-1z M18 20h1v1h-1z M22 20h1v1h-1z M25 20h1v1h-1z M29 20h1v1h-1z M30 20h1v1h-1z M3 21h1v1h-1z M6 21h1v1h-1z M9 21h1v1h-1z M10 21h1v1h-1z M12 21h1v1h-1z M13 21h1v1h-1z M14 21h1v1h-1z M15 21h1v1h-1z M16 21h1v1h-1z M18 21h1v1h-1z M19 21h1v1h-1z M20 21h1v1h-1z M26 21h1v1h-1z M27 21h1v1h-1z M29 21h1v1h-1z M2 22h1v1h-1z M4 22h1v1h-1z M5 22h1v1h-1z M6 22h1v1h-1z M7 22h1v1h-1z M8 22h1v1h-1z M12 22h1v1h-1z M13 22h1v1h-1z M16 22h1v1h-1z M17 22h1v1h-1z M18 22h1v1h-1z M19 22h1v1h-1z M20 22h1v1h-1z M22 22h1v1h-1z M23 22h1v1h-1z M24 22h1v1h-1z M25 22h1v1h-1z M26 22h1v1h-1z M10 23h1v1h-1z M11 23h1v1h-1z M12 23h1v1h-1z M13 23h1v1h-1z M16 23h1v1h-1z M17 23h1v1h-1z M21 23h1v1h-1z M22 23h1v1h-1z M26 23h1v1h-1z M28 23h1v1h-1z M29 23h1v1h-1z M30 23h1v1h-1z M2 24h1v1h-1z M3 24h1v1h-1z M4 24h1v1h-1z M5 24h1v1h-1z M6 24h1v1h-1z M7 24h1v1h-1z M8 24h1v1h-1z M13 24h1v1h-1z M14 24h1v1h-1z M15 24h1v1h-1z M18 24h1v1h-1z M19 24h1v1h-1z M21 24h1v1h-1z M22 24h1v1h-1z M24 24h1v1h-1z M26 24h1v1h-1z M27 24h1v1h-1z M29 24h1v1h-1z M30 24h1v1h-1z M2 25h1v1h-1z M8 25h1v1h-1z M11 25h1v1h-1z M12 25h1v1h-1z M13 25h1v1h-1z M17 25h1v1h-1z M19 25h1v1h-1z M22 25h1v1h-1z M26 25h1v1h-1z M27 25h1v1h-1z M30 25h1v1h-1z M2 26h1v1h-1z M4 26h1v1h-1z M5 26h1v1h-1z M6 26h1v1h-1z M8 26h1v1h-1z M10 26h1v1h-1z M11 26h1v1h-1z M12 26h1v1h-1z M13 26h1v1h-1z M19 26h1v1h-1z M22 26h1v1h-1z M23 26h1v1h-1z M24 26h1v1h-1z M25 26h1v1h-1z M26 26h1v1h-1z M29 26h1v1h-1z M2 27h1v1h-1z M4 27h1v1h-1z M5 27h1v1h-1z M6 27h1v1h-1z M8 27h1v1h-1z M11 27h1v1h-1z M15 27h1v1h-1z M18 27h1v1h-1z M19 27h1v1h-1z M25 27h1v1h-1z M26 27h1v1h-1z M28 27h1v1h-1z M2 28h1v1h-1z M4 28h1v1h-1z M5 28h1v1h-1z M6 28h1v1h-1z M8 28h1v1h-1z M10 28h1v1h-1z M11 28h1v1h-1z M14 28h1v1h-1z M16 28h1v1h-1z M18 28h1v1h-1z M20 28h1v1h-1z M25 28h1v1h-1z M26 28h1v1h-1z M27 28h1v1h-1z M30 28h1v1h-1z M2 29h1v1h-1z M8 29h1v1h-1z M11 29h1v1h-1z M12 29h1v1h-1z M13 29h1v1h-1z M15 29h1v1h-1z M17 29h1v1h-1z M19 29h1v1h-1z M20 29h1v1h-1z M21 29h1v1h-1z M22 29h1v1h-1z M24 29h1v1h-1z M25 29h1v1h-1z M29 29h1v1h-1z M2 30h1v1h-1z M3 30h1v1h-1z M4 30h1v1h-1z M5 30h1v1h-1z M6 30h1v1h-1z M7 30h1v1h-1z M8 30h1v1h-1z M10 30h1v1h-1z M12 30h1v1h-1z M19 30h1v1h-1z M21 30h1v1h-1z M22 30h1v1h-1z M24 30h1v1h-1z M25 30h1v1h-1z M26 30h1v1h-1z M27 30h1v1h-1z M29 30h1v1h-1z M30 30h1v1h-1z" fill="#F0D060"/></svg></div>
+        <div class="qr-eq-txt">
+          <p class="oeil">Sur ton téléphone</p>
+          <h3>ÉQUILIBRE</h3>
+          <p>Scanne le code : le jeu s'ouvre directement, sans rien installer.</p>
+          <a class="qr-eq-lien" href="https://tonequilibre.khalam.app">tonequilibre.khalam.app →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ différence ============ -->
+  <section class="borde" id="difference">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Notre différence</p>
+        <h2 class="titre">La technologie et la création ne font qu'un.</h2>
+        <p class="chapo">Ailleurs, ces métiers se parlent par e-mail et se découvrent à la livraison. Ici, ils partagent la même table.</p>
+      </div>
+      <div class="croise rev rev-2">
+        <div><span>Les développeurs</span> <i>×</i> <span>les artistes</span></div>
+        <div><span>Les designers</span> <i>×</i> <span>les réalisateurs</span></div>
+        <div><span>Les créatifs</span> <i>×</i> <span>les ingénieurs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ valeurs ============ -->
+  <section class="borde" id="valeurs">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Nos valeurs</p>
+        <h2 class="titre">Ce qui tient l'atelier debout.</h2>
+      </div>
+      <div class="valeurs rev rev-2" id="liste-valeurs"></div>
+    </div>
+  </section>
+
+  <!-- ============ ambition ============ -->
+  <section class="borde" id="ambition">
+    <div class="wrap duo">
+      <div class="rev">
+        <p class="oeil">Notre ambition</p>
+        <h2 class="titre">Faire rayonner la création africaine à l'international.</h2>
+      </div>
+      <div class="rev rev-2">
+        <p>Créer des licences qui voyagent. Développer des applications utilisées partout dans le monde. Produire des œuvres audiovisuelles reconnues. Accompagner les entreprises dans leur transformation numérique.</p>
+        <p>Et le faire depuis ici, avec notre vocabulaire, nos couleurs et nos récits — parce qu'une création n'est universelle que si elle vient d'un endroit précis.</p>
+        <div class="actions" style="margin-top:26px">
+          <a class="btn btn-vide" href="#contact">Travailler avec nous</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ contact ============ -->
+  <section class="borde contact" id="contact">
+    <div class="wrap rev">
+      <p class="oeil" style="justify-content:center">Prendre contact</p>
+      <h2 class="titre">Dites-nous ce que vous voulez construire.</h2>
+      <p class="chapo">Application, jeu, film, campagne ou univers animé : dites-nous où vous en êtes. Nous répondons nous-mêmes, sous 48 heures.</p>
+      <div class="actions">
+        <a class="btn btn-plein" id="lien-mail" href="#">Nous écrire</a>
+        <a class="btn btn-vide" id="lien-insta" href="#" rel="me noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <span>© <span id="annee">2026</span> KHALAM</span>
+  <span class="devise">Créer aujourd'hui les expériences de demain.</span>
+  <span><a href="#haut">Haut de page</a></span>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"KHALAM",
+  "url":"https://khalam.app/",
+  "slogan":"Créer aujourd'hui les expériences de demain.",
+  "description":"Entreprise indépendante de création numérique : applications, jeux vidéo, production audiovisuelle, animation, intelligence artificielle et technologies immersives.",
+  "email":"khalam3102@gmail.com",
+  "knowsAbout":["Développement d'applications","Jeux vidéo","Production audiovisuelle","Animation 2D et 3D","Intelligence artificielle","Réalité augmentée"]
+}
+</script>
+
+<script>
+/* =========================================================
+   KHALAM.app — BUILD_TAG : khalam-site-v4.2
+   Palette : indigo = la maison. Or = ÉQUILIBRE, nulle part ailleurs.
+   Contenu piloté par DIVISIONS / PRODUCTIONS / VALEURS / MAISON.
+   ========================================================= */
+
+const MAISON = {
+  email     : "khalam3102@gmail.com",
+  instagram : ""   /* vide = le bouton Instagram disparaît. Colle l'URL le jour venu. */
+};
+
+const DIVISIONS = [
+  { nom:"Games", sous:"games.khalam.app", accent:"var(--or)", statut:"Active",
+    desc:"Des jeux originaux mêlant réflexion, stratégie, aventure et immersion. Notre première licence, ÉQUILIBRE, est jouable aujourd'hui.",
+    items:["Jeux mobiles","Jeux de cartes","Multijoueur en ligne","Game design","Licences originales"] },
+  { nom:"Apps", sous:"apps.khalam.app", accent:"var(--indigo-clair)", statut:"Active",
+    desc:"Des applications modernes et performantes, du particulier au logiciel métier, sur toutes les plateformes.",
+    items:["Android","iPhone","Web","Windows","macOS","Logiciels professionnels","Applications sur mesure"] },
+  { nom:"Studio", sous:"studio.khalam.app", accent:"var(--indigo-clair)", statut:"En développement",
+    desc:"L'image en mouvement : nous accompagnons entreprises, artistes et marques de l'écriture au montage final.",
+    items:["Films","Clips","Publicités","Documentaires","Captations","Motion design","Habillages vidéo"] },
+  { nom:"Animation", sous:"animation.khalam.app", accent:"var(--indigo-clair)", statut:"En développement",
+    desc:"Personnages originaux et univers fantastiques, en 2D comme en 3D, du court métrage à la série.",
+    items:["Dessins animés","Animation 2D","Animation 3D","Séries","Courts métrages","Personnages originaux"] },
+  { nom:"AI", sous:"ai.khalam.app", accent:"var(--violet)", statut:"Recherche",
+    desc:"Une intelligence artificielle au service de la créativité — jamais à la place du créateur.",
+    items:["Assistants intelligents","Automatisation","Génération d'images","Génération vidéo","Outils créatifs"] },
+  { nom:"Labs", sous:"labs.khalam.app", accent:"var(--violet)", statut:"Recherche",
+    desc:"Le terrain d'essai de la maison : prototypes, expérimentations et technologies encore instables.",
+    items:["Prototypes","Réalité virtuelle","Réalité augmentée","Technologies émergentes","Expériences interactives"] }
+];
+
+const PRODUCTIONS = [
+  { nom:"ÉQUILIBRE", sous:"tonequilibre.khalam.app", type:"Jeu complet", dispo:true,
+    desc:"Solo, duel en ligne et La Voie des Quatre Maîtres avec ses quinze Gardiens." },
+  { nom:"Les Quatre Piliers", sous:"piliers.khalam.app", type:"Jeu court · 10 min", dispo:true,
+    desc:"Onze cartes, trois au maximum par pilier. Une marge d'une seule carte." },
+  { nom:"L'Édition", sous:"edition.khalam.app", type:"Jeu imprimé", dispo:false,
+    desc:"Le jeu physique, dos doré et symboles gravés. Première série limitée." }
+];
+
+const VALEURS = [
+  ["Imaginer","Le projet commence avant la première ligne de code."],
+  ["Créer","Faire, montrer, corriger. Puis recommencer."],
+  ["Partager","Un savoir gardé pour soi ne vaut rien."],
+  ["Innover","Préférer la question neuve à la réponse connue."],
+  ["Respect","Du public, des délais, du travail des autres."],
+  ["Excellence","Le détail que personne ne remarque, sauf à l'usage."],
+  ["Passion","On ne fait bien que ce qu'on aurait fait gratuitement."],
+  ["Authenticité","Nos récits viennent d'un endroit précis. Ça se voit."]
+];
+
+const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------------- intro ---------------- */
+(function intro(){
+  const bloc = document.getElementById("intro");
+  if (!bloc) return;
+
+  let deja = false;
+  try { deja = sessionStorage.getItem("khalam-intro") === "1"; } catch(e){}
+
+  function fermer(){
+    bloc.classList.add("parti");
+    document.body.classList.remove("verrou");
+    try { sessionStorage.setItem("khalam-intro","1"); } catch(e){}
+    setTimeout(function(){ if (bloc.parentNode) bloc.parentNode.removeChild(bloc); }, 1000);
+  }
+
+  if (deja || SOBRE){ bloc.classList.add("parti"); setTimeout(fermer, 50); return; }
+
+  document.body.classList.add("verrou");
+  document.getElementById("passer").addEventListener("click", fermer);
+  document.getElementById("entrer").addEventListener("click", fermer);
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") fermer(); });
+
+  const toile = document.getElementById("toile-intro");
+  const ctx = toile.getContext("2d");
+  let L = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  function taille(){
+    L = toile.clientWidth; H = toile.clientHeight;
+    toile.width = L * dpr; toile.height = H * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  taille();
+  window.addEventListener("resize", taille);
+
+  const cx = function(){ return L/2; }, cy = function(){ return H/2; };
+  const coins = [[0,0],[1,0],[1,1],[0,1]];
+  const debut = performance.now();
+  const T_VOYAGE = 1150, T_ORBITE = 1750, T_FLASH = 1980, T_FIN = 2450;
+  let fini = false;
+
+  function trace(){
+    const t = performance.now() - debut;
+    ctx.clearRect(0,0,L,H);
+
+    /* halo central qui grandit */
+    const halo = Math.min(1, t / T_ORBITE);
+    const g = ctx.createRadialGradient(cx(),cy(),0,cx(),cy(),120 + halo*90);
+    g.addColorStop(0,"rgba(132,151,240," + (0.10 + halo*0.18) + ")");
+    g.addColorStop(1,"rgba(132,151,240,0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,L,H);
+
+    coins.forEach(function(c,i){
+      let x, y, a = 1;
+      const dep = { x: c[0]*L, y: c[1]*H };
+      if (t < T_VOYAGE){
+        const p = t / T_VOYAGE;
+        const e = 1 - Math.pow(1-p, 3);
+        const ang = e * Math.PI * 0.9;
+        const rx = dep.x + (cx() - dep.x) * e;
+        const ry = dep.y + (cy() - dep.y) * e;
+        x = cx() + (rx - cx()) * Math.cos(ang) - (ry - cy()) * Math.sin(ang);
+        y = cy() + (rx - cx()) * Math.sin(ang) + (ry - cy()) * Math.cos(ang);
+      } else {
+        const p = Math.min(1, (t - T_VOYAGE) / (T_ORBITE - T_VOYAGE));
+        const r = 46 * (1 - p) + 3;
+        const ang = i * Math.PI/2 + p * Math.PI * 3;
+        x = cx() + Math.cos(ang) * r;
+        y = cy() + Math.sin(ang) * r;
+        a = 1 - p * 0.25;
+      }
+      const gp = ctx.createRadialGradient(x,y,0,x,y,26);
+      gp.addColorStop(0,"rgba(226,232,255," + a + ")");
+      gp.addColorStop(0.25,"rgba(132,151,240," + (a*0.75) + ")");
+      gp.addColorStop(1,"rgba(46,63,158,0)");
+      ctx.fillStyle = gp;
+      ctx.beginPath(); ctx.arc(x,y,26,0,Math.PI*2); ctx.fill();
+    });
+
+    if (t > T_ORBITE){
+      const p = Math.min(1, (t - T_ORBITE) / (T_FLASH - T_ORBITE));
+      const r = Math.pow(p, 0.6) * Math.max(L,H) * 0.75;
+      const gf = ctx.createRadialGradient(cx(),cy(),0,cx(),cy(),Math.max(r,1));
+      const a = (1 - p) * 0.9;
+      gf.addColorStop(0,"rgba(255,255,255," + a + ")");
+      gf.addColorStop(0.35,"rgba(132,151,240," + (a*0.55) + ")");
+      gf.addColorStop(1,"rgba(46,63,158,0)");
+      ctx.fillStyle = gf;
+      ctx.fillRect(0,0,L,H);
+    }
+
+    if (t < T_FIN){ requestAnimationFrame(trace); }
+    else if (!fini){ fini = true; ctx.clearRect(0,0,L,H); }
+  }
+  requestAnimationFrame(trace);
+
+  setTimeout(function(){ document.getElementById("intro-logo").classList.add("on"); }, T_FLASH - 120);
+  setTimeout(function(){ document.getElementById("phrase-1").classList.add("on"); }, T_FLASH + 380);
+  setTimeout(function(){ document.getElementById("phrase-2").classList.add("on"); }, T_FLASH + 900);
+  setTimeout(function(){ document.getElementById("intro-cta").classList.add("on"); }, T_FLASH + 1300);
+})();
+
+/* ---------------- divisions ---------------- */
+(function rendreDivisions(){
+  const hote = document.getElementById("liste-divisions");
+  if (!hote) return;
+
+  DIVISIONS.forEach(function(d){
+    const el = document.createElement("article");
+    el.className = "division";
+    el.style.setProperty("--accent", d.accent);
+    el.innerHTML =
+      '<svg class="marque-div" viewBox="0 0 100 100" fill="none" aria-hidden="true">' +
+        '<g stroke="currentColor" stroke-width="7" stroke-linecap="round">' +
+          '<path d="M18 12 C30 46, 44 56, 50 88"/><path d="M39 7 C44 42, 48 56, 50 88"/>' +
+          '<path d="M61 7 C56 42, 52 56, 50 88"/><path d="M82 12 C70 46, 56 56, 50 88"/>' +
+        '</g></svg>' +
+      '<h3><small></small><span class="nom-div"></span></h3>' +
+      '<div><p class="desc"></p><ul class="liste"></ul></div>' +
+      '<span class="statut"></span>';
+    el.querySelector("small").textContent = d.sous;
+    el.querySelector(".nom-div").textContent = "KHALAM " + d.nom;
+    el.querySelector(".desc").textContent = d.desc;
+    const ul = el.querySelector(".liste");
+    d.items.forEach(function(i){
+      const li = document.createElement("li"); li.textContent = i; ul.appendChild(li);
+    });
+    const st = el.querySelector(".statut");
+    st.textContent = d.statut;
+    if (d.statut === "Active") st.classList.add("actif");
+    hote.appendChild(el);
+  });
+})();
+
+/* ---------------- productions ÉQUILIBRE ---------------- */
+(function rendreProductions(){
+  const hote = document.getElementById("productions");
+  if (!hote) return;
+  PRODUCTIONS.forEach(function(p){
+    const el = document.createElement(p.dispo ? "a" : "article");
+    el.className = "prod " + (p.dispo ? "ouvert" : "ferme");
+    if (p.dispo){ el.href = "https://" + p.sous; el.rel = "noopener"; }
+    el.innerHTML =
+      '<div class="haut"><span class="type"></span><span class="' + (p.dispo ? "dispo" : "") + '"></span></div>' +
+      '<h4></h4><p></p><span class="adresse"></span>';
+    el.querySelector(".type").textContent = p.type;
+    el.querySelector(".haut span:last-child").textContent = p.dispo ? "Jouable" : "Bientôt";
+    el.querySelector("h4").textContent = p.nom;
+    el.querySelector("p").textContent = p.desc;
+    el.querySelector(".adresse").textContent = p.sous;
+    hote.appendChild(el);
+  });
+})();
+
+/* ---------------- valeurs ---------------- */
+(function rendreValeurs(){
+  const hote = document.getElementById("liste-valeurs");
+  if (!hote) return;
+  VALEURS.forEach(function(v){
+    const el = document.createElement("article");
+    el.className = "valeur";
+    el.innerHTML = "<h3></h3><p></p>";
+    el.querySelector("h3").textContent = v[0];
+    el.querySelector("p").textContent = v[1];
+    hote.appendChild(el);
+  });
+})();
+
+/* ---------------- les quatre piliers ---------------- */
+(function piliers(){
+  const zone = document.getElementById("piliers");
+  const niveau = document.getElementById("niveau");
+  if (!zone || !niveau) return;
+
+  const cols = [].slice.call(zone.querySelectorAll(".pilier")).map(function(el){
+    return { el:el, nom:el.dataset.nom, base:parseFloat(el.dataset.val),
+             val:parseFloat(el.dataset.val), fill:el.querySelector(".remplissage") };
+  });
+
+  function rendu(){
+    let mini = cols[0];
+    cols.forEach(function(c){
+      c.fill.style.height = c.val.toFixed(1) + "%";
+      if (c.val < mini.val) mini = c;
+    });
+    niveau.style.bottom = mini.val.toFixed(1) + "%";
+    niveau.dataset.libelle = "Le niveau tient à : " + mini.nom;
+  }
+  cols.forEach(function(c){
+    c.el.addEventListener("click", function(){ c.val = Math.min(96, c.val + 9); rendu(); });
+    c.el.addEventListener("mouseenter", function(){
+      if (SOBRE) return;
+      c.val = Math.min(96, c.val + 4); rendu();
+    });
+  });
+  rendu();
+
+  if (SOBRE) return;
+  let horloge = null, visible = false;
+  const oeil = new IntersectionObserver(function(e){
+    visible = e[0].isIntersecting;
+    if (visible && !horloge){
+      horloge = setInterval(function(){
+        cols.forEach(function(c){
+          const cible = c.base + (Math.random() * 14 - 7);
+          c.val = Math.max(18, Math.min(96, c.val * 0.72 + cible * 0.28));
+        });
+        rendu();
+      }, 3600);
+    } else if (!visible && horloge){ clearInterval(horloge); horloge = null; }
+  }, { threshold:0.15 });
+  oeil.observe(zone);
+})();
+
+/* ---------------- divers ---------------- */
+(function divers(){
+  const insta = document.getElementById("lien-insta");
+  if (insta){
+    if (MAISON.instagram){ insta.href = MAISON.instagram; insta.target = "_blank"; }
+    else { insta.remove(); }
+  }
+  const mail = document.getElementById("lien-mail");
+  if (mail) mail.href = "mailto:" + MAISON.email;
+  const annee = document.getElementById("annee");
+  if (annee) annee.textContent = new Date().getFullYear();
+
+  const tete = document.getElementById("tete");
+  if (tete){
+    const suit = function(){ tete.classList.toggle("pose", window.scrollY > 40); };
+    suit();
+    window.addEventListener("scroll", suit, { passive:true });
+  }
+
+  const cibles = document.querySelectorAll(".rev");
+  if (!("IntersectionObserver" in window)){
+    cibles.forEach(function(el){ el.classList.add("vu"); });
+  } else {
+    const obs = new IntersectionObserver(function(entrees){
+      entrees.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("vu"); obs.unobserve(e.target); }
+      });
+    }, { threshold:0.12, rootMargin:"0px 0px -8% 0px" });
+    cibles.forEach(function(el){ obs.observe(el); });
+  }
+})();
+
+if ("serviceWorker" in navigator){
+  window.addEventListener("load", function(){
+    navigator.serviceWorker.register("sw.js").catch(function(){});
+  });
+}
+</script>
+</body>
+</html>
