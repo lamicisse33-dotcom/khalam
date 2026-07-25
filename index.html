@@ -278,6 +278,17 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 }
 .regle-jeu{font-family:var(--licence);font-size:clamp(17px,2.4vw,24px);color:#E4D5A8;max-width:34ch;margin:0 0 34px}
 .prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:rgba(201,162,39,.22);margin-top:44px}
+.scan{display:none}
+@media (min-width:760px){
+  .scan{display:flex;align-items:center;gap:28px;margin-top:1px;padding:26px 22px;
+    background:var(--noir-2);border-top:1px solid rgba(201,162,39,.22)}
+  .scan img{flex:none;width:150px;height:150px;display:block;border-radius:4px}
+  .scan-sur{display:block;font-family:var(--util);font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:#8C846F;margin-bottom:10px}
+  .scan h4{font-family:var(--licence);font-weight:600;font-size:19px;letter-spacing:.05em;margin-bottom:9px}
+  .scan p{font-size:15px;color:#9B9384;margin-bottom:14px;max-width:38ch}
+  .scan-adr{font-family:var(--util);font-size:11px;letter-spacing:.05em;color:#D9CDAE}
+}
 .prod{background:var(--noir-2);padding:26px 22px 20px;display:flex;flex-direction:column;text-decoration:none;transition:background .35s}
 .prod:hover,.prod:focus-visible{background:#17161A}
 .prod .haut{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;font-family:var(--util);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8C846F}
@@ -485,6 +496,18 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 
       <p class="regle-jeu rev">« On ne vous jugera pas sur votre plus haut pilier, mais sur le plus bas. »</p>
       <div class="prods rev rev-2" id="productions"></div>
+
+      <!-- Scanner un QR depuis le telephone qu'on tient dans la main n'a aucun sens :
+           ce bloc ne s'affiche qu'au-dessus de 760px, c'est-a-dire sur ordinateur. -->
+      <aside class="scan rev rev-3" aria-label="Jouer sur mobile">
+        <img src="qr-piliers-parchemin-logo.png" alt="QR code vers piliers.khalam.app" width="150" height="150" loading="lazy"/>
+        <div class="scan-txt">
+          <span class="scan-sur">Sur ton téléphone</span>
+          <h4>Les Quatre Piliers</h4>
+          <p>Scanne le code : le jeu s'ouvre directement, sans rien installer.</p>
+          <span class="scan-adr">piliers.khalam.app</span>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -568,7 +591,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 
 <script>
 /* =========================================================
-   KHALAM.app — BUILD_TAG : khalam-site-v4.2
+   KHALAM.app — BUILD_TAG : khalam-site-v4.4
    Palette : indigo = la maison. Or = ÉQUILIBRE, nulle part ailleurs.
    Contenu piloté par DIVISIONS / PRODUCTIONS / VALEURS / MAISON.
    ========================================================= */
@@ -762,7 +785,7 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   PRODUCTIONS.forEach(function(p){
     const el = document.createElement(p.dispo ? "a" : "article");
     el.className = "prod " + (p.dispo ? "ouvert" : "ferme");
-    if (p.dispo){ el.href = "https://" + p.sous; el.rel = "noopener"; }
+    if (p.dispo){ el.href = "https://" + p.sous; el.rel = "noopener"; el.target = "_blank"; }
     el.innerHTML =
       '<div class="haut"><span class="type"></span><span class="' + (p.dispo ? "dispo" : "") + '"></span></div>' +
       '<h4></h4><p></p><span class="adresse"></span>';
