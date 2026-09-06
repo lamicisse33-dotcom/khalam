@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les applications de KHALAM — assistant vocal et traducteur wolof</title>
+<meta name="description" content="Géwel répond au téléphone à votre place ; l'Interprète traduit à voix haute entre le français et le wolof. Deux applications gratuites, à ouvrir dans le navigateur, faites à Dakar pour ceux qui parlent wolof.">
+<meta name="theme-color" content="#07070A">
+<link rel="canonical" href="https://khalam.app/applications/">
+<link rel="icon" href="https://khalam.app/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="https://khalam.app/icone-192.png">
+<meta property="og:site_name" content="KHALAM">
+<meta property="og:title" content="Les applications de KHALAM — assistant vocal et traducteur wolof">
+<meta property="og:description" content="Géwel répond au téléphone à votre place ; l'Interprète traduit à voix haute entre le français et le wolof. Deux applications gratuites, à ouvrir dans le navigateur, faites à Dakar pour ceux qui parlent wolof.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://khalam.app/applications/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://khalam.app/partage.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://khalam.app/partage.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Cinzel:wght@600&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* maison */
+  --noir:#07070A;
+  --noir-2:#0D0E14;
+  --noir-3:#12131C;
+  --trait:#1D1F2B;
+  --indigo:#2E3F9E;
+  --indigo-clair:#8497F0;
+  --indigo-nuit:#16204F;
+  --violet:#7B5EA7;
+  --blanc:#F2EFE9;
+  --cendre:#8B8A93;
+  --cendre-2:#5E5D68;
+  /* licence ÉQUILIBRE, nulle part ailleurs */
+  --or:#C9A227;
+  --or-clair:#E5C34A;
+  --p-spiritualite:#7B5EA7;
+  --p-amour:#B3384E;
+  --p-sante:#3E8E6E;
+  --p-argent:#A9602E;
+
+  --display:"Archivo", system-ui, sans-serif;
+  --corps:"Spectral", Georgia, serif;
+  --util:"Archivo", system-ui, sans-serif;
+  --licence:"Cinzel", Georgia, serif;
+  --marge:clamp(20px, 5vw, 80px);
+  --lg:1280px;
+}
+*{box-sizing:border-box}
+html{
+  scroll-behavior:smooth;color-scheme:dark;
+  background-color:#07070A;
+}
+/* fond verrouillé : certains lecteurs/aperçus imposent un fond blanc */
+body{
+  margin:0;background-color:#07070A !important;color:var(--blanc);
+  font-family:var(--corps);font-weight:300;font-size:17px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body.verrou{overflow:hidden}
+a{color:inherit}
+h1,h2,h3,h4{
+  font-family:var(--display);font-weight:600;line-height:1.05;margin:0;
+  letter-spacing:-.025em;font-stretch:expanded;
+}
+p{margin:0 0 1em}
+main{background-color:#07070A}
+.wrap{max-width:var(--lg);margin:0 auto;padding:0 var(--marge)}
+.oeil{
+  font-family:var(--util);font-size:11px;font-weight:500;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--cendre-2);margin:0 0 20px;
+}
+.oeil::before{content:"";display:inline-block;width:22px;height:1px;background:var(--indigo-clair);vertical-align:middle;margin-right:12px;opacity:.7}
+
+/* ===================== intro ===================== */
+#intro{
+  position:fixed;inset:0;z-index:100;background:var(--noir);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:opacity .9s ease, visibility .9s;
+}
+#intro.parti{opacity:0;visibility:hidden;pointer-events:none}
+#intro canvas{position:absolute;inset:0;width:100%;height:100%}
+.intro-contenu{position:relative;text-align:center;padding:0 24px;max-width:760px}
+.intro-logo{opacity:0;transform:translateY(8px);transition:opacity .9s ease,transform .9s ease}
+.intro-logo.on{opacity:1;transform:none}
+.intro-logo svg{width:74px;height:74px;display:block;margin:0 auto 22px}
+.intro-mot{
+  font-family:var(--display);font-weight:700;font-size:clamp(30px,7vw,54px);
+  letter-spacing:.34em;text-indent:.34em;font-stretch:expanded;
+}
+.intro-phrase{
+  font-family:var(--corps);font-size:clamp(16px,2.4vw,21px);color:#C9C7D2;
+  margin:26px auto 0;max-width:30ch;opacity:0;transform:translateY(10px);
+  transition:opacity .9s ease,transform .9s ease;
+}
+.intro-phrase.on{opacity:1;transform:none}
+.intro-phrase em{font-style:italic;color:var(--indigo-clair)}
+.intro-cta{
+  margin-top:34px;opacity:0;transform:translateY(10px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.intro-cta.on{opacity:1;transform:none}
+.passer{
+  position:absolute;right:clamp(16px,4vw,34px);top:clamp(16px,4vw,30px);
+  background:none;border:0;color:var(--cendre-2);cursor:pointer;
+  font-family:var(--util);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  padding:10px 4px;transition:color .3s;
+}
+.passer:hover,.passer:focus-visible{color:var(--blanc)}
+
+/* ===================== boutons ===================== */
+.btn{
+  display:inline-block;cursor:pointer;text-decoration:none;
+  font-family:var(--util);font-size:13px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;padding:16px 30px;border:1px solid transparent;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),background .35s,color .35s,border-color .35s,box-shadow .35s;
+}
+.btn-plein{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.btn-plein:hover,.btn-plein:focus-visible{
+  background:#3B50C4;transform:translateY(-2px);box-shadow:0 12px 40px -14px var(--indigo-clair);
+}
+.btn-vide{color:var(--blanc);border-color:#2A2D3C;background:none}
+.btn-vide:hover,.btn-vide:focus-visible{border-color:var(--indigo-clair);color:var(--indigo-clair);transform:translateY(-2px)}
+.btn-or{background:var(--or);color:#14110A;border-color:var(--or)}
+.btn-or:hover,.btn-or:focus-visible{background:var(--or-clair);transform:translateY(-2px)}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+
+/* ===================== en-tête ===================== */
+.tete{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  background:linear-gradient(180deg,rgba(7,7,10,.92),rgba(7,7,10,0));
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px var(--marge);border-bottom:1px solid transparent;
+  transition:background .4s,backdrop-filter .4s,border-color .4s;
+}
+.tete.pose{background:rgba(7,7,10,.88);backdrop-filter:blur(14px);border-bottom-color:var(--trait)}
+.logo-lien{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-lien svg{width:26px;height:26px}
+.logo-mot{
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.34em;
+  text-indent:.34em;color:var(--blanc);font-stretch:expanded;
+}
+.nav{display:flex;gap:26px;font-family:var(--util);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.nav a{color:var(--cendre);text-decoration:none;padding:6px 0;position:relative;transition:color .3s}
+.nav a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
+  background:var(--indigo-clair);transition:right .35s cubic-bezier(.22,1,.36,1);
+}
+.nav a:hover,.nav a:focus-visible{color:var(--blanc)}
+.nav a:hover::after,.nav a:focus-visible::after{right:0}
+@media(max-width:860px){.nav{display:none}}
+
+/* ===================== héros ===================== */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  padding:130px 0 90px;overflow:hidden;
+}
+.halo{position:absolute;border-radius:50%;filter:blur(90px);opacity:.42;pointer-events:none}
+.halo-1{width:52vw;height:52vw;background:var(--indigo);top:-14vw;left:-10vw;animation:derive 22s ease-in-out infinite}
+.halo-2{width:38vw;height:38vw;background:var(--indigo-nuit);bottom:-12vw;right:-6vw;animation:derive 28s ease-in-out infinite reverse}
+.halo-3{width:26vw;height:26vw;background:var(--violet);top:32%;right:18%;opacity:.20;animation:derive 34s ease-in-out infinite}
+@keyframes derive{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(4vw,3vw,0) scale(1.12)}
+}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(38px,7.6vw,88px);max-width:16ch}
+.hero h1 span{display:block;color:var(--cendre)}
+.hero h1 strong{font-weight:700;color:var(--blanc)}
+.hero-sous{
+  margin:30px 0 38px;font-size:clamp(16px,2.1vw,20px);color:#B9B7C4;max-width:52ch;
+}
+.compteur{
+  margin-top:56px;display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,60px);
+  border-top:1px solid var(--trait);padding-top:26px;
+}
+.compteur div{font-family:var(--util);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cendre-2)}
+.compteur b{display:block;font-size:26px;font-weight:600;letter-spacing:-.02em;color:var(--blanc);text-transform:none;margin-bottom:4px}
+
+/* ===================== sections ===================== */
+section{padding:clamp(80px,13vh,160px) 0;position:relative}
+.borde{border-top:1px solid #14151E}
+.titre{font-size:clamp(30px,5vw,58px);max-width:18ch;margin-bottom:22px}
+.chapo{color:#B0AEBB;max-width:60ch;font-size:clamp(16px,1.9vw,19px)}
+.duo{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,6vw,90px);align-items:start}
+@media(max-width:900px){.duo{grid-template-columns:1fr;gap:26px}}
+
+/* mission : quatre verbes */
+.verbes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait);margin-top:56px}
+@media(max-width:780px){.verbes{grid-template-columns:repeat(2,1fr)}}
+.verbe{background:var(--noir);padding:38px 26px 32px;position:relative;overflow:hidden}
+.verbe .pt{
+  width:7px;height:7px;border-radius:50%;background:var(--indigo-clair);
+  box-shadow:0 0 18px 3px rgba(132,151,240,.55);margin-bottom:26px;
+}
+.verbe h3{font-size:clamp(20px,2.6vw,28px);margin-bottom:10px}
+.verbe p{font-size:15px;color:#96949F;margin:0}
+
+/* divisions */
+.divisions{margin-top:60px;border-top:1px solid var(--trait)}
+.division{
+  display:grid;grid-template-columns:auto minmax(200px,1fr) 1.25fr auto;
+  gap:clamp(16px,3vw,44px);align-items:baseline;
+  padding:clamp(28px,4vw,46px) 0;border-bottom:1px solid var(--trait);
+  position:relative;transition:background .4s;
+}
+.division::before{
+  content:"";position:absolute;left:calc(var(--marge) * -1);right:calc(var(--marge) * -1);top:0;bottom:0;
+  background:linear-gradient(90deg,rgba(46,63,158,.14),transparent 60%);
+  opacity:0;transition:opacity .45s;pointer-events:none;
+}
+.division:hover::before,.division:focus-within::before{opacity:1}
+.division .marque-div{
+  width:34px;height:34px;color:var(--accent,var(--indigo-clair));
+  transition:transform .5s cubic-bezier(.22,1,.36,1);align-self:center;
+}
+.division:hover .marque-div{transform:rotate(45deg)}
+.division h3{font-size:clamp(21px,2.7vw,30px)}
+.division h3 small{
+  display:block;font-family:var(--util);font-weight:500;font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent,var(--indigo-clair));margin-bottom:9px;letter-spacing:.22em;
+}
+.division .desc{color:#98969F;font-size:16px;margin:0 0 14px}
+.division .liste{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.division .liste li{
+  font-family:var(--util);font-size:11px;font-weight:400;letter-spacing:.06em;color:#7E7C88;
+  border:1px solid #23252F;padding:6px 11px;border-radius:1px;
+}
+.statut{
+  font-family:var(--util);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  white-space:nowrap;color:var(--cendre-2);align-self:center;
+}
+.statut.actif{color:var(--indigo-clair)}
+.statut.actif::before{
+  content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--indigo-clair);margin-right:8px;vertical-align:middle;
+  box-shadow:0 0 10px 2px rgba(132,151,240,.6);
+}
+@media(max-width:940px){
+  .division{grid-template-columns:auto 1fr;gap:14px 18px}
+  .division .marque-div{grid-row:span 2;width:28px;height:28px}
+  .statut{grid-column:2;order:-1}
+}
+
+/* ÉQUILIBRE — seul endroit doré */
+.licence{
+  background:
+    radial-gradient(80% 120% at 50% 0%, rgba(201,162,39,.10), transparent 62%),
+    var(--noir-2);
+  border-top:1px solid rgba(201,162,39,.28);border-bottom:1px solid rgba(201,162,39,.28);
+}
+.licence .oeil{color:rgba(201,162,39,.75)}
+.licence .oeil::before{background:var(--or)}
+.licence h2{font-family:var(--licence);font-weight:600;letter-spacing:.1em;font-size:clamp(34px,7vw,76px);font-stretch:normal}
+.licence .chapo{color:#C3B48A}
+.piliers{
+  position:relative;height:clamp(150px,22vh,210px);display:flex;align-items:flex-end;
+  gap:clamp(6px,1.6vw,20px);margin:50px 0 22px;
+}
+.pilier{
+  position:relative;flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
+  background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;
+}
+.colonne{position:relative;width:100%;height:100%;display:flex;align-items:flex-end;background:rgba(255,255,255,.035)}
+.remplissage{width:100%;height:12%;background:var(--teinte);transition:height 1s cubic-bezier(.22,1,.36,1);box-shadow:0 0 34px -8px var(--teinte)}
+.pilier:hover .remplissage,.pilier:focus-visible .remplissage{filter:brightness(1.3)}
+.pilier:focus-visible{outline:1px solid var(--or);outline-offset:4px}
+.socle b{
+  display:block;padding-top:12px;font-family:var(--util);font-weight:400;font-size:10px;
+  letter-spacing:.18em;text-transform:uppercase;color:#9A917C;text-align:center;
+}
+.niveau{position:absolute;left:0;right:0;bottom:12%;height:1px;background:var(--or);opacity:.9;pointer-events:none;transition:bottom 1s cubic-bezier(.22,1,.36,1)}
+.niveau::after{
+  content:attr(data-libelle);position:absolute;right:0;bottom:9px;
+  font-family:var(--util);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);
+}
+.regle-jeu{font-family:var(--licence);font-size:clamp(17px,2.4vw,24px);color:#E4D5A8;max-width:34ch;margin:0 0 34px}
+/* Les traits de la grille étaient dessinés par le FOND du conteneur, qui
+   apparaissait dans les interstices d'un pixel. Élégant tant que la dernière
+   ligne est pleine — mais dès qu'une case reste vide, ce fond doré s'étale en
+   grand rectangle. Le site avait déjà ce défaut avec trois cartes ; à cinq, il
+   devient voyant. Chaque carte porte donc maintenant son propre trait, et une
+   case vide n'est plus qu'un vide. */
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;margin-top:44px}
+.prod{background:var(--noir-2);box-shadow:0 0 0 1px rgba(201,162,39,.22);padding:26px 22px 20px;display:flex;flex-direction:column;text-decoration:none;transition:background .35s}
+.prod:hover,.prod:focus-visible{background:#17161A}
+.prod .haut{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;font-family:var(--util);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8C846F}
+.prod .haut .dispo{color:var(--or)}
+.prod h4{font-family:var(--licence);font-weight:600;font-size:19px;letter-spacing:.05em;margin-bottom:9px;font-stretch:normal}
+.prod p{font-size:15px;color:#9B9384;margin-bottom:18px}
+.prod .adresse{margin-top:auto;font-family:var(--util);font-size:11px;letter-spacing:.05em;color:#7A7365;border-top:1px solid rgba(201,162,39,.16);padding-top:14px}
+.prod.ouvert .adresse{color:#D9CDAE}
+.prod.ouvert .adresse::after{content:" →";color:var(--or)}
+
+/* différence */
+.croise{margin-top:50px;border-top:1px solid var(--trait)}
+.croise div{
+  display:flex;flex-wrap:wrap;align-items:center;gap:clamp(10px,2.4vw,26px);
+  padding:clamp(20px,3vw,32px) 0;border-bottom:1px solid var(--trait);
+  font-family:var(--display);font-weight:500;font-size:clamp(19px,3.2vw,34px);
+  letter-spacing:-.02em;color:var(--cendre);transition:color .4s;
+}
+.croise div:hover{color:var(--blanc)}
+.croise i{font-style:normal;color:var(--indigo-clair);font-size:.8em;opacity:.75}
+
+/* valeurs */
+.valeurs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait);margin-top:56px}
+@media(max-width:900px){.valeurs{grid-template-columns:repeat(2,1fr)}}
+.valeur{
+  background:var(--noir);padding:34px 24px;position:relative;overflow:hidden;
+  transition:background .45s;
+}
+.valeur::after{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .45s;pointer-events:none;
+  background:radial-gradient(120% 100% at 50% 100%, rgba(46,63,158,.34), transparent 68%);
+}
+.valeur:hover{background:var(--noir-3)}
+.valeur:hover::after{opacity:1}
+.valeur h3{font-size:clamp(17px,2.1vw,23px);position:relative;z-index:2}
+.valeur p{position:relative;z-index:2;margin:8px 0 0;font-size:14px;color:#8E8C97}
+
+/* contact */
+.contact{text-align:center}
+.contact .titre{margin:0 auto 22px}
+.contact .chapo{margin:0 auto 40px}
+.contact .actions{justify-content:center}
+
+.pied{
+  background-color:#07070A;border-top:1px solid #14151E;padding:34px var(--marge);
+  display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;
+  font-family:var(--util);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A5964;
+}
+.pied a{text-decoration:none;color:#5A5964;transition:color .3s}
+.pied a:hover,.pied a:focus-visible{color:var(--indigo-clair)}
+.pied .devise{letter-spacing:.1em;color:var(--indigo-clair);text-transform:none;font-size:12px}
+
+/* révélations */
+.rev{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+.rev.vu{opacity:1;transform:none}
+.rev-2{transition-delay:.09s}
+.rev-3{transition-delay:.18s}
+:focus-visible{outline:2px solid var(--indigo-clair);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rev{opacity:1;transform:none;transition:none}
+  .halo{animation:none}
+  .remplissage,.niveau,.division .marque-div{transition:none}
+}
+
+/* ---- QR ÉQUILIBRE ---- */
+.qr-eq{padding:40px 0 80px}
+.qr-eq-carte{display:flex;gap:32px;align-items:center;flex-wrap:wrap;justify-content:center;
+  background:linear-gradient(135deg,rgba(201,162,39,0.08),rgba(10,7,17,0.4));
+  border:1px solid rgba(201,162,39,0.35);border-radius:20px;padding:32px;max-width:720px;margin:0 auto}
+.qr-eq-visuel{width:180px;height:180px;flex-shrink:0;border-radius:12px;overflow:hidden;
+  box-shadow:0 0 30px rgba(240,208,96,0.25)}
+.qr-eq-txt{flex:1;min-width:220px}
+.qr-eq-txt h3{font-size:32px;margin:6px 0 12px;color:var(--or,#F0D060);letter-spacing:1px}
+.qr-eq-txt p{color:#c9c2d8;line-height:1.5;margin:0 0 16px}
+.qr-eq-lien{color:var(--or,#F0D060);text-decoration:none;font-weight:700;letter-spacing:0.5px}
+.qr-eq-lien:hover{text-decoration:underline}
+@media(max-width:560px){.qr-eq-carte{flex-direction:column;text-align:center}.qr-eq-txt{text-align:center}}
+</style>
+<style>
+  /* L'ENTÊTE EST FIXE. Sur l'accueil, le grand héros lui laisse la place ;
+     ici la première section commence tout en haut, et le titre passait SOUS
+     le menu. Vu à l'écran avant d'être corrigé. */
+  main > .borde:first-child{padding-top:clamp(112px,15vh,168px)}
+
+  /* Les cartes de cette page sont celles de l'accueil, empilées les unes sous
+     les autres : une par produit, chacune avec son QR. */
+  .liste-produits{display:flex;flex-direction:column;gap:18px;margin-top:44px}
+  .liste-produits .qr-eq-carte{margin:0}
+  .retour{display:inline-block;margin-top:38px;font-family:var(--util);font-size:12px;
+          letter-spacing:.14em;text-transform:uppercase;color:var(--cendre);text-decoration:none}
+  .retour:hover{color:var(--blanc)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Les applications de KHALAM — assistant vocal et traducteur wolof",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Géwel",
+        "url": "https://gewel.khalam.app",
+        "description": "Assistant vocal qui répond au téléphone à votre place quand vous ne pouvez pas décrocher : il demande à l'appelant qui il est et ce qu'il veut, puis vous permet de reprendre l'appel en direct si c'est important. Conçu au Sénégal, en français et en wolof.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Tout navigateur web",
+        "inLanguage": [
+          "fr",
+          "wo"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "XOF"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "KHALAM",
+          "url": "https://khalam.app/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "L'Interprète Français ↔ Wolof",
+        "url": "https://wolof.khalam.app",
+        "description": "Traducteur vocal français wolof gratuit, en ligne, sans installation : chacun parle sa langue et le téléphone lit la traduction à voix haute. Pensé d'abord pour les personnes qui ne lisent pas. Voix wolof, reconnaissance vocale wolof, fait à Dakar.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Tout navigateur web",
+        "inLanguage": [
+          "fr",
+          "wo"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "XOF"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "KHALAM",
+          "url": "https://khalam.app/"
+        }
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="tete" id="tete">
+  <a class="logo-lien" href="https://khalam.app/" aria-label="KHALAM, accueil">
+    <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <g stroke="#8497F0" stroke-width="6" stroke-linecap="round">
+        <path d="M18 12 C30 46, 44 56, 50 88"/>
+        <path d="M39 7 C44 42, 48 56, 50 88"/>
+        <path d="M61 7 C56 42, 52 56, 50 88"/>
+        <path d="M82 12 C70 46, 56 56, 50 88"/>
+      </g>
+    </svg>
+    <span class="logo-mot">KHALAM</span>
+  </a>
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="https://khalam.app/#divisions">Divisions</a>
+    <a href="https://khalam.app/#equilibre">ÉQUILIBRE</a>
+    <a href="https://khalam.app/jeux/">Jeux</a>
+    <a href="https://khalam.app/applications/">Applications</a>
+    <a href="https://khalam.app/#difference">Notre différence</a>
+    <a href="https://khalam.app/#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="haut">
+  <section class="borde">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Nos applications</p>
+        <h1 class="titre">Deux outils, faits ici, pour ici.</h1>
+        <p class="chapo">Les jeux racontent ; les applications servent. Celles-ci s'ouvrent dans le navigateur, sans rien installer, et parlent la langue de ceux à qui elles s'adressent.</p>
+      </div>
+
+      <div class="liste-produits">
+      <article class="qr-eq-carte rev" style="border-color:#8497F04D">
+        <div class="qr-eq-visuel" style="box-shadow:0 0 30px #8497F033"><svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect width="29" height="29" fill="#0A0711"/><path d="M2 2h1v1h-1z M3 2h1v1h-1z M4 2h1v1h-1z M5 2h1v1h-1z M6 2h1v1h-1z M7 2h1v1h-1z M8 2h1v1h-1z M10 2h1v1h-1z M11 2h1v1h-1z M12 2h1v1h-1z M13 2h1v1h-1z M14 2h1v1h-1z M15 2h1v1h-1z M18 2h1v1h-1z M20 2h1v1h-1z M21 2h1v1h-1z M22 2h1v1h-1z M23 2h1v1h-1z M24 2h1v1h-1z M25 2h1v1h-1z M26 2h1v1h-1z M2 3h1v1h-1z M8 3h1v1h-1z M10 3h1v1h-1z M12 3h1v1h-1z M13 3h1v1h-1z M14 3h1v1h-1z M18 3h1v1h-1z M20 3h1v1h-1z M26 3h1v1h-1z M2 4h1v1h-1z M4 4h1v1h-1z M5 4h1v1h-1z M6 4h1v1h-1z M8 4h1v1h-1z M11 4h1v1h-1z M13 4h1v1h-1z M15 4h1v1h-1z M18 4h1v1h-1z M20 4h1v1h-1z M22 4h1v1h-1z M23 4h1v1h-1z M24 4h1v1h-1z M26 4h1v1h-1z M2 5h1v1h-1z M4 5h1v1h-1z M5 5h1v1h-1z M6 5h1v1h-1z M8 5h1v1h-1z M10 5h1v1h-1z M11 5h1v1h-1z M12 5h1v1h-1z M13 5h1v1h-1z M14 5h1v1h-1z M15 5h1v1h-1z M16 5h1v1h-1z M17 5h1v1h-1z M20 5h1v1h-1z M22 5h1v1h-1z M23 5h1v1h-1z M24 5h1v1h-1z M26 5h1v1h-1z M2 6h1v1h-1z M4 6h1v1h-1z M5 6h1v1h-1z M6 6h1v1h-1z M8 6h1v1h-1z M11 6h1v1h-1z M12 6h1v1h-1z M13 6h1v1h-1z M16 6h1v1h-1z M17 6h1v1h-1z M18 6h1v1h-1z M20 6h1v1h-1z M22 6h1v1h-1z M23 6h1v1h-1z M24 6h1v1h-1z M26 6h1v1h-1z M2 7h1v1h-1z M8 7h1v1h-1z M13 7h1v1h-1z M15 7h1v1h-1z M18 7h1v1h-1z M20 7h1v1h-1z M26 7h1v1h-1z M2 8h1v1h-1z M3 8h1v1h-1z M4 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M7 8h1v1h-1z M8 8h1v1h-1z M10 8h1v1h-1z M12 8h1v1h-1z M14 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M20 8h1v1h-1z M21 8h1v1h-1z M22 8h1v1h-1z M23 8h1v1h-1z M24 8h1v1h-1z M25 8h1v1h-1z M26 8h1v1h-1z M10 9h1v1h-1z M11 9h1v1h-1z M14 9h1v1h-1z M2 10h1v1h-1z M4 10h1v1h-1z M5 10h1v1h-1z M7 10h1v1h-1z M8 10h1v1h-1z M9 10h1v1h-1z M11 10h1v1h-1z M12 10h1v1h-1z M13 10h1v1h-1z M14 10h1v1h-1z M16 10h1v1h-1z M17 10h1v1h-1z M18 10h1v1h-1z M20 10h1v1h-1z M23 10h1v1h-1z M25 10h1v1h-1z M26 10h1v1h-1z M6 11h1v1h-1z M7 11h1v1h-1z M10 11h1v1h-1z M12 11h1v1h-1z M15 11h1v1h-1z M18 11h1v1h-1z M21 11h1v1h-1z M25 11h1v1h-1z M4 12h1v1h-1z M7 12h1v1h-1z M8 12h1v1h-1z M10 12h1v1h-1z M12 12h1v1h-1z M14 12h1v1h-1z M18 12h1v1h-1z M21 12h1v1h-1z M2 13h1v1h-1z M3 13h1v1h-1z M4 13h1v1h-1z M5 13h1v1h-1z M6 13h1v1h-1z M7 13h1v1h-1z M10 13h1v1h-1z M12 13h1v1h-1z M13 13h1v1h-1z M14 13h1v1h-1z M15 13h1v1h-1z M16 13h1v1h-1z M17 13h1v1h-1z M18 13h1v1h-1z M19 13h1v1h-1z M23 13h1v1h-1z M24 13h1v1h-1z M2 14h1v1h-1z M5 14h1v1h-1z M6 14h1v1h-1z M8 14h1v1h-1z M9 14h1v1h-1z M15 14h1v1h-1z M19 14h1v1h-1z M20 14h1v1h-1z M22 14h1v1h-1z M24 14h1v1h-1z M25 14h1v1h-1z M26 14h1v1h-1z M4 15h1v1h-1z M9 15h1v1h-1z M10 15h1v1h-1z M11 15h1v1h-1z M13 15h1v1h-1z M15 15h1v1h-1z M16 15h1v1h-1z M17 15h1v1h-1z M18 15h1v1h-1z M20 15h1v1h-1z M21 15h1v1h-1z M22 15h1v1h-1z M26 15h1v1h-1z M3 16h1v1h-1z M4 16h1v1h-1z M6 16h1v1h-1z M7 16h1v1h-1z M8 16h1v1h-1z M12 16h1v1h-1z M14 16h1v1h-1z M16 16h1v1h-1z M18 16h1v1h-1z M19 16h1v1h-1z M22 16h1v1h-1z M24 16h1v1h-1z M25 16h1v1h-1z M2 17h1v1h-1z M4 17h1v1h-1z M5 17h1v1h-1z M6 17h1v1h-1z M10 17h1v1h-1z M11 17h1v1h-1z M14 17h1v1h-1z M18 17h1v1h-1z M19 17h1v1h-1z M21 17h1v1h-1z M22 17h1v1h-1z M26 17h1v1h-1z M8 18h1v1h-1z M9 18h1v1h-1z M10 18h1v1h-1z M11 18h1v1h-1z M12 18h1v1h-1z M13 18h1v1h-1z M15 18h1v1h-1z M17 18h1v1h-1z M18 18h1v1h-1z M19 18h1v1h-1z M20 18h1v1h-1z M21 18h1v1h-1z M22 18h1v1h-1z M23 18h1v1h-1z M24 18h1v1h-1z M25 18h1v1h-1z M26 18h1v1h-1z M10 19h1v1h-1z M12 19h1v1h-1z M14 19h1v1h-1z M15 19h1v1h-1z M18 19h1v1h-1z M22 19h1v1h-1z M24 19h1v1h-1z M26 19h1v1h-1z M2 20h1v1h-1z M3 20h1v1h-1z M4 20h1v1h-1z M5 20h1v1h-1z M6 20h1v1h-1z M7 20h1v1h-1z M8 20h1v1h-1z M10 20h1v1h-1z M11 20h1v1h-1z M12 20h1v1h-1z M13 20h1v1h-1z M14 20h1v1h-1z M18 20h1v1h-1z M20 20h1v1h-1z M22 20h1v1h-1z M24 20h1v1h-1z M25 20h1v1h-1z M26 20h1v1h-1z M2 21h1v1h-1z M8 21h1v1h-1z M10 21h1v1h-1z M12 21h1v1h-1z M14 21h1v1h-1z M18 21h1v1h-1z M22 21h1v1h-1z M25 21h1v1h-1z M2 22h1v1h-1z M4 22h1v1h-1z M5 22h1v1h-1z M6 22h1v1h-1z M8 22h1v1h-1z M11 22h1v1h-1z M13 22h1v1h-1z M16 22h1v1h-1z M18 22h1v1h-1z M19 22h1v1h-1z M20 22h1v1h-1z M21 22h1v1h-1z M22 22h1v1h-1z M23 22h1v1h-1z M26 22h1v1h-1z M2 23h1v1h-1z M4 23h1v1h-1z M5 23h1v1h-1z M6 23h1v1h-1z M8 23h1v1h-1z M10 23h1v1h-1z M14 23h1v1h-1z M16 23h1v1h-1z M17 23h1v1h-1z M19 23h1v1h-1z M20 23h1v1h-1z M22 23h1v1h-1z M23 23h1v1h-1z M24 23h1v1h-1z M25 23h1v1h-1z M26 23h1v1h-1z M2 24h1v1h-1z M4 24h1v1h-1z M5 24h1v1h-1z M6 24h1v1h-1z M8 24h1v1h-1z M10 24h1v1h-1z M12 24h1v1h-1z M13 24h1v1h-1z M16 24h1v1h-1z M17 24h1v1h-1z M18 24h1v1h-1z M19 24h1v1h-1z M20 24h1v1h-1z M22 24h1v1h-1z M24 24h1v1h-1z M25 24h1v1h-1z M2 25h1v1h-1z M8 25h1v1h-1z M11 25h1v1h-1z M12 25h1v1h-1z M15 25h1v1h-1z M19 25h1v1h-1z M22 25h1v1h-1z M24 25h1v1h-1z M2 26h1v1h-1z M3 26h1v1h-1z M4 26h1v1h-1z M5 26h1v1h-1z M6 26h1v1h-1z M7 26h1v1h-1z M8 26h1v1h-1z M10 26h1v1h-1z M12 26h1v1h-1z M15 26h1v1h-1z M16 26h1v1h-1z M19 26h1v1h-1z M20 26h1v1h-1z M21 26h1v1h-1z M22 26h1v1h-1z M23 26h1v1h-1z M24 26h1v1h-1z M25 26h1v1h-1z M26 26h1v1h-1z" fill="#8497F0"/></svg></div>
+        <div class="qr-eq-txt">
+          <p class="oeil">Assistant vocal</p>
+          <h2 style="color:#8497F0;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">Géwel</h2>
+          <p>Il décroche quand vous ne pouvez pas, demande qui appelle et pourquoi, et vous rend l'appel s'il compte.</p>
+          <p style="font-size:14px;opacity:.55;margin-top:10px">Assistant vocal qui répond au téléphone à votre place quand vous ne pouvez pas décrocher : il demande à l'appelant qui il est et ce qu'il veut, puis vous permet de reprendre l'appel en direct si c'est important. Conçu au Sénégal, en français et en wolof.</p>
+          <a class="qr-eq-lien" href="https://gewel.khalam.app" style="color:#8497F0">gewel.khalam.app →</a>
+        </div>
+      </article>
+
+      <article class="qr-eq-carte rev" style="border-color:#22C55E4D">
+        <div class="qr-eq-visuel" style="box-shadow:0 0 30px #22C55E33"><svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect width="29" height="29" fill="#0A0711"/><path d="M2 2h1v1h-1z M3 2h1v1h-1z M4 2h1v1h-1z M5 2h1v1h-1z M6 2h1v1h-1z M7 2h1v1h-1z M8 2h1v1h-1z M10 2h1v1h-1z M11 2h1v1h-1z M13 2h1v1h-1z M16 2h1v1h-1z M20 2h1v1h-1z M21 2h1v1h-1z M22 2h1v1h-1z M23 2h1v1h-1z M24 2h1v1h-1z M25 2h1v1h-1z M26 2h1v1h-1z M2 3h1v1h-1z M8 3h1v1h-1z M10 3h1v1h-1z M11 3h1v1h-1z M12 3h1v1h-1z M13 3h1v1h-1z M15 3h1v1h-1z M18 3h1v1h-1z M20 3h1v1h-1z M26 3h1v1h-1z M2 4h1v1h-1z M4 4h1v1h-1z M5 4h1v1h-1z M6 4h1v1h-1z M8 4h1v1h-1z M10 4h1v1h-1z M11 4h1v1h-1z M15 4h1v1h-1z M17 4h1v1h-1z M18 4h1v1h-1z M20 4h1v1h-1z M22 4h1v1h-1z M23 4h1v1h-1z M24 4h1v1h-1z M26 4h1v1h-1z M2 5h1v1h-1z M4 5h1v1h-1z M5 5h1v1h-1z M6 5h1v1h-1z M8 5h1v1h-1z M11 5h1v1h-1z M12 5h1v1h-1z M14 5h1v1h-1z M15 5h1v1h-1z M18 5h1v1h-1z M20 5h1v1h-1z M22 5h1v1h-1z M23 5h1v1h-1z M24 5h1v1h-1z M26 5h1v1h-1z M2 6h1v1h-1z M4 6h1v1h-1z M5 6h1v1h-1z M6 6h1v1h-1z M8 6h1v1h-1z M10 6h1v1h-1z M11 6h1v1h-1z M12 6h1v1h-1z M13 6h1v1h-1z M16 6h1v1h-1z M18 6h1v1h-1z M20 6h1v1h-1z M22 6h1v1h-1z M23 6h1v1h-1z M24 6h1v1h-1z M26 6h1v1h-1z M2 7h1v1h-1z M8 7h1v1h-1z M18 7h1v1h-1z M20 7h1v1h-1z M26 7h1v1h-1z M2 8h1v1h-1z M3 8h1v1h-1z M4 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M7 8h1v1h-1z M8 8h1v1h-1z M10 8h1v1h-1z M12 8h1v1h-1z M14 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M20 8h1v1h-1z M21 8h1v1h-1z M22 8h1v1h-1z M23 8h1v1h-1z M24 8h1v1h-1z M25 8h1v1h-1z M26 8h1v1h-1z M12 9h1v1h-1z M15 9h1v1h-1z M2 10h1v1h-1z M5 10h1v1h-1z M6 10h1v1h-1z M7 10h1v1h-1z M8 10h1v1h-1z M9 10h1v1h-1z M10 10h1v1h-1z M11 10h1v1h-1z M12 10h1v1h-1z M13 10h1v1h-1z M14 10h1v1h-1z M16 10h1v1h-1z M18 10h1v1h-1z M19 10h1v1h-1z M22 10h1v1h-1z M24 10h1v1h-1z M25 10h1v1h-1z M26 10h1v1h-1z M2 11h1v1h-1z M3 11h1v1h-1z M4 11h1v1h-1z M5 11h1v1h-1z M7 11h1v1h-1z M9 11h1v1h-1z M10 11h1v1h-1z M11 11h1v1h-1z M13 11h1v1h-1z M15 11h1v1h-1z M16 11h1v1h-1z M17 11h1v1h-1z M21 11h1v1h-1z M22 11h1v1h-1z M23 11h1v1h-1z M24 11h1v1h-1z M25 11h1v1h-1z M3 12h1v1h-1z M4 12h1v1h-1z M8 12h1v1h-1z M10 12h1v1h-1z M12 12h1v1h-1z M17 12h1v1h-1z M18 12h1v1h-1z M21 12h1v1h-1z M23 12h1v1h-1z M26 12h1v1h-1z M4 13h1v1h-1z M5 13h1v1h-1z M6 13h1v1h-1z M7 13h1v1h-1z M10 13h1v1h-1z M12 13h1v1h-1z M13 13h1v1h-1z M14 13h1v1h-1z M16 13h1v1h-1z M17 13h1v1h-1z M18 13h1v1h-1z M21 13h1v1h-1z M23 13h1v1h-1z M24 13h1v1h-1z M25 13h1v1h-1z M26 13h1v1h-1z M6 14h1v1h-1z M8 14h1v1h-1z M10 14h1v1h-1z M12 14h1v1h-1z M13 14h1v1h-1z M16 14h1v1h-1z M18 14h1v1h-1z M20 14h1v1h-1z M26 14h1v1h-1z M2 15h1v1h-1z M4 15h1v1h-1z M5 15h1v1h-1z M7 15h1v1h-1z M10 15h1v1h-1z M12 15h1v1h-1z M14 15h1v1h-1z M16 15h1v1h-1z M17 15h1v1h-1z M18 15h1v1h-1z M22 15h1v1h-1z M25 15h1v1h-1z M2 16h1v1h-1z M3 16h1v1h-1z M6 16h1v1h-1z M8 16h1v1h-1z M11 16h1v1h-1z M16 16h1v1h-1z M17 16h1v1h-1z M18 16h1v1h-1z M19 16h1v1h-1z M22 16h1v1h-1z M23 16h1v1h-1z M24 16h1v1h-1z M25 16h1v1h-1z M26 16h1v1h-1z M2 17h1v1h-1z M4 17h1v1h-1z M5 17h1v1h-1z M6 17h1v1h-1z M9 17h1v1h-1z M14 17h1v1h-1z M16 17h1v1h-1z M17 17h1v1h-1z M20 17h1v1h-1z M21 17h1v1h-1z M23 17h1v1h-1z M24 17h1v1h-1z M26 17h1v1h-1z M2 18h1v1h-1z M8 18h1v1h-1z M11 18h1v1h-1z M13 18h1v1h-1z M14 18h1v1h-1z M15 18h1v1h-1z M18 18h1v1h-1z M19 18h1v1h-1z M20 18h1v1h-1z M21 18h1v1h-1z M22 18h1v1h-1z M24 18h1v1h-1z M25 18h1v1h-1z M10 19h1v1h-1z M11 19h1v1h-1z M12 19h1v1h-1z M13 19h1v1h-1z M18 19h1v1h-1z M22 19h1v1h-1z M24 19h1v1h-1z M25 19h1v1h-1z M2 20h1v1h-1z M3 20h1v1h-1z M4 20h1v1h-1z M5 20h1v1h-1z M6 20h1v1h-1z M7 20h1v1h-1z M8 20h1v1h-1z M10 20h1v1h-1z M11 20h1v1h-1z M14 20h1v1h-1z M15 20h1v1h-1z M16 20h1v1h-1z M18 20h1v1h-1z M20 20h1v1h-1z M22 20h1v1h-1z M26 20h1v1h-1z M2 21h1v1h-1z M8 21h1v1h-1z M10 21h1v1h-1z M13 21h1v1h-1z M15 21h1v1h-1z M18 21h1v1h-1z M22 21h1v1h-1z M26 21h1v1h-1z M2 22h1v1h-1z M4 22h1v1h-1z M5 22h1v1h-1z M6 22h1v1h-1z M8 22h1v1h-1z M10 22h1v1h-1z M13 22h1v1h-1z M14 22h1v1h-1z M16 22h1v1h-1z M17 22h1v1h-1z M18 22h1v1h-1z M19 22h1v1h-1z M20 22h1v1h-1z M21 22h1v1h-1z M22 22h1v1h-1z M2 23h1v1h-1z M4 23h1v1h-1z M5 23h1v1h-1z M6 23h1v1h-1z M8 23h1v1h-1z M10 23h1v1h-1z M14 23h1v1h-1z M19 23h1v1h-1z M20 23h1v1h-1z M25 23h1v1h-1z M26 23h1v1h-1z M2 24h1v1h-1z M4 24h1v1h-1z M5 24h1v1h-1z M6 24h1v1h-1z M8 24h1v1h-1z M13 24h1v1h-1z M14 24h1v1h-1z M16 24h1v1h-1z M19 24h1v1h-1z M22 24h1v1h-1z M23 24h1v1h-1z M24 24h1v1h-1z M25 24h1v1h-1z M26 24h1v1h-1z M2 25h1v1h-1z M8 25h1v1h-1z M12 25h1v1h-1z M13 25h1v1h-1z M14 25h1v1h-1z M21 25h1v1h-1z M22 25h1v1h-1z M24 25h1v1h-1z M25 25h1v1h-1z M26 25h1v1h-1z M2 26h1v1h-1z M3 26h1v1h-1z M4 26h1v1h-1z M5 26h1v1h-1z M6 26h1v1h-1z M7 26h1v1h-1z M8 26h1v1h-1z M10 26h1v1h-1z M13 26h1v1h-1z M18 26h1v1h-1z M23 26h1v1h-1z M26 26h1v1h-1z" fill="#22C55E"/></svg></div>
+        <div class="qr-eq-txt">
+          <p class="oeil">Traduction vocale</p>
+          <h2 style="color:#22C55E;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">L'Interprète Français ↔ Wolof</h2>
+          <p>Chacun parle sa langue ; le téléphone lit la traduction à voix haute.</p>
+          <p style="font-size:14px;opacity:.55;margin-top:10px">Traducteur vocal français wolof gratuit, en ligne, sans installation : chacun parle sa langue et le téléphone lit la traduction à voix haute. Pensé d'abord pour les personnes qui ne lisent pas. Voix wolof, reconnaissance vocale wolof, fait à Dakar.</p>
+          <a class="qr-eq-lien" href="https://wolof.khalam.app" style="color:#22C55E">wolof.khalam.app →</a>
+        </div>
+      </article>
+      </div>
+
+      <a class="retour" href="https://khalam.app/">← Retour à KHALAM</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <span>© <span id="annee">2026</span> KHALAM</span>
+  <span class="devise">Créer aujourd'hui les expériences de demain.</span>
+  <span><a href="#haut">Haut de page</a></span>
+</footer>
+
+<script>
+  document.getElementById('annee').textContent = new Date().getFullYear();
+  /* Les blocs apparaissent en montant, comme sur l'accueil. Si le navigateur
+     ne sait pas observer, on les montre tout de suite : mieux vaut sans
+     animation que rien du tout. */
+  (function () {
+    var cibles = document.querySelectorAll('.rev');
+    if (!('IntersectionObserver' in window)) {
+      cibles.forEach(function (e) { e.classList.add('vu'); });
+      return;
+    }
+    var o = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); o.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    cibles.forEach(function (e) { o.observe(e); });
+  })();
+</script>
+</body>
+</html>

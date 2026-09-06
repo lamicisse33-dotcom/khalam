@@ -1,0 +1,6 @@
+# KHALAM — khalam.app
+# Tout est public : il n'y a rien à cacher sur ce site.
+User-agent: *
+Allow: /
+
+Sitemap: https://khalam.app/sitemap.xml
