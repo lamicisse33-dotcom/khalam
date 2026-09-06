@@ -277,8 +277,14 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
   font-family:var(--util);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);
 }
 .regle-jeu{font-family:var(--licence);font-size:clamp(17px,2.4vw,24px);color:#E4D5A8;max-width:34ch;margin:0 0 34px}
-.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:rgba(201,162,39,.22);margin-top:44px}
-.prod{background:var(--noir-2);padding:26px 22px 20px;display:flex;flex-direction:column;text-decoration:none;transition:background .35s}
+/* Les traits de la grille étaient dessinés par le FOND du conteneur, qui
+   apparaissait dans les interstices d'un pixel. Élégant tant que la dernière
+   ligne est pleine — mais dès qu'une case reste vide, ce fond doré s'étale en
+   grand rectangle. Le site avait déjà ce défaut avec trois cartes ; à cinq, il
+   devient voyant. Chaque carte porte donc maintenant son propre trait, et une
+   case vide n'est plus qu'un vide. */
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;margin-top:44px}
+.prod{background:var(--noir-2);box-shadow:0 0 0 1px rgba(201,162,39,.22);padding:26px 22px 20px;display:flex;flex-direction:column;text-decoration:none;transition:background .35s}
 .prod:hover,.prod:focus-visible{background:#17161A}
 .prod .haut{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;font-family:var(--util);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8C846F}
 .prod .haut .dispo{color:var(--or)}
@@ -400,6 +406,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
   <nav class="nav" aria-label="Navigation principale">
     <a href="#divisions">Divisions</a>
     <a href="#equilibre">ÉQUILIBRE</a>
+    <a href="#applications">Applications</a>
     <a href="#difference">Notre différence</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -532,6 +539,48 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
     </div>
   </section>
 
+  <!-- ============ QR LES QUATRE DAMES ============ -->
+  <section class="qr-eq" id="jouer-quatredames" aria-label="Jouer à Les Quatre Dames" style="padding-top:0">
+    <div class="wrap">
+      <div class="qr-eq-carte rev" style="border-color:rgba(221,160,170,0.3)">
+        <div class="qr-eq-visuel" style="box-shadow:0 0 30px rgba(221,160,170,0.2)"><svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect width="33" height="33" fill="#0A0711"/><path d="M2 2h1v1h-1z M3 2h1v1h-1z M4 2h1v1h-1z M5 2h1v1h-1z M6 2h1v1h-1z M7 2h1v1h-1z M8 2h1v1h-1z M12 2h1v1h-1z M13 2h1v1h-1z M14 2h1v1h-1z M15 2h1v1h-1z M18 2h1v1h-1z M20 2h1v1h-1z M21 2h1v1h-1z M24 2h1v1h-1z M25 2h1v1h-1z M26 2h1v1h-1z M27 2h1v1h-1z M28 2h1v1h-1z M29 2h1v1h-1z M30 2h1v1h-1z M2 3h1v1h-1z M8 3h1v1h-1z M10 3h1v1h-1z M11 3h1v1h-1z M16 3h1v1h-1z M17 3h1v1h-1z M18 3h1v1h-1z M19 3h1v1h-1z M21 3h1v1h-1z M24 3h1v1h-1z M30 3h1v1h-1z M2 4h1v1h-1z M4 4h1v1h-1z M5 4h1v1h-1z M6 4h1v1h-1z M8 4h1v1h-1z M11 4h1v1h-1z M13 4h1v1h-1z M14 4h1v1h-1z M15 4h1v1h-1z M16 4h1v1h-1z M18 4h1v1h-1z M22 4h1v1h-1z M24 4h1v1h-1z M26 4h1v1h-1z M27 4h1v1h-1z M28 4h1v1h-1z M30 4h1v1h-1z M2 5h1v1h-1z M4 5h1v1h-1z M5 5h1v1h-1z M6 5h1v1h-1z M8 5h1v1h-1z M13 5h1v1h-1z M14 5h1v1h-1z M15 5h1v1h-1z M16 5h1v1h-1z M17 5h1v1h-1z M20 5h1v1h-1z M24 5h1v1h-1z M26 5h1v1h-1z M27 5h1v1h-1z M28 5h1v1h-1z M30 5h1v1h-1z M2 6h1v1h-1z M4 6h1v1h-1z M5 6h1v1h-1z M6 6h1v1h-1z M8 6h1v1h-1z M10 6h1v1h-1z M13 6h1v1h-1z M16 6h1v1h-1z M19 6h1v1h-1z M20 6h1v1h-1z M21 6h1v1h-1z M24 6h1v1h-1z M26 6h1v1h-1z M27 6h1v1h-1z M28 6h1v1h-1z M30 6h1v1h-1z M2 7h1v1h-1z M8 7h1v1h-1z M15 7h1v1h-1z M19 7h1v1h-1z M20 7h1v1h-1z M21 7h1v1h-1z M22 7h1v1h-1z M24 7h1v1h-1z M30 7h1v1h-1z M2 8h1v1h-1z M3 8h1v1h-1z M4 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M7 8h1v1h-1z M8 8h1v1h-1z M10 8h1v1h-1z M12 8h1v1h-1z M14 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M20 8h1v1h-1z M22 8h1v1h-1z M24 8h1v1h-1z M25 8h1v1h-1z M26 8h1v1h-1z M27 8h1v1h-1z M28 8h1v1h-1z M29 8h1v1h-1z M30 8h1v1h-1z M11 9h1v1h-1z M15 9h1v1h-1z M16 9h1v1h-1z M18 9h1v1h-1z M19 9h1v1h-1z M2 10h1v1h-1z M4 10h1v1h-1z M6 10h1v1h-1z M8 10h1v1h-1z M13 10h1v1h-1z M16 10h1v1h-1z M17 10h1v1h-1z M19 10h1v1h-1z M21 10h1v1h-1z M22 10h1v1h-1z M26 10h1v1h-1z M29 10h1v1h-1z M2 11h1v1h-1z M3 11h1v1h-1z M5 11h1v1h-1z M9 11h1v1h-1z M10 11h1v1h-1z M13 11h1v1h-1z M14 11h1v1h-1z M16 11h1v1h-1z M17 11h1v1h-1z M19 11h1v1h-1z M22 11h1v1h-1z M24 11h1v1h-1z M27 11h1v1h-1z M30 11h1v1h-1z M3 12h1v1h-1z M4 12h1v1h-1z M7 12h1v1h-1z M8 12h1v1h-1z M10 12h1v1h-1z M12 12h1v1h-1z M13 12h1v1h-1z M15 12h1v1h-1z M20 12h1v1h-1z M22 12h1v1h-1z M24 12h1v1h-1z M26 12h1v1h-1z M28 12h1v1h-1z M29 12h1v1h-1z M30 12h1v1h-1z M2 13h1v1h-1z M9 13h1v1h-1z M10 13h1v1h-1z M11 13h1v1h-1z M13 13h1v1h-1z M14 13h1v1h-1z M17 13h1v1h-1z M19 13h1v1h-1z M20 13h1v1h-1z M22 13h1v1h-1z M23 13h1v1h-1z M24 13h1v1h-1z M29 13h1v1h-1z M2 14h1v1h-1z M3 14h1v1h-1z M6 14h1v1h-1z M8 14h1v1h-1z M10 14h1v1h-1z M11 14h1v1h-1z M13 14h1v1h-1z M14 14h1v1h-1z M18 14h1v1h-1z M19 14h1v1h-1z M21 14h1v1h-1z M22 14h1v1h-1z M23 14h1v1h-1z M24 14h1v1h-1z M25 14h1v1h-1z M27 14h1v1h-1z M29 14h1v1h-1z M30 14h1v1h-1z M2 15h1v1h-1z M3 15h1v1h-1z M4 15h1v1h-1z M5 15h1v1h-1z M9 15h1v1h-1z M10 15h1v1h-1z M12 15h1v1h-1z M13 15h1v1h-1z M14 15h1v1h-1z M15 15h1v1h-1z M17 15h1v1h-1z M18 15h1v1h-1z M23 15h1v1h-1z M24 15h1v1h-1z M27 15h1v1h-1z M30 15h1v1h-1z M3 16h1v1h-1z M4 16h1v1h-1z M8 16h1v1h-1z M9 16h1v1h-1z M11 16h1v1h-1z M13 16h1v1h-1z M14 16h1v1h-1z M16 16h1v1h-1z M17 16h1v1h-1z M18 16h1v1h-1z M23 16h1v1h-1z M24 16h1v1h-1z M25 16h1v1h-1z M26 16h1v1h-1z M27 16h1v1h-1z M29 16h1v1h-1z M30 16h1v1h-1z M3 17h1v1h-1z M6 17h1v1h-1z M7 17h1v1h-1z M9 17h1v1h-1z M11 17h1v1h-1z M12 17h1v1h-1z M15 17h1v1h-1z M16 17h1v1h-1z M18 17h1v1h-1z M19 17h1v1h-1z M20 17h1v1h-1z M25 17h1v1h-1z M27 17h1v1h-1z M29 17h1v1h-1z M2 18h1v1h-1z M3 18h1v1h-1z M8 18h1v1h-1z M9 18h1v1h-1z M10 18h1v1h-1z M11 18h1v1h-1z M16 18h1v1h-1z M17 18h1v1h-1z M19 18h1v1h-1z M20 18h1v1h-1z M23 18h1v1h-1z M24 18h1v1h-1z M27 18h1v1h-1z M29 18h1v1h-1z M30 18h1v1h-1z M5 19h1v1h-1z M6 19h1v1h-1z M7 19h1v1h-1z M10 19h1v1h-1z M16 19h1v1h-1z M17 19h1v1h-1z M22 19h1v1h-1z M23 19h1v1h-1z M24 19h1v1h-1z M27 19h1v1h-1z M28 19h1v1h-1z M30 19h1v1h-1z M2 20h1v1h-1z M5 20h1v1h-1z M6 20h1v1h-1z M7 20h1v1h-1z M8 20h1v1h-1z M9 20h1v1h-1z M10 20h1v1h-1z M12 20h1v1h-1z M14 20h1v1h-1z M15 20h1v1h-1z M19 20h1v1h-1z M23 20h1v1h-1z M24 20h1v1h-1z M25 20h1v1h-1z M26 20h1v1h-1z M29 20h1v1h-1z M30 20h1v1h-1z M3 21h1v1h-1z M5 21h1v1h-1z M7 21h1v1h-1z M9 21h1v1h-1z M10 21h1v1h-1z M12 21h1v1h-1z M17 21h1v1h-1z M19 21h1v1h-1z M21 21h1v1h-1z M22 21h1v1h-1z M23 21h1v1h-1z M27 21h1v1h-1z M29 21h1v1h-1z M2 22h1v1h-1z M4 22h1v1h-1z M5 22h1v1h-1z M6 22h1v1h-1z M7 22h1v1h-1z M8 22h1v1h-1z M10 22h1v1h-1z M13 22h1v1h-1z M14 22h1v1h-1z M18 22h1v1h-1z M19 22h1v1h-1z M22 22h1v1h-1z M23 22h1v1h-1z M24 22h1v1h-1z M25 22h1v1h-1z M26 22h1v1h-1z M10 23h1v1h-1z M13 23h1v1h-1z M14 23h1v1h-1z M15 23h1v1h-1z M17 23h1v1h-1z M18 23h1v1h-1z M19 23h1v1h-1z M21 23h1v1h-1z M22 23h1v1h-1z M26 23h1v1h-1z M28 23h1v1h-1z M29 23h1v1h-1z M30 23h1v1h-1z M2 24h1v1h-1z M3 24h1v1h-1z M4 24h1v1h-1z M5 24h1v1h-1z M6 24h1v1h-1z M7 24h1v1h-1z M8 24h1v1h-1z M12 24h1v1h-1z M13 24h1v1h-1z M16 24h1v1h-1z M17 24h1v1h-1z M18 24h1v1h-1z M20 24h1v1h-1z M21 24h1v1h-1z M22 24h1v1h-1z M24 24h1v1h-1z M26 24h1v1h-1z M27 24h1v1h-1z M29 24h1v1h-1z M30 24h1v1h-1z M2 25h1v1h-1z M8 25h1v1h-1z M11 25h1v1h-1z M15 25h1v1h-1z M16 25h1v1h-1z M18 25h1v1h-1z M19 25h1v1h-1z M20 25h1v1h-1z M22 25h1v1h-1z M26 25h1v1h-1z M27 25h1v1h-1z M29 25h1v1h-1z M30 25h1v1h-1z M2 26h1v1h-1z M4 26h1v1h-1z M5 26h1v1h-1z M6 26h1v1h-1z M8 26h1v1h-1z M10 26h1v1h-1z M11 26h1v1h-1z M12 26h1v1h-1z M14 26h1v1h-1z M16 26h1v1h-1z M17 26h1v1h-1z M18 26h1v1h-1z M19 26h1v1h-1z M22 26h1v1h-1z M23 26h1v1h-1z M24 26h1v1h-1z M25 26h1v1h-1z M26 26h1v1h-1z M29 26h1v1h-1z M2 27h1v1h-1z M4 27h1v1h-1z M5 27h1v1h-1z M6 27h1v1h-1z M8 27h1v1h-1z M14 27h1v1h-1z M15 27h1v1h-1z M16 27h1v1h-1z M17 27h1v1h-1z M19 27h1v1h-1z M20 27h1v1h-1z M26 27h1v1h-1z M28 27h1v1h-1z M2 28h1v1h-1z M4 28h1v1h-1z M5 28h1v1h-1z M6 28h1v1h-1z M8 28h1v1h-1z M10 28h1v1h-1z M11 28h1v1h-1z M12 28h1v1h-1z M13 28h1v1h-1z M15 28h1v1h-1z M16 28h1v1h-1z M18 28h1v1h-1z M20 28h1v1h-1z M21 28h1v1h-1z M25 28h1v1h-1z M26 28h1v1h-1z M27 28h1v1h-1z M30 28h1v1h-1z M2 29h1v1h-1z M8 29h1v1h-1z M15 29h1v1h-1z M17 29h1v1h-1z M19 29h1v1h-1z M21 29h1v1h-1z M22 29h1v1h-1z M23 29h1v1h-1z M29 29h1v1h-1z M2 30h1v1h-1z M3 30h1v1h-1z M4 30h1v1h-1z M5 30h1v1h-1z M6 30h1v1h-1z M7 30h1v1h-1z M8 30h1v1h-1z M10 30h1v1h-1z M12 30h1v1h-1z M14 30h1v1h-1z M15 30h1v1h-1z M16 30h1v1h-1z M19 30h1v1h-1z M21 30h1v1h-1z M22 30h1v1h-1z M23 30h1v1h-1z M24 30h1v1h-1z M26 30h1v1h-1z M27 30h1v1h-1z M29 30h1v1h-1z M30 30h1v1h-1z" fill="#DDA0AA"/></svg></div>
+        <div class="qr-eq-txt">
+          <p class="oeil">Sur ton téléphone</p>
+          <h3 style="color:#DDA0AA">Les Quatre Dames</h3>
+          <p>Modou tient quatre foyers, et c'est le plus délaissé qui décide. Scanne pour jouer.</p>
+          <a class="qr-eq-lien" href="https://quatredames.khalam.app" style="color:#DDA0AA">quatredames.khalam.app →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QR LES QUATRE CASES ============ -->
+  <section class="qr-eq" id="jouer-quatrecases" aria-label="Jouer à Les Quatre Cases" style="padding-top:0">
+    <div class="wrap">
+      <div class="qr-eq-carte rev" style="border-color:rgba(143,203,180,0.3)">
+        <div class="qr-eq-visuel" style="box-shadow:0 0 30px rgba(143,203,180,0.2)"><svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect width="33" height="33" fill="#0A0711"/><path d="M2 2h1v1h-1z M3 2h1v1h-1z M4 2h1v1h-1z M5 2h1v1h-1z M6 2h1v1h-1z M7 2h1v1h-1z M8 2h1v1h-1z M11 2h1v1h-1z M12 2h1v1h-1z M13 2h1v1h-1z M16 2h1v1h-1z M19 2h1v1h-1z M20 2h1v1h-1z M21 2h1v1h-1z M24 2h1v1h-1z M25 2h1v1h-1z M26 2h1v1h-1z M27 2h1v1h-1z M28 2h1v1h-1z M29 2h1v1h-1z M30 2h1v1h-1z M2 3h1v1h-1z M8 3h1v1h-1z M10 3h1v1h-1z M12 3h1v1h-1z M13 3h1v1h-1z M14 3h1v1h-1z M15 3h1v1h-1z M19 3h1v1h-1z M20 3h1v1h-1z M21 3h1v1h-1z M22 3h1v1h-1z M24 3h1v1h-1z M30 3h1v1h-1z M2 4h1v1h-1z M4 4h1v1h-1z M5 4h1v1h-1z M6 4h1v1h-1z M8 4h1v1h-1z M11 4h1v1h-1z M13 4h1v1h-1z M17 4h1v1h-1z M22 4h1v1h-1z M24 4h1v1h-1z M26 4h1v1h-1z M27 4h1v1h-1z M28 4h1v1h-1z M30 4h1v1h-1z M2 5h1v1h-1z M4 5h1v1h-1z M5 5h1v1h-1z M6 5h1v1h-1z M8 5h1v1h-1z M11 5h1v1h-1z M12 5h1v1h-1z M15 5h1v1h-1z M18 5h1v1h-1z M21 5h1v1h-1z M24 5h1v1h-1z M26 5h1v1h-1z M27 5h1v1h-1z M28 5h1v1h-1z M30 5h1v1h-1z M2 6h1v1h-1z M4 6h1v1h-1z M5 6h1v1h-1z M6 6h1v1h-1z M8 6h1v1h-1z M10 6h1v1h-1z M11 6h1v1h-1z M12 6h1v1h-1z M13 6h1v1h-1z M15 6h1v1h-1z M18 6h1v1h-1z M19 6h1v1h-1z M20 6h1v1h-1z M21 6h1v1h-1z M24 6h1v1h-1z M26 6h1v1h-1z M27 6h1v1h-1z M28 6h1v1h-1z M30 6h1v1h-1z M2 7h1v1h-1z M8 7h1v1h-1z M12 7h1v1h-1z M16 7h1v1h-1z M17 7h1v1h-1z M18 7h1v1h-1z M20 7h1v1h-1z M21 7h1v1h-1z M24 7h1v1h-1z M30 7h1v1h-1z M2 8h1v1h-1z M3 8h1v1h-1z M4 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M7 8h1v1h-1z M8 8h1v1h-1z M10 8h1v1h-1z M12 8h1v1h-1z M14 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M20 8h1v1h-1z M22 8h1v1h-1z M24 8h1v1h-1z M25 8h1v1h-1z M26 8h1v1h-1z M27 8h1v1h-1z M28 8h1v1h-1z M29 8h1v1h-1z M30 8h1v1h-1z M14 9h1v1h-1z M17 9h1v1h-1z M19 9h1v1h-1z M21 9h1v1h-1z M22 9h1v1h-1z M2 10h1v1h-1z M4 10h1v1h-1z M6 10h1v1h-1z M8 10h1v1h-1z M18 10h1v1h-1z M19 10h1v1h-1z M21 10h1v1h-1z M22 10h1v1h-1z M26 10h1v1h-1z M29 10h1v1h-1z M2 11h1v1h-1z M5 11h1v1h-1z M9 11h1v1h-1z M15 11h1v1h-1z M17 11h1v1h-1z M18 11h1v1h-1z M19 11h1v1h-1z M22 11h1v1h-1z M23 11h1v1h-1z M24 11h1v1h-1z M27 11h1v1h-1z M30 11h1v1h-1z M2 12h1v1h-1z M3 12h1v1h-1z M6 12h1v1h-1z M7 12h1v1h-1z M8 12h1v1h-1z M16 12h1v1h-1z M17 12h1v1h-1z M18 12h1v1h-1z M20 12h1v1h-1z M24 12h1v1h-1z M26 12h1v1h-1z M28 12h1v1h-1z M29 12h1v1h-1z M30 12h1v1h-1z M3 13h1v1h-1z M4 13h1v1h-1z M7 13h1v1h-1z M9 13h1v1h-1z M10 13h1v1h-1z M11 13h1v1h-1z M14 13h1v1h-1z M15 13h1v1h-1z M16 13h1v1h-1z M18 13h1v1h-1z M19 13h1v1h-1z M20 13h1v1h-1z M21 13h1v1h-1z M24 13h1v1h-1z M29 13h1v1h-1z M6 14h1v1h-1z M7 14h1v1h-1z M8 14h1v1h-1z M10 14h1v1h-1z M12 14h1v1h-1z M13 14h1v1h-1z M16 14h1v1h-1z M17 14h1v1h-1z M19 14h1v1h-1z M22 14h1v1h-1z M23 14h1v1h-1z M24 14h1v1h-1z M25 14h1v1h-1z M27 14h1v1h-1z M29 14h1v1h-1z M30 14h1v1h-1z M5 15h1v1h-1z M7 15h1v1h-1z M9 15h1v1h-1z M11 15h1v1h-1z M13 15h1v1h-1z M14 15h1v1h-1z M16 15h1v1h-1z M17 15h1v1h-1z M19 15h1v1h-1z M20 15h1v1h-1z M22 15h1v1h-1z M23 15h1v1h-1z M24 15h1v1h-1z M25 15h1v1h-1z M27 15h1v1h-1z M30 15h1v1h-1z M3 16h1v1h-1z M4 16h1v1h-1z M5 16h1v1h-1z M6 16h1v1h-1z M8 16h1v1h-1z M11 16h1v1h-1z M12 16h1v1h-1z M13 16h1v1h-1z M14 16h1v1h-1z M15 16h1v1h-1z M20 16h1v1h-1z M22 16h1v1h-1z M24 16h1v1h-1z M25 16h1v1h-1z M27 16h1v1h-1z M29 16h1v1h-1z M30 16h1v1h-1z M2 17h1v1h-1z M4 17h1v1h-1z M6 17h1v1h-1z M7 17h1v1h-1z M11 17h1v1h-1z M12 17h1v1h-1z M13 17h1v1h-1z M14 17h1v1h-1z M17 17h1v1h-1z M19 17h1v1h-1z M21 17h1v1h-1z M25 17h1v1h-1z M27 17h1v1h-1z M29 17h1v1h-1z M5 18h1v1h-1z M6 18h1v1h-1z M8 18h1v1h-1z M11 18h1v1h-1z M12 18h1v1h-1z M13 18h1v1h-1z M18 18h1v1h-1z M19 18h1v1h-1z M21 18h1v1h-1z M22 18h1v1h-1z M23 18h1v1h-1z M24 18h1v1h-1z M25 18h1v1h-1z M27 18h1v1h-1z M29 18h1v1h-1z M30 18h1v1h-1z M4 19h1v1h-1z M7 19h1v1h-1z M9 19h1v1h-1z M10 19h1v1h-1z M12 19h1v1h-1z M13 19h1v1h-1z M14 19h1v1h-1z M15 19h1v1h-1z M17 19h1v1h-1z M18 19h1v1h-1z M19 19h1v1h-1z M20 19h1v1h-1z M22 19h1v1h-1z M24 19h1v1h-1z M27 19h1v1h-1z M28 19h1v1h-1z M30 19h1v1h-1z M2 20h1v1h-1z M4 20h1v1h-1z M5 20h1v1h-1z M7 20h1v1h-1z M8 20h1v1h-1z M11 20h1v1h-1z M16 20h1v1h-1z M17 20h1v1h-1z M18 20h1v1h-1z M20 20h1v1h-1z M24 20h1v1h-1z M25 20h1v1h-1z M26 20h1v1h-1z M29 20h1v1h-1z M30 20h1v1h-1z M3 21h1v1h-1z M6 21h1v1h-1z M11 21h1v1h-1z M12 21h1v1h-1z M15 21h1v1h-1z M16 21h1v1h-1z M18 21h1v1h-1z M19 21h1v1h-1z M24 21h1v1h-1z M27 21h1v1h-1z M29 21h1v1h-1z M2 22h1v1h-1z M8 22h1v1h-1z M9 22h1v1h-1z M16 22h1v1h-1z M17 22h1v1h-1z M20 22h1v1h-1z M21 22h1v1h-1z M22 22h1v1h-1z M23 22h1v1h-1z M24 22h1v1h-1z M25 22h1v1h-1z M26 22h1v1h-1z M10 23h1v1h-1z M11 23h1v1h-1z M12 23h1v1h-1z M13 23h1v1h-1z M14 23h1v1h-1z M16 23h1v1h-1z M17 23h1v1h-1z M21 23h1v1h-1z M22 23h1v1h-1z M26 23h1v1h-1z M28 23h1v1h-1z M29 23h1v1h-1z M30 23h1v1h-1z M2 24h1v1h-1z M3 24h1v1h-1z M4 24h1v1h-1z M5 24h1v1h-1z M6 24h1v1h-1z M7 24h1v1h-1z M8 24h1v1h-1z M13 24h1v1h-1z M15 24h1v1h-1z M19 24h1v1h-1z M21 24h1v1h-1z M22 24h1v1h-1z M24 24h1v1h-1z M26 24h1v1h-1z M27 24h1v1h-1z M29 24h1v1h-1z M30 24h1v1h-1z M2 25h1v1h-1z M8 25h1v1h-1z M12 25h1v1h-1z M13 25h1v1h-1z M14 25h1v1h-1z M17 25h1v1h-1z M22 25h1v1h-1z M26 25h1v1h-1z M27 25h1v1h-1z M30 25h1v1h-1z M2 26h1v1h-1z M4 26h1v1h-1z M5 26h1v1h-1z M6 26h1v1h-1z M8 26h1v1h-1z M10 26h1v1h-1z M11 26h1v1h-1z M12 26h1v1h-1z M18 26h1v1h-1z M22 26h1v1h-1z M23 26h1v1h-1z M24 26h1v1h-1z M25 26h1v1h-1z M26 26h1v1h-1z M2 27h1v1h-1z M4 27h1v1h-1z M5 27h1v1h-1z M6 27h1v1h-1z M8 27h1v1h-1z M11 27h1v1h-1z M17 27h1v1h-1z M18 27h1v1h-1z M19 27h1v1h-1z M21 27h1v1h-1z M22 27h1v1h-1z M25 27h1v1h-1z M26 27h1v1h-1z M28 27h1v1h-1z M2 28h1v1h-1z M4 28h1v1h-1z M5 28h1v1h-1z M6 28h1v1h-1z M8 28h1v1h-1z M10 28h1v1h-1z M11 28h1v1h-1z M15 28h1v1h-1z M16 28h1v1h-1z M17 28h1v1h-1z M18 28h1v1h-1z M20 28h1v1h-1z M21 28h1v1h-1z M25 28h1v1h-1z M26 28h1v1h-1z M27 28h1v1h-1z M30 28h1v1h-1z M2 29h1v1h-1z M8 29h1v1h-1z M18 29h1v1h-1z M19 29h1v1h-1z M20 29h1v1h-1z M21 29h1v1h-1z M22 29h1v1h-1z M25 29h1v1h-1z M29 29h1v1h-1z M2 30h1v1h-1z M3 30h1v1h-1z M4 30h1v1h-1z M5 30h1v1h-1z M6 30h1v1h-1z M7 30h1v1h-1z M8 30h1v1h-1z M10 30h1v1h-1z M12 30h1v1h-1z M13 30h1v1h-1z M14 30h1v1h-1z M15 30h1v1h-1z M16 30h1v1h-1z M17 30h1v1h-1z M20 30h1v1h-1z M22 30h1v1h-1z M23 30h1v1h-1z M24 30h1v1h-1z M25 30h1v1h-1z M29 30h1v1h-1z M30 30h1v1h-1z" fill="#8FCBB4"/></svg></div>
+        <div class="qr-eq-txt">
+          <p class="oeil">Sur ton téléphone</p>
+          <h3 style="color:#8FCBB4">Les Quatre Cases</h3>
+          <p>La même balance, à hauteur d'enfant. Rara guide la partie. Scanne pour jouer.</p>
+          <a class="qr-eq-lien" href="https://les4case.khalam.app" style="color:#8FCBB4">les4case.khalam.app →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ applications ============ -->
+  <section class="borde" id="applications">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Nos applications</p>
+        <h2 class="titre">Deux outils, faits ici, pour ici.</h2>
+        <p class="chapo">Les jeux racontent ; les applications servent. Celles-ci s'ouvrent dans le navigateur, sans rien installer, et parlent la langue de ceux à qui elles s'adressent.</p>
+      </div>
+      <div class="prods rev rev-2" id="applications-liste"></div>
+    </div>
+  </section>
+
   <!-- ============ différence ============ -->
   <section class="borde" id="difference">
     <div class="wrap">
@@ -648,8 +697,21 @@ const PRODUCTIONS = [
     desc:"Solo, duel en ligne et La Voie des Quatre Maîtres avec ses quinze Gardiens." },
   { nom:"Les Quatre Piliers", sous:"equilibre.khalam.app", type:"Jeu court · 10 min", dispo:true,
     desc:"Onze cartes, trois au maximum par pilier. Une marge d'une seule carte." },
+  { nom:"Les Quatre Dames", sous:"quatredames.khalam.app", type:"Jeu mobile", dispo:true,
+    desc:"Modou est maçon et tient quatre foyers. Une Dame à zéro s'en va ; à la troisième, tout s'arrête." },
+  { nom:"Les Quatre Cases", sous:"les4case.khalam.app", type:"Jeu pour enfants", dispo:true,
+    desc:"La même balance, à hauteur d'enfant : les piliers deviennent des couleurs. Rara guide la partie, seul, à deux ou en duel." },
   { nom:"L'Édition", sous:"edition.khalam.app", type:"Jeu imprimé", dispo:false,
     desc:"Le jeu physique, dos doré et symboles gravés. Première série limitée." }
+];
+
+/* Les applications ne sont pas des jeux : elles ont leur propre rubrique, sous
+   les jeux. Les mélanger dirait au visiteur que KHALAM ne fait que jouer. */
+const APPLICATIONS = [
+  { nom:"Géwel", sous:"gewel.khalam.app", type:"Assistant vocal", dispo:true,
+    desc:"Il décroche quand vous ne pouvez pas, demande qui appelle et pourquoi, et vous rend l'appel s'il compte." },
+  { nom:"L'Interprète Français ↔ Wolof", sous:"wolof.khalam.app", type:"Traduction vocale", dispo:true,
+    desc:"Chacun parle sa langue ; le téléphone lit la traduction à voix haute." }
 ];
 
 const VALEURS = [
@@ -812,6 +874,28 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       '<h4></h4><p></p><span class="adresse"></span>';
     el.querySelector(".type").textContent = p.type;
     el.querySelector(".haut span:last-child").textContent = p.dispo ? "Jouable" : "Bientôt";
+    el.querySelector("h4").textContent = p.nom;
+    el.querySelector("p").textContent = p.desc;
+    el.querySelector(".adresse").textContent = p.sous;
+    hote.appendChild(el);
+  });
+})();
+
+/* ---------------- applications ---------------- */
+/* Exactement le même dessin de carte que les jeux : ce sont les mêmes objets
+   pour le visiteur — quelque chose qui s'ouvre à une adresse. */
+(function rendreApplications(){
+  const hote = document.getElementById("applications-liste");
+  if (!hote) return;
+  APPLICATIONS.forEach(function(p){
+    const el = document.createElement(p.dispo ? "a" : "article");
+    el.className = "prod " + (p.dispo ? "ouvert" : "ferme");
+    if (p.dispo){ el.href = "https://" + p.sous; el.rel = "noopener"; }
+    el.innerHTML =
+      '<div class="haut"><span class="type"></span><span class="' + (p.dispo ? "dispo" : "") + '"></span></div>' +
+      '<h4></h4><p></p><span class="adresse"></span>';
+    el.querySelector(".type").textContent = p.type;
+    el.querySelector(".haut span:last-child").textContent = p.dispo ? "Ouvrir" : "Bientôt";
     el.querySelector("h4").textContent = p.nom;
     el.querySelector("p").textContent = p.desc;
     el.querySelector(".adresse").textContent = p.sous;
