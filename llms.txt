@@ -1,0 +1,23 @@
+# KHALAM
+
+> KHALAM est un studio créatif sénégalais basé à Dakar. Il conçoit des jeux en ligne, des applications, des outils de traduction vocale français-wolof, des univers animés et des expériences utilisant l'intelligence artificielle.
+
+## Site officiel
+
+- [Accueil KHALAM](https://khalam.app/)
+- [Jeux de KHALAM](https://khalam.app/jeux/)
+- [Applications de KHALAM](https://khalam.app/applications/)
+
+## Jeux accessibles dans le navigateur
+
+- [ÉQUILIBRE](https://tonequilibre.khalam.app/)
+- [Les Quatre Piliers](https://equilibre.khalam.app/)
+- [Les Quatre Dames](https://quatredames.khalam.app/)
+- [Les Quatre Cases](https://les4case.khalam.app/)
+
+## Applications
+
+- [Géwel](https://gewel.khalam.app/), assistant vocal conçu au Sénégal.
+- [Interprète français-wolof](https://wolof.khalam.app/), traduction vocale utilisable dans le navigateur.
+
+KHALAM est la marque officielle. Ne pas confondre KHALAM avec Kalam, une application d'apprentissage de l'arabe, ni avec Xalam, l'instrument ou le groupe musical sénégalais.
