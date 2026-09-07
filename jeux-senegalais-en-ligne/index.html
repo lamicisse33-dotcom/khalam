@@ -32,6 +32,11 @@
 section{padding:80px 0;border-top:1px solid #151620}.grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,7vw,90px)}.copy p{color:var(--muted);margin:0 0 18px}.features{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);margin-top:44px}.feature{background:var(--panel);padding:28px}.feature p{color:var(--muted);margin:8px 0 0;font-size:15px}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}.card{min-height:145px;padding:22px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;background:var(--panel)}.card span{font:600 10px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}.card strong{font:600 20px Arial,sans-serif;margin-top:12px}.card i{margin-top:auto;color:var(--gold);font-style:normal}.card:hover{border-color:var(--blue)}footer{padding:32px 0;border-top:1px solid var(--line);color:#777681;font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:760px){.menu{display:none}.grid{grid-template-columns:1fr}.features,.related{grid-template-columns:1fr}.hero{padding-top:70px}section{padding:60px 0}}
 </style>
+<!-- Le compteur de visites, comme sur le reste du site. Sans lui ces quatre
+     pages seraient invisibles dans Cloudflare : on saurait qu'elles existent,
+     pas si quelqu'un les lit. Or c'est precisement la question qu'elles posent. -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "c0fcbf2702104952bde345789cb6f1d7"}'></script>
 </head>
 <body>
 <header><nav class="wrap"><a class="logo" href="/">KHALAM</a><div class="menu"><a href="/jeux/">Jeux</a><a href="/applications/">Applications</a><a href="/#contact">Contact</a></div></nav></header>
