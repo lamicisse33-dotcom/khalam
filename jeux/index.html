@@ -377,6 +377,21 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
      les autres : une par produit, chacune avec son QR. */
   .liste-produits{display:flex;flex-direction:column;gap:18px;margin-top:44px}
   .liste-produits .qr-eq-carte{margin:0}
+  .promesse{font-size:18px;line-height:1.35;font-weight:700;margin:0 0 10px}
+  .points{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:14px 0 0}
+  .points li{font-family:var(--util);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+             padding:5px 11px;border:1px solid;border-radius:999px;color:#c9c2d8;opacity:.85}
+  /* Dit avant le clic, jamais après : découvrir le code devant l'écran fait
+     perdre la personne et la confiance en même temps. */
+  .sur-code{font-size:14px;margin-top:16px;padding:11px 14px;border-radius:10px;
+            background:rgba(255,255,255,.045);border:1px solid rgba(255,247,220,.13);color:#c9c2d8}
+  .sur-code span{font-weight:700}
+  .sur-code a{color:inherit;text-decoration:underline}
+  .bandeau-acces{max-width:760px;margin:22px auto 0;padding:16px 20px;border-radius:14px;
+                 border:1px solid rgba(201,162,39,.35);background:rgba(201,162,39,.07);
+                 color:#e6dfc8;font-size:15px;line-height:1.55;text-align:center}
+  .bandeau-acces a{color:var(--or,#C9A227);font-weight:700}
+  @media(max-width:560px){.promesse{font-size:16px}}
   .retour{display:inline-block;margin-top:38px;font-family:var(--util);font-size:12px;
           letter-spacing:.14em;text-transform:uppercase;color:var(--cendre);text-decoration:none}
   .retour:hover{color:var(--blanc)}
@@ -514,6 +529,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <p class="oeil">Nos jeux</p>
         <h1 class="titre">Cinq jeux, cinq adresses.</h1>
         <p class="chapo">Tous se jouent directement dans le navigateur, sans rien installer. Scannez le code, ou ouvrez l'adresse : la partie commence.</p>
+        
       </div>
 
       <div class="liste-produits">
@@ -522,7 +538,10 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <div class="qr-eq-txt">
           <p class="oeil">Jeu complet</p>
           <h2 style="color:#F0D060;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">ÉQUILIBRE</h2>
+          
           <p>Solo, duel en ligne et La Voie des Quatre Maîtres avec ses quinze Gardiens.</p>
+          
+          
           <p style="font-size:14px;opacity:.55;margin-top:10px">Jeu de cartes sénégalais gratuit à jouer en ligne, en français. Quatre piliers de vie — spiritualité, amour, santé, argent — et c'est le plus bas qui décide. Solo ou duel à deux, sans installation, sur téléphone.</p>
           <a class="qr-eq-lien" href="https://tonequilibre.khalam.app" style="color:#F0D060">tonequilibre.khalam.app →</a>
         </div>
@@ -533,7 +552,10 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <div class="qr-eq-txt">
           <p class="oeil">Jeu court · 10 min</p>
           <h2 style="color:#c9c2d8;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">Les Quatre Piliers</h2>
+          
           <p>Onze cartes, trois au maximum par pilier. Une marge d'une seule carte.</p>
+          
+          
           <p style="font-size:14px;opacity:.55;margin-top:10px">La version courte du jeu de cartes ÉQUILIBRE : onze cartes, une partie en dix minutes, jouable dans le navigateur sans rien installer. Jeu de réflexion en français, conçu à Dakar.</p>
           <a class="qr-eq-lien" href="https://equilibre.khalam.app" style="color:#c9c2d8">equilibre.khalam.app →</a>
         </div>
@@ -544,7 +566,10 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <div class="qr-eq-txt">
           <p class="oeil">Jeu mobile</p>
           <h2 style="color:#DDA0AA;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">Les Quatre Dames</h2>
+          
           <p>Modou est maçon et tient quatre foyers. Une Dame à zéro s'en va ; à la troisième, tout s'arrête.</p>
+          
+          
           <p style="font-size:14px;opacity:.55;margin-top:10px">Jeu mobile sénégalais gratuit : Modou est maçon à Dakar et doit tenir quatre foyers sans en négliger aucun. Fleurs, soins, prières, argent — tout coûte, et tout coûte plus cher chaque jour. Jouable dans le navigateur, sans installation.</p>
           <a class="qr-eq-lien" href="https://quatredames.khalam.app" style="color:#DDA0AA">quatredames.khalam.app →</a>
         </div>
@@ -555,7 +580,10 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <div class="qr-eq-txt">
           <p class="oeil">Jeu pour enfants</p>
           <h2 style="color:#8FCBB4;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">Les Quatre Cases</h2>
+          
           <p>La même balance, à hauteur d'enfant : les piliers deviennent des couleurs. Rara guide la partie, seul, à deux ou en duel.</p>
+          
+          
           <p style="font-size:14px;opacity:.55;margin-top:10px">Jeu pour enfants en français, gratuit et sans publicité : les quatre piliers deviennent quatre couleurs, et le guide Rara accompagne la partie. Se joue seul, à deux sur le même téléphone, ou en duel en ligne. Conçu au Sénégal.</p>
           <a class="qr-eq-lien" href="https://les4case.khalam.app" style="color:#8FCBB4">les4case.khalam.app →</a>
         </div>
@@ -566,7 +594,10 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <div class="qr-eq-txt">
           <p class="oeil">Jeu imprimé</p>
           <h2 style="color:#C9A227;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">L'Édition</h2>
+          
           <p>Le jeu physique, dos doré et symboles gravés. Première série limitée.</p>
+          
+          
           <p style="font-size:14px;opacity:.55;margin-top:10px">Le jeu de cartes ÉQUILIBRE en version physique imprimée, première série limitée. À paraître.</p>
           <span class="qr-eq-lien" style="color:#C9A227;opacity:.6">edition.khalam.app</span>
         </div>
