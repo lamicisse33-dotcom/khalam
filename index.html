@@ -462,10 +462,16 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <a class="btn btn-plein" href="#contact">Parler d'un projet</a>
         <a class="btn btn-vide" href="#divisions">Voir nos divisions</a>
       </div>
+      <!-- Ces chiffres ne s'ecrivent plus a la main. Le 7 septembre 2026,
+           l'accueil annoncait encore << 2 jeux jouables >> alors qu'il y en
+           avait cinq : le nombre avait ete tape le jour ou il etait vrai, et
+           il etait reste. Lamine l'a vu depuis son telephone.
+           Ils se comptent maintenant sur les memes listes que les cartes plus
+           bas. Un jeu ajoute a PRODUCTIONS se compte ici tout seul. -->
       <div class="compteur">
-        <div><b>6</b>Divisions</div>
+        <div><b id="nb-divisions">—</b>Divisions</div>
         <div><b>1</b>Licence originale</div>
-        <div><b>2</b>Jeux jouables aujourd'hui</div>
+        <div><b id="nb-jeux">—</b><span id="mot-jeux">Jeux jouables aujourd'hui</span></div>
       </div>
     </div>
   </section>
@@ -812,6 +818,25 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   setTimeout(function(){ document.getElementById("phrase-1").classList.add("on"); }, T_FLASH + 380);
   setTimeout(function(){ document.getElementById("phrase-2").classList.add("on"); }, T_FLASH + 900);
   setTimeout(function(){ document.getElementById("intro-cta").classList.add("on"); }, T_FLASH + 1300);
+})();
+
+/* ---------------- les chiffres de l'accueil ----------------
+   Ils comptent les listes, ils ne les decrivent pas. C'est la seule facon
+   qu'ils ne mentent pas le jour ou Lamine publie un jeu de plus. */
+(function compterPourDeVrai(){
+  const jouables = PRODUCTIONS.filter(function(p){ return p.dispo; }).length;
+  const poser = function(id, valeur){
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(valeur);
+  };
+  poser("nb-divisions", DIVISIONS.length);
+  poser("nb-jeux", jouables);
+  /* Un seul jeu ne prend pas de « x » : le detail se remarque, surtout au
+     debut d'un projet ou le chiffre est petit. */
+  const mot = document.getElementById("mot-jeux");
+  if (mot) mot.textContent = jouables > 1
+    ? "Jeux jouables aujourd'hui"
+    : "Jeu jouable aujourd'hui";
 })();
 
 /* ---------------- divisions ---------------- */
