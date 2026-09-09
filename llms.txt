@@ -10,6 +10,7 @@
 
 ## Jeux accessibles dans le navigateur
 
+- [GALGAL](https://galgal.khalam.app/), jeu de cartes sénégalais à deux ou à quatre.
 - [ÉQUILIBRE](https://tonequilibre.khalam.app/)
 - [Les Quatre Piliers](https://equilibre.khalam.app/)
 - [Les Quatre Dames](https://quatredames.khalam.app/)
