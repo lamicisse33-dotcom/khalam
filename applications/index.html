@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Les applications de KHALAM — assistant vocal, IA en wolof, traducteur français wolof</title>
-<meta name="description" content="Trois applications faites à Dakar : Géwel répond au téléphone à votre place, BIBA répond à vos questions en wolof à voix haute, et l'Interprète traduit entre le français et le wolof. Dans le navigateur, sans rien installer. Accès sur code, à demander à KHALAM.">
+<meta name="description" content="Quatre applications faites à Dakar : Géwel répond au téléphone à votre place, BIBA répond aux questions de vos visiteurs en wolof à voix haute, BIA écrit vos devis, lettres et messages à partir de votre wolof, et l'Interprète traduit entre le français et le wolof. Dans le navigateur, sans rien installer. Accès sur code, à demander à KHALAM.">
 <meta name="theme-color" content="#07070A">
 <link rel="canonical" href="https://khalam.app/applications/">
 <link rel="icon" href="https://khalam.app/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="https://khalam.app/icone-192.png">
 <meta property="og:site_name" content="KHALAM">
 <meta property="og:title" content="Les applications de KHALAM — assistant vocal, IA en wolof, traducteur français wolof">
-<meta property="og:description" content="Trois applications faites à Dakar : Géwel répond au téléphone à votre place, BIBA répond à vos questions en wolof à voix haute, et l'Interprète traduit entre le français et le wolof. Dans le navigateur, sans rien installer. Accès sur code, à demander à KHALAM.">
+<meta property="og:description" content="Quatre applications faites à Dakar : Géwel répond au téléphone à votre place, BIBA répond aux questions de vos visiteurs en wolof à voix haute, BIA écrit vos devis, lettres et messages à partir de votre wolof, et l'Interprète traduit entre le français et le wolof. Dans le navigateur, sans rien installer. Accès sur code, à demander à KHALAM.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://khalam.app/applications/">
 <meta property="og:locale" content="fr_FR">
@@ -387,6 +387,14 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
             background:rgba(255,255,255,.045);border:1px solid rgba(255,247,220,.13);color:#c9c2d8}
   .sur-code span{font-weight:700}
   .sur-code a{color:inherit;text-decoration:underline}
+  /* Ce qui n'est pas derrière un lien mais derrière une conversation : on le
+     distingue du reste par un trait pointillé, pour qu'on ne le prenne pas
+     pour un bouton qui manque. */
+  .offre{font-size:14px;margin-top:14px;padding:12px 14px;border-radius:10px;line-height:1.6;
+         background:rgba(255,255,255,.02);border:1px dashed rgba(255,247,220,.20);color:#c9c2d8}
+  .offre span{font-weight:700;display:block;margin-bottom:4px}
+  .offre a{color:inherit;text-decoration:underline}
+  .qr-eq-txt strong{font-weight:700;color:#EFEAF7}
   .bandeau-acces{max-width:760px;margin:22px auto 0;padding:16px 20px;border-radius:14px;
                  border:1px solid rgba(201,162,39,.35);background:rgba(201,162,39,.07);
                  color:#e6dfc8;font-size:15px;line-height:1.55;text-align:center}
@@ -409,7 +417,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         "@type": "SoftwareApplication",
         "name": "Géwel",
         "url": "https://gewel.khalam.app",
-        "description": "Assistant vocal qui répond au téléphone à votre place quand vous ne pouvez pas décrocher : il demande à l'appelant qui il est et ce qu'il veut, puis vous permet de reprendre l'appel en direct si c'est important. Conçu au Sénégal, en français et en wolof.",
+        "description": "Assistant vocal qui répond au téléphone à votre place quand vous ne pouvez pas décrocher : il demande à l'appelant qui il est et ce qu'il veut, vous résume l'appel, et vous permet de reprendre la ligne en direct si c'est important. Interprétation en direct pendant l'appel sur demande. Conçu au Sénégal, en français et en wolof.",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Tout navigateur web",
         "inLanguage": [
@@ -435,7 +443,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         "@type": "SoftwareApplication",
         "name": "BIBA",
         "url": "https://biba.khalam.app/",
-        "description": "Intelligence artificielle en wolof, gratuite, à ouvrir dans le navigateur : on lui parle, elle répond à voix haute en wolof. Assistant IA sénégalais fait à Dakar, pensé d'abord pour les personnes qui ne lisent pas.",
+        "description": "Assistante virtuelle en wolof, gratuite, à ouvrir dans le navigateur : on lui parle, elle répond à voix haute en wolof et en français. Elle répond aux questions des visiteurs sur une entreprise — ses produits, ses horaires, ses démarches — et peut être installée pour votre maison sur demande. Assistant IA sénégalais fait à Dakar, pensé d'abord pour les personnes qui ne lisent pas.",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Tout navigateur web",
         "inLanguage": [
@@ -457,6 +465,32 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
     {
       "@type": "ListItem",
       "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "BIA",
+        "url": "https://bia.khalam.app",
+        "description": "Intelligence artificielle en wolof qui écrit à votre place : devis en PDF, lettres, messages en français prêts à envoyer par WhatsApp ou SMS, lecture à voix haute d'un document photographié, recherche sur internet. On lui parle en wolof, elle répond en wolof. Faite à Dakar, pensée d'abord pour les personnes qui ne lisent pas.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Tout navigateur web",
+        "inLanguage": [
+          "fr",
+          "wo"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "XOF"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "KHALAM",
+          "url": "https://khalam.app/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
       "item": {
         "@type": "SoftwareApplication",
         "name": "L'Interprète Français ↔ Wolof",
@@ -519,8 +553,8 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
     <div class="wrap">
       <div class="rev">
         <p class="oeil">Nos applications</p>
-        <h1 class="titre">Trois outils qui parlent votre langue.</h1>
-        <p class="chapo">Les jeux racontent ; les applications servent. Celles-ci s'ouvrent dans le navigateur, sans rien installer — et elles parlent wolof, pour de vrai, à voix haute. Y compris à ceux qui ne lisent pas.</p>
+        <h1 class="titre">Quatre outils qui parlent votre langue.</h1>
+        <p class="chapo">Les jeux racontent ; les applications servent. Celles-ci s'ouvrent dans le navigateur, sans rien installer — et elles parlent wolof, pour de vrai, à voix haute. Y compris à ceux qui ne lisent pas : on leur parle, elles répondent, et personne n'a besoin de savoir écrire pour s'en servir.</p>
         <p class="bandeau-acces">Ces applications s'ouvrent avec un code de connexion. Il est gratuit : demandez le vôtre à KHALAM, on vous le donne. <a href="https://khalam.app/#contact">Demander mon code →</a></p>
       </div>
 
@@ -531,10 +565,13 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
           <p class="oeil">Assistant vocal</p>
           <h2 style="color:#8497F0;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">Géwel</h2>
           <p class="promesse" style="color:#8497F0">Ne ratez plus l'appel qui comptait.</p>
-          <p>Il décroche quand vous ne pouvez pas, demande qui appelle et pourquoi, vous le dit — et vous rend la ligne si ça vaut la peine. En français comme en wolof.</p>
-          <ul class="points"><li style="border-color:#8497F055">Répond à votre place</li><li style="border-color:#8497F055">Français et wolof</li><li style="border-color:#8497F055">Vous reprenez l'appel quand vous voulez</li></ul>
+          <p>Géwel décroche à votre place quand vous ne pouvez pas : en réunion, au volant, les mains prises, ou devant un numéro que vous ne connaissez pas. Il salue l'appelant, lui demande qui il est et ce qu'il veut, l'écoute jusqu'au bout — puis vous dit en une phrase de quoi il s'agit.</p>
+          <p>La décision reste la vôtre. Si l'appel compte, vous reprenez la ligne en direct et l'appelant est toujours là. Sinon le message vous attend, écrit, et vous rappelez à votre heure. Rien ne tombe dans une boîte vocale que plus personne n'écoute.</p>
+          <p>Il parle français et wolof, et répond dans la langue de celui qui appelle — sans lui demander d'en changer pour vous.</p>
+          <ul class="points"><li style="border-color:#8497F055">Répond à votre place</li><li style="border-color:#8497F055">Demande qui appelle et pourquoi</li><li style="border-color:#8497F055">Vous résume l'appel</li><li style="border-color:#8497F055">Vous reprenez la ligne en direct</li><li style="border-color:#8497F055">Français et wolof</li></ul>
+          <p class="offre"><span style="color:#8497F0">Sur demande — l'interprète pendant l'appel.</span> Géwel est fait pour aller plus loin : traduire la conversation pendant qu'elle a lieu. Votre correspondant parle anglais, français ou chinois, vous répondez en wolof, et chacun entend l'autre dans sa langue sans attendre la fin. Si c'est ce qu'il vous faut, <a href="https://khalam.app/#contact">écrivez-nous</a> : on le met en place avec vous.</p>
           <p class="sur-code"><span style="color:#8497F0">Accès sur code.</span> Gratuit — demandez-le à KHALAM depuis <a href="https://khalam.app/#contact">khalam.app</a>.</p>
-          <p style="font-size:14px;opacity:.55;margin-top:10px">Assistant vocal qui répond au téléphone à votre place quand vous ne pouvez pas décrocher : il demande à l'appelant qui il est et ce qu'il veut, puis vous permet de reprendre l'appel en direct si c'est important. Conçu au Sénégal, en français et en wolof.</p>
+          <p style="font-size:14px;opacity:.55;margin-top:10px">Assistant vocal qui répond au téléphone à votre place quand vous ne pouvez pas décrocher : il demande à l'appelant qui il est et ce qu'il veut, vous résume l'appel, et vous permet de reprendre la ligne en direct si c'est important. Interprétation en direct pendant l'appel sur demande. Conçu au Sénégal, en français et en wolof.</p>
           <a class="qr-eq-lien" href="https://gewel.khalam.app" style="color:#8497F0">gewel.khalam.app →</a>
         </div>
       </article>
@@ -544,12 +581,33 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <div class="qr-eq-txt">
           <p class="oeil">Intelligence artificielle</p>
           <h2 style="color:#C9A227;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">BIBA</h2>
-          <p class="promesse" style="color:#C9A227">Une intelligence artificielle qui vous répond en wolof, à voix haute.</p>
-          <p>Posez votre question comme vous la diriez à quelqu'un. Elle écoute, elle comprend, elle répond dans votre langue. Rien à lire, rien à écrire.</p>
-          <ul class="points"><li style="border-color:#C9A22755">Elle parle wolof</li><li style="border-color:#C9A22755">On lui parle, elle répond</li><li style="border-color:#C9A22755">Sans savoir lire</li></ul>
+          <p class="promesse" style="color:#C9A227">L'assistante qui répond à vos visiteurs, à voix haute.</p>
+          <p>BIBA est l'assistante de KHALAM. On lui parle comme à quelqu'un — pas de menu, pas de formulaire, rien à écrire — et elle répond à voix haute, en wolof. Elle connaît la maison : les jeux, les applications, les adresses, les démarches, ce qui existe et ce qui n'existe pas.</p>
+          <p>Ce qui la distingue : <strong>elle ne dit que ce qu'elle sait</strong>. Sa base de connaissances est sa seule source. Elle n'invente ni un prix, ni une date, ni un numéro ; quand elle ne sait pas, elle le dit et donne un contact. Une réponse inventée, lue à voix haute à quelqu'un qui y croit, coûte bien plus cher qu'un «&#8239;je ne sais pas&#8239;».</p>
+          <p>Et quand la question sort de son domaine, elle ne renvoie personne les mains vides : une phrase utile quand même, puis elle passe la main à sa petite sœur BIA.</p>
+          <ul class="points"><li style="border-color:#C9A22755">Wolof et français à voix haute</li><li style="border-color:#C9A22755">On lui parle, rien à écrire</li><li style="border-color:#C9A22755">Ne dit que ce qu'elle sait</li><li style="border-color:#C9A22755">Sans savoir lire</li><li style="border-color:#C9A22755">S'installe sur le téléphone</li></ul>
+          <p class="offre"><span style="color:#C9A227">Pour votre entreprise.</span> BIBA n'est pas liée à KHALAM par nature : c'est une assistante qu'on installe pour une maison, et qui n'apprend que celle-là — vos produits, vos prix, vos horaires, vos démarches. Posée sur votre site ou votre page, elle accueille vos visiteurs, répond à leurs questions et les oriente vers la bonne personne, en wolof et en français à voix haute ; d'autres langues sur demande. Elle ne dit rien qui ne vienne de ce que vous lui avez donné, et ne parle jamais au nom de votre maison sans votre accord. KHALAM s'en occupe de bout en bout : <a href="https://khalam.app/#contact">écrivez-nous</a> et on la prépare avec vous.</p>
           <p class="sur-code"><span style="color:#C9A227">Accès sur code.</span> Gratuit — demandez-le à KHALAM depuis <a href="https://khalam.app/#contact">khalam.app</a>.</p>
-          <p style="font-size:14px;opacity:.55;margin-top:10px">Intelligence artificielle en wolof, gratuite, à ouvrir dans le navigateur : on lui parle, elle répond à voix haute en wolof. Assistant IA sénégalais fait à Dakar, pensé d'abord pour les personnes qui ne lisent pas.</p>
+          <p style="font-size:14px;opacity:.55;margin-top:10px">Assistante virtuelle en wolof, gratuite, à ouvrir dans le navigateur : on lui parle, elle répond à voix haute en wolof et en français. Elle répond aux questions des visiteurs sur une entreprise — ses produits, ses horaires, ses démarches — et peut être installée pour votre maison sur demande. Assistant IA sénégalais fait à Dakar, pensé d'abord pour les personnes qui ne lisent pas.</p>
           <a class="qr-eq-lien" href="https://biba.khalam.app/" style="color:#C9A227">biba.khalam.app →</a>
+        </div>
+      </article>
+
+      <article class="qr-eq-carte rev" style="border-color:#A78BFA4D">
+        <div class="qr-eq-visuel" style="box-shadow:0 0 30px #A78BFA33"><svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect width="29" height="29" fill="#0A0711"/><path d="M2 2h1v1h-1z M3 2h1v1h-1z M4 2h1v1h-1z M5 2h1v1h-1z M6 2h1v1h-1z M7 2h1v1h-1z M8 2h1v1h-1z M11 2h1v1h-1z M13 2h1v1h-1z M14 2h1v1h-1z M15 2h1v1h-1z M16 2h1v1h-1z M17 2h1v1h-1z M20 2h1v1h-1z M21 2h1v1h-1z M22 2h1v1h-1z M23 2h1v1h-1z M24 2h1v1h-1z M25 2h1v1h-1z M26 2h1v1h-1z M2 3h1v1h-1z M8 3h1v1h-1z M10 3h1v1h-1z M11 3h1v1h-1z M13 3h1v1h-1z M15 3h1v1h-1z M16 3h1v1h-1z M17 3h1v1h-1z M18 3h1v1h-1z M20 3h1v1h-1z M26 3h1v1h-1z M2 4h1v1h-1z M4 4h1v1h-1z M5 4h1v1h-1z M6 4h1v1h-1z M8 4h1v1h-1z M11 4h1v1h-1z M12 4h1v1h-1z M14 4h1v1h-1z M18 4h1v1h-1z M20 4h1v1h-1z M22 4h1v1h-1z M23 4h1v1h-1z M24 4h1v1h-1z M26 4h1v1h-1z M2 5h1v1h-1z M4 5h1v1h-1z M5 5h1v1h-1z M6 5h1v1h-1z M8 5h1v1h-1z M12 5h1v1h-1z M17 5h1v1h-1z M20 5h1v1h-1z M22 5h1v1h-1z M23 5h1v1h-1z M24 5h1v1h-1z M26 5h1v1h-1z M2 6h1v1h-1z M4 6h1v1h-1z M5 6h1v1h-1z M6 6h1v1h-1z M8 6h1v1h-1z M10 6h1v1h-1z M11 6h1v1h-1z M13 6h1v1h-1z M14 6h1v1h-1z M15 6h1v1h-1z M16 6h1v1h-1z M17 6h1v1h-1z M20 6h1v1h-1z M22 6h1v1h-1z M23 6h1v1h-1z M24 6h1v1h-1z M26 6h1v1h-1z M2 7h1v1h-1z M8 7h1v1h-1z M11 7h1v1h-1z M12 7h1v1h-1z M13 7h1v1h-1z M14 7h1v1h-1z M16 7h1v1h-1z M17 7h1v1h-1z M20 7h1v1h-1z M26 7h1v1h-1z M2 8h1v1h-1z M3 8h1v1h-1z M4 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M7 8h1v1h-1z M8 8h1v1h-1z M10 8h1v1h-1z M12 8h1v1h-1z M14 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M20 8h1v1h-1z M21 8h1v1h-1z M22 8h1v1h-1z M23 8h1v1h-1z M24 8h1v1h-1z M25 8h1v1h-1z M26 8h1v1h-1z M12 9h1v1h-1z M15 9h1v1h-1z M17 9h1v1h-1z M18 9h1v1h-1z M2 10h1v1h-1z M4 10h1v1h-1z M6 10h1v1h-1z M8 10h1v1h-1z M11 10h1v1h-1z M13 10h1v1h-1z M14 10h1v1h-1z M15 10h1v1h-1z M17 10h1v1h-1z M18 10h1v1h-1z M22 10h1v1h-1z M25 10h1v1h-1z M5 11h1v1h-1z M7 11h1v1h-1z M10 11h1v1h-1z M11 11h1v1h-1z M12 11h1v1h-1z M13 11h1v1h-1z M15 11h1v1h-1z M18 11h1v1h-1z M19 11h1v1h-1z M20 11h1v1h-1z M26 11h1v1h-1z M3 12h1v1h-1z M4 12h1v1h-1z M6 12h1v1h-1z M7 12h1v1h-1z M8 12h1v1h-1z M9 12h1v1h-1z M14 12h1v1h-1z M16 12h1v1h-1z M24 12h1v1h-1z M25 12h1v1h-1z M26 12h1v1h-1z M2 13h1v1h-1z M3 13h1v1h-1z M5 13h1v1h-1z M11 13h1v1h-1z M12 13h1v1h-1z M14 13h1v1h-1z M15 13h1v1h-1z M16 13h1v1h-1z M17 13h1v1h-1z M21 13h1v1h-1z M25 13h1v1h-1z M2 14h1v1h-1z M3 14h1v1h-1z M7 14h1v1h-1z M8 14h1v1h-1z M10 14h1v1h-1z M12 14h1v1h-1z M13 14h1v1h-1z M14 14h1v1h-1z M15 14h1v1h-1z M18 14h1v1h-1z M19 14h1v1h-1z M20 14h1v1h-1z M23 14h1v1h-1z M25 14h1v1h-1z M26 14h1v1h-1z M5 15h1v1h-1z M6 15h1v1h-1z M7 15h1v1h-1z M9 15h1v1h-1z M10 15h1v1h-1z M12 15h1v1h-1z M13 15h1v1h-1z M14 15h1v1h-1z M15 15h1v1h-1z M16 15h1v1h-1z M18 15h1v1h-1z M19 15h1v1h-1z M20 15h1v1h-1z M23 15h1v1h-1z M26 15h1v1h-1z M2 16h1v1h-1z M4 16h1v1h-1z M5 16h1v1h-1z M8 16h1v1h-1z M10 16h1v1h-1z M12 16h1v1h-1z M13 16h1v1h-1z M14 16h1v1h-1z M16 16h1v1h-1z M18 16h1v1h-1z M20 16h1v1h-1z M21 16h1v1h-1z M24 16h1v1h-1z M25 16h1v1h-1z M26 16h1v1h-1z M3 17h1v1h-1z M4 17h1v1h-1z M6 17h1v1h-1z M9 17h1v1h-1z M10 17h1v1h-1z M11 17h1v1h-1z M14 17h1v1h-1z M15 17h1v1h-1z M17 17h1v1h-1z M22 17h1v1h-1z M25 17h1v1h-1z M2 18h1v1h-1z M6 18h1v1h-1z M8 18h1v1h-1z M9 18h1v1h-1z M10 18h1v1h-1z M11 18h1v1h-1z M13 18h1v1h-1z M15 18h1v1h-1z M17 18h1v1h-1z M18 18h1v1h-1z M19 18h1v1h-1z M20 18h1v1h-1z M21 18h1v1h-1z M22 18h1v1h-1z M23 18h1v1h-1z M10 19h1v1h-1z M11 19h1v1h-1z M13 19h1v1h-1z M15 19h1v1h-1z M16 19h1v1h-1z M17 19h1v1h-1z M18 19h1v1h-1z M22 19h1v1h-1z M23 19h1v1h-1z M25 19h1v1h-1z M26 19h1v1h-1z M2 20h1v1h-1z M3 20h1v1h-1z M4 20h1v1h-1z M5 20h1v1h-1z M6 20h1v1h-1z M7 20h1v1h-1z M8 20h1v1h-1z M12 20h1v1h-1z M16 20h1v1h-1z M17 20h1v1h-1z M18 20h1v1h-1z M20 20h1v1h-1z M22 20h1v1h-1z M23 20h1v1h-1z M25 20h1v1h-1z M26 20h1v1h-1z M2 21h1v1h-1z M8 21h1v1h-1z M11 21h1v1h-1z M12 21h1v1h-1z M13 21h1v1h-1z M15 21h1v1h-1z M18 21h1v1h-1z M22 21h1v1h-1z M23 21h1v1h-1z M26 21h1v1h-1z M2 22h1v1h-1z M4 22h1v1h-1z M5 22h1v1h-1z M6 22h1v1h-1z M8 22h1v1h-1z M10 22h1v1h-1z M11 22h1v1h-1z M14 22h1v1h-1z M15 22h1v1h-1z M16 22h1v1h-1z M18 22h1v1h-1z M19 22h1v1h-1z M20 22h1v1h-1z M21 22h1v1h-1z M22 22h1v1h-1z M23 22h1v1h-1z M25 22h1v1h-1z M26 22h1v1h-1z M2 23h1v1h-1z M4 23h1v1h-1z M5 23h1v1h-1z M6 23h1v1h-1z M8 23h1v1h-1z M11 23h1v1h-1z M12 23h1v1h-1z M13 23h1v1h-1z M14 23h1v1h-1z M18 23h1v1h-1z M19 23h1v1h-1z M21 23h1v1h-1z M22 23h1v1h-1z M23 23h1v1h-1z M24 23h1v1h-1z M2 24h1v1h-1z M4 24h1v1h-1z M5 24h1v1h-1z M6 24h1v1h-1z M8 24h1v1h-1z M10 24h1v1h-1z M12 24h1v1h-1z M13 24h1v1h-1z M14 24h1v1h-1z M15 24h1v1h-1z M22 24h1v1h-1z M26 24h1v1h-1z M2 25h1v1h-1z M8 25h1v1h-1z M12 25h1v1h-1z M14 25h1v1h-1z M15 25h1v1h-1z M16 25h1v1h-1z M17 25h1v1h-1z M18 25h1v1h-1z M20 25h1v1h-1z M22 25h1v1h-1z M23 25h1v1h-1z M25 25h1v1h-1z M2 26h1v1h-1z M3 26h1v1h-1z M4 26h1v1h-1z M5 26h1v1h-1z M6 26h1v1h-1z M7 26h1v1h-1z M8 26h1v1h-1z M10 26h1v1h-1z M11 26h1v1h-1z M13 26h1v1h-1z M14 26h1v1h-1z M16 26h1v1h-1z M17 26h1v1h-1z M18 26h1v1h-1z M21 26h1v1h-1z M25 26h1v1h-1z M26 26h1v1h-1z" fill="#A78BFA"/></svg></div>
+        <div class="qr-eq-txt">
+          <p class="oeil">Intelligence artificielle</p>
+          <h2 style="color:#A78BFA;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">BIA</h2>
+          <p class="promesse" style="color:#A78BFA">Parlez wolof. Elle fait le reste.</p>
+          <p>BIA est faite pour ceux qui parlent sans écrire. On lui parle en wolof, et elle fabrique ce qu'on lui demande — en bon français, prêt à envoyer.</p>
+          <p><strong>Un devis.</strong> Elle pose les questions une à une : pour qui, quoi, combien. Puis elle sort un papier propre, en PDF, avec vos coordonnées déjà dedans. <strong>Une lettre</strong>, de la même façon. <strong>Un message</strong> à envoyer par WhatsApp ou par SMS : vous dictez en wolof, elle écrit en français, correctement, et vous n'avez plus qu'à copier.</p>
+          <p><strong>Elle lit vos papiers.</strong> Photographiez une convocation, une ordonnance, une facture, une capture d'écran : elle vous dit d'abord si c'est un texte ou une image, puis vous le lit à voix haute en wolof — ou le garde pour plus tard.</p>
+          <p><strong>Elle voit et elle cherche.</strong> Elle reconnaît les applications et les jeux de KHALAM sur une image, et les visages publics. Quand la question porte sur ce qui change — un prix du jour, un résultat, une nouvelle — elle va voir sur internet et donne la date de ce qu'elle rapporte. Pour un appel, elle prépare le numéro ; c'est vous qui appuyez.</p>
+          <p><strong>Et si un mot sonne faux</strong>, une fenêtre s'ouvre : elle le redit autrement, et vous gardez la version qui vous convient. Chaque correction améliore son wolof.</p>
+          <ul class="points"><li style="border-color:#A78BFA55">Devis en PDF</li><li style="border-color:#A78BFA55">Lettres et courriers</li><li style="border-color:#A78BFA55">Messages prêts à envoyer</li><li style="border-color:#A78BFA55">Lit vos papiers photographiés</li><li style="border-color:#A78BFA55">Cherche sur internet</li><li style="border-color:#A78BFA55">Wolof à voix haute</li></ul>
+          <p class="sur-code"><span style="color:#A78BFA">Accès sur code.</span> Gratuit — demandez-le à KHALAM depuis <a href="https://khalam.app/#contact">khalam.app</a>.</p>
+          <p style="font-size:14px;opacity:.55;margin-top:10px">Intelligence artificielle en wolof qui écrit à votre place : devis en PDF, lettres, messages en français prêts à envoyer par WhatsApp ou SMS, lecture à voix haute d'un document photographié, recherche sur internet. On lui parle en wolof, elle répond en wolof. Faite à Dakar, pensée d'abord pour les personnes qui ne lisent pas.</p>
+          <a class="qr-eq-lien" href="https://bia.khalam.app" style="color:#A78BFA">bia.khalam.app →</a>
         </div>
       </article>
 
@@ -559,8 +617,10 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
           <p class="oeil">Traduction vocale</p>
           <h2 style="color:#22C55E;font-family:var(--licence);font-size:23px;letter-spacing:.05em;margin-bottom:10px">L'Interprète Français ↔ Wolof</h2>
           <p class="promesse" style="color:#22C55E">Deux langues, une seule conversation.</p>
-          <p>Chacun parle la sienne, le téléphone dit l'autre à voix haute. Au marché, au guichet, chez le médecin — là où ne pas se comprendre coûte cher.</p>
-          <ul class="points"><li style="border-color:#22C55E55">Les deux sens</li><li style="border-color:#22C55E55">Voix wolof, pas un accent français</li><li style="border-color:#22C55E55">Rien à installer</li></ul>
+          <p>Chacun parle la sienne, le téléphone dit l'autre à voix haute. Un micro d'un côté pour le français, un de l'autre pour le wolof : on appuie, on parle, on écoute. Il n'y a rien à lire et rien à taper.</p>
+          <p>Au marché, au guichet, à la banque, chez le médecin — partout où ne pas se comprendre coûte de l'argent, du temps, ou pire. La voix wolof est une vraie voix wolof, pas du français à l'accent : c'est la différence entre être compris et être deviné.</p>
+          <p>Et quand une traduction tombe à côté, on le dit : le bouton « mal traduit » garde la correction, et la suivante sera meilleure.</p>
+          <ul class="points"><li style="border-color:#22C55E55">Les deux sens</li><li style="border-color:#22C55E55">Voix wolof, pas un accent français</li><li style="border-color:#22C55E55">Rien à installer</li><li style="border-color:#22C55E55">Se corrige à l'usage</li></ul>
           <p class="sur-code"><span style="color:#22C55E">Accès sur code.</span> Gratuit — demandez-le à KHALAM depuis <a href="https://khalam.app/#contact">khalam.app</a>.</p>
           <p style="font-size:14px;opacity:.55;margin-top:10px">Traducteur vocal français wolof gratuit, en ligne, sans installation : chacun parle sa langue et le téléphone lit la traduction à voix haute. Pensé d'abord pour les personnes qui ne lisent pas. Voix wolof, reconnaissance vocale wolof, fait à Dakar.</p>
           <a class="qr-eq-lien" href="https://wolof.khalam.app" style="color:#22C55E">wolof.khalam.app →</a>
