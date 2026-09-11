@@ -463,6 +463,21 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
   flex-wrap:wrap;margin-top:38px}
 .galgal-carte{position:relative;width:clamp(104px,17vw,158px);aspect-ratio:63/88;
   container-type:inline-size}
+/* ── LES QUATRE CARTES TOURNENT ────────────────────────────────────────────
+   Demandé par Lamine le 11 septembre 2026 : « il faut les animer, chacune
+   prend la place de l'autre — l'argent prend la place de la spiritualité,
+   l'amour la place de l'argent, ainsi de suite. Ça anime un peu le site. »
+
+   Elles ne sautent pas d'une place à l'autre : elles GLISSENT, et c'est le
+   glissement qui se regarde. Une seconde entière pour faire le trajet, une
+   courbe qui part vite et se pose doucement — le mouvement d'une carte qu'on
+   fait coulisser sur une table, pas d'une fenêtre qui s'ouvre.
+
+   Le déplacement est calculé sur les positions RÉELLES des cartes, mesurées
+   dans la page. Sur un téléphone étroit elles se rangent sur deux lignes :
+   la rotation suit alors ces deux lignes au lieu de les envoyer hors écran. */
+.galgal-carte{transition:transform .95s cubic-bezier(.33,0,.15,1);will-change:transform}
+@media (prefers-reduced-motion: reduce){ .galgal-carte{transition:none} }
 .galgal-legende{margin-top:20px;text-align:center;font-size:13.5px;opacity:.6}
 .mention-creation{max-width:760px;margin:38px auto 0;text-align:center;
   font-size:13.5px;line-height:1.85;opacity:.62;
@@ -943,10 +958,25 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
   requestAnimationFrame(trace);
 
-  setTimeout(function(){ document.getElementById("intro-logo").classList.add("on"); }, T_FLASH - 120);
-  setTimeout(function(){ document.getElementById("phrase-1").classList.add("on"); }, T_FLASH + 380);
-  setTimeout(function(){ document.getElementById("phrase-2").classList.add("on"); }, T_FLASH + 900);
-  setTimeout(function(){ document.getElementById("intro-cta").classList.add("on"); }, T_FLASH + 1300);
+  /* ── QUAND ON APPUIE SUR « PASSER » ──────────────────────────────────────
+     Trouvé le 11 septembre 2026 en éprouvant la page dans un navigateur :
+     quelqu'un qui passe l'introduction laissait derrière lui quatre minuteries
+     déjà lancées. L'introduction n'était plus là, et chacune tombait sur du
+     vide — quatre erreurs dans la console à chaque visiteur pressé.
+
+     Rien ne se voyait à l'écran, et c'est bien le problème : une page qui
+     jette des erreurs est une page qu'on n'ouvre pas devant un partenaire.
+     Chaque minuterie vérifie maintenant que son élément est encore là. */
+  function allumer(id, delai){
+    setTimeout(function(){
+      var el = document.getElementById(id);
+      if (el) el.classList.add("on");
+    }, delai);
+  }
+  allumer("intro-logo", T_FLASH - 120);
+  allumer("phrase-1",  T_FLASH + 380);
+  allumer("phrase-2",  T_FLASH + 900);
+  allumer("intro-cta", T_FLASH + 1300);
 })();
 
 /* ---------------- les chiffres de l'accueil ----------------
@@ -1131,6 +1161,86 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       });
     }, { threshold:0.12, rootMargin:"0px 0px -8% 0px" });
     cibles.forEach(function(el){ obs.observe(el); });
+  }
+})();
+
+/* ── LA RONDE DES QUATRE CARTES ─────────────────────────────────────────────
+   Chacune prend la place de la suivante, en boucle, toutes les trois secondes
+   et demie.
+
+   ON MESURE, ON NE CALCULE PAS. On pourrait croire qu'il suffit de décaler
+   d'une largeur de carte plus un espace — c'est faux dès que l'écran est
+   étroit : les quatre cartes passent alors sur deux lignes, et un décalage
+   horizontal les enverrait dans le vide. On relève donc la position réelle de
+   chaque carte dans la page, et chacune va exactement là où était sa voisine.
+   Les positions relevées ne bougent pas quand on déplace les cartes : une
+   transformation ne change pas la place que l'élément occupe dans la page.
+
+   ELLE S'ARRÊTE QUAND PERSONNE NE REGARDE — hors de l'écran, ou onglet en
+   arrière-plan. Une animation qui tourne dans le vide ne fait que vider la
+   batterie de quelqu'un. */
+(function(){
+  var zone = document.querySelector(".galgal-cartes");
+  if (!zone) return;
+  var cartes = Array.prototype.slice.call(zone.querySelectorAll(".galgal-carte"));
+  if (cartes.length < 2) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var places = [], decalage = 0, minuteur = null, visible = false;
+
+  function mesurer(){
+    places = cartes.map(function(c){ return { x: c.offsetLeft, y: c.offsetTop }; });
+  }
+  function poser(){
+    cartes.forEach(function(c, i){
+      var but = places[(i + decalage) % cartes.length];
+      var moi = places[i];
+      c.style.transform = "translate(" + (but.x - moi.x) + "px," + (but.y - moi.y) + "px)";
+    });
+  }
+  function tourner(){
+    decalage = (decalage + 1) % cartes.length;
+    poser();
+  }
+  function partir(){
+    if (minuteur || !visible || document.hidden) return;
+    minuteur = setInterval(tourner, 3500);
+  }
+  function arreter(){
+    if (minuteur) { clearInterval(minuteur); minuteur = null; }
+  }
+
+  mesurer();
+
+  /* Un changement de largeur remet tout à plat : on efface les déplacements,
+     on laisse la page se ranger, on remesure, et on repose les cartes là où
+     elles en étaient. Sans ça, une rotation d'écran laisse des cartes
+     empilées. */
+  var attente = null;
+  window.addEventListener("resize", function(){
+    clearTimeout(attente);
+    attente = setTimeout(function(){
+      cartes.forEach(function(c){ c.style.transition = "none"; c.style.transform = ""; });
+      mesurer();
+      poser();
+      requestAnimationFrame(function(){
+        cartes.forEach(function(c){ c.style.transition = ""; });
+      });
+    }, 180);
+  });
+
+  document.addEventListener("visibilitychange", function(){
+    if (document.hidden) arreter(); else partir();
+  });
+
+  if ("IntersectionObserver" in window){
+    new IntersectionObserver(function(entrees){
+      visible = entrees[0].isIntersecting;
+      if (visible) partir(); else arreter();
+    }, { threshold: .2 }).observe(zone);
+  } else {
+    visible = true;
+    partir();
   }
 })();
 
