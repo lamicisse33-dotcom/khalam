@@ -1,7 +1,7 @@
-/* KHALAM.app — VERSION : khalam-site-v4.2 */
-const VERSION = "khalam-site-v4.2";
+/* KHALAM.app — VERSION : khalam-site-v4.3-logo */
+const VERSION = "khalam-site-v4.3-logo";
 const CACHE = "khalam-" + VERSION;
-const SOCLE = ["./", "./index.html", "./manifest.webmanifest"];
+const SOCLE = ["./", "./index.html", "./manifest.webmanifest", "./favicon.svg", "./icone-192.png", "./icone-512.png"];
 
 self.addEventListener("install", function (e) {
   self.skipWaiting();

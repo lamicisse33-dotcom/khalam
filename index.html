@@ -92,19 +92,21 @@ main{background-color:#07070A}
 
 /* ===================== intro ===================== */
 #intro{
-  position:fixed;inset:0;z-index:100;background:var(--noir);
+  position:fixed;inset:0;z-index:100;
+  background:radial-gradient(circle at 50% 42%,#2A145A 0,#120B2B 42%,#07070A 78%);
   display:flex;align-items:center;justify-content:center;flex-direction:column;
-  transition:opacity .9s ease, visibility .9s;
+  transition:opacity .9s ease, visibility .9s;overflow:hidden;
 }
 #intro.parti{opacity:0;visibility:hidden;pointer-events:none}
 #intro canvas{position:absolute;inset:0;width:100%;height:100%}
-.intro-contenu{position:relative;text-align:center;padding:0 24px;max-width:760px}
-.intro-logo{opacity:0;transform:translateY(8px);transition:opacity .9s ease,transform .9s ease}
+.intro-contenu{position:relative;text-align:center;padding:0 24px;max-width:760px;z-index:2}
+.intro-logo{opacity:0;transform:translateY(10px) scale(.96);filter:drop-shadow(0 0 22px rgba(126,76,228,.35));transition:opacity .7s ease,transform .9s cubic-bezier(.22,1,.36,1)}
 .intro-logo.on{opacity:1;transform:none}
-.intro-logo svg{width:74px;height:74px;display:block;margin:0 auto 22px}
+.intro-logo svg{width:108px;height:108px;display:block;margin:0 auto 12px}
 .intro-mot{
   font-family:var(--display);font-weight:700;font-size:clamp(30px,7vw,54px);
   letter-spacing:.34em;text-indent:.34em;font-stretch:expanded;
+  color:#F7F1E3;text-shadow:0 0 28px rgba(242,196,94,.12);
 }
 .intro-phrase{
   font-family:var(--corps);font-size:clamp(16px,2.4vw,21px);color:#C9C7D2;
@@ -494,13 +496,21 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
   <div class="intro-contenu">
     <div class="intro-logo" id="intro-logo">
       <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <g stroke="#8497F0" stroke-width="3" stroke-linecap="round">
-          <path d="M18 12 C30 46, 44 56, 50 88"/>
-          <path d="M39 7 C44 42, 48 56, 50 88"/>
-          <path d="M61 7 C56 42, 52 56, 50 88"/>
-          <path d="M82 12 C70 46, 56 56, 50 88"/>
-        </g>
-      </svg>
+  <g stroke="#F2C45E" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 31 Q33 25 43 31 L50 23 L57 31 Q67 25 82 31"/>
+    <path d="M18 31 L27 53 M18 31 L16 53 M82 31 L73 53 M82 31 L84 53"/>
+    <path d="M15 55 Q27 67 43 55 M57 55 Q73 67 85 55"/>
+    <path d="M50 31 C49 45 49 61 47 74 Q50 78 53 74 C51 61 51 45 50 31"/>
+    <path d="M42 79 Q50 74 58 79 L63 84 H37 Z"/>
+  </g>
+  <path d="M50 20 L57 28 L50 36 L43 28 Z" fill="#7E4CE4" stroke="#F2C45E" stroke-width="2.6"/>
+  <path d="M50 23.5 L53.8 28 L50 32.5 L46.2 28 Z" fill="#D9C4FF" opacity=".9"/>
+  
+      <circle cx="30" cy="61" r="5.2" fill="#3EA6FF"/>
+      <circle cx="41" cy="61" r="5.2" fill="#FF8A2B"/>
+      <circle cx="59" cy="61" r="5.2" fill="#53D85C"/>
+      <circle cx="70" cy="61" r="5.2" fill="#F06BC7"/>
+</svg>
       <p class="intro-mot">KHALAM</p>
     </div>
     <p class="intro-phrase" id="phrase-1">Nous ne créons pas des produits.<br>Nous créons des <em>univers</em>.</p>
@@ -515,13 +525,21 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 <header class="tete" id="tete">
   <a class="logo-lien" href="#haut" aria-label="KHALAM, accueil">
     <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      <g stroke="#8497F0" stroke-width="6" stroke-linecap="round">
-        <path d="M18 12 C30 46, 44 56, 50 88"/>
-        <path d="M39 7 C44 42, 48 56, 50 88"/>
-        <path d="M61 7 C56 42, 52 56, 50 88"/>
-        <path d="M82 12 C70 46, 56 56, 50 88"/>
-      </g>
-    </svg>
+  <g stroke="#F2C45E" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 31 Q33 25 43 31 L50 23 L57 31 Q67 25 82 31"/>
+    <path d="M18 31 L27 53 M18 31 L16 53 M82 31 L73 53 M82 31 L84 53"/>
+    <path d="M15 55 Q27 67 43 55 M57 55 Q73 67 85 55"/>
+    <path d="M50 31 C49 45 49 61 47 74 Q50 78 53 74 C51 61 51 45 50 31"/>
+    <path d="M42 79 Q50 74 58 79 L63 84 H37 Z"/>
+  </g>
+  <path d="M50 20 L57 28 L50 36 L43 28 Z" fill="#7E4CE4" stroke="#F2C45E" stroke-width="2.6"/>
+  <path d="M50 23.5 L53.8 28 L50 32.5 L46.2 28 Z" fill="#D9C4FF" opacity=".9"/>
+  
+      <circle cx="30" cy="61" r="5.2" fill="#3EA6FF"/>
+      <circle cx="41" cy="61" r="5.2" fill="#FF8A2B"/>
+      <circle cx="59" cy="61" r="5.2" fill="#53D85C"/>
+      <circle cx="70" cy="61" r="5.2" fill="#F06BC7"/>
+</svg>
     <span class="logo-mot">KHALAM</span>
   </a>
   <nav class="nav" aria-label="Navigation principale">
@@ -786,7 +804,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 
 <script>
 /* =========================================================
-   KHALAM.app — BUILD_TAG : khalam-site-v4.2
+   KHALAM.app — BUILD_TAG : khalam-site-v4.3-logo
    Palette : indigo = la maison. Or = ÉQUILIBRE, nulle part ailleurs.
    Contenu piloté par DIVISIONS / PRODUCTIONS / VALEURS / MAISON.
    ========================================================= */
@@ -896,65 +914,128 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   taille();
   window.addEventListener("resize", taille);
 
-  const cx = function(){ return L/2; }, cy = function(){ return H/2; };
-  const coins = [[0,0],[1,0],[1,1],[0,1]];
   const debut = performance.now();
-  const T_VOYAGE = 1150, T_ORBITE = 1750, T_FLASH = 1980, T_FIN = 2450;
+  const T_ASSEMBLAGE = 1750, T_IMPACT = 2350, T_FIN = 3150;
   let fini = false;
+  const couleurs = ["#3EA6FF","#FF8A2B","#53D85C","#F06BC7"];
 
-  function trace(){
-    const t = performance.now() - debut;
-    ctx.clearRect(0,0,L,H);
+  function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+  function easeOut(p){ return 1-Math.pow(1-p,3); }
+  function easeInOut(p){ return p<.5 ? 4*p*p*p : 1-Math.pow(-2*p+2,3)/2; }
+  function pointBezier(a,b,c,p){
+    const q=1-p; return {x:q*q*a.x+2*q*p*b.x+p*p*c.x,y:q*q*a.y+2*q*p*b.y+p*p*c.y};
+  }
+  function ligne(a,b,p,largeur,couleur,alpha){
+    p=clamp(p,0,1); if(p<=0)return;
+    ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.strokeStyle=couleur;ctx.lineWidth=largeur;ctx.lineCap="round";ctx.lineJoin="round";
+    ctx.shadowBlur=16;ctx.shadowColor=couleur;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(a.x+(b.x-a.x)*p,a.y+(b.y-a.y)*p);ctx.stroke();ctx.restore();
+  }
+  function courbe(points,p,largeur,couleur,alpha){
+    p=clamp(p,0,1); if(p<=0)return;
+    ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.strokeStyle=couleur;ctx.lineWidth=largeur;ctx.lineCap="round";ctx.shadowBlur=18;ctx.shadowColor=couleur;
+    ctx.beginPath();ctx.moveTo(points[0].x,points[0].y);
+    const steps=Math.max(2,Math.floor(42*p));
+    for(let i=1;i<=steps;i++){
+      const u=(i/42); const q=1-u;
+      const x=q*q*points[0].x+2*q*u*points[1].x+u*u*points[2].x;
+      const y=q*q*points[0].y+2*q*u*points[1].y+u*u*points[2].y;
+      ctx.lineTo(x,y);
+    }
+    ctx.stroke();ctx.restore();
+  }
+  function cercle(x,y,r,couleur,a){
+    ctx.save();ctx.globalAlpha=a;ctx.shadowBlur=28;ctx.shadowColor=couleur;
+    const g=ctx.createRadialGradient(x-r*.35,y-r*.38,1,x,y,r);
+    g.addColorStop(0,"#fff");g.addColorStop(.18,couleur);g.addColorStop(1,couleur);
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.restore();
+  }
+  function etincelles(t,cx,cy,rayon){
+    ctx.save();
+    for(let i=0;i<58;i++){
+      const a=i*2.399 + t*.00035*(i%3+1);
+      const puls=.45+.55*Math.sin(t*.003+i*1.7);
+      const r=rayon*(.35+((i*37)%100)/100*.85);
+      const x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r*.62;
+      const s=.7+(i%5===0?1.6:.5);
+      ctx.globalAlpha=.10+.38*Math.max(0,puls);
+      ctx.fillStyle=i%4===0?"#B98BFF":"#F2C45E";
+      ctx.shadowBlur=8;ctx.shadowColor=ctx.fillStyle;
+      ctx.beginPath();ctx.arc(x,y,s,0,Math.PI*2);ctx.fill();
+    }
+    ctx.restore();
+  }
 
-    /* halo central qui grandit */
-    const halo = Math.min(1, t / T_ORBITE);
-    const g = ctx.createRadialGradient(cx(),cy(),0,cx(),cy(),120 + halo*90);
-    g.addColorStop(0,"rgba(132,151,240," + (0.10 + halo*0.18) + ")");
-    g.addColorStop(1,"rgba(132,151,240,0)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0,0,L,H);
+  function dessinerLogo(t){
+    const cx=L/2, cy=H/2-28;
+    const echelle=Math.min(L,H)/620;
+    const sx=function(v){return cx+v*echelle;}, sy=function(v){return cy+v*echelle;};
+    const or="#F2C45E", ivoire="#FFF2C7";
+    const p=clamp(t/T_ASSEMBLAGE,0,1), pe=easeOut(p);
 
-    coins.forEach(function(c,i){
-      let x, y, a = 1;
-      const dep = { x: c[0]*L, y: c[1]*H };
-      if (t < T_VOYAGE){
-        const p = t / T_VOYAGE;
-        const e = 1 - Math.pow(1-p, 3);
-        const ang = e * Math.PI * 0.9;
-        const rx = dep.x + (cx() - dep.x) * e;
-        const ry = dep.y + (cy() - dep.y) * e;
-        x = cx() + (rx - cx()) * Math.cos(ang) - (ry - cy()) * Math.sin(ang);
-        y = cy() + (rx - cx()) * Math.sin(ang) + (ry - cy()) * Math.cos(ang);
-      } else {
-        const p = Math.min(1, (t - T_VOYAGE) / (T_ORBITE - T_VOYAGE));
-        const r = 46 * (1 - p) + 3;
-        const ang = i * Math.PI/2 + p * Math.PI * 3;
-        x = cx() + Math.cos(ang) * r;
-        y = cy() + Math.sin(ang) * r;
-        a = 1 - p * 0.25;
-      }
-      const gp = ctx.createRadialGradient(x,y,0,x,y,26);
-      gp.addColorStop(0,"rgba(226,232,255," + a + ")");
-      gp.addColorStop(0.25,"rgba(132,151,240," + (a*0.75) + ")");
-      gp.addColorStop(1,"rgba(46,63,158,0)");
-      ctx.fillStyle = gp;
-      ctx.beginPath(); ctx.arc(x,y,26,0,Math.PI*2); ctx.fill();
+    // aura centrale et anneaux d'énergie
+    const rg=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.min(L,H)*.48);
+    rg.addColorStop(0,"rgba(126,76,228,"+(0.12+pe*.18)+")");rg.addColorStop(.45,"rgba(67,34,126,.08)");rg.addColorStop(1,"rgba(7,7,10,0)");
+    ctx.fillStyle=rg;ctx.fillRect(0,0,L,H);
+    etincelles(t,cx,cy,Math.min(L,H)*.43);
+
+    // faisceaux dorés qui assemblent la balance
+    courbe([{x:sx(-205),y:sy(-105)},{x:sx(-85),y:sy(-145)},{x:sx(-28),y:sy(-112)}], clamp((p-.10)/.42,0,1), 4.2*echelle, or,.95);
+    courbe([{x:sx(205),y:sy(-105)},{x:sx(85),y:sy(-145)},{x:sx(28),y:sy(-112)}], clamp((p-.10)/.42,0,1), 4.2*echelle, or,.95);
+    ligne({x:sx(-28),y:sy(-112)},{x:sx(0),y:sy(-142)},clamp((p-.28)/.25,0,1),4.2*echelle,or,.95);
+    ligne({x:sx(0),y:sy(-142)},{x:sx(28),y:sy(-112)},clamp((p-.34)/.25,0,1),4.2*echelle,or,.95);
+
+    // support central compact et élégant
+    courbe([{x:sx(0),y:sy(-108)},{x:sx(-4),y:sy(20)},{x:sx(-20),y:sy(112)}],clamp((p-.32)/.38,0,1),5*echelle,or,.95);
+    courbe([{x:sx(0),y:sy(-108)},{x:sx(4),y:sy(20)},{x:sx(20),y:sy(112)}],clamp((p-.32)/.38,0,1),5*echelle,or,.95);
+    courbe([{x:sx(-20),y:sy(112)},{x:sx(0),y:sy(126)},{x:sx(20),y:sy(112)}],clamp((p-.48)/.28,0,1),4.5*echelle,or,.95);
+    ligne({x:sx(-54),y:sy(126)},{x:sx(54),y:sy(126)},clamp((p-.52)/.26,0,1),5*echelle,or,.95);
+
+    // suspentes
+    const hs=clamp((p-.34)/.32,0,1);
+    [[-205,-105,-175,18],[-205,-105,-245,18],[205,-105,175,18],[205,-105,245,18]].forEach(function(v){
+      ligne({x:sx(v[0]),y:sy(v[1])},{x:sx(v[2]),y:sy(v[3])},hs,3*echelle,or,.9);
     });
+    // bols
+    courbe([{x:sx(-252),y:sy(28)},{x:sx(-205),y:sy(82)},{x:sx(-158),y:sy(28)}],clamp((p-.46)/.28,0,1),6*echelle,ivoire,.95);
+    courbe([{x:sx(158),y:sy(28)},{x:sx(205),y:sy(82)},{x:sx(252),y:sy(28)}],clamp((p-.46)/.28,0,1),6*echelle,ivoire,.95);
 
-    if (t > T_ORBITE){
-      const p = Math.min(1, (t - T_ORBITE) / (T_FLASH - T_ORBITE));
-      const r = Math.pow(p, 0.6) * Math.max(L,H) * 0.75;
-      const gf = ctx.createRadialGradient(cx(),cy(),0,cx(),cy(),Math.max(r,1));
-      const a = (1 - p) * 0.9;
-      gf.addColorStop(0,"rgba(255,255,255," + a + ")");
-      gf.addColorStop(0.35,"rgba(132,151,240," + (a*0.55) + ")");
-      gf.addColorStop(1,"rgba(46,63,158,0)");
-      ctx.fillStyle = gf;
-      ctx.fillRect(0,0,L,H);
+    // joyau central
+    const pj=clamp((p-.22)/.22,0,1);
+    if(pj>0){
+      ctx.save();ctx.globalAlpha=pj;ctx.translate(cx,sy(-127));ctx.rotate(Math.PI/4);ctx.shadowBlur=30;ctx.shadowColor="#B98BFF";
+      const g=ctx.createLinearGradient(-18*echelle,-18*echelle,18*echelle,18*echelle);g.addColorStop(0,"#E7D9FF");g.addColorStop(.42,"#A36CF5");g.addColorStop(1,"#5C2FB7");
+      ctx.fillStyle=g;ctx.strokeStyle=or;ctx.lineWidth=3.2*echelle;ctx.fillRect(-16*echelle,-16*echelle,32*echelle,32*echelle);ctx.strokeRect(-16*echelle,-16*echelle,32*echelle,32*echelle);ctx.restore();
     }
 
-    if (t < T_FIN){ requestAnimationFrame(trace); }
-    else if (!fini){ fini = true; ctx.clearRect(0,0,L,H); }
+    // boules : trajectoires longues et colorées, puis impact dans les bols
+    const cibles=[[-222,38],[-188,38],[188,38],[222,38]];
+    const departs=[[-L/echelle*.58,-H/echelle*.25],[-L/echelle*.52,H/echelle*.02],[L/echelle*.58,-H/echelle*.22],[L/echelle*.52,H/echelle*.04]];
+    const ctrls=[[-300,-80],[-315,110],[300,-85],[315,110]];
+    const po=easeInOut(clamp((t-380)/1450,0,1));
+    for(let i=0;i<4;i++){
+      const a={x:sx(departs[i][0]),y:sy(departs[i][1])}, b={x:sx(ctrls[i][0]),y:sy(ctrls[i][1])}, c={x:sx(cibles[i][0]),y:sy(cibles[i][1])};
+      // trail
+      ctx.save();ctx.lineCap="round";ctx.lineWidth=3.6*echelle;ctx.shadowBlur=16;ctx.shadowColor=couleurs[i];
+      for(let k=8;k>=1;k--){
+        const pp=clamp(po-k*.018,0,1), q=pointBezier(a,b,c,pp);ctx.globalAlpha=.055*(9-k);ctx.strokeStyle=couleurs[i];ctx.beginPath();ctx.moveTo(q.x,q.y);const q2=pointBezier(a,b,c,clamp(pp+.035,0,1));ctx.lineTo(q2.x,q2.y);ctx.stroke();
+      }
+      ctx.restore();
+      const q=pointBezier(a,b,c,po);cercle(q.x,q.y,12*echelle,couleurs[i],clamp((t-240)/380,0,1));
+    }
+
+    // impact final : onde dorée + flash du joyau
+    const imp=clamp((t-T_ASSEMBLAGE)/(T_IMPACT-T_ASSEMBLAGE),0,1);
+    if(imp>0){
+      ctx.save();ctx.globalAlpha=(1-imp)*.75;ctx.strokeStyle="#F7D883";ctx.lineWidth=2;ctx.shadowBlur=18;ctx.shadowColor="#F2C45E";
+      ctx.beginPath();ctx.ellipse(cx,sy(126),40+imp*Math.min(L,H)*.5,14+imp*Math.min(L,H)*.12,0,0,Math.PI*2);ctx.stroke();ctx.restore();
+      const r=ctx.createRadialGradient(cx,sy(-127),0,cx,sy(-127),110*echelle*(.3+imp));
+      r.addColorStop(0,"rgba(255,255,255,"+(.9*(1-imp))+")");r.addColorStop(.18,"rgba(200,161,255,"+(.55*(1-imp))+")");r.addColorStop(1,"rgba(126,76,228,0)");ctx.fillStyle=r;ctx.fillRect(0,0,L,H);
+    }
+  }
+
+  function trace(){
+    const t=performance.now()-debut;ctx.clearRect(0,0,L,H);dessinerLogo(t);
+    if(t<T_FIN){requestAnimationFrame(trace);}else if(!fini){fini=true;ctx.clearRect(0,0,L,H);}
   }
   requestAnimationFrame(trace);
 
@@ -973,10 +1054,10 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (el) el.classList.add("on");
     }, delai);
   }
-  allumer("intro-logo", T_FLASH - 120);
-  allumer("phrase-1",  T_FLASH + 380);
-  allumer("phrase-2",  T_FLASH + 900);
-  allumer("intro-cta", T_FLASH + 1300);
+  allumer("intro-logo", 2350);
+  allumer("phrase-1",  2850);
+  allumer("phrase-2",  3250);
+  allumer("intro-cta", 3550);
 })();
 
 /* ---------------- les chiffres de l'accueil ----------------
@@ -1009,10 +1090,15 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     el.style.setProperty("--accent", d.accent);
     el.innerHTML =
       '<svg class="marque-div" viewBox="0 0 100 100" fill="none" aria-hidden="true">' +
-        '<g stroke="currentColor" stroke-width="7" stroke-linecap="round">' +
-          '<path d="M18 12 C30 46, 44 56, 50 88"/><path d="M39 7 C44 42, 48 56, 50 88"/>' +
-          '<path d="M61 7 C56 42, 52 56, 50 88"/><path d="M82 12 C70 46, 56 56, 50 88"/>' +
-        '</g></svg>' +
+        '<g stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">' +
+          '<path d="M18 31 Q33 25 43 31 L50 23 L57 31 Q67 25 82 31"/>' +
+          '<path d="M18 31 L27 53 M18 31 L16 53 M82 31 L73 53 M82 31 L84 53"/>' +
+          '<path d="M15 55 Q27 67 43 55 M57 55 Q73 67 85 55"/>' +
+          '<path d="M50 31 C49 45 49 61 47 74 Q50 78 53 74 C51 61 51 45 50 31"/>' +
+          '<path d="M42 79 Q50 74 58 79 L63 84 H37 Z"/>' +
+        '</g>' +
+        '<path d="M50 20 L57 28 L50 36 L43 28 Z" fill="currentColor" opacity=".82"/>' +
+      '</svg>' +
       '<h3><small></small><span class="nom-div"></span></h3>' +
       '<div><p class="desc"></p><ul class="liste"></ul></div>' +
       '<span class="statut"></span>';
