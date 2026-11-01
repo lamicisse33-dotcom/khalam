@@ -855,14 +855,14 @@ const PRODUCTIONS = [
 /* Les applications ne sont pas des jeux : elles ont leur propre rubrique, sous
    les jeux. Les mélanger dirait au visiteur que KHALAM ne fait que jouer. */
 const APPLICATIONS = [
+  /* BIA en premier : c'est l'application phare, et sa porte d'entrée est sa page
+     khalam.app/bia (pas l'adresse de l'app), pour que le visiteur comprenne avant d'entrer. */
+  { nom:"BIA", sous:"khalam.app/bia", type:"Intelligence artificielle · wolof", dispo:true,
+    desc:"Parle. Simplifie ta vie. En wolof ou en français : elle écrit tes messages et tes devis, lit tes papiers, programme tes rappels, tient ton carnet de commerce et te conseille comme une amie." },
   { nom:"Géwel", sous:"gewel.khalam.app", type:"Assistant vocal", dispo:true,
     desc:"Il décroche quand vous ne pouvez pas, demande qui appelle et pourquoi, et vous rend la ligne si l'appel compte. Interprète en direct pendant l'appel, sur demande." },
   { nom:"BIBA", sous:"biba.khalam.app", type:"Intelligence artificielle · KHALAM", dispo:true,
     desc:"L'assistante de la maison. Posez votre question comme vous la diriez à quelqu'un : elle écoute, elle comprend, elle répond en wolof à voix haute. Installable pour votre entreprise, sur demande." },
-  /* BIA manquait ici, alors que c'est la plus complète des trois : ajoutée le
-     10 septembre 2026. Une application absente du site n'existe pour personne. */
-  { nom:"BIA", sous:"khalam.app/bia", type:"Intelligence artificielle · wolof", dispo:true,
-    desc:"Parlez wolof, elle fait le reste : un devis, une lettre, un message propre en français à envoyer, ou la lecture à voix haute d'un papier photographié." },
   { nom:"L'Interprète Français ↔ Wolof", sous:"wolof.khalam.app", type:"Traduction vocale", dispo:true,
     desc:"Chacun parle sa langue ; le téléphone lit la traduction à voix haute." }
 ];
