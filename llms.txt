@@ -18,6 +18,8 @@
 
 ## Applications
 
+- [BIA](https://khalam.app/bia), assistante personnelle gratuite de KHALAM qui parle wolof et français, créée à Dakar et disponible au Sénégal. Échange vocal, messages, lecture de documents et rappels. En phase de test, sur invitation avec un code émis par KHALAM.
+
 - [Géwel](https://gewel.khalam.app/), assistant vocal conçu au Sénégal.
 - [Interprète français-wolof](https://wolof.khalam.app/), traduction vocale utilisable dans le navigateur.
 
