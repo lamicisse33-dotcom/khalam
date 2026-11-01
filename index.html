@@ -780,7 +780,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 </main>
 
 <footer class="pied">
-  <span>© <span id="annee">2026</span> KHALAM — créations originales, tous droits réservés</span>
+  <span>© 2014 KHALAM — créations originales, tous droits réservés</span>
   <span class="devise"><a href="/bia">BIA — IA gratuite en wolof au Sénégal</a></span>
   <span><a href="#haut">Haut de page</a></span>
 </footer>
@@ -1227,8 +1227,6 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
   const mail = document.getElementById("lien-mail");
   if (mail) mail.href = "mailto:" + MAISON.email;
-  const annee = document.getElementById("annee");
-  if (annee) annee.textContent = new Date().getFullYear();
 
   const tete = document.getElementById("tete");
   if (tete){
