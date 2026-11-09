@@ -67,6 +67,10 @@
 @media (min-width:1600px){html{zoom:1.22}}
 @media (min-width:2200px){html{zoom:1.6}}
 @media (min-width:3200px){html{zoom:2.1}}
+    /* Visage vidéo : jamais de bouton Play (iPhone en économie d'énergie). */
+    video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none}
+    .hero video{pointer-events:none}
+    .portrait .visage-fixe{position:absolute;inset:0}
   </style>
   <script type="application/ld+json">
 {
@@ -160,7 +164,7 @@
       <div class="hero-art" aria-label="Illustration de BIA, ton assistante vocale">
         <div class="halo"></div><span class="spark one">✳</span><span class="spark two">✦</span>
         <div class="float a"><b>Wolof · Français</b>Ta langue, naturellement</div>
-        <div class="portrait"><video src="/bia-media/bia-visage.mp4" poster="/bia-media/bia-visage.webp" width="228" height="270" autoplay muted loop playsinline preload="metadata" aria-label="BIA, en tenue bleu nuit, qui parle"></video></div>
+        <div class="portrait"><video src="/bia-media/bia-visage.mp4" poster="/bia-media/bia-visage.webp" width="228" height="270" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" aria-label="BIA, en tenue bleu nuit, qui parle"></video></div>
         <div class="float b"><b>À l’écoute</b><span class="sound" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
       </div>
     </section>
@@ -292,6 +296,42 @@
   }
   var boutons=document.querySelectorAll('[data-partager]');
   for(var i=0;i<boutons.length;i++)boutons[i].addEventListener('click',partager);
+})();
+/* ── LE VISAGE TOURNE EN BOUCLE, OU RESTE FIXE — JAMAIS DE BOUTON PLAY ────
+   Sur iPhone, quand Safari refuse la lecture automatique (économie
+   d'énergie), une vidéo à l'arrêt montre un gros bouton Play. Si play() est
+   refusé, l'image fixe recouvre aussitôt la vidéo, et on réessaie une fois,
+   au premier toucher, clic ou défilement. Si la vidéo tourne, l'image
+   s'efface ; sinon la vidéo est retirée et l'image reste. */
+(function(){
+  var v=document.querySelector('.portrait video');if(!v)return;
+  var cadre=v.parentNode,image=null;
+  v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');
+  function couvrir(){
+    if(image)return;
+    image=document.createElement('img');image.className='visage-fixe';
+    image.src='/bia-media/bia-visage.webp';image.width=228;image.height=270;
+    image.alt=v.getAttribute('aria-label')||'BIA';
+    cadre.appendChild(image);
+  }
+  function decouvrir(){if(image){image.remove();image=null;}}
+  function lire(){
+    v.muted=true;var p;
+    try{p=v.play();}catch(e){return Promise.reject(e);}
+    return p&&p.then?p:(v.paused?Promise.reject():Promise.resolve());
+  }
+  function abandonner(){couvrir();v.pause();v.removeAttribute('src');v.load();v.remove();}
+  function refuse(){
+    couvrir();
+    var evts=['touchstart','click','scroll'],fait=false;
+    function retenter(){
+      if(fait)return;fait=true;
+      evts.forEach(function(n){window.removeEventListener(n,retenter,{passive:true});});
+      lire().then(function(){if(v.paused)abandonner();else decouvrir();},abandonner);
+    }
+    evts.forEach(function(n){window.addEventListener(n,retenter,{passive:true});});
+  }
+  lire().then(function(){if(v.paused)refuse();},refuse);
 })();
 /* ── DEMANDER UN CODE ───────────────────────────────────────────────────────
    Cette page est servie par GitHub Pages : il n'y a pas de serveur dessous.
