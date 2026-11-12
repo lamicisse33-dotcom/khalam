@@ -73,3 +73,39 @@ test('écran 1280×800 : plateau visible, conquêtes à droite, aucune erreur', 
   assert.deepEqual(erreurs, []);
   await ctx.close();
 });
+
+test('installation : manifeste « Pylo », service worker à la VERSION du moteur, « PYLO 1.4 » partout', async () => {
+  const { ctx, p, erreurs } = await ouvrir(390, 844);
+  const m = await p.evaluate(async () => { const l = document.querySelector('link[rel=manifest]'); return (await fetch(l.href)).json(); });
+  assert.equal(m.name, 'Pylo'); assert.equal(m.display, 'standalone'); assert.equal(m.start_url, '/jeux/pylo/');
+  for (const i of m.icons) assert.equal((await fetch(base + i.src)).status, 200, i.src);
+  const reg = await p.evaluate(async () => { const r = await navigator.serviceWorker.ready; return r.scope; });
+  assert.match(reg, /\/jeux\/pylo\/$/);
+  const sw = await (await fetch(`${base}/jeux/pylo/sw.js`)).text();
+  const version = await p.evaluate(() => Pilo.VERSION);
+  assert.equal(version, '1.4');
+  assert.match(sw, new RegExp(`const VERSION = 'pylo-${version.replace('.', '\\.')}'`), 'le service worker suit le moteur');
+  assert.match(await p.textContent('#sessionSummary'), /^PYLO 1\.4/);
+  assert.deepEqual(erreurs, []);
+  await ctx.close();
+});
+
+test('partager : feuille de partage, repli copier, et le résultat après une partie', async () => {
+  const { ctx, p } = await ouvrir(390, 844, () => { window.__partages = []; navigator.share = (d) => { window.__partages.push(d); return Promise.resolve(); }; });
+  await p.click('#shareButton');
+  let d = (await p.evaluate(() => window.__partages))[0];
+  assert.equal(d.text, 'Pylo par KHALAM — khalam.app/jeux/pylo'); assert.equal(d.url, 'https://khalam.app/jeux/pylo/');
+  await p.evaluate(() => { g.mode = 'ai'; g.history = Array.from({ length: 23 }, () => ({ move: { piece: 1, taken: 0, from: 52, to: 44, capture: null } })); endGame({ winner: 1, reason: 'conquest' }); });
+  await p.click('#shareResult');
+  d = (await p.evaluate(() => window.__partages)).at(-1);
+  assert.match(d.text, /^J’ai gagné contre l’ordinateur \(\w+\) par conquête, en 23 coups ! Pylo par KHALAM — khalam\.app\/jeux\/pylo$/);
+  await ctx.close();
+  // Sans feuille de partage : le texte est copié.
+  const c = await navigateur.newContext({ viewport: { width: 390, height: 844 }, permissions: ['clipboard-read', 'clipboard-write'] });
+  await c.addInitScript(() => { delete Navigator.prototype.share; });
+  const q = await c.newPage(); await q.goto(`${base}/jeux/pylo/`); await q.waitForSelector('#board .cell');
+  await q.click('#shareButton');
+  await q.waitForFunction(() => document.getElementById('messageTitle').textContent === 'Copié');
+  assert.equal(await q.evaluate(() => navigator.clipboard.readText()), 'Pylo par KHALAM — khalam.app/jeux/pylo');
+  await c.close();
+});

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Pylo : le jeton royal (couronne du Roi, PiloIcons.king) sur le bois du plateau. -->
+  <defs>
+    <radialGradient id="fond" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#3a2c18"/><stop offset="1" stop-color="#17160f"/></radialGradient>
+    <radialGradient id="ivoire" cx="33%" cy="22%" r="85%"><stop offset="0" stop-color="#fff9e9"/><stop offset="1" stop-color="#d2bb8a"/></radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#fond)"/>
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#d2b275" stroke-width="6" opacity=".55"/>
+  <circle cx="256" cy="256" r="168" fill="url(#ivoire)" stroke="#dfbe7a" stroke-width="5"/>
+  <circle cx="256" cy="256" r="154" fill="none" stroke="#ae8b47" stroke-width="7" opacity=".7"/>
+  <g transform="translate(256 248) scale(6.4) translate(-20 -21)" fill="none" stroke="#86632d" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 13l7 6 5-11 5 11 7-6-3 17H11z"/><path d="M12 34h16M12 27h16"/>
+  </g>
+</svg>

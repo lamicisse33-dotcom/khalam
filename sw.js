@@ -11,7 +11,8 @@ self.addEventListener("install", function (e) {
 self.addEventListener("activate", function (e) {
   e.waitUntil(
     caches.keys().then(function (cles) {
-      return Promise.all(cles.map(function (k) { return k === CACHE ? null : caches.delete(k); }));
+      // Seulement les anciens caches du site : ceux des jeux (pylo-…) leur appartiennent.
+      return Promise.all(cles.map(function (k) { return k === CACHE || k.indexOf("khalam-") !== 0 ? null : caches.delete(k); }));
     }).then(function () { return self.clients.claim(); })
   );
 });

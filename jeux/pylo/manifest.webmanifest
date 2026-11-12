@@ -1,0 +1,20 @@
+{
+  "name": "Pylo",
+  "short_name": "Pylo",
+  "description": "Pylo par KHALAM — deux rois à protéger, deux palais à conquérir.",
+  "id": "/jeux/pylo/",
+  "start_url": "/jeux/pylo/",
+  "scope": "/jeux/pylo/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#17160f",
+  "theme_color": "#16150f",
+  "lang": "fr",
+  "categories": ["games"],
+  "icons": [
+    { "src": "/jeux/pylo/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/jeux/pylo/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/jeux/pylo/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/jeux/pylo/icone.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
