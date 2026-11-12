@@ -74,7 +74,7 @@ test('écran 1280×800 : plateau visible, conquêtes à droite, aucune erreur', 
   await ctx.close();
 });
 
-test('installation : manifeste « Pylo », service worker à la VERSION du moteur, « PYLO 1.4 » partout', async () => {
+test('installation : manifeste « Pylo », service worker à la VERSION du moteur, « PYLO 1.5 » partout', async () => {
   const { ctx, p, erreurs } = await ouvrir(390, 844);
   const m = await p.evaluate(async () => { const l = document.querySelector('link[rel=manifest]'); return (await fetch(l.href)).json(); });
   assert.equal(m.name, 'Pylo'); assert.equal(m.display, 'standalone'); assert.equal(m.start_url, '/jeux/pylo/');
@@ -83,9 +83,9 @@ test('installation : manifeste « Pylo », service worker à la VERSION du moteu
   assert.match(reg, /\/jeux\/pylo\/$/);
   const sw = await (await fetch(`${base}/jeux/pylo/sw.js`)).text();
   const version = await p.evaluate(() => Pilo.VERSION);
-  assert.equal(version, '1.4');
+  assert.equal(version, '1.5');
   assert.match(sw, new RegExp(`const VERSION = 'pylo-${version.replace('.', '\\.')}'`), 'le service worker suit le moteur');
-  assert.match(await p.textContent('#sessionSummary'), /^PYLO 1\.4/);
+  assert.match(await p.textContent('#sessionSummary'), /^PYLO 1\.5/);
   assert.deepEqual(erreurs, []);
   await ctx.close();
 });
@@ -108,4 +108,38 @@ test('partager : feuille de partage, repli copier, et le résultat après une pa
   await q.waitForFunction(() => document.getElementById('messageTitle').textContent === 'Copié');
   assert.equal(await q.evaluate(() => navigator.clipboard.readText()), 'Pylo par KHALAM — khalam.app/jeux/pylo');
   await c.close();
+});
+
+
+test('le match : revanche aux couleurs échangées, score 1–0 puis 1–1, belle tirée au sort ; couleurs alternées', async () => {
+  const { ctx, p, erreurs } = await ouvrir(390, 844, () => { try { localStorage.setItem('pilo_couleur_15', '2'); } catch {} });
+  // Couleur précédente Ébène : la nouvelle partie se joue en Ivoire.
+  assert.equal(await p.evaluate(() => g.humain), 1);
+  const finir = (gagnant) => p.evaluate((w) => { stopAuto(); endGame({ winner: w === 'vous' ? g.humain : 3 - g.humain, reason: 'conquest' }); }, gagnant);
+  await finir('vous');
+  assert.equal(await p.textContent('#matchScore'), 'MANCHE 1 · VOUS 1–0 ORDINATEUR');
+  assert.equal(await p.textContent('#rematch'), 'Revanche');
+  await p.evaluate(() => { document.querySelectorAll('dialog[open]').forEach((d) => d.close()); document.getElementById('rematch').click(); });
+  assert.equal(await p.evaluate(() => g.humain), 2, 'la revanche échange les couleurs');
+  assert.ok(await p.evaluate(() => document.getElementById('board').classList.contains('retourne')), 'vos jetons restent en bas');
+  assert.match(await p.textContent('#campBas'), /ÉBÈNE/);
+  assert.equal(await p.textContent('#matchScore'), 'MANCHE 2 · VOUS 1–0 ORDINATEUR');
+  // L'ordinateur (Ivoire) commence ; ensuite c'est à vous, avec les jetons ébène.
+  await p.waitForFunction(() => g.history.length >= 1 && g.state.turn === 2 && !g.busy, null, { timeout: 15000 });
+  assert.ok(await p.evaluate(() => canPlay()), 'vous jouez Ébène');
+  await finir('ordinateur');
+  assert.equal(await p.textContent('#matchScore'), 'MANCHE 2 · VOUS 1–1 ORDINATEUR');
+  assert.equal(await p.textContent('#rematch'), 'Jouer la belle');
+  await p.evaluate(() => { document.querySelectorAll('dialog[open]').forEach((d) => d.close()); document.getElementById('rematch').click(); });
+  assert.equal(await p.textContent('#matchScore'), 'BELLE · VOUS 1–1 ORDINATEUR');
+  assert.ok([1, 2].includes(await p.evaluate(() => g.humain)));
+  await finir('vous');
+  assert.equal(await p.textContent('#matchScore'), 'BELLE · VOUS 2–1 ORDINATEUR');
+  // Match fini : une nouvelle revanche ouvre un nouveau match, couleurs encore échangées.
+  const avant = await p.evaluate(() => g.humain);
+  await p.evaluate(() => { document.querySelectorAll('dialog[open]').forEach((d) => d.close()); document.getElementById('rematch').click(); });
+  assert.equal(await p.evaluate(() => g.humain), 3 - avant);
+  assert.equal(await p.evaluate(() => match.manche), 1);
+  assert.deepEqual(erreurs, []);
+  await ctx.close();
 });

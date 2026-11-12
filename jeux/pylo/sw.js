@@ -1,6 +1,6 @@
 /* PYLO — service worker. VERSION suit le moteur (Pilo.VERSION) : la changer
    à chaque mise en ligne, sinon les téléphones gardent l'ancienne page. */
-const VERSION = 'pylo-1.4';
+const VERSION = 'pylo-1.5';
 const FICHIERS = ['./', './index.html', './manifest.webmanifest', './icone.svg', './icone-192.png', './icone-512.png', './icone-maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {

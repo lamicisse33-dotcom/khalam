@@ -1,5 +1,5 @@
 /* PYLO 1.4 — la règle d'honneur : coup interdit, pris au piège, pat,
-   dernier souffle ; l'IA et le worker ne jouent que des coups légaux. */
+   conquête tenue ; l'IA et le worker ne jouent que des coups légaux. */
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { charger, html } from './charger.mjs';
@@ -52,17 +52,28 @@ test('pat : aucun roi menacé et aucun coup légal → partie nulle', () => {
   assert.match(r.text, /Règle d’honneur : ce jeton protège un de vos rois/);
 });
 
-test('dernier souffle : pris au piège, on peut encore capturer un roi adverse', () => {
+test('plus de dernier souffle : pris au piège, même avec une prise de roi sous la main', () => {
   const s = poser([...COIN, '1RB1', '2SC1', '2GA2', '2GB2', '2GC2', '2GB3', '2GD3', '1SD5', '2RE5', '2RA8']);
   assert.equal(E.kingCapturable(s, 1), true, 'le Roi B1 est menacé par la Sentinelle C1');
-  egal(coups(E.rawMoves(s)), ['D5C5', 'D5F5']);
-  const l = E.legalMoves(s);
-  egal(coups(l), ['D5F5'], 'seule la prise du roi E5 reste');
-  assert.equal(l[0].souffle, true);
-  assert.equal(M.result(s), null, 'pas pris au piège : la partie continue');
-  const apres = E.apply(s, l[0]);
-  egal(E.outcome(apres), { winner: 1, reason: 'royal' }, 'le roi capturé décide la partie');
-  egal(M.result({ ...s, souffle: false }), { winner: 2, reason: 'piege' }, 'sans dernier souffle : pris au piège');
+  egal(coups(E.rawMoves(s)), ['D5C5', 'D5F5'], 'la prise du roi E5 existe parmi les coups bruts…');
+  egal(E.legalMoves(s), [], '… mais elle laisserait le Roi B1 capturable : interdite');
+  egal(M.result(s), { winner: 2, reason: 'piege' });
+});
+
+test('conquête tenue : deux palais occupés, la victoire attend le tour suivant', () => {
+  // Les rois ivoire B6 (Spiritualité) et F6 (Amour) occupent les deux palais ; c'est à Ébène.
+  const s = poser(['1RB6', '1RF6', '2RA8', '2RH8', '1GH1'], 'honneur', 2);
+  assert.equal(E.outcome(s), null, 'pas encore : l’adversaire a un coup pour réagir');
+  assert.ok(E.legalMoves(s).length > 0);
+  const tenu = E.apply(s, E.legalMoves(s).find((m) => E.coord(m.from) === 'H8'));
+  egal(E.outcome(tenu), { winner: 1, reason: 'conquest' }, 'le tour revient, les palais sont tenus : conquête');
+  egal(E.outcome({ ...s, rule: 'classique' }), { winner: 1, reason: 'conquest' }, 'en classique, immédiate');
+  // Aucun coup pour réagir : la conquête tient.
+  const bloque = poser(['1RB6', '1RF6', '2RA8', '2RH8', '1GH1'], 'honneur', 2);
+  bloque.b[E.square('A', 8)] = 0; bloque.b[E.square('H', 8)] = 0; bloque.b[E.square('A', 1)] = E.token(2, 0); bloque.b[E.square('B', 1)] = E.token(2, 0);
+  bloque.b[E.square('A', 2)] = E.token(1, 1); bloque.b[E.square('B', 2)] = E.token(1, 1); bloque.b[E.square('A', 3)] = E.token(1, 1); bloque.b[E.square('B', 3)] = E.token(1, 1); bloque.b[E.square('C', 2)] = E.token(1, 1); bloque.b[E.square('C', 3)] = E.token(1, 1); bloque.b[E.square('D', 3)] = E.token(1, 1);
+  egal(E.legalMoves(bloque), [], 'Ébène n’a aucun coup');
+  egal(M.result(bloque), { winner: 1, reason: 'conquest' }, 'la conquête tient, ce n’est pas un pat');
 });
 
 test('l’IA ne joue que des coups légaux sous la règle d’honneur', () => {

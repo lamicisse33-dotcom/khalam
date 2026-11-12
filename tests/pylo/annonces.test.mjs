@@ -102,3 +102,16 @@ test('la page : voix active par défaut, en français ; ouverture et pendule ann
   assert.match(page, /'À toi\.':'À l’ordinateur\.'/);
   assert.match(page, /'Trente secondes\.'/); assert.match(page, /'Dix secondes\.'/);
 });
+
+
+test('conquête tenue : « Deux palais occupés… il doit tenir. », puis « Conquête brisée. » si un roi est délogé', () => {
+  const s = { ...poser([...ROIS, '1RB6:Amour', '1RF5:Argent'], 1), rule: 'honneur' };
+  const { m, n } = jouer(s, 'F5', 'F6');
+  assert.deepEqual(textes(M.evenements(s, m, n, 1)), [{ kind: 'son', text: 'tambour' }, { kind: 'voix', text: 'Deux palais occupés… il doit tenir.' }]);
+  assert.equal(E.outcome(n), null, 'pas encore gagné');
+  assert.equal(textes(M.evenements(s, m, n, 2)).at(-1).text, 'Deux palais occupés par l’adversaire… déloge un roi !');
+  const r = { ...n, turn: 1 };
+  const sortie = jouer(r, 'F6', 'E7');
+  const l = textes(M.evenements(r, sortie.m, sortie.n, 1)).map((x) => x.text);
+  assert.ok(l.includes('Conquête brisée.')); assert.ok(!l.includes('Palais perdu.'));
+});
