@@ -94,3 +94,11 @@ test('la page : battement, tambour, roulement synthétisés, aucun fichier son',
   for (const nom of ['battement', 'tambour', 'roulement']) assert.match(page, new RegExp(`function ${nom}\\(`), nom);
   assert.doesNotMatch(page, /new Audio\(|\.mp3|\.wav|\.ogg/, 'aucun fichier son');
 });
+
+test('la page : voix active par défaut, en français ; ouverture et pendule annoncées', () => {
+  const page = html();
+  assert.match(page, /settings=\{[^}]*voice:true/);
+  assert.match(page, /lang='fr-FR'/);
+  assert.match(page, /'À toi\.':'À l’ordinateur\.'/);
+  assert.match(page, /'Trente secondes\.'/); assert.match(page, /'Dix secondes\.'/);
+});
