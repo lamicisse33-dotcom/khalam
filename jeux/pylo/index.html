@@ -33,6 +33,87 @@
  .board-column{order:1!important}#players{order:2!important;margin:8px 0 2px!important;gap:6px!important}
  .player-card,.player-card:first-child{padding:5px 0!important;border-bottom:0!important}.conquests{margin-top:4px!important}.conquest{padding:3px 2px!important}.conquest small{font-size:9px!important}.conquest b{font-size:8px!important}
  .analysis-card{order:3}}
+/* PYLO 1.5.1 — tailles de plateau et commandes adaptées à l'écran. */
+.app-shell{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));padding-bottom:env(safe-area-inset-bottom)}
+.board-column{min-width:0;max-width:none;display:flex;flex-direction:column}
+.board-column>*{flex-shrink:0}
+.board-strip{height:auto;min-height:26px;gap:6px;flex-wrap:wrap;letter-spacing:.3px;line-height:1.4;padding:3px 0}
+.board-strip>span{white-space:nowrap}
+.danger-legend[hidden]{display:none!important}
+.controls{order:1;flex-wrap:wrap;margin:8px 0}
+.commentary{order:2;height:auto;min-height:78px;max-height:150px}
+.context-note{order:3}.result-actions{order:4}
+.interaction-bar>span{min-width:0;white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+.interaction-bar button{white-space:normal!important;max-width:130px!important}
+.commentary>div{min-width:0}
+.lesson-bar{max-width:100%}
+dialog{overflow:auto;overscroll-behavior:contain;max-height:calc(100dvh - 24px);max-width:min(640px,calc(100vw - 24px))}
+.close{position:sticky;top:0;float:right;z-index:2;background:#211f16}
+@media(min-width:761px){
+ .app-shell{max-width:1600px;padding-inline:24px}
+ .arena{grid-template-columns:180px minmax(0,min(720px,calc(100dvh - 305px))) 235px;gap:24px}
+ .board-column{width:100%;max-width:none}
+ .guide-panel,.right-panel{padding-top:0}
+ .interaction-bar{min-height:56px;margin-bottom:4px}
+ .mode-nav{margin:10px auto}
+}
+@media(min-width:761px) and (max-width:1180px){.arena{grid-template-columns:minmax(0,min(690px,calc(100dvh - 305px))) 220px;gap:20px}}
+@media(max-width:760px){
+ .app-shell{padding-inline:max(8px,env(safe-area-inset-left))}
+ .topbar{height:49px}.brand{font-size:26px}.brand small{margin-top:3px}
+ .mode-nav{margin:5px 0;max-width:none}.mode-nav button{min-width:0;padding:7px 3px}.mode-nav small{display:none}.mode-nav span{font-size:12px}
+ .welcome{white-space:normal;flex-wrap:wrap}.welcome-texte{font-size:11px}
+ .board-column{width:100%;max-width:560px;align-self:center}
+ .interaction-bar{align-items:center;padding:6px!important}.interaction-bar>span{font-size:12px;line-height:1.4}.interaction-bar button{font-size:10px;flex-basis:88px;padding:7px 6px!important}
+ .board-strip{font-size:10px;min-height:22px;gap:3px}.mode-pill{font-size:9px;letter-spacing:0}
+ .board-frame{padding-inline:7px}.board-engraving{height:18px}.board-footer{height:16px;font-size:7px}
+ .controls{gap:6px;margin:6px 0}.controls button,.controls .primary{padding:9px 10px;font-size:11px;min-height:36px}.controls label{margin-left:auto}
+ .commentary{min-height:75px;max-height:150px;padding:8px 0}.commentary strong{font-size:17px}
+ .context-note{min-height:0;margin:6px 0}
+ #players{max-width:560px;align-self:center}.analysis-card,.history-panel{max-width:560px;align-self:center}
+ footer{margin-top:12px;letter-spacing:0}
+}
+/* Un téléphone tourné doit conserver son plateau entier à l'écran. */
+@media(orientation:landscape) and (max-height:600px) and (min-width:550px){
+ .app-shell{max-width:1100px;padding-inline:max(10px,env(safe-area-inset-left))}
+ .topbar{height:40px;gap:12px}.brand{font-size:24px}.brand small{font-size:6px;margin-top:2px}.tagline{display:none}
+ .mode-nav{margin:4px 0;max-width:none;gap:6px}.mode-nav button{min-width:0;flex:1;text-align:center;padding:5px}.mode-nav small{display:none}.mode-nav span{font-size:12px}
+ .welcome{display:none!important}
+ .arena{display:block}.guide-panel{display:none}
+ .board-column{display:grid;grid-template-columns:min(48vw,calc(100dvh - 90px)) minmax(0,1fr);column-gap:16px;align-items:start;width:100%;max-width:none}
+ .board-frame{grid-column:1;grid-row:1 / 12;padding-inline:6px}.board-engraving{height:17px;font-size:9px}.board-footer{height:15px;font-size:7px}
+ .board-column>:not(.board-frame){grid-column:2;order:initial}
+ .interaction-bar{min-height:0!important;padding:6px!important;margin:0 0 4px!important}.interaction-bar>span{font-size:12px}.interaction-bar button{padding:7px!important;font-size:10px}
+ .board-strip{min-height:20px;font-size:10px}.mode-pill{font-size:9px}
+ .danger-legend{height:auto;font-size:10px}.controls{grid-row:5;margin:5px 0;gap:5px}.controls button,.controls .primary{padding:7px 9px;min-height:32px;font-size:11px}.controls label{font-size:10px}.controls select{font-size:11px}
+ .commentary{grid-row:6;min-height:0;max-height:100px;padding:6px 0}.commentary strong{font-size:16px}.commentary p{font-size:11px;line-height:1.4}.context-note{font-size:10px;min-height:0;margin:4px 0}
+ .lesson-bar{margin:2px 0;padding:5px}.lesson-bar p{font-size:11px;margin:3px 0}.lesson-bar strong{font-size:14px}
+ .right-panel{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding-top:12px}#players{display:flex;gap:16px;grid-column:1 / -1;margin:0!important;max-width:none}.player-card{flex:1;min-width:0}.analysis-card,.history-panel{margin:0;max-width:none}
+ .rank,.file{font-size:8px}.palace-symbol{font-size:24px}
+}
+@media(min-width:2000px) and (min-height:1000px){
+ .app-shell{max-width:3000px;padding-inline:3vw}
+ .topbar{height:clamp(80px,5vh,130px)}.brand{font-size:clamp(40px,2vw,72px)}.brand small{font-size:12px}.tagline{font-size:20px}
+ .header-actions{gap:16px}.icon-button{width:52px;height:52px;font-size:25px}.quiet-button{font-size:18px}
+ .mode-nav{margin:20px auto;gap:20px}.mode-nav button{min-width:220px;padding:14px 22px}.mode-nav span{font-size:22px}.mode-nav small{font-size:16px}
+ .welcome{max-width:1800px;padding:12px 18px}.welcome-texte{font-size:20px}.welcome>button{font-size:18px;padding:12px 16px}
+ .arena{grid-template-columns:minmax(260px,360px) minmax(0,min(1450px,calc(100dvh - 470px))) minmax(320px,440px);gap:3vw}
+ .eyebrow{font-size:17px}.type-row{padding:24px 0}.type-row b{font-size:22px}.type-row small,.objective p{font-size:20px}.text-button{font-size:18px}
+ .interaction-bar{min-height:85px;padding:16px}.interaction-bar>span{font-size:20px}.interaction-bar button{font-size:18px;max-width:220px!important;padding:14px}
+ .board-strip{min-height:42px;font-size:18px}.mode-pill,.legend-inline{font-size:17px}.board-frame{padding-inline:18px}.board-engraving{height:40px;font-size:20px}.board-footer{height:32px;font-size:14px}.rank,.file{font-size:16px}.palace-symbol{font-size:60px}.royal-symbol{width:22px;height:22px}
+ .controls button,.controls .primary,.controls select,.controls label{font-size:19px}.controls button,.controls .primary{padding:16px 20px}.controls{gap:12px;margin:14px 0}
+ .player-head{font-size:23px}.clock{font-size:20px}.conquest small{font-size:20px}.conquest b{font-size:16px}.army-count{font-size:18px}.conquest{grid-template-columns:36px 1fr}.conquest>span{width:36px;height:36px}
+ .analysis-card{padding:24px}.analysis-card h1{font-size:36px}.analysis-card p,.alternative,.history-panel li,.history-panel li b{font-size:20px}.history-panel li em{font-size:17px}.commentary{min-height:120px;max-height:220px}.commentary strong{font-size:32px}.commentary p,.context-note{font-size:20px}
+ footer,footer>span:nth-child(2),.footer-button{font-size:17px}
+}
+
+
+@media(min-width:761px) and (min-height:601px) and (max-width:1999px){.topbar{height:56px}.mode-nav{margin:5px auto}.mode-nav button{padding-block:6px}.welcome{margin:4px auto 6px}.right-panel>.interaction-bar{margin-bottom:12px}}
+@media(max-width:760px) and (max-height:650px) and (orientation:portrait){.welcome{display:none!important}.topbar{height:44px}.mode-nav{margin:3px 0}.interaction-bar{margin-bottom:3px!important}.board-column{width:min(100%,calc(100dvh - 260px))}}
+@media(orientation:landscape) and (max-height:600px) and (min-width:550px){.board-column{grid-template-columns:min(48vw,calc(100dvh - 102px)) minmax(0,1fr)}}
+
+.interaction-bar{height:auto}.interaction-bar>span{max-height:none}
+@media(min-width:761px) and (min-height:601px){.right-panel>.interaction-bar{flex-direction:column;align-items:stretch}.right-panel>.interaction-bar button{max-width:none!important}}
 </style></head><body>
 <div class="app-shell"><header class="topbar"><a class="brand" href="#">PYLO<small>PAR KHALAM</small></a><p class="tagline">Deux rois à protéger.<br><strong>Deux palais à conquérir.</strong></p><div class="header-actions"><button id="sound" class="icon-button" aria-label="Activer ou désactiver les sons" title="Sons">♪</button><button id="shareButton" class="icon-button" aria-label="Partager Pylo" title="Partager">⤴</button><button id="settingsButton" class="icon-button" aria-label="Réglages">⚙</button><button id="helpButton" class="quiet-button">Les règles</button></div></header>
 <nav class="mode-nav" aria-label="Modes de jeu"><button data-mode="observe"><span>Observer</span><small>Partie commentée</small></button><button data-mode="ai" class="active"><span>Jouer</span><small>Contre l’ordinateur</small></button><button data-mode="local"><span>À deux</span><small>Sur le même écran</small></button><button data-mode="lesson"><span>Apprendre</span><small>Quatre leçons courtes</small></button></nav>
@@ -445,6 +526,8 @@ async function partager(avecResultat){const res=avecResultat?phraseResultat():''
 $('shareButton').onclick=()=>partager(!!g.ended);$('shareResult').onclick=()=>partager(true);$('victoryShare').onclick=()=>partager(true);
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('/jeux/pylo/sw.js',{scope:'/jeux/pylo/'}).catch(()=>{});
 /* Sur téléphone, les cartes de conquête se rangent juste sous le plateau ; sur grand écran, dans le panneau de droite. */
+// Les consignes suivent le plateau sur mobile et occupent le panneau latéral sur ordinateur.
+{const mq=matchMedia('(min-width:761px) and (min-height:601px)'),placer=()=>{const bar=$('interactionBar');if(mq.matches)document.querySelector('.right-panel').prepend(bar);else document.querySelector('.board-column').prepend(bar);};mq.addEventListener?.('change',placer);placer();}
 {const mq=matchMedia('(max-width:760px)'),placer=()=>{const pl=$('players');if(mq.matches)document.querySelector('.board-frame').after(pl);else document.querySelector('.right-panel').prepend(pl);};mq.addEventListener?.('change',placer);placer();}
 document.querySelectorAll('[data-intro]').forEach(b=>b.onclick=()=>{dismissWelcome();if(b.dataset.intro==='lesson')start('lesson');else if(b.dataset.intro==='ai'){settings.level=1;settings.assist=true;settings.timed=false;storage('pilo_settings_11',settings);start('ai');}else start('observe');});
 /* Effet autonome : toujours nettoyé à la fermeture et au début d'une nouvelle partie. */
