@@ -81,7 +81,7 @@ dialog p,dialog li{font-size:13px;line-height:1.65;color:#d6cab2}dialog ul{paddi
 <div class="carte"><div class="eyebrow">Derniers coups</div><ol id="historique"></ol></div>
 </aside>
 </main>
-<footer>PYLO COURONNE — prototype v0.1 · Deux royaumes</footer>
+<footer>PYLO COURONNE — prototype v0.2 · Deux royaumes</footer>
 </div>
 
 <dialog id="menu"><div class="eyebrow">Nouvelle partie</div><h2>Deux royaumes, deux couronnes</h2>
@@ -91,23 +91,24 @@ dialog p,dialog li{font-size:13px;line-height:1.65;color:#d6cab2}dialog ul{paddi
 <div class="choix"><button data-mode="deux">À deux sur cet écran<small>Chacun son tour, sur le même téléphone</small></button><button data-mode="apprenti">Contre Apprenti<small>Regarde un coup devant</small></button><button data-mode="gardien">Contre Gardien<small>Regarde deux coups devant</small></button><button data-mode="maitre">Contre Maître<small>Regarde trois coups devant</small></button></div>
 </dialog>
 
-<dialog id="regles"><button class="fermer" data-fermer="regles" aria-label="Fermer">×</button><div class="eyebrow">Règle v0.1</div><h2>Pylo Couronne</h2>
+<dialog id="regles"><button class="fermer" data-fermer="regles" aria-label="Fermer">×</button><div class="eyebrow">Règle v0.2</div><h2>Pylo Couronne</h2>
 <h3>Le plateau</h3><p>Deux royaumes : <b>Ivoire</b> en bas (rangées 1–4 : Santé et Argent), <b>Ébène</b> en haut (rangées 5–8 : Spiritualité et Amour). Les quartiers ne sont qu’un décor : seule compte la frontière entre les rangées 4 et 5. Palais d’Ivoire : D1 E1 D2 E2 ; palais d’Ébène : D7 E7 D8 E8.</p>
 <h3>Les pièces (un pas, sauf indication)</h3><ul>
 <li><b>Roi</b> : en avant, droit ou en diagonale. Dans le royaume adverse, il peut aussi reculer, sans repasser la frontière. Jamais de côté.</li>
 <li><b>Reine</b> : un pas dans les huit directions. Seule à pouvoir corrompre un Héritier.</li>
 <li><b>Garde</b> : en avant ou en arrière sur sa colonne. <b>Sentinelle</b> : à gauche ou à droite sur sa ligne.</li>
-<li><b>Sauteur</b> : exactement deux cases en diagonale, par-dessus n’importe quoi.</li>
+<li><b>Sauteur</b> : exactement deux cases en diagonale, par-dessus n’importe quoi (un seul pas en diagonale quand il porte une couronne).</li>
 <li><b>Héritier</b> (Princesse ou Prince) : un pas en diagonale. Placé au hasard sur la rangée 4 (Ivoire) ou 5 (Ébène).</li></ul>
 <h3>Prendre</h3><p>On saute par-dessus un adversaire voisin, dans une direction permise, vers la case vide juste derrière ; le Sauteur prend ce qu’il survole. Une prise par tour, jamais obligatoire.</p>
 <h3>Honneur et palais</h3><p>On ne laisse jamais son roi capturable. Roi menacé sans parade : <b>roi piégé</b>, défaite. Plus aucun coup sans menace : pat, nulle. Jamais plus de deux de ses pièces dans son propre palais ; l’adversaire y entre librement.</p>
 <h3>Les couronnes</h3><ul>
 <li>Une pièce libre qui <b>termine</b> son coup sur une couronne la ramasse (jamais en passant). Sur sa propre couronne dans son propre palais, on choisit : entrer, ou entrer et ramasser.</li>
+<li><b>Une couronne pèse</b> : tout porteur avance d’un seul pas dans ses directions habituelles (le Sauteur porteur : un pas en diagonale, plus de saut).</li>
 <li>Un porteur ne prend jamais. Porteur pris : la couronne reste au sol sur sa case.</li>
 <li>Un porteur qui entre dans son propre palais y dépose la couronne.</li></ul>
 <h3>Gagner</h3><p><b>Conquête</b> : la couronne adverse ET la tienne se trouvent dans ton palais (au sol ou portées) à la fin de ton coup. Ou <b>roi piégé</b> chez l’adversaire.</p>
 <h3>Corruption</h3><p>Quand une Reine termine un déplacement sans prise à côté d’un Héritier ennemi <b>isolé</b> (aucun allié autour de lui), l’Héritier change de camp, avec la couronne qu’il porte.</p>
-<h3>Nulles</h3><p>Même position trois fois ; 40 demi-coups sans prise, corruption ni progrès d’une couronne portée vers son palais ; pat.</p>
+<h3>Nulles</h3><p>Même position trois fois ; pat ; ou 40 demi-coups sans aucun de ces événements : une prise, un ramassage de couronne, un dépôt dans un palais, une corruption, un progrès d’une couronne portée vers son palais, ou la première entrée d’une pièce dans le royaume adverse (une fois par pièce).</p>
 </dialog>
 
 <dialog id="choixCoup"><div class="eyebrow">Ce coup offre un choix</div><h2 id="choixTitre">Que fais-tu ?</h2><div class="choix" id="choixListe"></div><button class="quiet" data-fermer="choixCoup" style="margin-top:12px">Annuler</button></dialog>
@@ -257,6 +258,7 @@ function appliquer(m) {
   if (s.ev.depot) mots.push('couronne déposée au palais');
   if (s.ev.corrompus.length) mots.push('un Héritier change de camp !');
   if (s.ev.progres) mots.push('la couronne progresse');
+  if (s.ev.premiereEntree) mots.push('première entrée chez l’adversaire');
   aide(`${P.notation(m)}${mots.length ? ' — ' + mots.join(', ') : ''}`);
   rendre();
   if (partie.resultat) montrerFin(); else faireJouerIA();

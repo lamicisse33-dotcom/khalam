@@ -1,7 +1,9 @@
 /* ── PYLO COURONNE — SIMULATION ─────────────────────────────────────────────
    node simulations/pylo-couronne/simuler.mjs --blanc maitre --noir apprenti \
         --parties 1000 --graine 1 --sortie simulations/pylo-couronne/resultats/
-   Options : --heritiers oui|non (oui)  --beam-maitre 8  --travailleurs N  --nom serie
+   Options : --heritiers oui|non (oui)  --garde-couronne oui|non (oui : l'IA ramasse sa
+   couronne menacée dans son palais, scénario 9)  --jsonl oui|non  --beam-maitre 8
+   --travailleurs N  --nom serie
 
    Parties APPARIÉES : chaque graine est jouée deux fois, l'IA « blanc » avec
    Ivoire (premier joueur) puis avec Ébène. Même position de départ (Héritiers
@@ -22,13 +24,13 @@ const P = require('../../jeux/pylo/couronne/moteur.js');
 const PLAFOND = 300;
 
 function opts(argv) {
-  const o = { blanc: 'maitre', noir: 'maitre', parties: 20, graine: 1, sortie: 'simulations/pylo-couronne/resultats/', heritiers: 'oui', 'beam-maitre': 8, travailleurs: Math.max(1, cpus().length - 2), nom: '' };
+  const o = { blanc: 'maitre', noir: 'maitre', parties: 20, graine: 1, sortie: 'simulations/pylo-couronne/resultats/', heritiers: 'oui', 'garde-couronne': 'oui', jsonl: 'oui', 'beam-maitre': 8, travailleurs: Math.max(1, cpus().length - 2), nom: '' };
   for (let i = 0; i < argv.length; i += 2) o[argv[i].replace(/^--/, '')] = argv[i + 1];
   o.parties = Number(o.parties); o.graine = Number(o.graine); o['beam-maitre'] = Number(o['beam-maitre']); o.travailleurs = Number(o.travailleurs);
   if (o.parties % 2) throw new Error('--parties doit être pair (parties appariées)');
   return o;
 }
-const reglage = (niveau, o) => ({ niveau, beam: niveau === 'maitre' ? o['beam-maitre'] : undefined });
+const reglage = (niveau, o) => ({ niveau, beam: niveau === 'maitre' ? o['beam-maitre'] : undefined, gardeCouronne: o['garde-couronne'] !== 'non' });
 
 /* Une partie, avec son journal d'observations. */
 function jouerPartie(graine, manche, o) {
@@ -91,7 +93,7 @@ if (!isMainThread) {
   })));
   resultats.sort((a, b) => a.graine - b.graine || a.manche - b.manche);
   mkdirSync(o.sortie, { recursive: true });
-  writeFileSync(path.join(o.sortie, nom + '.jsonl'), resultats.map((r) => JSON.stringify(r)).join('\n') + '\n');
+  if (o.jsonl !== 'non') writeFileSync(path.join(o.sortie, nom + '.jsonl'), resultats.map((r) => JSON.stringify(r)).join('\n') + '\n');
   const md = resume(resultats, o, nom, (Date.now() - t0) / 1000);
   writeFileSync(path.join(o.sortie, nom + '.md'), md);
   console.log(md);
@@ -115,8 +117,8 @@ function resume(R, o, nom, secondes) {
   const ms = R.map((r) => r.ms), msMoy = ms.reduce((a, b) => a + b, 0) / n;
   const courtes = nt.slice().sort((a, b) => a.longueur - b.longueur).slice(0, 5);
   const l = [];
-  l.push(`# Pylo Couronne v0.1 — série ${nom}`, '');
-  l.push(`- IA « blanc » : **${o.blanc}** · IA « noir » : **${o.noir}** · Héritiers : **${o.heritiers}** · beam du Maître : ${o['beam-maitre']}`);
+  l.push(`# Pylo Couronne v${P.VERSION} — série ${nom}`, '');
+  l.push(`- IA « blanc » : **${o.blanc}** · IA « noir » : **${o.noir}** · Héritiers : **${o.heritiers}** · Garde de sa couronne (scénario 9) : **${o['garde-couronne']}** · beam du Maître : ${o['beam-maitre']}`);
   l.push(`- ${n} parties appariées (${n / 2} graines × 2, camps inversés), graines ${o.graine} à ${o.graine + n / 2 - 1} · plafond ${PLAFOND} demi-coups`);
   l.push(`- Temps : ${secondes.toFixed(0)} s au total, ${(msMoy / 1000).toFixed(2)} s par partie en moyenne (un cœur)`, '');
   l.push('## Issues', '', '| Issue | Parties | % |', '|---|---:|---:|');

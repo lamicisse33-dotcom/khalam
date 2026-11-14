@@ -37,7 +37,7 @@ test('Héritiers : rangée 4 (Ivoire) et 5 (Ébène), case libre, Princesse/Prin
   assert.equal(P.heritiers(P.initial({ graine: 3, heritiers: false })).length, 0);
 });
 
-test('déplacements : Reine 8 directions, Garde colonne, Sentinelle ligne, Sauteur deux cases en diagonale, Héritier diagonale', () => {
+test('déplacements : Reine 8 directions, Garde colonne, Sentinelle ligne, Sauteur (sans couronne) deux cases en diagonale, Héritier diagonale', () => {
   const s = pos(`
     8 . . . . . . . r
     4 . . Q . . G . .
@@ -218,7 +218,7 @@ test('sa couronne au sol dans son palais : « entrer » et « entrer et ramasser
   assert.equal(dehors.ev.sortie, 1);
 });
 
-test('un porteur ne prend jamais ; le Sauteur porteur n’a aucune prise (ni survol d’ennemi)', () => {
+test('un porteur ne prend jamais ; v0.2 : le Sauteur porteur fait un pas en diagonale, sans saut ni prise', () => {
   const s = pos(`
     8 . . . . . . . r
     6 . . . . . . . .
@@ -234,7 +234,7 @@ test('un porteur ne prend jamais ; le Sauteur porteur n’a aucune prise (ni sur
     3 . . . J . . . .
     1 R . . . . . . .
     couronnes: ivoire=H1 ebene=D3*`);
-  assert.deepEqual(depuis(j, 'D3'), ['D3-B1', 'D3-B5', 'D3-F1'], 'F5 survolerait E4 (ennemi) : interdit au porteur ; B5, B1, F1 restent');
+  assert.deepEqual(depuis(j, 'D3'), ['D3-C2', 'D3-C4', 'D3-E2↓'], 'un pas en diagonale (E2 : dépôt au palais) ; E4 est occupée, aucune prise, aucun saut');
   const libre = pos(`
     8 . . . . . . . r
     4 . . . . g . G .
@@ -316,7 +316,8 @@ test('record et progression : un aller-retour ne remet pas le compteur à zéro 
     calme: 7`);
   const pris = P.jouer(s, trouver(s, 'H5-H6+Ce'));
   assert.deepEqual(pris.c[2].trajet, { camp: 1, record: P.distance(P.GARDE, 1, c('H6')) });
-  assert.equal(pris.calme, 8, 'ramasser n’est pas progresser');
+  assert.equal(pris.ev.progres, 0, 'ramasser n’est pas progresser…');
+  assert.equal(pris.calme, 0, '… mais v0.2 : un ramassage remet le compteur à zéro');
   // La Garde ne descend que sa colonne : H6 → H5 n'approche pas (colonne H hors palais : ∞). On prend une Reine.
   const r = pos(`
     8 . . . . . . . r
@@ -367,6 +368,45 @@ test('nulle à 40 demi-coups sans prise ni progrès ; triple répétition', () =
   for (const k of [...tour, ...tour]) { assert.equal(g.resultat, null); jouer(k); }
   assert.deepEqual(g.resultat, { gagnant: 0, raison: 'repetition' });
   P.annuler(g); assert.equal(g.resultat, null, 'annuler rend la partie');
+});
+
+/* ── v0.2 ─────────────────────────────────────────────────────────────── */
+test('v0.2 : le compteur repart à zéro sur ramassage, dépôt et première entrée de chaque pièce chez l’adversaire (une fois)', () => {
+  const s = pos(`
+    8 . . . . . . . r
+    5 . . . . . . . .
+    4 G . . . . . . .
+    3 . . . . G . . .
+    1 . R . . . . . .
+    couronnes: ivoire=E2 ebene=E3*
+    calme: 20`);
+  const depot = apres(s, 'E3-E2↓');
+  assert.equal(depot.ev.depot, 2); assert.equal(depot.calme, 0, 'dépôt');
+  const q = pos(`
+    8 . . . . . . . r
+    4 G . . . . . . .
+    1 . R . . . . . .
+    couronnes: ivoire=H1 ebene=H8
+    calme: 20`);
+  const entree = apres(q, 'A4-A5');
+  assert.equal(entree.ev.premiereEntree, true); assert.equal(entree.calme, 0, 'première entrée de la Garde');
+  const retour = apres(entree, 'H8-H7', 'A5-A4', 'H7-H6', 'A4-A5');
+  assert.equal(retour.ev.premiereEntree, false); assert.equal(retour.calme, 4, 'deuxième entrée de la même pièce : rien');
+  const autre = apres(pos(`
+    8 . . . . . . . r
+    4 G . G . . . . .
+    1 . R . . . . . .
+    couronnes: ivoire=H1 ebene=H8
+    calme: 20`), 'A4-A5', 'H8-H7', 'C4-C5');
+  assert.equal(autre.calme, 0, 'chaque pièce a sa première entrée');
+  const init = P.initial({ graine: 4 });
+  assert.equal(init.entre.filter(Boolean).length, 0, 'au départ, personne n’est entré');
+});
+
+test('v0.2 : carte de distance du Sauteur porteur = celle de l’Héritier (un pas en diagonale)', () => {
+  for (const p of [1, 2]) for (let i = 0; i < 64; i++) assert.equal(P.distance(P.SAUTEUR, p, i), P.distance(P.PRINCESSE, p, i));
+  assert.equal(P.distance(P.SAUTEUR, 1, c('A5')), 3, 'A5 → B4 → C3 → D2');
+  assert.equal(P.portee(P.SAUTEUR, 1, c('A3'), c('C5')), 1, 'sans couronne, il saute toujours deux cases');
 });
 
 /* ── HÉRITIERS ─────────────────────────────────────────────────────────── */

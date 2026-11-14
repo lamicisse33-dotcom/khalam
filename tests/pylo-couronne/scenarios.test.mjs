@@ -62,7 +62,7 @@ test('3. porteur adverse à deux cases de son palais, prenable par saut → le p
   attendu(s, 'D4xD6');
 });
 
-test('4. l’adversaire gagne au prochain coup, une seule parade (prendre son porteur) → la jouer', () => {
+test('4. l’adversaire gagne au prochain coup ; parade : prendre son porteur → la jouer', () => {
   const s = pos(`
     8 . . . q r . . .
     6 . . . . g . . .
@@ -141,25 +141,41 @@ test('8. Sauteur porteur avec une prise disponible → la prise n’est pas dans
   for (const g of GRAINES) assert.ok(!choix(s, g).includes('x'));
 });
 
-test('9. ma couronne au sol dans mon palais : « entrer » et « entrer et ramasser » existent ; l’IA ne l’emporte que sous menace', () => {
-  const calme = pos(`
+test('9. ma couronne au sol dans mon palais : « entrer » et « entrer et ramasser » existent ; ramasser seulement sous menace, vers une sortie sûre', () => {
+  // Première moitié : les deux coups existent.
+  const deux = pos(`
     8 . . . q r . . .
     7 . . g . . . . .
     3 . . . . G . . .
     1 . . . R . . . .
     couronnes: ivoire=E2 ebene=D7`);
-  assert.ok(coups(calme).includes('E3-E2') && coups(calme).includes('E3-E2+Ci'));
-  for (const g of GRAINES) assert.notEqual(choix(calme, g), 'E3-E2+Ci', 'sans menace, la couronne reste au sol');
-  // Menace : le Sauteur d'Ébène G4 ramasserait la couronne E2 au prochain coup, puis l'emporterait.
+  assert.ok(coups(deux).includes('E3-E2') && coups(deux).includes('E3-E2+Ci'));
+  /* Sans menace (aucune pièce ennemie ne peut finir son prochain coup sur E2) :
+     entrer sans ramasser vaut mieux qu'entrer et ramasser, et l'IA ne ramasse pas. */
+  const calme = pos(`
+    8 . . . q r . . .
+    7 . . g . . . . .
+    3 . . . F . . . .
+    1 . R . . . . . .
+    couronnes: ivoire=E2 ebene=D7`);
+  const suite = (s, n) => P.coupsLegaux(s).find((m) => P.notation(m) === n).suite;
+  assert.ok(coups(calme).includes('D3-E2') && coups(calme).includes('D3-E2+Ci'));
+  assert.ok(P.evaluer(suite(calme, 'D3-E2'), 1) > P.evaluer(suite(calme, 'D3-E2+Ci'), 1), 'sans menace : entrer > entrer et ramasser');
+  for (const g of GRAINES) assert.notEqual(choix(calme, g), 'D3-E2+Ci');
+  /* Menace : le Sauteur d'Ébène G4 peut finir son prochain coup sur E2 (il
+     survole F3) et voler la couronne. Ma Princesse D3 peut entrer en E2 ; avec
+     la couronne, elle a des sorties (D3, F3, F1) que ce Sauteur n'atteint pas
+     au coup suivant. Attendu : entrer et ramasser. */
   const menace = pos(`
     8 . . . q r . . .
     7 . . g . . . . .
     4 . . . . . . j .
-    3 . . . . G . . .
-    1 . . . R . . . .
+    3 . . . F . . . .
+    1 . R . . . . . .
     couronnes: ivoire=E2 ebene=D7`);
-  assert.ok(P.coupsLegaux(P.jouer(menace, P.coupsLegaux(menace).find((m) => P.notation(m) === 'E3-E2'))).some((m) => m.ramasse === 1));
-  attendu(menace, 'E3-E2+Ci');
+  assert.ok(P.coupsLegaux(P.jouer(menace, P.coupsLegaux(menace).find((m) => P.notation(m) === 'B1-A2'))).some((m) => m.a === P.caseDe('E2') && m.ramasse === 1), 'sans réaction, le Sauteur G4 finit sur E2 et vole la couronne');
+  attendu(menace, 'D3-E2+Ci');
+  assert.ok(P.sortieSure(suite(menace, 'D3-E2+Ci'), P.caseDe('E2'), 1), 'une sortie sûre existe pour la porteuse');
 });
 
 test('10. Héritier ennemi isolé à portée de ma Reine → la Reine va le corrompre', () => {
