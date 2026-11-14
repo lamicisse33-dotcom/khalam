@@ -410,9 +410,10 @@ function cote(s, p, prises) {
   // (a)(b)(c) : les deux couronnes vues vers MON palais.
   for (const k of [1, 2]) {
     const C = s.c[k];
+    // Portée par l'adversaire, même dans mon palais : elle part (c'est sa valeur à lui).
+    if (C.porte && camp(b[C.sq]) !== p) continue;
     if (palaisDe(C.sq) === p) { v += CHEZ_MOI; continue; }
     if (C.porte) {
-      if (camp(b[C.sq]) !== p) continue;
       v += valeurPortee(distance(sorte(b[C.sq]), p, C.sq));
       // (d) mon porteur prenable au prochain coup ; protégé si un allié reprend l'intercepteur.
       if (menaces.has(C.sq)) {
@@ -422,7 +423,6 @@ function cote(s, p, prises) {
       continue;
     }
     // Au sol hors de mon palais : ma pièce la plus proche, pondérée par son retour (Sentinelle exclue).
-    if (k === e && palaisDe(C.sq) === e && piecesAuPalais(s, e) >= 2 && !C.porte) { /* bien gardée : rien de plus */ }
     let meilleur = Infinity;
     for (const i of miennes) {
       const t = sorte(b[i]);
