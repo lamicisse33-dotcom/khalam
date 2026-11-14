@@ -272,6 +272,16 @@ test('dépôt en entrant dans son palais ; conquête quand les deux couronnes y 
     2 . . . R . . . .
     couronnes: ivoire=D2* ebene=E3*`);
   assert.deepEqual(P.fin(P.jouer(porte, trouver(porte, 'E3-E2↓'))), { gagnant: 1, raison: 'conquete' }, 'portée dans le palais compte aussi (règle 8)');
+  // Règle 8 (v0.2.1) : portée par une pièce ENNEMIE dans mon palais, elle n'y est pas.
+  const ennemie = pos(`
+    8 . . . . . . . r
+    3 . . . . G . . .
+    2 . . . g . . . .
+    1 . R . . . . . .
+    couronnes: ivoire=D2* ebene=E3*`);
+  const n3 = P.jouer(ennemie, trouver(ennemie, 'E3-E2↓'));
+  assert.equal(P.dansPalais(n3, 1, 1), false); assert.equal(P.fin(n3), null, 'ma couronne portée par une Garde d’Ébène en D2 : pas de conquête');
+  assert.equal(P.etatCouronne(n3, 1).etat, 'vol');
   const une = pos(`
     8 . . . . . . . r
     3 . . . . G . . .

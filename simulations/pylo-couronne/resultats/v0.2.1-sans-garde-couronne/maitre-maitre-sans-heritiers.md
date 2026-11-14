@@ -1,44 +1,44 @@
-# Pylo Couronne v0.2 — série maitre-maitre-sans-heritiers
+# Pylo Couronne v0.2.1 — série maitre-maitre-sans-heritiers
 
 - IA « blanc » : **maitre** · IA « noir » : **maitre** · Héritiers : **non** · Garde de sa couronne (scénario 9) : **non** · beam du Maître : 8
 - 1000 parties appariées (500 graines × 2, camps inversés), graines 1 à 500 · plafond 300 demi-coups
-- Temps : 51 s au total, 0.39 s par partie en moyenne (un cœur)
+- Temps : 3088 s au total, 24.67 s par partie en moyenne (un cœur)
 
 ## Issues
 
 | Issue | Parties | % |
 |---|---:|---:|
 | Victoire par conquête | 40 | 4.0 % |
-| Victoire par roi piégé | 274 | 27.4 % |
-| Nulle — 40 demi-coups sans progrès | 659 | 65.9 % |
+| Victoire par roi piégé | 279 | 27.9 % |
+| Nulle — 40 demi-coups sans progrès | 654 | 65.4 % |
 | Nulle — triple répétition | 16 | 1.6 % |
 | Nulle — pat | 1 | 0.1 % |
-| **Nulles (total)** | 676 | 67.6 % |
+| **Nulles (total)** | 671 | 67.1 % |
 | Non terminées (plafond, à part) | 10 | 1.0 % |
 
 ## Longueur (demi-coups)
 
-- Toutes les parties : médiane **96**, quartiles 61 – 142 (min 23, max 300)
-- Parties terminées seulement : médiane 95, quartiles 61 – 140
+- Toutes les parties : médiane **96**, quartiles 61 – 141 (min 23, max 300)
+- Parties terminées seulement : médiane 95, quartiles 61 – 139
 
 ## Équilibre
 
-- Victoires du premier joueur (Ivoire) : **21.5 %** de toutes les parties ; 68.5 % des parties décisives (215/314)
-- Score de « blanc » (maitre) contre « noir » (maitre) : **501/1000 = 50.1 %** (victoire 1, nulle ou non terminée ½, défaite 0)
+- Victoires du premier joueur (Ivoire) : **21.7 %** de toutes les parties ; 68.0 % des parties décisives (217/319)
+- Score de « blanc » (maitre) contre « noir » (maitre) : **499.5/1000 = 50.0 %** (victoire 1, nulle ou non terminée ½, défaite 0)
 
 ## Couronnes
 
 - Parties avec au moins un vol entrepris : **23.1 %** (0.31 vols par partie)
-- Les deux couronnes volées en même temps : 60 parties (6.0 %) → 17 conquêtes, 12 rois piégés, 24 nulles, 7 non terminées
-- Blocage (portée à ≤ 2 cases de son palais de destination pendant ≥ 10 demi-coups sans entrer) : **9.4 %** des parties
-- Couronne au sol hors palais ≥ 10 demi-coups : 1.3 % des parties ; 5/676 nulles (0.7 %) en contiennent une
+- Les deux couronnes volées en même temps : 60 parties (6.0 %) → 16 conquêtes, 18 rois piégés, 19 nulles, 7 non terminées
+- Blocage (portée à ≤ 2 cases de son palais de destination pendant ≥ 10 demi-coups sans entrer) : **9.0 %** des parties
+- Couronne au sol hors palais ≥ 10 demi-coups : 1.2 % des parties ; 4/671 nulles (0.6 %) en contiennent une
 - Sorties de sa propre couronne hors de son palais : 26.4 % des parties (0.32 par partie) ; 9/10 non terminées (90.0 %) en contiennent une
 
 ## Héritiers
 
 - Corruptions : 0.00 par partie (0.0 % des parties en ont au moins une)
 - Captures d’Héritier : 0.00 par partie
-- Victoires précédées d’une corruption par le vainqueur : 0/314 (0.0 %)
+- Victoires précédées d’une corruption par le vainqueur : 0/319 (0.0 %)
 
 ## Les 5 parties non terminées les plus courtes
 
@@ -58,9 +58,9 @@
 
   `H3-F5 A6-C4 B3-C3 G6-F6 A3-C5 B6-A6 G3-F3 E8-E7 F3-E3 C7-C6 E3-F3 D8-D7 F3-E3 D7-D6 E3-F3 F7-F8 F3-G3 D6-D7+Ce C5-A3 F8-F7 F2-F3 F7-F8 A3-C5 F8-F7 D1-D2 H6-F4 G3-H3 F4-H6 C2-C1 F6-E6 C5-A7 F7-F6 F3-F4 E6-D6 E1-E2+Ci D7-E8 F5-D3 C4-E6 C3-B3 F6-F7 B3-C3 H6-F8 C3-B3 E6-G4 E2-E1 E7-E6 D3-B5 C6-C5 D2-C3 F7-F6 B5-D3 E8-D8 B3-A3 A6-B6 D3-F1 D6-C6 F1-D3 E6-D5 D3-B1 G4-E6 B1-D3 E6-C8 D3-B1 C6-D6 C1-C2 D6-C6 F4-F3 F6-F7 B1-D3 F8-H6 F3-F4 C6-D6 F4-F5 C8-A6 H3-G3 A6-C8 A3-B3 B6-A6 B3-A3 D8-E8 G3-F3 H6-F4 D3-B5 C8-E6 F5-F6 F4-D2 C3-B4 F7xF5 F3-G3 F5-F6 E1-D1 A6-B6 C2-C3 E6-G4 C3-C4 B6-C6 A3-B3 F6-F5 B5xD7 C5xC3 B4-C5 C3-C4 C5xE7 F5-F4 E7-F6 E8-D8 G3-H3 D5-D4 D7-B5 C4-C5 D1-E1 G4-E6 F6-E7 E6-G8 B3-A3 D4-D3 E7-D6 G8-E6 E1-F2 D3-E4 F2-E1↓ D2-B4 E1-F2 B4-D2 F2-G3 F4-F5 D6-E7 E6-C8 G3-H4 C8-A6 B5-D7 A6-C8 H4-G5 C8xE6 E7xE5 E4-E3 G5-G4 E3-E2 G4xE6 E2-E1+Ci E6-D7 D2-F4 E5-F6 D8-E8 D7-D8 E8-E7 F6-F7 E7-D6 D8-E7 E1-F2 F7-E8 D6-C7 E7-D8 C7-C6 E8-F7 C6-D6 F7-E8 D6-E6 D8-D7 E6-F6 D7-E7 F6-F5 E8-D7 F4-D2 D7-D8 F2-E3 D8-D7 E3-D4 E7-E6 F5-G6 E6-D5 D4-D3 D5xB5 G6-F7 B5-C4 D3-C2 D7-E8 F7-F8 C4-B5 C2-C1 B5-B6 D2-B4 B6-C7 C1-B2 C7-B8 B4-D6 E8-E7 D6-B4 E7-D6 B2-A1 A7-C5 B4-D2 D6-D5 D2-F4 B8-B7 F4-D2 B7-B6 D2-B4 D5-D6 F8-E8↓ C5-E3 E8-F7 B6-C6 F7-E8 C6-C7 A1-B2 E3-C1 B2-A1 A3-B3 E8-D8 C7-D7 D8-E8 D7-C8 E8-F8 C8-D8 A1-A2 D6-D7 F8-F7 D8-E8+Ce F7-F8 D7-D8 A2-A1 H3-G3 B4-D6 G3-F3 D6-B4 B3-A3 A1-A2 F3-G3 B4-D6 C1-E3 D6-B4 G3-H3 A2-A1 H3-G3 F8-F7 E3-G5 B4-D6 D8-D7 F7-G6 D7xD5 G6xG4 G3-H3 G4-H4 E8-D7 H4xH2 D7-C6 H2-G2 C6-C5 G2-F3 D5-D6 F3-E4 D6-E7 E4-D5 C5-B5 D5-C6 B5-B4 C6-D7 E7-E8 D7-D8 E8-F7 D8-E7 F7-E8 E7-F8 E8-D7 F8-E7 D7-C6 E7-D6 C6-B7 D6-C7 B7-A8 C7-C8 B4-C3 C8-D7 C3-C2 D7-C6 C2-C1 C6-B5 C1-D1↓ B5-B4 D1-C2 B4-C4 A8-A7 C4-D4 C2-B1 D4-C3 B1-C1 C3-D3 A7-A6 D3-E2 A6-A7 E2-E1 A7-B6 E1-E2 B6-C5 E2-E1 C5-C6 E1-E2 C6-C7 E2-E1`
 
-- graine 147, manche 1 (Ivoire maitre, Ébène maitre), 300 demi-coups :
+- graine 142, manche 1 (Ivoire maitre, Ébène maitre), 300 demi-coups :
 
-  `H3-F5 A6-C4 B3-C3 G6-F6 A3-C5 B6-A6 C5-E3 E8-D7 E3-C5 F6-E6 F2-F3 C7-C6 G3-H3 D8-E7 F3-F4 E7-E8 F4-F3 E8-F8 H3-G3 C6-C7 F3-F4 C7-C6 G3-F3 F8-G8 C5-A7 C6-C7 D1-E2 G8-G7 C2-C1 G7-H8 A7-C5 C7-C6 C5-A7 F7-F8 A7-C5 H8-H7 F3-G3 C4-A2 C5-E7 A2-C4 E2-F3 C6-C5 E1-E2+Ci E6-D6 F3-G4 A6-B6 E2-E1 H7-G7 E7-G5 B6-A6 C1-C2 G7-H7 G5-E7 F8-F7 C2-C1 F7-F8 E1-D1 C4-A2 G3-F3 F8-F7 D1-E1 A6-B6 E1-D1 H6-F8 G4-H5 D6-E6 E7-G5 B6-C6 F3-E3 C6-B6 E3-D3 B6-A6 F4-F3 A2-C4 D3-E3 C4-A2 D1-E1 A6-B6 E1-D1 C5-C6 E3-D3 B6-A6 D3-E3 C6-C7 F3-F4 C7-C6 C1-C2 C6-C7 F4-F3 C7-C6 C3-D3 C6-C7 H5-G6 H7-H6 G6xE8 C7-C6 F3-F4 H6-H5 E3-F3 F8-D6 C2-C1 H5-H4 G5-E3 H4-G5 F5-H3 D6-F8 E8-F7 E6-F6 D3-C3 G5-F5 F7-E8 F5-E5 F3-G3 E5-E4 E3-G1 E4-D4 F4-F5 F6-E6 E8-F7 E6-D6 F7-F6 D4xB2 D1-E1 C6-C7 F5-F4 B2-C3 F6-G5 D7-E6 G5-F6 D6-C6 G3-F3 C3-D2 E1-D1 F8-D6 G1-E3 A2-C4 F3-G3 A6-B6 G3-F3 C4-A2 F6-F7 E6-D5 H3-F5 D2-E2 E3-G5 D6-F8 F3-G3 A2-C4 F7-F6 C6-D6 D1-E1 F8-H6 G3-H3 C7-C6 G5-E7 C4-A2 E1-D1 D5-D4 E7-G5 A2-C4 G5-E7 D4-C3 D1-E1 C4-A2 E7-G5 B6-A6 G5-E7 C6-C5 E1-D1 C3-D4 E7-G5 H6-F8 D1-E1 A2-C4 H3-G3 C4-A2 E1-D1 D4-C3 D1-E1 C5-C4 E1-D1 A6-B6 D1-E1 C4-C5 G3-H3 B6-C6 H3-G3 F8-H6 E1-D1 C3-B4 D1-E1 B4-B3 E1-D1 A2-C4 G5-E7 H6-F8 D1-E1 C4-A6 F5-D7+Ce D6-E6 F6-E5 F8xD6 E5xC7 A6-C8 C7-D6 E6-F6 D7-E6 B3-A4 E1-D1 C8-A6 F4-F5 F6-G6 D6-E5 A6-C4 F5-F4 C4-A2 E6-D5 E2-E1 G3-H3 A2-C4 D5-E4 C4-E2 E4-D5 E2-G4 D5-E4 E1-D2 E4-D5 A4-B3 D1-E1 B3-A2 D5-E4 A2-A3 H3-G3 A3-A2 E1-D1 A2-B3 G3-H3 G6-H6 E4-D5 G4-E2 D5-E4 B3-C4 D1-E1 D2-D3 H3-G3 C6-B6 G3-H3 C5-C6 H3-G3 B6-A6 G3-H3 C4-B3 E1-D1 A6-B6 H3-G3 H6-G6 G3-H3 C6-C5 E4-F3 E2xG4 E5-E6 D3-E3 F4-F5 E3-F3+Ce F5-F6 F3-E4 C1-C2 E4-E5 F6-F7 E5-D6 H3-G3 B3-C4 C2-C1 B6-A6 G3-H3 C4-C3 D1-E1 G6-H6 E1-D1 C5-C6 F7-F8 C3-B4 H3-G3 H6-G6 G3-H3 G6-F6 F8-F7 D6-C7 F7xF5 C7-D8↓ C1-C2 D8-C7 F5-F4 C7-D6 E6-E5 D6-D5 E5-F6 D5-D4 F6-E7 D4-D3`
+  `H3-F5 A6-C4 B3-C3 G6-F6 A3-C5 B6-A6 C5-E3 D8-D7+Ce E3-C1 D7-E7 G3-F3 F7-F8 F3-E3 E8-F7 F2-F1 H6-F4 C1-A3 C7-C6 E1-D2 E7-E8 A3-C5 F4-H6 F5-D7 F7-G6 D7xB5 C4-E6 D2-D3 E6-G4 D3-D4 G6-H5 D4-E5 F8-F7 B5-D3 E8-D8 D3-B5 H5-H4 C3-B3 F6-G6 E5-E6 F7-F6 E6-D7 H4-H3 D7-E8 D8-C7 E8-D8 C7-B7 D8-C7 B7-A7 C7-C8 F6-F5 B5-D7 G6-F6 C8-B8 F5-F4 C5-E7 G4-E2+Ci F1-F2 E2-F1 E7xG5 F1-G2 B8-C8 A7-B6 C8-C7 B6-B5 C7-C6 B5-B6 G5-E7 B6-A7 C6-C7 H6-F8 E7-C5 H3-G4 C7-B8 F8-H6 C5-E7 G4-G3 F2-F1 G2-H3 B8-B7 H3-G4 E7-G5 G4-F5 B7-A8 F4-F3 G5-E7 F5-G6 D7-F5 G6-F7 A8-B7 F7-E8↓ B7-C8 A7-B7 C8-D8 H6-F8 F5-D7 F8xD6 D8xF8 B7-C7 F8-E8+Ci C7-D8↓ E8-F7 D8-E7 F7-G6 E7xC7 G6-H5 C7-C8 B3-C3 A6-B6 E3-D3 C8-C7 H5-G5 C7-C6 D1-D2 C6-C7 D3-E3 C7-B7 G5-H5 B7-A6 C3-B3 D6-B8 H5-G5 F3-F4 C2-C3 A6-A7 E3-D3 F4-F3 D3-E3 A7-A6 G5-G4 F3-F4 C3-C2 B8-D6 C2-C3 D6-F8 C3-C4 A6-B7 E3-D3 B7-B8 B3-A3 B8-A8 C4-C3 F8-H6 G4-H4 F4-F5 H4-G4 A8-B8 G4-F3 G3-G4 F3-E2↓ B8-B7 E2-E3 B7-C6 E3-E4 F5-F6 C3-C2 C6-B5 C2-C3 B5-C5 D3-E3 H6-F8 E3-D3 F8-D6 A3-B3 B6-A6 B3-A3 D6-B8 E4-E5 G4-F3 E5xG7 F3-E2+Ci G7-F8 E2-F3 F8-E8 C5-D6 E8-D8+Ce D6-E6 D8-E8 B8-D6 A3-B3 E6-E7 D2-E3 E7-E6 C3-C2 E6-E7 B3-C3 E7-E6 F1-F2 F3-G4 C3-B3 E6-E7 E3-D4 A6-B6 E8-F8 E7-F7 F8-G8 F7-G6 G8-H8 B6-C6 H8-G8 D6-B8 B3-C3 C6-B6 D4-D5 G6-F5 D5-D6 F5-F6 G8-H7 F6-G7 H7-H6 G7-H7 H6-H5 H7-H6 H5-H4 H6-G5 H4-G3 G5-F6 G3-F3 F6-E5 D6-E7 E5-D4 F3-E2↓ D4xD2 E2-F3 G4-H3 E7-E6 H3-H4 F3-G3 H4-H3 G3-H2 H3-G2 H2-H1 G2-H3 H1-H2 H3-G2 H2-H3 G2-H1 H3-G2 D2-E2+Ce G2-F3 E2-D2 E6-F7 H1-H2 F7-F8 H2-H1 F8-G7 B6-C6 G7-F8 C6-D6 F3-F4 D2-E2 F4-E4 D6-C6 E4-D3 E2-F1 D3-D4 C6-B6 D4-C5 B6-A6 C5-D5 F1-G2 D5-E6 G2-H3 F8-F7 H3-H4 F7-G8 H4-G3 G8-H7 G3-H4 E6-E7 H4-G3 E7-F6 G3-H3 F6-E7 H1-H2 E7-D8 H3-G4 D8-E7 G4-F4 E7-F7 A6-B6 F7-F6 H2-H3 F6-G5 F4-E5 G5-H4 H3-H2 H7-G8 E5-F6 H4-H3 H2-H1 H3-G4 F6-E7↓ G8-H7 E7-F7 G4-F5 F7-E7+Ce F5-E6 E7-F8 E6-F7 F8-E8↓`
 
 
 Notation : D1-D2 déplacement, C3xE5 prise, +Ci/+Ce ramasse la couronne d’Ivoire/d’Ébène, ↓ dépôt au palais, ~F5 corruption de l’Héritier en F5.

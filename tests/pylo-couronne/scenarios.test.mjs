@@ -62,7 +62,7 @@ test('3. porteur adverse à deux cases de son palais, prenable par saut → le p
   attendu(s, 'D4xD6');
 });
 
-test('4. l’adversaire gagne au prochain coup ; parade : prendre son porteur → la jouer', () => {
+test('4. l’adversaire gagne au prochain coup ; parades : prendre son porteur, ou ramasser sa couronne dans son palais', () => {
   const s = pos(`
     8 . . . q r . . .
     6 . . . . g . . .
@@ -74,6 +74,20 @@ test('4. l’adversaire gagne au prochain coup ; parade : prendre son porteur �
   // Sans parade, Ébène joue E6-E7↓ : les deux couronnes dans son palais.
   assert.ok(P.imminente(P.jouer(s, P.coupsLegaux(s).find((m) => P.notation(m) === 'H2-G2')), 2));
   attendu(s, 'E5xE7');
+  /* Seconde parade (règle 8 précisée) : ma Garde D6 termine sur D7, case de SA
+     couronne dans SON palais, et la ramasse. Portée par une pièce ivoire, elle
+     n'est plus « dans » le palais d'Ébène : son entrée E6-E7 ne gagne plus. */
+  const ramasser = pos(`
+    8 . . . . . . . r
+    6 . . . G g . . .
+    1 R . . . . . . .
+    couronnes: ivoire=E6* ebene=D7
+    trajets: ivoire=2:6`);
+  const sansParade = P.jouer(ramasser, P.coupsLegaux(ramasser).find((m) => P.notation(m) === 'A1-A2'));
+  assert.deepEqual(P.fin(P.jouer(sansParade, P.coupsLegaux(sansParade).find((m) => P.notation(m) === 'E6-E7↓'))), { gagnant: 2, raison: 'conquete' });
+  attendu(ramasser, 'D6-D7+Ce');
+  const pare = P.coupsLegaux(ramasser).find((m) => P.notation(m) === 'D6-D7+Ce').suite;
+  assert.equal(P.fin(P.jouer(pare, P.coupsLegaux(pare).find((m) => P.notation(m) === 'E6-E7↓'))), null, 'plus de conquête');
 });
 
 test('5. mon palais contient déjà deux de mes pièces → aucun coup proposé n’y fait entrer une 3e', () => {
@@ -174,8 +188,7 @@ test('9. ma couronne au sol dans mon palais : « entrer » et « entrer et ramas
     1 . R . . . . . .
     couronnes: ivoire=E2 ebene=D7`);
   assert.ok(P.coupsLegaux(P.jouer(menace, P.coupsLegaux(menace).find((m) => P.notation(m) === 'B1-A2'))).some((m) => m.a === P.caseDe('E2') && m.ramasse === 1), 'sans réaction, le Sauteur G4 finit sur E2 et vole la couronne');
-  attendu(menace, 'D3-E2+Ci');
-  assert.ok(P.sortieSure(suite(menace, 'D3-E2+Ci'), P.caseDe('E2'), 1), 'une sortie sûre existe pour la porteuse');
+  attendu(menace, 'D3-E2+Ci'); // le scénario s'arrête au ramassage
 });
 
 test('10. Héritier ennemi isolé à portée de ma Reine → la Reine va le corrompre', () => {

@@ -1,4 +1,4 @@
-/* ── PYLO COURONNE v0.2 — LE MOTEUR UNIQUE ─────────────────────────────────
+/* ── PYLO COURONNE v0.2.1 — LE MOTEUR UNIQUE ─────────────────────────────────
    Un seul fichier pour la page (window.PyloCouronne) et pour Node
    (require / import) : la page, les tests et la simulation jouent avec les
    mêmes règles. Aucune règle n'existe ailleurs.
@@ -19,7 +19,8 @@
    pas ; le Sauteur porteur fait un pas en diagonale, sans saut. 2) Le compteur
    de 40 demi-coups repart à zéro sur toute prise, progression, ramassage,
    dépôt au palais, corruption, et sur la première entrée de chaque pièce dans
-   le royaume adverse (une fois par pièce). */
+   le royaume adverse (une fois par pièce).
+   v0.2.1 : règle 8 précisée (voir dansPalais). */
 (function (racine, fabrique) {
   const api = fabrique();
   if (typeof module === 'object' && module && module.exports) module.exports = api;
@@ -27,7 +28,7 @@
 })(typeof self !== 'undefined' ? self : globalThis, function () {
 'use strict';
 
-const VERSION = '0.2';
+const VERSION = '0.2.1';
 const IVOIRE = 1, EBENE = 2;
 const ROI = 0, REINE = 1, GARDE = 2, SENTINELLE = 3, SAUTEUR = 4, PRINCESSE = 5, PRINCE = 6, NT = 7;
 const NOMS = ['Roi', 'Reine', 'Garde', 'Sentinelle', 'Sauteur', 'Princesse', 'Prince'];
@@ -153,7 +154,10 @@ function initial(opts = {}) {
 
 const porteePar = (s, i) => (s.c[1].porte && s.c[1].sq === i ? 1 : s.c[2].porte && s.c[2].sq === i ? 2 : 0);
 const auSol = (s, i) => [1, 2].filter((k) => !s.c[k].porte && s.c[k].sq === i);
-const dansPalais = (s, k, p) => palaisDe(s.c[k].sq) === p; // règle 8 : au sol ou portée dans le palais
+/* Règle 8 (v0.2.1) : une couronne est « dans » le palais de p si elle est au
+   sol sur une de ses cases, ou portée par une pièce DU CAMP p qui s'y tient.
+   Portée par une pièce ennemie dans ce palais, elle n'y est pas. */
+const dansPalais = (s, k, p) => palaisDe(s.c[k].sq) === p && (!s.c[k].porte || camp(s.b[s.c[k].sq]) === p);
 const conquete = (s, p) => dansPalais(s, 1, p) && dansPalais(s, 2, p);
 function piecesAuPalais(s, p) { let n = 0; for (const i of PALAIS[p]) if (camp(s.b[i]) === p) n++; return n; }
 
@@ -282,7 +286,7 @@ function etatCouronne(s, k) {
   const C = s.c[k], porteur = C.porte ? camp(s.b[C.sq]) : 0, tr = C.trajet;
   const base = { sq: C.sq, porte: C.porte, porteur: C.porte ? s.b[C.sq] : 0, trajet: tr, distance: null };
   if (C.porte) base.distance = PALAIS_DE[C.sq] === porteur ? 0 : distance(sorte(s.b[C.sq]), porteur, C.sq);
-  if (palaisDe(C.sq) === k) return { ...base, etat: 'chez-elle' };
+  if (dansPalais(s, k, k)) return { ...base, etat: 'chez-elle' };
   if (!C.porte && palaisDe(C.sq) === 3 - k) return { ...base, etat: 'deposee' };
   if (C.porte) return { ...base, etat: porteur === k ? 'retour' : 'vol' };
   return { ...base, etat: tr && tr.camp !== k ? 'vol-au-sol' : 'au-sol' };
@@ -402,7 +406,7 @@ const valeurPortee = (d) => 60 + 22 * (8 - Math.min(d, 8)); // une couronne que 
 function imminente(s, q) {
   for (const k of [1, 2]) {
     const C = s.c[k];
-    if (palaisDe(C.sq) === q) continue;
+    if (dansPalais(s, k, q)) continue;
     if (!(C.porte && camp(s.b[C.sq]) === q && distance(sorte(s.b[C.sq]), q, C.sq) <= 1)) return false;
   }
   return true;
@@ -441,8 +445,11 @@ function cote(s, p, prises, reglages = {}) {
        coup suivant ; sans menace, la porter ne fait que l'exposer. */
     if (k === p && palaisDe(C.sq) === p && reglages.gardeCouronne !== false) {
       const menace = menaceSur(s, C.sq, e);
-      if (C.porte) v += menace ? (sortieSure(s, C.sq, p) ? 0 : -35) : -15;
-      else if (menace) v -= 90;
+      if (C.porte) {
+        v += menace ? (sortieSure(s, C.sq, p) ? 0 : -35) : -15;
+        // v0.2.1 : porteur prenable au coup suivant dans mon palais → petit malus, la sortie vient d'elle-même.
+        if (menaces.has(C.sq)) v -= 25;
+      } else if (menace) v -= 90;
     }
     if (palaisDe(C.sq) === p) { v += CHEZ_MOI; continue; }
     if (C.porte && !chezEllePortee) {
