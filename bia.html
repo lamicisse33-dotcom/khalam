@@ -1,393 +1,158 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#11130f">
-  <meta name="description" content="Bia Xarit, l’intelligence artificielle sénégalaise qui parle wolof — l’assistante vocale de KHALAM, faite à Dakar, en wolof et en français : elle écrit tes messages et devis, lit tes ordonnances et documents, programme tes rappels, tient ton carnet de commerce, te conseille comme une amie. Gratuite, sur invitation.">
-  <link rel="canonical" href="https://khalam.app/bia">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "@id": "https://khalam.app/bia#app", "name": "Bia Xarit", "alternateName": ["BIA", "BIA KHALAM"], "url": "https://khalam.app/bia", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Android, iOS, Web", "inLanguage": ["wo", "fr"], "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "XOF"}, "description": "Assistante vocale en wolof et en français, faite à Dakar : elle écrit tes messages et devis, lit tes ordonnances et documents, programme tes rappels, tient ton carnet de commerce et te conseille comme une amie.", "featureList": ["Conversation vocale en wolof et en français", "Écriture de messages, lettres, devis et factures", "Lecture à voix haute de documents photographiés", "Rappels de médicaments et de rendez-vous", "Carnet de commerce à la voix : dettes, caisse, commandes, stock", "Pharmacies de garde et numéros d’urgence", "Pharmacie et structure de santé les plus proches, carte, appel, itinéraire", "Itinéraires et orientation", "Recherche d’annonces à Dakar et au Sénégal : voitures, appartements, chambres, maisons, terrains et objets d’occasion", "Traduction français–wolof", "Conseils du quotidien : santé, grossesse, sport, famille"], "author": {"@type": "Organization", "name": "KHALAM", "url": "https://khalam.app/"}, "image": "https://bia.khalam.app/icone-512.png"}, {"@type": "FAQPage", "@id": "https://khalam.app/bia#faq", "mainEntity": [{"@type": "Question", "name": "Pourquoi Bia Xarit ?", "acceptedAnswer": {"@type": "Answer", "text": "Xarit veut dire l’amie en wolof : Bia est l’amie qui parle ta langue."}}, {"@type": "Question", "name": "Bia Xarit, c’est une IA ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui : une IA qui parle wolof, sénégalaise et africaine, faite à Dakar par KHALAM. Tu lui parles, elle te répond à voix haute."}}, {"@type": "Question", "name": "Bia Xarit est-elle gratuite ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Bia Xarit est gratuite, en phase de test, sur invitation. Il n’y a ni paiement ni abonnement. L’accès se fait avec un code envoyé par KHALAM sur WhatsApp."}}, {"@type": "Question", "name": "Faut-il savoir lire ou écrire ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Tu parles, elle répond à voix haute. Elle lit les papiers que tu photographies et elle écrit à ta place."}}, {"@type": "Question", "name": "Dans quelles langues ?", "acceptedAnswer": {"@type": "Answer", "text": "En wolof et en français — et tu peux mélanger les deux dans la même phrase."}}, {"@type": "Question", "name": "Sur quel téléphone ?", "acceptedAnswer": {"@type": "Answer", "text": "Android ou iPhone."}}, {"@type": "Question", "name": "Qu’est-ce que le carnet de commerce ?", "acceptedAnswer": {"@type": "Answer", "text": "Un carnet privé, tenu à la voix : dettes, caisse, commandes et stock. Tu dis ce qui s’est passé, elle note, additionne et te rappelle qui te doit."}}, {"@type": "Question", "name": "Comment avoir un code ?", "acceptedAnswer": {"@type": "Answer", "text": "Laisse ton numéro dans le formulaire de cette page : une personne de KHALAM t’envoie ton code par WhatsApp."}}]}]}</script>
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="KHALAM">
-  <meta property="og:title" content="Bia Xarit — l’IA sénégalaise qui parle wolof. Parle. Simplifie ta vie. | KHALAM">
-  <meta property="og:description" content="Bia Xarit, l’intelligence artificielle sénégalaise qui parle wolof — l’assistante vocale de KHALAM, faite à Dakar, en wolof et en français : elle écrit tes messages et devis, lit tes ordonnances et documents, programme tes rappels, tient ton carnet de commerce, te conseille comme une amie. Gratuite, sur invitation.">
-  <meta property="og:url" content="https://khalam.app/bia">
-  <title>Bia Xarit — l’IA sénégalaise qui parle wolof. Parle. Simplifie ta vie. | KHALAM</title>
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:locale" content="fr_SN">
-  <meta property="og:image" content="https://khalam.app/bia-media/bia-visage.webp">
-  <meta property="og:image:alt" content="Bia Xarit, assistante IA gratuite en wolof et français au Sénégal">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Bia Xarit — l’IA sénégalaise qui parle wolof. Parle. Simplifie ta vie. | KHALAM">
-  <meta name="twitter:description" content="Bia Xarit, l’intelligence artificielle sénégalaise qui parle wolof — l’assistante vocale de KHALAM, faite à Dakar, en wolof et en français : elle écrit tes messages et devis, lit tes ordonnances et documents, programme tes rappels, tient ton carnet de commerce, te conseille comme une amie. Gratuite, sur invitation.">
-  <meta name="twitter:image" content="https://khalam.app/bia-media/bia-visage.webp">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <style>
-    :root{--ink:#11130f;--paper:#f4f1e8;--gold:#d7ad50;--gold2:#f0d58f;--muted:#a7a79d;--line:rgba(240,213,143,.18);--card:#191b16;--mint:#c7d8bd;--white:#fffdf7;--max:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font:16px/1.6 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-size:13px;letter-spacing:.2em;font-weight:750}.brand-mark{width:35px;height:35px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-family:Georgia,serif;font-size:20px;letter-spacing:0}.nav-links{display:flex;gap:28px;color:#d2d0c5;font-size:13px}.nav-links a:hover{color:var(--gold2)}.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--gold);border-radius:999px;padding:12px 19px;background:var(--gold);color:#17160f;font-weight:700;font-size:13px;transition:.2s}.nav-cta:hover,.button:hover{transform:translateY(-2px);background:var(--gold2)}.button.outline{background:transparent;color:var(--gold2)}.button.partager{cursor:pointer;font:inherit;font-weight:700;font-size:13px}.closing .partage-etat{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:51;width:max-content;max-width:calc(100% - 32px);margin:0;color:var(--mint);font-size:13px;text-align:center;pointer-events:none}.closing .partage-etat:not(:empty){padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:#15170f;box-shadow:0 10px 30px #000a}.partage-menu{position:fixed;inset:auto 0 0 0;z-index:50;background:#15170f;border-top:1px solid var(--line);padding:18px 20px calc(18px + env(safe-area-inset-bottom));display:grid;gap:10px;box-shadow:0 -20px 60px #000a}.partage-menu a,.partage-menu button{display:flex;align-items:center;gap:12px;width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--paper);font:inherit;font-size:15px;text-align:left;cursor:pointer}.partage-menu .fermer{justify-content:center;color:var(--muted);border-style:dashed}.partage-voile{position:fixed;inset:0;z-index:49;background:#0009}.button.outline:hover{background:rgba(215,173,80,.1)}
-    .hero{min-height:630px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding:70px 0 82px}.eyebrow{color:var(--gold2);font-size:11px;font-weight:750;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:24px;height:1px;background:var(--gold)}h1,h2,h3,p{margin-top:0}h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(46px,6vw,78px);line-height:.99;letter-spacing:-.045em;margin:22px 0 24px;max-width:680px}h1 em{color:var(--gold2);font-weight:400}.intro{max-width:550px;color:#c4c3b8;font-size:17px;line-height:1.75}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:29px 0 22px}.access-note{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:12px}.lock{width:17px;height:17px;display:grid;place-items:center;border:1px solid #77766c;border-radius:50%;font-size:10px}.hero-art{height:460px;position:relative;display:grid;place-items:center}.halo{position:absolute;width:min(390px,85%);aspect-ratio:1;border:1px solid rgba(215,173,80,.24);border-radius:50%;box-shadow:0 0 100px rgba(215,173,80,.06),inset 0 0 80px rgba(215,173,80,.035)}.halo:before,.halo:after{content:"";position:absolute;inset:25px;border:1px solid rgba(215,173,80,.16);border-radius:50%}.halo:after{inset:55px;border-style:dashed;opacity:.5}.portrait{position:relative;width:228px;height:270px;border-radius:48% 48% 44% 44%;background:#000;border:1px solid rgba(240,213,143,.5);display:grid;place-items:center;overflow:hidden;box-shadow:0 22px 80px rgba(0,0,0,.38)}.portrait img,.portrait video{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;background:#000}.portrait:after{content:"Bia Xarit";position:absolute;bottom:20px;letter-spacing:.36em;text-indent:.36em;font-size:11px;color:var(--gold2);font-weight:700}.spark{position:absolute;color:var(--gold2);font-size:20px}.spark.one{top:66px;right:12%}.spark.two{bottom:76px;left:9%;font-size:13px}.float{position:absolute;border:1px solid var(--line);background:rgba(25,27,22,.88);backdrop-filter:blur(12px);padding:12px 15px;border-radius:14px;font-size:12px;box-shadow:0 12px 35px #0005}.float b{display:block;color:var(--gold2);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}.float.a{top:55px;left:0}.float.b{right:-3px;bottom:70px}.sound{display:flex;align-items:center;gap:3px;height:17px}.sound i{width:3px;border-radius:4px;background:var(--gold);height:6px;animation:pulse 1s ease-in-out infinite alternate}.sound i:nth-child(2n){height:13px;animation-delay:.25s}.sound i:nth-child(3n){height:9px;animation-delay:.5s}@keyframes pulse{to{transform:scaleY(.45);opacity:.55}}
-    .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:22px 0}.trust div{text-align:center;border-right:1px solid var(--line);color:#d1cfc4;font-size:13px}.trust div:last-child{border:0}.trust strong{display:block;color:var(--gold2);font-size:15px;margin-bottom:2px}
-    section{padding:94px 0}.section-head{max-width:690px;margin-bottom:38px}.section-head h2{font:500 clamp(34px,4.3vw,54px)/1.08 Georgia,serif;letter-spacing:-.03em;margin:14px 0}.section-head p{color:#b7b6aa;max-width:620px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:25px;min-height:226px;position:relative;overflow:hidden}.card:after{content:"";position:absolute;width:100px;height:100px;right:-36px;bottom:-42px;border:1px solid rgba(215,173,80,.13);border-radius:50%}.icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(215,173,80,.1);color:var(--gold2);font-size:19px;margin-bottom:21px}.card h3{font:500 21px Georgia,serif;margin:0 0 9px;color:var(--white)}.card p{font-size:13px;color:#b7b6aa;line-height:1.7;margin:0}.card .promesse{color:var(--gold2);font-style:italic;margin-top:12px;font-size:13px}.card.neuf .icon{background:rgba(199,216,189,.14);color:var(--mint)}.pourquoi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.pourquoi div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px;font-size:13px;color:#b7b6aa;line-height:1.6}.pourquoi strong{display:block;color:var(--white);font:500 17px Georgia,serif;margin-bottom:6px}@media(max-width:800px){.pourquoi{grid-template-columns:1fr 1fr}}@media(max-width:520px){.pourquoi{grid-template-columns:1fr}}.examples{background:#171912;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.example-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.example{padding:22px;border:1px solid var(--line);border-radius:16px;background:#11130f}.tag{display:inline-block;color:var(--gold2);font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin-bottom:12px}.example blockquote{margin:0;color:#e6e3d8;font:19px/1.5 Georgia,serif}.example small{display:block;margin-top:12px;color:var(--muted);font-size:12px}
-    .how{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.steps{display:grid;gap:0}.step{display:grid;grid-template-columns:43px 1fr;gap:17px;padding:0 0 24px;margin-bottom:24px;border-bottom:1px solid var(--line)}.step:last-child{border:0;margin:0}.num{width:35px;height:35px;border-radius:50%;border:1px solid rgba(215,173,80,.45);display:grid;place-items:center;color:var(--gold2);font-family:Georgia,serif}.step h3{font:500 19px Georgia,serif;margin:2px 0 5px}.step p{font-size:13px;color:#b7b6aa;margin:0;max-width:470px}.gate{border:1px solid rgba(215,173,80,.38);border-radius:22px;background:linear-gradient(135deg,#202117,#151711);padding:30px;display:flex;align-items:center;gap:20px}.gate-icon{flex:0 0 48px;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:rgba(215,173,80,.12);color:var(--gold2);font-size:20px}.gate h3{font:500 21px Georgia,serif;margin:0 0 6px}.gate p{color:#b7b6aa;font-size:13px;margin:0}.gate .button{flex:0 0 auto;margin-left:auto}
-    .closing{text-align:center;padding:86px 0 100px;background:radial-gradient(ellipse at 50% 100%,rgba(215,173,80,.11),transparent 58%)}.closing h2{font:500 clamp(36px,5vw,58px)/1.08 Georgia,serif;max-width:720px;margin:15px auto}.closing p{color:#b7b6aa;max-width:550px;margin:0 auto 24px}.footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;align-items:center;justify-content:space-between;color:#929287;font-size:11px}.footer .brand{font-size:11px;color:var(--paper)}.pill{border:1px solid rgba(199,216,189,.3);color:var(--mint);border-radius:99px;padding:5px 10px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
-    @media(max-width:800px){.wrap{width:min(100% - 32px,var(--max))}.nav{height:68px}.nav-links{display:none}.hero{grid-template-columns:1fr;gap:8px;padding:62px 0 48px;min-height:0}.hero-art{height:350px;order:-1}.portrait{width:190px;height:230px}.halo{width:300px}.float.a{left:2%;top:44px}.float.b{right:1%;bottom:47px}.spark.one{right:9%;top:45px}h1{font-size:clamp(45px,12vw,68px)}.intro{font-size:15px}.trust{grid-template-columns:1fr;gap:12px;padding:18px}.trust div{border:0!important}.grid{grid-template-columns:1fr 1fr}.card{padding:20px;min-height:215px}.how{grid-template-columns:1fr;gap:34px}section{padding:70px 0}.gate{align-items:flex-start;flex-wrap:wrap}.gate .button{margin:0 0 0 68px}.footer{gap:15px;flex-wrap:wrap}}
-    @media(max-width:520px){.wrap{width:calc(100% - 28px)}.nav-cta{padding:10px 13px;font-size:11px}.hero{padding-top:43px}.hero-art{height:300px}.portrait{width:164px;height:203px}.halo{width:260px}.float{padding:9px 11px;font-size:10px}.float.a{top:26px}.float.b{bottom:32px}.actions{display:grid}.button{width:100%;padding:14px}.grid,.example-grid{grid-template-columns:1fr}.card{min-height:0}.card p{max-width:350px}.section-head{margin-bottom:27px}.gate{padding:21px}.gate .button{margin-left:0;width:100%}.footer{justify-content:center;text-align:center}.footer .brand{width:100%;justify-content:center}}
-    /* « En phase de test » : dit deux fois, en haut et au-dessus du
-       formulaire, parce que ce sont les deux endroits où quelqu'un décide
-       d'essayer. */
-    .phase-essai{display:inline-block;margin:14px 0 0;padding:5px 12px;border:1px solid rgba(199,216,189,.32);border-radius:99px;color:var(--mint);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:650}
-    /* ── DEMANDER UN CODE ───────────────────────────────────────────────
-       Une colonne, des champs hauts de 48 px et un texte de 16 px : en
-       dessous de 16 px, Safari zoome tout seul quand on touche un champ, et
-       la page part de travers sur un iPhone. */
-    .demande{display:grid;gap:16px;max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:19px;padding:26px}
-    .champ{display:grid;gap:7px}
-    .champ label{font-size:13px;color:#d2d0c5;font-weight:650}
-    .champ label span{color:var(--muted);font-weight:400}
-    .demande input[type=tel],.demande input[type=text]{width:100%;min-height:48px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#11130f;color:var(--paper);font-family:inherit;font-size:16px;line-height:1.4}
-    .demande input:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
-    .demande input[aria-invalid=true]{border-color:#d98b6a}
-    .accord{display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#c4c3b8;line-height:1.55;cursor:pointer}
-    .accord input{flex:0 0 auto;width:21px;height:21px;margin:1px 0 0;accent-color:var(--gold)}
-    .demande button{width:100%;min-height:48px}
-    .demande-etat{margin:0;font-size:13.5px;line-height:1.55;min-height:1.2em}
-    .demande-etat[data-ton=erreur]{color:#f0a98a}
-    .demande-etat[data-ton=bon]{color:var(--mint)}
-    /* Le champ piège : invisible à l'œil ET au lecteur d'écran, hors du
-       parcours du clavier. Un humain ne peut pas le remplir ; un robot qui
-       remplit tout le remplit. */
-    .piege{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-    .demande-note{max-width:520px;margin:18px 0 0;color:var(--muted);font-size:12.5px;line-height:1.7}
-    @media(max-width:520px){.demande{padding:20px;border-radius:16px}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-/* GRAND ÉCRAN (téléviseur, moniteur 4K) : toute la page grandit d'un bloc, proportions gardées. */
-@media (min-width:1600px){html{zoom:1.22}}
-@media (min-width:2200px){html{zoom:1.6}}
-@media (min-width:3200px){html{zoom:2.1}}
-    /* Visage vidéo : jamais de bouton Play (iPhone en économie d'énergie). */
-    video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none}
-    .hero video{pointer-events:none}
-    .portrait .visage-fixe{position:absolute;inset:0}
-  </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://khalam.app/#organization",
-      "name": "KHALAM",
-      "url": "https://khalam.app/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dakar",
-        "addressCountry": "SN"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://khalam.app/bia#page",
-      "url": "https://khalam.app/bia",
-      "name": "Bia Xarit — IA gratuite qui parle wolof au Sénégal | KHALAM",
-      "description": "Découvre Bia Xarit, l’intelligence artificielle gratuite qui parle wolof et français au Sénégal. Messages, documents et rappels à la voix. Accès sur code KHALAM.",
-      "inLanguage": "fr-SN",
-      "about": {
-        "@id": "https://khalam.app/bia#application"
-      },
-      "publisher": {
-        "@id": "https://khalam.app/#organization"
-      }
-    },
-    {
-      "@type": "WebApplication",
-      "@id": "https://khalam.app/bia#application",
-      "name": "Bia Xarit",
-      "alternateName": "BIA",
-      "url": "https://khalam.app/bia",
-      "description": "Découvre Bia Xarit, l’intelligence artificielle gratuite qui parle wolof et français au Sénégal. Messages, documents et rappels à la voix. Accès sur code KHALAM.",
-      "applicationCategory": "ProductivityApplication",
-      "operatingSystem": "Navigateur web",
-      "inLanguage": [
-        "wo",
-        "fr"
-      ],
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "XOF",
-        "description": "Gratuite, en phase de test, sur invitation avec un code KHALAM."
-      },
-      "publisher": {
-        "@id": "https://khalam.app/#organization"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "KHALAM",
-          "item": "https://khalam.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Bia Xarit",
-          "item": "https://khalam.app/bia"
-        }
-      ]
-    }
-  ]
-}
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09121d">
+<title>Bia Xarit — l’IA qui parle wolof et comprend votre quotidien | KHALAM</title>
+<meta name="description" content="Bia Xarit, l’intelligence artificielle de KHALAM créée à Dakar. Wolof, français, Tekkil ma, documents, recherche, carnet, carte, conseils, histoires, compagnie. Pass à partir de 500 F, valables 30 jours.">
+<link rel="canonical" href="https://khalam.app/bia">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KHALAM">
+<meta property="og:title" content="Bia Xarit — Parlez. Elle s’occupe du reste.">
+<meta property="og:description" content="L’IA de KHALAM qui parle wolof et français, vous aide au quotidien et vous accompagne comme une amie. Pass à partir de 500 F, valables 30 jours.">
+<meta property="og:url" content="https://khalam.app/bia">
+<meta property="og:image" content="https://khalam.app/bia-media/bia-visage.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://khalam.app/#org","name":"KHALAM","url":"https://khalam.app/","address":{"@type":"PostalAddress","addressLocality":"Dakar","addressCountry":"SN"}},
+{"@type":"SoftwareApplication","@id":"https://khalam.app/bia#app","name":"Bia Xarit","url":"https://khalam.app/bia","applicationCategory":"UtilitiesApplication","operatingSystem":"Web, Android, iOS","inLanguage":["wo","fr","en","ar","es","de"],"description":"Assistante IA vocale créée à Dakar par KHALAM : conversation wolof-français, traduction, Tekkil ma, documents, recherche, carte, carnet de commerce, rappels et accompagnement du quotidien.","offers":[
+{"@type":"Offer","name":"Pass Découverte","price":"500","priceCurrency":"XOF","description":"20 minutes d’utilisation active, valables 30 jours."},
+{"@type":"Offer","name":"Pass Xarit","price":"1000","priceCurrency":"XOF","description":"50 minutes d’utilisation active, valables 30 jours."},
+{"@type":"Offer","name":"Pass Xarit+","price":"2000","priceCurrency":"XOF","description":"120 minutes d’utilisation active, valables 30 jours."}
+],"author":{"@id":"https://khalam.app/#org"}}
+]}
+</script>
+<style>
+:root{--bg:#07111c;--bg2:#0b1825;--panel:#102235;--panel2:#132b42;--line:#28435b;--gold:#e0b35c;--gold2:#f1d899;--text:#f7f3ea;--muted:#aab8c5;--blue:#53aaf5;--green:#86d5a7;--red:#ff8f86;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,var(--bg),#091522 45%,#07111c);color:var(--text);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}.nav{position:sticky;top:0;z-index:40;background:rgba(7,17,28,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}.nav-in{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.18em;font-size:12px}.mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font:20px Georgia}.links{display:flex;gap:24px;color:#c2ced8;font-size:13px}.cta,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;border:1px solid var(--gold);background:var(--gold);color:#0b1420;font-weight:800;font-size:13px}.btn.alt{background:transparent;color:var(--gold2)}.hero{min-height:720px;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding:74px 0}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);font-weight:800}.hero h1{font:500 clamp(48px,6vw,78px)/1.02 Georgia,serif;letter-spacing:-.04em;margin:16px 0 22px}.hero h1 em{color:var(--gold2);font-style:normal}.lead{font-size:18px;color:#c6d1db;max-width:610px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.microcopy{margin-top:16px;color:#8fa0af;font-size:12px}.hero-art{position:relative;min-height:520px;display:grid;place-items:center}.orb{position:absolute;width:410px;aspect-ratio:1;border-radius:50%;border:1px solid #35506b;box-shadow:0 0 130px rgba(83,170,245,.12),inset 0 0 90px rgba(224,179,92,.05)}.portrait{width:270px;height:330px;border-radius:42% 42% 36% 36%;overflow:hidden;border:1px solid rgba(241,216,153,.5);box-shadow:0 25px 90px #0009;position:relative;background:#000}.portrait video,.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}.bubble{position:absolute;background:rgba(16,34,53,.92);border:1px solid #2b4862;border-radius:16px;padding:12px 14px;font-size:12px;color:#d5e0e9;box-shadow:0 12px 40px #0007}.bubble b{display:block;color:var(--gold2);font-size:10px;letter-spacing:.12em;text-transform:uppercase}.b1{top:55px;left:0}.b2{right:0;bottom:70px}.strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #20384f;border-bottom:1px solid #20384f}.strip div{text-align:center;padding:20px 10px;border-right:1px solid #20384f;color:#acbac7;font-size:12px}.strip div:last-child{border:0}.strip strong{display:block;color:#fff;font-size:15px}.section{padding:90px 0}.head{max-width:760px;margin-bottom:34px}.head h2{font:500 clamp(34px,4.3vw,54px)/1.08 Georgia,serif;letter-spacing:-.03em;margin:10px 0 12px}.head p{color:#aebdca;margin:0}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:linear-gradient(180deg,var(--panel),#0d1d2d);border:1px solid #203f5b;border-radius:20px;padding:24px;min-height:215px}.card .ico{width:42px;height:42px;border-radius:13px;background:#173653;display:grid;place-items:center;color:var(--gold2);margin-bottom:16px}.card h3{font:500 20px Georgia,serif;margin:0 0 8px}.card p{color:#aebdca;font-size:13.5px;margin:0}.quote{margin-top:13px;color:var(--gold2)!important;font-style:italic}.friend{background:radial-gradient(circle at 20% 30%,rgba(83,170,245,.10),transparent 35%),#0a1724;border-top:1px solid #20384f;border-bottom:1px solid #20384f}.friend-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}.friend-copy h2{font:500 clamp(38px,5vw,58px)/1.06 Georgia,serif;margin:12px 0 18px}.friend-copy p{color:#b6c3cd}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.chip{border:1px solid #34506a;border-radius:999px;padding:7px 11px;color:#cdd8e1;font-size:12px}.story-card{background:linear-gradient(145deg,#142a40,#0c1b2a);border:1px solid #2b4964;border-radius:26px;padding:30px;box-shadow:0 30px 80px #0006}.story-card blockquote{font:27px/1.45 Georgia,serif;margin:0 0 18px;color:#f5ead0}.story-card small{color:#8fa6b8}.gallery{background:#08131e}.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.shot{background:#0d1c2a;border:1px solid #23405a;border-radius:24px;padding:18px}.shot h3{font:500 20px Georgia,serif;margin:14px 0 5px}.shot p{font-size:13px;color:#9fb0be;margin:0}.phone{width:min(100%,300px);aspect-ratio:9/18.5;border:7px solid #172432;border-radius:38px;background:#f5faff;overflow:hidden;margin:auto;box-shadow:0 20px 55px #0007;position:relative;color:#102d63}.phone:before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:92px;height:20px;border-radius:20px;background:#172432;z-index:10}.screen{height:100%;padding:38px 14px 16px;background:linear-gradient(180deg,#f7fbff,#eef7ff);font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#102d63}.appbar{display:flex;align-items:center;justify-content:space-between;font-weight:800;margin-bottom:18px}.gear{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#e2f1ff;border:1px solid #c7dff4}.wave{height:160px;display:grid;place-items:center}.wave .face{width:115px;height:140px;border-radius:46%;overflow:hidden;background:#000;border:2px solid #0d6ed8}.wave img{width:100%;height:100%;object-fit:cover;object-position:center top}.mic{width:86px;height:86px;border-radius:50%;margin:12px auto;background:#e9f5ff;border:3px solid #0b71dc;display:grid;place-items:center;font-size:34px}.status{text-align:center;color:#526b8c}.bottom{position:absolute;left:14px;right:14px;bottom:18px;display:flex;gap:8px}.bottom span{flex:1;background:#eaf4ff;border:1px solid #cbdff3;border-radius:12px;padding:9px 5px;text-align:center;font-size:11px}.menu-card{background:#fff;border:1px solid #d4e4f2;border-radius:14px;padding:12px;margin-bottom:10px}.menu-card strong{display:block;margin-bottom:6px}.toggle{display:flex;justify-content:space-between;align-items:center}.sw{width:42px;height:24px;border-radius:20px;background:#16804c;position:relative}.sw:after{content:"";width:18px;height:18px;border-radius:50%;background:#fff;position:absolute;right:3px;top:3px}.select{background:#edf6ff;border:1px solid #c8def1;padding:8px;border-radius:10px}.tek-head{font-size:20px;font-weight:800;margin:2px 0 16px}.tkcard{background:white;border:1px solid #cbdff3;border-radius:15px;padding:12px;margin-bottom:11px}.tkbtn{background:#0869d6;color:#fff;border-radius:12px;padding:12px;text-align:center;font-weight:800}.chatline{border-left:3px solid #16804c;background:#fff;border-radius:10px;padding:9px;margin-top:8px}.map{height:58%;border-radius:16px;background:linear-gradient(135deg,#d9efd6,#e9e2c5);position:relative;overflow:hidden;border:1px solid #c5d7c5}.road{position:absolute;width:150%;height:10px;background:#fff;transform:rotate(-28deg);top:45%;left:-20%}.route{position:absolute;width:120%;height:4px;background:#1684dd;transform:rotate(-28deg);top:47%;left:-10%}.pin{position:absolute;width:18px;height:18px;border-radius:50%;background:#1684dd;border:4px solid #fff;left:28%;bottom:28%}.dest{position:absolute;width:18px;height:18px;border-radius:50%;background:#16804c;border:4px solid #fff;right:24%;top:25%}.routebox{background:#fff;border-radius:13px;padding:10px;margin-top:10px;border:1px solid #d5e0dc}.doc{background:#fff;border:1px solid #d7e1e9;border-radius:14px;padding:14px;box-shadow:0 5px 18px #4b6f8a18}.doc h4{margin:0 0 10px;font-size:16px}.line{height:7px;background:#dce8f0;border-radius:6px;margin:7px 0}.line.short{width:60%}.total{margin-top:14px;font-weight:800;text-align:right}.carnet-tabs{display:flex;gap:5px;margin-bottom:10px}.carnet-tabs span{flex:1;background:#eaf4ff;border-radius:8px;padding:6px 2px;text-align:center;font-size:10px}.ledger{background:#fff;border:1px solid #d6e3ed;border-radius:12px;padding:10px}.ledger-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e8eef3}.ledger-row:last-child{border:0}.camera{height:70%;border-radius:16px;background:linear-gradient(180deg,#111,#343434);position:relative;overflow:hidden;display:grid;place-items:center;color:#fff}.camera img{width:100%;height:100%;object-fit:cover;opacity:.72}.count{position:absolute;font-size:62px;font-weight:800;text-shadow:0 3px 12px #000}.cam-actions{display:flex;gap:8px;margin-top:12px}.cam-actions span{flex:1;text-align:center;padding:10px;border-radius:10px;background:#eaf4ff}.free-badge{display:inline-block;background:#dff5e7;color:#14693e;border:1px solid #a8dbba;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;margin-bottom:12px}.freebox{background:#fff;border:1px solid #d6e4ef;border-radius:14px;padding:14px}.pass{background:#0a1724;border-top:1px solid #20384f;border-bottom:1px solid #20384f}.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.price{background:#102235;border:1px solid #2a4963;border-radius:22px;padding:25px;position:relative}.price.best{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}.price h3{font:500 24px Georgia,serif;margin:0 0 8px}.mins{font-size:34px;font-weight:850}.amount{font-size:22px;color:var(--gold2);font-weight:850}.valid{margin-top:10px;color:#a9bac7;font-size:12px}.pass-note{margin-top:20px;padding:16px 18px;border:1px solid #294860;border-radius:15px;color:#c1ced8;background:#0d1e2d}.always{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.always div{border:1px solid #31506a;border-radius:14px;padding:14px;color:#c8d4de}.form-section{padding:84px 0}.request{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}.request h2{font:500 clamp(36px,4.5vw,54px)/1.08 Georgia,serif}.form{background:#102235;border:1px solid #294963;border-radius:22px;padding:24px;display:grid;gap:14px}.form label{font-size:12px;color:#c5d1db}.form input,.form select{width:100%;min-height:48px;border-radius:12px;border:1px solid #35546e;background:#091725;color:white;padding:11px 12px;font-size:16px}.form button{min-height:48px;border:0;border-radius:12px;background:var(--gold);font-weight:850;color:#091522}.state{min-height:20px;font-size:13px}.footer{border-top:1px solid #20384f;padding:26px 0 38px;color:#8095a6;font-size:11px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.links{display:none}.hero{grid-template-columns:1fr;gap:20px}.hero-art{order:-1;min-height:400px}.service-grid,.shots{grid-template-columns:1fr 1fr}.friend-grid,.request{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.strip{grid-template-columns:1fr 1fr}.strip div:nth-child(2){border-right:0}.always{grid-template-columns:1fr}}
+@media(max-width:580px){.wrap{width:calc(100% - 26px)}.hero{padding-top:42px;min-height:0}.hero-art{min-height:330px}.orb{width:280px}.portrait{width:190px;height:240px}.b1{top:15px}.b2{bottom:20px}.actions{display:grid}.btn,.cta{width:100%}.service-grid,.shots{grid-template-columns:1fr}.section{padding:66px 0}.strip{grid-template-columns:1fr}.strip div{border-right:0;border-bottom:1px solid #20384f}.strip div:last-child{border-bottom:0}.phone{max-width:285px}}
+</style>
 </head>
 <body>
-  <header class="wrap nav">
-    <a class="brand" href="https://khalam.app/" aria-label="KHALAM, accueil"><span class="brand-mark">K</span><span>KHALAM</span></a>
-    <nav class="nav-links" aria-label="Navigation"><a href="#services">Pour qui</a><a href="#exemples">Exemples</a><a href="#questions">Questions</a><a href="#demander">Demander un code</a></nav>
-    <a class="nav-cta" href="https://bia.khalam.app/">J’ai un code → Entrer dans Bia&nbsp;Xarit</a>
-  </header>
+<header class="nav"><div class="wrap nav-in">
+<a class="brand" href="/"><span class="mark">K</span><span>KHALAM</span></a>
+<nav class="links"><a href="#services">Services</a><a href="#amie">Une vraie amie</a><a href="#application">L’application</a><a href="#pass">Les pass</a></nav>
+<a class="cta" href="#demander">Demander un pass</a>
+</div></header>
 
-  <main>
-    <section class="wrap hero" id="accueil">
-      <div>
-        <div class="eyebrow">L’IA qui parle wolof · IA sénégalaise · IA africaine</div>
-        <p class="phase-essai">BIA&nbsp;XARIT est gratuite et en phase de test : accès sur invitation.</p>
-        <h1>Bia&nbsp;Xarit.<br>Parle.<br><em>Simplifie ta vie.</em></h1>
-        <p class="intro"><strong>Bia&nbsp;Xarit, l’intelligence artificielle gratuite qui parle wolof et français au Sénégal.</strong> Une assistante vocale créée par KHALAM à Dakar, pour t’aider au quotidien. Un message à écrire, un document à comprendre, un rendez-vous à retenir ? Parle à Bia&nbsp;Xarit comme à une amie. Elle t’écoute, te répond à voix haute et t’aide à avancer.<br><br><strong>Pas besoin de savoir lire ou écrire. Avec Bia&nbsp;Xarit, ta voix suffit.</strong></p>
-        <div class="actions"><a class="button" href="#demander">Demander mon code <span aria-hidden="true">→</span></a><a class="button outline" href="#services">Découvrir Bia&nbsp;Xarit</a><button class="button outline partager" type="button" data-partager aria-label="Partager la page de Bia Xarit"><span aria-hidden="true">⇪</span> Partager</button></div>
-      </div>
-      <div class="hero-art" aria-label="Illustration de Bia Xarit, ton assistante vocale">
-        <div class="halo"></div><span class="spark one">✳</span><span class="spark two">✦</span>
-        <div class="float a"><b>Wolof · Français</b>Ta langue, naturellement</div>
-        <div class="portrait"><video src="/bia-media/bia-visage.mp4" poster="/bia-media/bia-visage.webp" width="228" height="270" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" aria-label="Bia Xarit, en tenue bleu nuit, qui parle"></video></div>
-        <div class="float b"><b>À l’écoute</b><span class="sound" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-      </div>
-    </section>
+<main>
+<section class="wrap hero">
+<div>
+<div class="eyebrow">Créée à Dakar · Wolof · Français · Voix · Vision</div>
+<h1>Bia Xarit.<br><em>Parlez. Elle s’occupe du reste.</em></h1>
+<p class="lead">Bia Xarit est l’intelligence artificielle de KHALAM pensée pour la vraie vie. Vous lui parlez comme à une personne. Elle vous écoute, vous répond à la voix, vous aide à comprendre, écrire, traduire, chercher, vous déplacer, gérer votre activité — ou simplement discuter quand vous en avez envie.</p>
+<div class="actions"><a class="btn" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a></div>
+<p class="microcopy">Pas besoin de connaître l’informatique. Votre voix suffit.</p>
+</div>
+<div class="hero-art"><div class="orb"></div>
+<div class="bubble b1"><b>Wolof · Français</b>Une IA qui parle votre langue.</div>
+<div class="portrait"><video src="/bia-media/bia-visage.mp4" poster="/bia-media/bia-visage.webp" autoplay muted loop playsinline preload="auto"></video></div>
+<div class="bubble b2"><b>À votre écoute</b>Une assistante. Une conseillère. Une amie.</div>
+</div>
+</section>
 
-    <section class="wrap" id="services">
-      <div class="section-head"><div class="eyebrow">Pour qui ?</div><h2>Une seule assistante, mille petits services.</h2><p>Dis à Bia&nbsp;Xarit ce que tu veux faire. Elle s’occupe du reste.</p></div>
-      <div class="grid">
-        <article class="card"><div class="icon" aria-hidden="true">✚</div><h3>Santé : accompagne tes proches, même dans les petits détails</h3><p>Photographie une ordonnance pour en faciliter la lecture, prépare tes questions pour le médecin et programme tes rappels de médicaments. Et quand il faut y aller : dis « la pharmacie la plus proche » ou « l’hôpital le plus proche », en wolof ou en français — Bia&nbsp;Xarit te répond « D’accord, je t’ouvre la carte », te montre la plus proche, sa distance, et te propose d’appeler ou de suivre le chemin.</p><p class="promesse">Moins d’oublis, plus de tranquillité — et le bon endroit, tout de suite.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">▤</div><h3>Commerce : ton talent mérite une assistante</h3><p>Dicte tes devis, prépare tes factures et rédige des messages qui donnent envie d’acheter. Comprends les courriers reçus et échange plus facilement avec tes clients en wolof ou en français.</p><p class="promesse">Tu t’occupes de tes clients. Bia&nbsp;Xarit t’aide avec le reste.</p></article>
-        <article class="card neuf"><div class="icon" aria-hidden="true">☷</div><h3>Ton carnet de commerce, à la voix</h3><p>« Moussa me doit 15 000 depuis mardi. » « J’ai vendu 3 sacs de riz à 12 000. » « Il me reste combien de sucre ? » Bia&nbsp;Xarit tient tes dettes, ta caisse, tes commandes et ton stock, te rappelle qui te doit et te fait le bilan du jour — en wolof.</p><p class="promesse">Privé, simple, sans menu : tu parles, elle écrit.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">❦</div><h3>Agriculture et élevage : une alliée jusque dans les champs</h3><p>Cherche des informations utiles pour tes cultures et ton élevage, fais lire une notice ou prépare un message pour un acheteur. Programme tes rappels de traitements, de vaccination et d’échéances.</p><p class="promesse">Au village comme en ville, l’information devient plus accessible.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">✎</div><h3>Artisans et professionnels : transforme tes paroles en travail accompli</h3><p>Un devis à préparer, une adresse à trouver, une livraison à retenir ? Dicte ta demande et garde le fil de ta journée.</p><p class="promesse">Moins de paperasse. Plus de temps pour ton métier.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">Aa</div><h3>Apprentissage : ose poser toutes tes questions</h3><p>Pratique le français ou le wolof, révise une leçon et fais expliquer les mots difficiles. Tu n’as pas compris ? Bia&nbsp;Xarit reprend avec toi.</p><p class="promesse">Chacun son rythme. Chacun sa chance d’apprendre.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">♥</div><h3>Une amie qui écoute, à toute heure</h3><p>Tu t’ennuies, tu as envie de parler ? Tu es seul·e, stressé·e, inquiet·e ? Une dispute, un doute dans ton couple ? Bia&nbsp;Xarit discute, rassure, donne l’avis franc d’une meilleure amie — et garde tout pour elle. Quand c’est lourd, elle te dit avec douceur vers qui te tourner.</p><p class="promesse">Quelqu’un à qui parler, même la nuit.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">✿</div><h3>Grossesse et maternité : la grande sœur qui sait</h3><p>Chaque mois de la grossesse expliqué simplement, ce qui est normal et ce qui doit faire aller à la clinique. Les rendez-vous, les vitamines, les vaccins du bébé : elle les rappelle. Et les questions qu’on n’ose pas poser, elle y répond sans juger.</p><p class="promesse">Tu n’es plus seule avec tes questions.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">➶</div><h3>Sport et forme : un coach qui ne lâche pas</h3><p>Marche, course, musculation, perte de poids, remise en forme : un programme pour toi, adapté à ton temps. Elle compte avec toi pendant l’effort, te rappelle de boire et de t’étirer, note tes séances et te motive.</p><p class="promesse">Un petit pas chaque jour, et elle s’en souvient.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">⌂</div><h3>Famille : un coup de pouce pour toute la famille</h3><p>Un message pour l’école, une démarche à comprendre, une question de devoirs ou un rappel pour grand-père : Bia&nbsp;Xarit accompagne les besoins de chaque génération.</p><p class="promesse">Une aide pour toi. Un coup de pouce pour tous.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">▧</div><h3>Papiers et démarches : comprends ce qu’on te demande</h3><p>Une lettre de la banque, un contrat, un avis de l’administration : photographie-le, Bia&nbsp;Xarit te lit ce qu’il y a dedans et ce que ça veut dire pour toi. Puis elle écrit la réponse, la demande ou la réclamation, dans les bons mots.</p><p class="promesse">Plus jamais signer sans comprendre.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">➤</div><h3>En ville : elle te montre le chemin</h3><p>Une adresse à trouver, un numéro d’urgence sous le doigt : Bia&nbsp;Xarit cherche, te guide sur la carte et te dit où aller — sans que tu aies à lire quoi que ce soit.</p><p class="promesse">Tu demandes, elle t’oriente.</p></article>
-        <article class="card neuf"><div class="icon" aria-hidden="true">⌕</div><h3>Trouver : voiture, appartement, maison</h3><p>Dis-lui ce que tu cherches, elle fouille les annonces de Dakar et te lit les meilleures : prix, quartier, numéro.</p><p class="promesse">Une voiture d’occasion, un appartement ou une chambre à louer, une maison ou un terrain à vendre : tu dis, elle cherche.</p></article>
-      </div>
-    </section>
+<div class="wrap strip">
+<div><strong>Tekkil ma</strong>Deux personnes. Deux langues.</div>
+<div><strong>Une vingtaine de services</strong>Dans une seule Bia.</div>
+<div><strong>À partir de 500 F</strong>Vous payez le temps utilisé.</div>
+<div><strong>30 jours</strong>Chaque pass est valable un mois.</div>
+</div>
 
-    <section class="examples" id="exemples"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">Quelques exemples</div><h2>Tu peux commencer comme ça.</h2><p>Pas besoin de chercher les mots parfaits. Dis à Bia&nbsp;Xarit ce que tu veux faire.</p></div>
-      <div class="example-grid">
-        <article class="example"><span class="tag">Lire une ordonnance</span><blockquote>« Lis-moi cette ordonnance et rappelle-moi mes comprimés matin et soir. »</blockquote><small>Tu photographies le papier ; Bia&nbsp;Xarit le lit, l’explique et programme les rappels.</small></article>
-        <article class="example"><span class="tag">Trouver une pharmacie</span><blockquote>« Fan la pharmacie bi gën a jege ? »</blockquote><small>Elle te montre la plus proche sur la carte et te propose d’appeler.</small></article>
-        <article class="example"><span class="tag">Trouver un logement</span><blockquote>« Dama bëgg appartement bu ñu luye ci Pikine »</blockquote><small>Elle fouille les annonces de Dakar, te lit les trois premières avec leur prix et leur quartier, et les montre à l’écran avec le numéro quand il est affiché.</small></article>
-        <article class="example"><span class="tag">Tenir son carnet</span><blockquote>« Fatou me doit 8 000 depuis lundi. Et qui d’autre me doit ? »</blockquote><small>Bia&nbsp;Xarit note, additionne et te dit tout ce qu’on te doit — en wolof si tu veux.</small></article>
-        <article class="example"><span class="tag">Écrire un message</span><blockquote>« Aide-moi à écrire un message poli pour confirmer le rendez-vous de demain. »</blockquote><small>Tu expliques l’intention ; Bia&nbsp;Xarit formule le texte, prêt pour WhatsApp.</small></article>
-        <article class="example"><span class="tag">Parler wolof</span><blockquote>« Dama bëgg nga dimbali ma bind message bii ci français. »</blockquote><small>Tu peux mélanger wolof et français pour te faire comprendre.</small></article>
-        <article class="example"><span class="tag">Parler, tout simplement</span><blockquote>« Bia&nbsp;Xarit, je n’arrive pas à dormir. Tu peux me parler un peu ? »</blockquote><small>Elle discute, elle écoute, elle rassure. Comme une amie.</small></article>
-        <article class="example"><span class="tag">Préparer un devis</span><blockquote>« Prépare un devis avec ces articles, les quantités et les prix. »</blockquote><small>Tu donnes les informations ; Bia&nbsp;Xarit les met en forme dans un PDF.</small></article>
-      </div>
-    </div></section>
+<section class="section wrap" id="services">
+<div class="head"><div class="eyebrow">Ce que Bia fait pour vous</div><h2>Une seule Bia. Une vingtaine de services.</h2><p>Pas de menus compliqués : vous dites ce que vous voulez faire. Bia comprend la demande et vous accompagne.</p></div>
+<div class="service-grid">
+<article class="card"><div class="ico">🌍</div><h3>Tekkil ma</h3><p>Ouvrez un salon, envoyez le lien par WhatsApp et parlez chacun dans votre langue : wolof, français, anglais, arabe, espagnol ou chinois mandarin.</p><p class="quote">Deux personnes. Deux langues. Une conversation.</p></article>
+<article class="card"><div class="ico">📄</div><h3>Lire vos documents</h3><p>Ordonnance, facture, courrier, contrat ou document photographié : Bia le lit et vous l’explique en wolof ou en français. Si une ligne est illisible, elle le dit au lieu de deviner.</p></article>
+<article class="card"><div class="ico">⏰</div><h3>Rappels et santé pratique</h3><p>« Rappelle-moi mon médicament à 8 h. » Bia programme le rappel, retrouve la pharmacie ou l’hôpital le plus proche et donne les numéros de secours utiles.</p></article>
+<article class="card"><div class="ico">🔎</div><h3>Recherche et annonces</h3><p>Voiture, appartement, maison, terrain, prix, météo, horaire ou actualité : vous demandez, elle cherche et vous présente clairement ce qu’elle trouve.</p></article>
+<article class="card"><div class="ico">🗺️</div><h3>Vous guider</h3><p>Bia ouvre la carte, utilise votre position pour le trajet et vous indique destination, direction et distance. Votre position n’est pas conservée.</p></article>
+<article class="card"><div class="ico">✍🏾</div><h3>Vous parlez. Elle écrit.</h3><p>Message WhatsApp, email, devis ou facture : vous dictez, Bia rédige. Vos devis et factures peuvent devenir des PDF prêts à partager.</p></article>
+<article class="card"><div class="ico">📒</div><h3>Carnet du commerce</h3><p>Dettes, caisse, commandes et stock. « Moussa me doit 15 000. » Bia enregistre, calcule et vous relit vos chiffres sans en inventer.</p></article>
+<article class="card"><div class="ico">🧠</div><h3>Elle se souvient</h3><p>Bia retient ce que vous choisissez de lui confier et peut s’en servir la prochaine fois pour vous répondre avec plus de continuité.</p></article>
+<article class="card"><div class="ico">📸</div><h3>Images, vidéos et photo</h3><p>« Montre-moi le Lac Rose. » Bia affiche des images ou une vidéo. « Prends-moi une photo. » Elle ouvre l’appareil, compte 3-2-1 et la photo reste sur votre téléphone.</p></article>
+<article class="card"><div class="ico">📚</div><h3>Apprendre et comprendre</h3><p>Une leçon, un SMS en wolof, un nombre, une traduction, une explication : demandez à Bia de reprendre simplement avec vous.</p></article>
+<article class="card"><div class="ico">💬</div><h3>Conseils du quotidien</h3><p>Couple, famille, travail, décision difficile, organisation personnelle : Bia écoute, échange, aide à prendre du recul et donne un avis sans remplacer un professionnel quand il en faut un.</p></article>
+<article class="card"><div class="ico">🎭</div><h3>Histoires, contes et humour</h3><p>Demandez-lui une histoire, un conte, une blague ou simplement de parler avec vous. Bia peut aussi tenir compagnie et vous accompagner comme une vraie amie.</p></article>
+</div>
+</section>
 
-    <section class="wrap" id="pourquoi">
-      <div class="section-head"><div class="eyebrow">Pourquoi tu vas aimer BIA&nbsp;XARIT</div><h2>Elle te facilite la vie. À toi d’en profiter.</h2></div>
-      <div class="pourquoi">
-        <div><strong>Une voix et un visage.</strong>Elle te répond à voix haute ; l’échange devient vivant.</div>
-        <div><strong>Elle garde le fil.</strong>Retrouve tes repères d’une conversation à l’autre.</div>
-        <div><strong>Tu peux la corriger.</strong>Tes retours l’aident à mieux te comprendre.</div>
-        <div><strong>Elle te suit partout.</strong>Sur ton téléphone, ton assistante reste à portée de main.</div>
-      </div>
-    </section>
+<section class="section friend" id="amie"><div class="wrap friend-grid">
+<div class="friend-copy"><div class="eyebrow">Plus qu’un outil</div><h2>Une vraie amie au quotidien.</h2><p>Parfois, vous avez quelque chose à faire. Parfois, vous avez simplement besoin de parler. Bia sait faire les deux.</p><p>Une question de couple. Une situation familiale. Une idée à réfléchir. Un moment de stress ou de solitude. Une envie de rire. Une histoire avant de dormir. Bia est là pour échanger avec vous, sans jugement.</p><div class="chips"><span class="chip">Conseillère</span><span class="chip">Confidente</span><span class="chip">Compagne de discussion</span><span class="chip">Histoires & contes</span><span class="chip">Blagues</span><span class="chip">Wolof & français</span></div></div>
+<div class="story-card"><blockquote>« Parle avec moi un peu. »<br>« Donne-moi ton avis. »<br>« Raconte-moi un conte. »<br>« Fais-moi rire. »</blockquote><small>Une IA utile quand vous avez quelque chose à faire. Une amie quand vous avez simplement envie de parler.</small></div>
+</div></section>
 
-    <section class="wrap" id="questions">
-      <div class="section-head"><div class="eyebrow">Questions fréquentes</div><h2>Ce qu’on nous demande.</h2></div>
-      <div class="grid">
-        <article class="card"><h3>Pourquoi Bia&nbsp;Xarit ?</h3><p>Xarit veut dire l’amie en wolof : Bia est l’amie qui parle ta langue.</p></article>
-        <article class="card"><h3>Bia&nbsp;Xarit est-elle gratuite ?</h3><p>Oui. Bia&nbsp;Xarit est gratuite, en phase de test, sur invitation. Il n’y a ni paiement ni abonnement. L’accès se fait avec un code envoyé par KHALAM sur WhatsApp.</p></article>
-        <article class="card"><h3>Faut-il savoir lire ou écrire ?</h3><p>Non. Tu parles, elle répond à voix haute. Elle lit les papiers que tu photographies et elle écrit à ta place.</p></article>
-        <article class="card"><h3>Bia&nbsp;Xarit, c’est une IA ?</h3><p>Oui : une IA qui parle wolof, sénégalaise et africaine, faite à Dakar par KHALAM. Tu lui parles, elle te répond à voix haute — ce qu’aucune IA connue ne fait en wolof.</p></article>
-        <article class="card"><h3>Dans quelles langues ?</h3><p>En wolof et en français — et tu peux mélanger les deux dans la même phrase.</p></article>
-        <article class="card"><h3>Sur quel téléphone ?</h3><p>Android ou iPhone.</p></article>
-        <article class="card"><h3>Qu’est-ce que le carnet de commerce ?</h3><p>Un carnet privé, tenu à la voix : dettes, caisse, commandes et stock. Tu dis ce qui s’est passé, elle note, additionne et te rappelle qui te doit.</p></article>
-        <article class="card"><h3>Comment avoir un code ?</h3><p>Laisse ton numéro dans le formulaire de cette page : une personne de KHALAM t’envoie ton code par WhatsApp.</p></article>
-      </div>
-    </section>
+<section class="section gallery" id="application"><div class="wrap">
+<div class="head"><div class="eyebrow">L’application aujourd’hui</div><h2>Découvrez Bia Xarit écran par écran.</h2><p>Les aperçus ci-dessous reprennent les principales vues actuellement présentes dans l’application : accueil, réglages, Tekkil ma, carte, documents, carnet, photo et mode gratuit.</p></div>
+<div class="shots">
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Bia Xarit</span><span class="gear">⚙</span></div><div class="wave"><div class="face"><img src="https://app.khalam.app/bia-24.webp" alt="Bia Xarit"></div></div><div class="mic">🎙️</div><div class="status">Je t’écoute</div><div class="bottom"><span>Clavier</span><span>Moi</span><span>Services</span></div></div></div><h3>Accueil vocal</h3><p>Le cœur de Bia : vous parlez, elle écoute et répond à la voix.</p></article>
 
-    <section class="wrap how" id="acces">
-      <div class="section-head"><div class="eyebrow">Un accès simple et protégé</div><h2>Bia&nbsp;Xarit est gratuite. Le code vient de KHALAM.</h2><p>La page de présentation est ouverte à tous. Pour entrer dans l’assistante, il faut un code d’accès émis par KHALAM.</p></div>
-      <div>
-        <div class="steps">
-          <div class="step"><span class="num">1</span><div><h3>Reçois ton code</h3><p>Demande ton code d’accès à KHALAM.</p></div></div>
-          <div class="step"><span class="num">2</span><div><h3>Ouvre Bia&nbsp;Xarit</h3><p>Le bouton te conduit à l’application.</p></div></div>
-          <div class="step"><span class="num">3</span><div><h3>Parle-lui</h3><p>Une fois le code accepté, pose ta question à la voix ou par écrit.</p></div></div>
-        </div>
-        <div class="gate"><div class="gate-icon" aria-hidden="true">◇</div><div><h3>Tu as déjà ton code ?</h3><p>Entre dans Bia&nbsp;Xarit et saisis ton numéro et ton code Khalam.</p></div><a class="button" href="https://bia.khalam.app/">Entrer dans Bia&nbsp;Xarit <span aria-hidden="true">↗</span></a></div>
-      </div>
-    </section>
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Moi</span><span>×</span></div><div class="menu-card"><strong>Langue</strong><div class="select">Wolof · Français (par défaut) ▾</div></div><div class="menu-card"><strong>Personnage et voix</strong><div class="toggle"><span>Personnage animé</span><span class="sw"></span></div></div><div class="menu-card"><strong>Version gratuite</strong><div class="toggle"><span>Français</span><span class="sw"></span></div></div><div class="menu-card"><strong>Options</strong><span>Conversation écrite · À relire · Réglages</span></div></div></div><h3>Moi / Réglages</h3><p>L’engrenage ouvre les langues, le personnage, la voix, la version gratuite et les préférences.</p></article>
 
-    <section class="wrap" id="demander">
-      <div class="section-head">
-        <div class="eyebrow">Demander un code</div>
-        <h2>Laisse ton numéro.</h2>
-        <p>KHALAM t’envoie ton code par WhatsApp — et c’est une personne qui te répond, jamais une machine.</p>
-      </div>
-      <form class="demande" id="formulaire-code" novalidate>
-        <div class="champ">
-          <label for="demande-numero">Ton numéro de téléphone</label>
-          <input id="demande-numero" name="numero" type="tel" inputmode="tel" autocomplete="tel" placeholder="+221 77 123 45 67" required>
-        </div>
-        <div class="champ">
-          <label for="demande-prenom">Ton prénom <span>(facultatif)</span></label>
-          <input id="demande-prenom" name="prenom" type="text" autocomplete="given-name" maxlength="40" placeholder="BIBA">
-        </div>
-        <div class="piege" aria-hidden="true"><label for="demande-societe">Société</label><input id="demande-societe" name="societe" type="text" tabindex="-1" autocomplete="off"></div>
-        <label class="accord" for="demande-accord">
-          <input type="checkbox" id="demande-accord" name="accord">
-          <span>J’accepte que KHALAM garde mon numéro pour m’envoyer un code.</span>
-        </label>
-        <button class="button" type="submit">Demander mon code</button>
-        <p class="demande-etat" id="demande-etat" role="status" aria-live="polite"></p>
-      </form>
-    </section>
+<article class="shot"><div class="phone"><div class="screen"><div class="tek-head">Tekkil ma — interprète</div><div class="tkcard"><b>Ma langue</b><div class="select">Wolof ▾</div><br><b>Langue de l’invité</b><div class="select">English ▾</div></div><div class="tkbtn">Ouvrir le salon</div><div class="chatline"><b>Vous :</b> Dama bëgg wax ak yaw.</div><div class="chatline"><b>Traduction :</b> I would like to speak with you.</div></div></div><h3>Tekkil ma</h3><p>Salon partagé, six langues, conversation vocale dans les deux sens.</p></article>
 
-    <section class="closing"><div class="wrap"><div class="eyebrow" style="justify-content:center">BIA&nbsp;XARIT · KHALAM</div><h2>Parle comme tu es.<br>Avance à ton rythme.</h2><p>Demande ton code à KHALAM et découvre ce qu’elle peut faire pour toi.</p><div class="actions" style="justify-content:center;margin-top:22px"><a class="button" href="#demander">Demander mon code <span aria-hidden="true">→</span></a><button class="button outline partager" type="button" data-partager aria-label="Partager la page de Bia Xarit"><span aria-hidden="true">⇪</span> Partager Bia&nbsp;Xarit</button></div><p class="partage-etat" aria-live="polite"></p></div></section>
-  </main>
-  <footer class="wrap footer"><a class="brand" href="#accueil"><span class="brand-mark">K</span><span>KHALAM</span></a><span>Bia&nbsp;Xarit — Parle. Simplifie ta vie.</span><span>© 2014 KHALAM</span><span class="pill">Accès gratuit par code</span></footer>
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Direction : Almadies</span><span>×</span></div><div class="map"><div class="road"></div><div class="route"></div><span class="pin"></span><span class="dest"></span></div><div class="routebox"><b>Almadies</b><br>Direction : nord-ouest<br>Distance : 6,7 km</div></div></div><h3>Carte et déplacement</h3><p>Votre position, la destination, la direction et la distance, dans une vue dédiée.</p></article>
+
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Devis</span><span>×</span></div><div class="doc"><h4>DEVIS</h4><div class="line"></div><div class="line short"></div><div class="line"></div><div class="line"></div><div class="line short"></div><div class="total">Total : 36 000 F</div></div><div class="bottom"><span>Corriger</span><span>Faire le PDF</span></div></div></div><h3>Documents en plein écran</h3><p>Messages, emails, devis et factures s’affichent proprement et peuvent être conservés.</p></article>
+
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Mon carnet</span><span>×</span></div><div class="carnet-tabs"><span>Dettes</span><span>Caisse</span><span>Stock</span><span>Commandes</span></div><div class="ledger"><div class="ledger-row"><span>Moussa</span><b>15 000 F</b></div><div class="ledger-row"><span>Awa</span><b>8 000 F</b></div><div class="ledger-row"><span>Total dû</span><b>23 000 F</b></div></div></div></div><h3>Carnet du commerce</h3><p>Dettes, caisse, commandes et stock réunis dans une vue simple.</p></article>
+
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Photo</span><span>×</span></div><div class="camera"><img src="https://app.khalam.app/reperes/bia.jpg" alt=""><div class="count">3</div></div><div class="cam-actions"><span>Garder</span><span>Refaire</span></div></div></div><h3>Photo à la voix</h3><p>Bia ouvre l’appareil photo, compte puis vous laisse garder ou refaire la photo.</p></article>
+
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Bia Xarit</span><span>⚙</span></div><span class="free-badge">Mode continuité gratuit · FR</span><div class="freebox"><b>Je reste avec vous en français.</b><p>Conversation et fonctions légères restent disponibles après la fin du pass, pendant quelques minutes.</p></div><div class="mic">🎙️</div><div class="status">Français · voix légère</div></div></div><h3>Continuité gratuite</h3><p>Après expiration du temps payant, Bia termine la tâche en cours puis reste quelques minutes en français avec ses fonctions légères.</p></article>
+
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Langues</span><span>×</span></div><div class="menu-card"><strong>Bia Xarit</strong><p>Wolof · Français</p></div><div class="menu-card"><strong>Autres langues</strong><p>Anglais · Arabe · Espagnol · Allemand</p></div><div class="menu-card"><strong>Tekkil ma</strong><p>Wolof · Français · Anglais · Arabe · Espagnol · Chinois mandarin</p></div></div></div><h3>Langues</h3><p>Le wolof et le français au cœur de Bia, avec d’autres langues dans le menu et Tekkil ma.</p></article>
+</div>
+</div></section>
+
+<section class="section pass" id="pass"><div class="wrap">
+<div class="head"><div class="eyebrow">Les pass Bia Xarit</div><h2>Vous payez seulement quand vous utilisez Bia.</h2><p>Le temps où vous laissez l’application ouverte sans l’utiliser ne consomme pas votre pass.</p></div>
+<div class="pricing">
+<div class="price"><h3>Découverte</h3><div class="mins">20 min</div><div class="amount">500 F</div><div class="valid">Valable 30 jours à partir de l’activation.</div></div>
+<div class="price best"><h3>Xarit</h3><div class="mins">50 min</div><div class="amount">1 000 F</div><div class="valid">Valable 30 jours à partir de l’activation.</div></div>
+<div class="price"><h3>Xarit+</h3><div class="mins">120 min</div><div class="amount">2 000 F</div><div class="valid">Valable 30 jours à partir de l’activation.</div></div>
+</div>
+<div class="pass-note"><strong>Chaque pass est valable pendant 30 jours.</strong> Les minutes non utilisées expirent à la fin de cette période. Lorsque le pass se termine, Bia finit ce qu’elle faisait puis reste encore quelques minutes avec vous gratuitement, en français, avec ses fonctions légères.</div>
+<div class="always"><div><strong>Urgences toujours accessibles</strong><br>Police · Gendarmerie · Pompiers · SAMU.</div><div><strong>Pharmacie / hôpital proche</strong><br>La recherche de la structure la plus proche reste disponible, pass ou pas.</div></div>
+</div></section>
+
+<section class="form-section wrap" id="demander"><div class="request">
+<div><div class="eyebrow">Commencer avec Bia</div><h2>Demandez votre pass.</h2><p class="lead">Choisissez votre pass et laissez votre numéro. KHALAM vous recontacte pour l’accès à Bia Xarit.</p><p class="microcopy">Adresse officielle : khalam.app/bia</p></div>
+<form class="form" id="formulaire-code" novalidate>
+<div><label for="demande-nom">Votre prénom</label><input id="demande-nom" name="nom" type="text" autocomplete="name" placeholder="Votre prénom"></div>
+<div><label for="demande-numero">Votre numéro de téléphone</label><input id="demande-numero" name="numero" type="tel" inputmode="tel" autocomplete="tel" placeholder="+221 77 123 45 67" required></div>
+<div><label for="demande-pass">Pass souhaité</label><select id="demande-pass" name="pass"><option value="decouverte">Découverte — 20 min — 500 F</option><option value="xarit" selected>Xarit — 50 min — 1 000 F</option><option value="xaritplus">Xarit+ — 120 min — 2 000 F</option></select></div>
+<button type="submit">Demander mon pass</button><p class="state" id="demande-etat" aria-live="polite"></p>
+</form>
+</div></section>
+</main>
+
+<footer class="wrap footer"><span>KHALAM · Dakar, Sénégal</span><span>Bia Xarit — Parlez. Elle s’occupe du reste.</span><span>© 2026 KHALAM</span></footer>
+
 <script>
 (function(){
-  var URL_BIA='https://khalam.app/bia';
-  var TITRE='Bia Xarit — l’IA qui parle wolof';
-  var TEXTE='Bia Xarit, l’IA sénégalaise qui parle wolof et français : elle écrit tes messages, lit tes papiers, tient ton carnet et te conseille. Gratuite, faite à Dakar par KHALAM.';
-  var etat=document.querySelector('.partage-etat');
-  function dire(m){if(etat){etat.textContent=m;setTimeout(function(){if(etat.textContent===m)etat.textContent='';},4000);}}
-  function copier(){
-    var fini=function(){dire('Lien copié : '+URL_BIA);};
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(URL_BIA).then(fini,function(){prompt('Copie ce lien :',URL_BIA);});}
-    else{prompt('Copie ce lien :',URL_BIA);}
-  }
-  function menu(){
-    if(document.querySelector('.partage-menu'))return;
-    var voile=document.createElement('div');voile.className='partage-voile';
-    var m=document.createElement('div');m.className='partage-menu';m.setAttribute('role','dialog');m.setAttribute('aria-label','Partager Bia Xarit');
-    var msg=encodeURIComponent(TEXTE+' '+URL_BIA);
-    m.innerHTML='<a href="https://wa.me/?text='+msg+'" target="_blank" rel="noopener">💬 Envoyer sur WhatsApp</a>'
-      +'<a href="https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(URL_BIA)+'" target="_blank" rel="noopener">👥 Partager sur Facebook</a>'
-      +'<button type="button" data-copier>🔗 Copier le lien</button>'
-      +'<button type="button" class="fermer" data-fermer>Fermer</button>';
-    function fermer(){m.remove();voile.remove();}
-    voile.addEventListener('click',fermer);
-    m.querySelector('[data-fermer]').addEventListener('click',fermer);
-    m.querySelector('[data-copier]').addEventListener('click',function(){copier();fermer();});
-    document.body.appendChild(voile);document.body.appendChild(m);
-  }
-  function partager(){
-    if(navigator.share){navigator.share({title:TITRE,text:TEXTE,url:URL_BIA}).catch(function(e){if(e&&e.name!=='AbortError')menu();});}
-    else menu();
-  }
-  var boutons=document.querySelectorAll('[data-partager]');
-  for(var i=0;i<boutons.length;i++)boutons[i].addEventListener('click',partager);
-})();
-/* ── LE VISAGE TOURNE EN BOUCLE, OU RESTE FIXE — JAMAIS DE BOUTON PLAY ────
-   Sur iPhone, quand Safari refuse la lecture automatique (économie
-   d'énergie), une vidéo à l'arrêt montre un gros bouton Play. Si play() est
-   refusé, l'image fixe recouvre aussitôt la vidéo, et on réessaie une fois,
-   au premier toucher, clic ou défilement. Si la vidéo tourne, l'image
-   s'efface ; sinon la vidéo est retirée et l'image reste. */
-(function(){
-  var v=document.querySelector('.portrait video');if(!v)return;
-  var cadre=v.parentNode,image=null;
-  v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');
-  function couvrir(){
-    if(image)return;
-    image=document.createElement('img');image.className='visage-fixe';
-    image.src='/bia-media/bia-visage.webp';image.width=228;image.height=270;
-    image.alt=v.getAttribute('aria-label')||'Bia Xarit';
-    cadre.appendChild(image);
-  }
-  function decouvrir(){if(image){image.remove();image=null;}}
-  function lire(){
-    v.muted=true;var p;
-    try{p=v.play();}catch(e){return Promise.reject(e);}
-    return p&&p.then?p:(v.paused?Promise.reject():Promise.resolve());
-  }
-  function abandonner(){couvrir();v.pause();v.removeAttribute('src');v.load();v.remove();}
-  function refuse(){
-    couvrir();
-    var evts=['touchstart','click','scroll'],fait=false;
-    function retenter(){
-      if(fait)return;fait=true;
-      evts.forEach(function(n){window.removeEventListener(n,retenter,{passive:true});});
-      lire().then(function(){if(v.paused)abandonner();else decouvrir();},abandonner);
-    }
-    evts.forEach(function(n){window.addEventListener(n,retenter,{passive:true});});
-  }
-  lire().then(function(){if(v.paused)refuse();},refuse);
-})();
-/* ── DEMANDER UN CODE ───────────────────────────────────────────────────────
-   Cette page est servie par GitHub Pages : il n'y a pas de serveur dessous.
-   La demande part donc vers l'application, sur Render, qui range la ligne et
-   rend le lien WhatsApp. Le numéro de KHALAM n'est PAS écrit ici : il vit
-   dans une variable du serveur, et peut changer sans toucher à cette page. */
-(function(){
-  var f=document.getElementById('formulaire-code');if(!f)return;
-  var etat=document.getElementById('demande-etat');
-  var champ=document.getElementById('demande-numero');
-  var accord=document.getElementById('demande-accord');
-  var bouton=f.querySelector('button[type=submit]');
-  var API='https://app.khalam.app/api/demande-code';
-
-  /* La même règle que le serveur, pour répondre tout de suite au lieu de
-     faire un aller-retour. C'est le serveur qui tranche pour de bon. */
-  function normaliser(brut){
-    var t=String(brut||'').trim();if(!t)return null;
-    var plus=t.charAt(0)==='+',c=t.replace(/\D/g,'');
-    if(!c)return null;
-    if(!plus&&c.slice(0,2)==='00')c=c.slice(2);
-    else if(!plus&&c.length===9&&c.charAt(0)==='7')return '+221'+c;
-    else if(!plus&&c.slice(0,3)==='221'&&c.length===12)return '+'+c;
-    else if(!plus)return null;
-    if(c.length<8||c.length>15||c.charAt(0)==='0')return null;
-    return '+'+c;
-  }
-  function dire(texte,ton){etat.textContent=texte;etat.setAttribute('data-ton',ton||'');}
-
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var numero=normaliser(champ.value);
-    champ.setAttribute('aria-invalid',numero?'false':'true');
-    if(!champ.value.trim()){dire('Saisis ton num\u00e9ro de t\u00e9l\u00e9phone.','erreur');champ.focus();return;}
-    if(!numero){dire('Ce num\u00e9ro n\u2019est pas valide. Exemple : +221 77 123 45 67.','erreur');champ.focus();return;}
-    if(!accord.checked){dire('Coche la case pour que KHALAM puisse t\u2019envoyer ton code.','erreur');accord.focus();return;}
-    bouton.disabled=true;dire('Envoi\u2026','');
-    fetch(API,{method:'POST',headers:{'content-type':'application/json'},
-      body:JSON.stringify({numero:numero,prenom:document.getElementById('demande-prenom').value,
-        accord:true,societe:document.getElementById('demande-societe').value})})
-      .then(function(r){return r.json().then(function(d){return {statut:r.status,d:d};});})
-      .then(function(x){
-        bouton.disabled=false;
-        if(!x.d||x.d.ok!==true){dire((x.d&&x.d.message)||'La demande n\u2019a pas pu \u00eatre envoy\u00e9e. R\u00e9essaie dans un instant.','erreur');return;}
-        dire(x.d.message,'bon');
-        /* WhatsApp s'ouvre APRÈS que la demande est rangée : si le rangement
-           échoue, on ne fait pas croire que KHALAM a reçu quelque chose. */
-        if(x.d.whatsapp)window.open(x.d.whatsapp,'_blank','noopener');
-      })
-      .catch(function(){bouton.disabled=false;dire('Pas de connexion. R\u00e9essaie dans un instant.','erreur');});
-  });
+ const f=document.getElementById('formulaire-code'),etat=document.getElementById('demande-etat');
+ if(!f)return;
+ const propreNumero=(v)=>String(v||'').replace(/[^+\d]/g,'');
+ f.addEventListener('submit',async function(e){
+   e.preventDefault();
+   const numero=propreNumero(document.getElementById('demande-numero').value);
+   const nom=String(document.getElementById('demande-nom').value||'').trim();
+   const pass=String(document.getElementById('demande-pass').value||'xarit');
+   if(!numero||numero.replace(/\D/g,'').length<9){etat.textContent='Vérifiez votre numéro de téléphone.';return;}
+   etat.textContent='Envoi de votre demande…';
+   try{
+     const r=await fetch('https://app.khalam.app/api/demande-code',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({numero,nom,origine:'khalam.app/bia',message:'Demande de pass Bia Xarit : '+pass})});
+     const d=await r.json().catch(()=>({}));
+     if(!r.ok)throw new Error(d.message||'La demande n’a pas pu être envoyée.');
+     etat.textContent='Demande reçue. KHALAM vous recontactera pour votre pass.';
+     if(d.whatsapp)window.open(d.whatsapp,'_blank','noopener');
+   }catch(err){etat.textContent=err&&err.message?err.message:'La demande n’a pas pu être envoyée.';}
+ });
 })();
 </script>
-</body>
-</html>
+</body></html>
