@@ -184,6 +184,25 @@ body{
   .pricing .mins{font-size:11px}
 }
 
+
+/* Détail compact sous la durée de chaque pass */
+.pricing .mins{font-size:10px!important;margin-bottom:2px!important;color:#6d87a3!important}
+.pricing .mins::before{content:"";display:none}
+.pricing .fullaccess{
+  order:4;
+  font-size:9px;
+  line-height:1.22;
+  color:#748ca7;
+  max-width:34ch;
+  margin:0 0 12px;
+  letter-spacing:0;
+}
+.pricing .valid{order:5;font-size:10px!important}
+@media(max-width:640px){
+  .pricing .mins{font-size:9px!important}
+  .pricing .fullaccess{font-size:8px}
+}
+
 </style>
 </head>
 <body>
@@ -230,7 +249,7 @@ body{
 <section class="section wrap" id="services">
   <div class="head">
     <div class="eyebrow">Tout ce que Bia peut faire</div>
-    <h2>Une seule Bia. Une vingtaine de services.</h2>
+    <h2>Une seule Bia. Des capacités et des services infinis.</h2>
     <p>Le principe est simple : vous dites à Bia ce que vous voulez faire. Ses capacités évoluent avec vos besoins, vos idées et votre créativité. Plus vous imaginez, plus Bia peut vous accompagner.</p>
   </div>
   <div class="grid">
@@ -393,9 +412,9 @@ body{
       <p>Les pass et l’accès sont gérés exclusivement depuis la page officielle Bia.</p>
     </div>
     <div class="pricing">
-      <article class="price"><h3>Découverte</h3><div class="amount">500 F</div><div class="mins">20 min</div><div class="valid">Valable pendant un mois.</div></article>
-      <article class="price best"><h3>Xarit</h3><div class="amount">1 000 F</div><div class="mins">50 min</div><div class="valid">Valable pendant un mois.</div></article>
-      <article class="price"><h3>Xarit+</h3><div class="amount">2 000 F</div><div class="mins">120 min</div><div class="valid">Valable pendant un mois.</div></article>
+      <article class="price"><h3>Découverte</h3><div class="amount">500 F</div><div class="mins">20 min</div><div class="fullaccess">Service complet · accès à toutes les capacités de Bia pendant votre temps d’utilisation.</div><div class="valid">Valable pendant un mois.</div></article>
+      <article class="price best"><h3>Xarit</h3><div class="amount">1 000 F</div><div class="mins">50 min</div><div class="fullaccess">Service complet · accès à toutes les capacités de Bia pendant votre temps d’utilisation.</div><div class="valid">Valable pendant un mois.</div></article>
+      <article class="price"><h3>Xarit+</h3><div class="amount">2 000 F</div><div class="mins">120 min</div><div class="fullaccess">Service complet · accès à toutes les capacités de Bia pendant votre temps d’utilisation.</div><div class="valid">Valable pendant un mois.</div></article>
     </div>
     <div class="note">
       Vos minutes sont comptées pendant l’utilisation active. Le temps où Bia reste ouverte sans être utilisée ne consomme pas le pass. Avec un pass, vous accédez à l’expérience Bia Xarit. Quand le pass se termine, Bia termine ce qu’elle faisait et peut assurer une courte continuité gratuite en français avec ses fonctions légères. Les informations de secours et la recherche de la pharmacie ou de l’hôpital le plus proche restent accessibles.
