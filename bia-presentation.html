@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#07111c">
+<meta name="theme-color" content="#bfeaff">
 <title>Bia Xarit — Présentation complète | KHALAM</title>
 <meta name="description" content="Découvrez Bia Xarit, l’intelligence artificielle de KHALAM créée à Dakar : wolof, français, traduction vocale, documents, recherche, carte, commerce, conseils, compagnie et bien plus.">
 <link rel="canonical" href="https://khalam.app/bia-presentation">
@@ -66,6 +66,95 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}.hero h1{font-size:clamp(48px
 .final{padding:95px 0;text-align:center}.final h2{font-size:clamp(38px,5vw,62px);line-height:1.05;max-width:16ch;margin:0 auto 18px}.final p{max-width:680px;margin:0 auto 26px;color:#afbeca}.footer{border-top:1px solid #20384f;padding:28px 0 38px;color:#8195a6;font-size:11px}.footerin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:980px){.navlinks{display:none}.hero{grid-template-columns:1fr;gap:20px}.heroart{order:-1;min-height:410px}.grid,.gallery{grid-template-columns:1fr 1fr}.feature{grid-template-columns:1fr}.audiences{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.wrap{width:calc(100% - 26px)}.hero{padding-top:38px;min-height:0}.heroart{min-height:330px}.orb{width:285px}.portrait{width:194px;height:245px}.b1{top:18px}.b2{bottom:22px}.actions{display:grid}.btn{width:100%}.strip,.grid,.gallery,.lang,.pricing,.audiences{grid-template-columns:1fr}.strip div{border-right:0;border-bottom:1px solid #20394f}.section{padding:66px 0}}
+
+/* ===== Refonte bleue Bia ===== */
+:root{
+  --bia-navy:#08265b;
+  --bia-blue:#0879ee;
+  --bia-blue2:#2f9bf6;
+  --bia-sky:#bfeaff;
+  --bia-sky2:#eaf8ff;
+  --bia-white:#ffffff;
+  --bia-ink:#0b2d60;
+  --bia-muted:#55749a;
+  --bia-line:#9ed6ff;
+}
+body{
+  background:
+    radial-gradient(circle at 12% 4%,rgba(255,255,255,.95),transparent 23%),
+    linear-gradient(180deg,#c9efff 0%,#eaf8ff 28%,#d8f2ff 62%,#bfeaff 100%);
+  color:var(--bia-ink);
+}
+.nav{
+  background:rgba(214,243,255,.88);
+  border-bottom:1px solid rgba(8,121,238,.16);
+  box-shadow:0 8px 30px rgba(11,80,140,.07);
+}
+.brand,.navlinks{color:var(--bia-navy)}
+.mark{border-color:var(--bia-blue);color:var(--bia-blue);background:white}
+.btn{border-color:var(--bia-blue);background:linear-gradient(135deg,var(--bia-blue2),var(--bia-blue));color:white;box-shadow:0 10px 28px rgba(8,121,238,.20)}
+.btn.alt{background:rgba(255,255,255,.58);color:var(--bia-navy);border-color:#79c5fa}
+.hero h1,.head h2,.feature h2,.final h2{color:var(--bia-navy)}
+.hero h1 em{color:var(--bia-blue)}
+.eyebrow{color:var(--bia-blue);font-weight:900}
+.lead,.head p,.feature p,.final p,.micro{color:var(--bia-muted)}
+.heroart .orb{border-color:#72c4fb;box-shadow:0 0 100px rgba(20,145,245,.18),inset 0 0 70px rgba(255,255,255,.6)}
+.bubble{background:rgba(255,255,255,.88);border-color:#9dd7ff;color:var(--bia-ink)}
+.bubble b{color:var(--bia-blue)}
+.strip{background:rgba(255,255,255,.42);border-color:#9dd7ff;border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(39,120,180,.10)}
+.strip div{border-color:#a9dcff;color:#55749a}.strip strong{color:var(--bia-navy)}
+.section.alt{background:rgba(255,255,255,.40);border-color:#9dd7ff}
+.card,.aud,.langbox,.price,.note,.visual,.bullet{
+  background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(235,248,255,.92));
+  border-color:#9ed6ff;
+  color:var(--bia-ink);
+  box-shadow:0 16px 40px rgba(35,112,170,.08);
+}
+.card .num,.amount,.quote{color:var(--bia-blue)!important}
+.card h3,.aud h3,.langbox h3,.price h3,.bullet strong{color:var(--bia-navy)}
+.card p,.aud p,.langbox p,.valid,.note,.visual small{color:var(--bia-muted)}
+.visual blockquote{color:var(--bia-navy)}
+.price.best{border-color:var(--bia-blue);box-shadow:0 0 0 2px rgba(8,121,238,.15) inset,0 18px 46px rgba(8,121,238,.10)}
+.footer{border-color:#9ed6ff;color:#55749a}
+#application{position:relative}
+#application:before{
+  content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);
+  width:min(1100px,94%);height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(8,121,238,.10),transparent 68%);pointer-events:none
+}
+.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.shot{
+  background:rgba(255,255,255,.68);border:1px solid #99d4fb;border-radius:30px;padding:16px;
+  box-shadow:0 24px 60px rgba(20,96,160,.13);min-height:0
+}
+.shot h3{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:850;color:var(--bia-navy);font-size:18px;margin:16px 3px 5px}
+.shot p{color:var(--bia-muted);font-size:13px;margin:0 3px 4px}
+.appshot{
+  aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:linear-gradient(180deg,#d6f2ff,#aee3ff);
+  color:#08265b;position:relative;border:1px solid rgba(20,127,220,.25);box-shadow:0 14px 34px rgba(16,85,145,.14);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+}
+.status{height:5.2%;padding:11px 17px 0;display:flex;justify-content:space-between;align-items:flex-start;font-weight:900;font-size:12px}
+.apphead{height:10.8%;padding:9px 17px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.65)}
+.apptitle{font-weight:900;font-size:18px;line-height:1.1}.apptitle small{display:block;font-size:10px;margin-top:4px}
+.gear{font-size:24px;font-weight:400}
+.wavebox{height:48%;position:relative;overflow:hidden}
+.wavebox:before,.wavebox:after{content:"";position:absolute;width:125%;height:26%;left:-12%;border-radius:50%;border:13px solid rgba(14,126,238,.70);transform:rotate(-13deg);top:33%}
+.wavebox:after{border-color:rgba(255,255,255,.85);transform:rotate(13deg);top:43%}
+.listenlabel{text-align:center;font-size:17px;font-weight:900;margin-top:-2px}.langlabel{text-align:center;font-size:11px;margin-top:5px}
+.actionsbar{position:absolute;left:6%;right:6%;bottom:4%;height:18%;border:1px solid white;border-radius:23px;background:rgba(255,255,255,.18);display:flex;justify-content:space-around;align-items:center}
+.appact{text-align:center;font-size:10px;font-weight:900}.appact i{display:grid;place-items:center;margin:0 auto 6px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.48);border:1px solid white;font-style:normal;font-size:18px}
+.appact.main i{width:58px;height:58px;background:linear-gradient(145deg,#2ca2ff,#076fe6);color:white}
+.stage{height:47%;background:#000;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}.stage img{height:95%;max-width:90%;object-fit:contain;object-position:center bottom}
+.stage.close img{height:108%;object-position:center top}
+.chatshot{background:#fff}.chathead{height:11%;display:flex;align-items:center;gap:10px;padding:22px 15px 8px;border-bottom:1px solid #e3eaf1;font-weight:900}
+.chatbody{height:79%;padding:10px 12px;overflow:hidden;background:#fff}.msg{max-width:83%;padding:10px 12px;border-radius:16px;margin:8px 0;font-size:10px;line-height:1.42}.msg.user{margin-left:auto;background:#a77a12;color:white;border-bottom-right-radius:5px}.msg.bia{background:#edf4fb;color:#101a2e;border-bottom-left-radius:5px}
+.docpreview{height:95px;background:linear-gradient(150deg,#f7f7f7,#dfeafb);border-radius:10px;margin-bottom:7px;padding:8px;color:#17396f;font-size:8px}.docpreview b{font-size:15px;float:right}.docline{height:4px;background:#bcd5ed;border-radius:5px;margin:7px 0}.chatinput{position:absolute;left:0;right:0;bottom:0;height:10%;border-top:1px solid #e1e8ef;background:white;display:flex;gap:7px;align-items:center;padding:8px}.plus,.send{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid #92c9f6}.send{background:#168bf0;color:white}.field{flex:1;border:1px solid #cad7e5;border-radius:18px;padding:7px 10px;color:#9aabba;font-size:10px}
+.tekkilshot,.settingsshot{background:linear-gradient(180deg,#eff9ff,#d9f1ff);padding:14px}.backbox{background:#cceeff;padding:13px;border-radius:13px;font-size:11px;font-weight:900;margin:14px 0 12px}.screenh{font-family:Georgia,serif;font-size:22px;font-weight:800;margin:8px 0 16px}.formcard{background:white;border:1px solid #9bd1fa;border-radius:18px;padding:13px}.label{font-size:10px;color:#58779b;margin:9px 0 5px}.selectbox{background:#e8f4ff;border:1px solid #acd4f5;border-radius:12px;padding:10px;font-size:12px;font-weight:700;display:flex;justify-content:space-between}.bluebtn{background:linear-gradient(135deg,#2b9df4,#0877e6);color:white;border-radius:12px;padding:11px;text-align:center;font-weight:900;font-size:12px;margin-top:12px}.softbtn{background:#e8f4ff;border:1px solid #acd4f5;border-radius:12px;padding:10px;text-align:center;font-weight:800;font-size:10px;margin-top:8px}
+.settingsshot{padding:11px}.settingsshot .backbox{margin-top:8px}.settingsshot .screenh{font-family:Inter,sans-serif;font-size:23px;margin:5px 0 1px}.subtitle{font-size:10px;color:#56769a;margin-bottom:10px}.setcard{background:rgba(255,255,255,.87);border:1px solid #9fd3f7;border-radius:17px;padding:11px;margin:8px 0}.settitle{font-weight:900;font-size:12px;margin-bottom:8px}.setrow{padding:9px;border:1px solid #add6f5;border-radius:11px;margin:6px 0;font-size:10px}.green{background:#2ba55c;color:white;border-radius:11px;padding:10px;font-weight:900;font-size:10px;margin-top:8px}.done{position:absolute;left:5%;right:5%;bottom:4%;background:#1278d5;color:#fff;border-radius:13px;padding:11px;text-align:center;font-weight:900}
+@media(max-width:980px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.gallery{grid-template-columns:1fr}.shot{padding:14px}.appshot{max-width:380px;margin:auto}}
+
 </style>
 </head>
 <body>
@@ -161,13 +250,82 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}.hero h1{font-size:clamp(48px
     <p>La page de présentation montre les principaux univers de l’application. Pour utiliser réellement Bia, tous les accès ci-dessous renvoient vers sa page officielle.</p>
   </div>
   <div class="gallery">
-    <article class="shot"><div class="screen"><div class="screenbar"><span>Bia Xarit</span><span>⚙</span></div><div class="face"><img src="/bia-media/bia-visage.webp" alt="Bia"></div><div class="mic">🎙</div></div><h3>Accueil vocal</h3><p>Parlez naturellement à Bia en wolof ou en français.</p></article>
-    <article class="shot"><div class="screen"><div class="screenbar"><span>Menu Bia</span><span>⚙</span></div><div style="background:white;border:1px solid #d4e4f2;border-radius:12px;padding:10px;margin:8px 0">Langue · Wolof / Français</div><div style="background:white;border:1px solid #d4e4f2;border-radius:12px;padding:10px;margin:8px 0">Voix · Mémoire · Préférences</div></div><h3>Menu & réglages</h3><p>Langues, préférences et réglages depuis une interface claire.</p></article>
-    <article class="shot"><div class="screen"><div class="screenbar"><span>Tekkil ma</span><span>↗</span></div><div style="background:white;border:1px solid #cbdff3;border-radius:12px;padding:10px;margin:7px 0">Moi · Wolof</div><div style="background:white;border:1px solid #cbdff3;border-radius:12px;padding:10px;margin:7px 0">Invité · Français</div><div style="background:#0869d6;color:#fff;border-radius:10px;padding:10px;text-align:center;margin-top:10px">Créer le salon</div></div><h3>Tekkil ma</h3><p>Une conversation vocale à distance entre deux langues.</p></article>
-    <article class="shot"><div class="screen"><div class="screenbar"><span>Carte</span><span>⌖</span></div><div style="height:95px;border-radius:12px;background:linear-gradient(135deg,#d9efd6,#e9e2c5);margin-top:10px"></div><div style="background:white;border-radius:10px;padding:9px;margin-top:9px">Destination · 4,2 km</div></div><h3>Carte & itinéraire</h3><p>Direction, distance et localisation pour vos déplacements.</p></article>
-    <article class="shot"><div class="screen"><div class="screenbar"><span>Documents</span><span>PDF</span></div><div style="background:white;border:1px solid #d7e1e9;border-radius:12px;padding:10px;margin-top:10px"><b>Devis</b><div style="height:6px;background:#dce8f0;border-radius:5px;margin:10px 0"></div><div style="height:6px;background:#dce8f0;border-radius:5px;width:60%"></div><div style="text-align:right;margin-top:14px;font-weight:800">Total</div></div></div><h3>Documents, devis & factures</h3><p>Vos paroles deviennent des documents structurés et partageables.</p></article>
-    <article class="shot"><div class="screen"><div class="screenbar"><span>Carnet</span><span>+</span></div><div style="display:flex;gap:5px;font-size:10px"><span style="flex:1;background:#eaf4ff;padding:6px;text-align:center;border-radius:7px">Dettes</span><span style="flex:1;background:#eaf4ff;padding:6px;text-align:center;border-radius:7px">Stock</span></div><div style="background:white;border-radius:10px;padding:9px;margin-top:9px">Moussa <b style="float:right">15 000 F</b></div></div><h3>Carnet commerçant</h3><p>Dettes, caisse, commandes et stock en langage naturel.</p></article>
+<article class="shot">
+  <div class="appshot">
+    <div class="status"><span>00:00 ◢</span><span>▮▮▮ ◉ ▰</span></div>
+    <div class="apphead"><div class="apptitle">Bia Xarit<small>par KHALAM</small></div><div class="gear">⚙</div></div>
+    <div class="wavebox"></div>
+    <div class="listenlabel">Parlez, je vous écoute</div><div class="langlabel">Français</div>
+    <div class="actionsbar"><div class="appact"><i>💬</i>Messages</div><div class="appact main"><i>≋</i>Parler</div><div class="appact"><i>文</i>Tekkil ma</div></div>
   </div>
+  <h3>Accueil vocal</h3><p>Une interface simple : parler, écrire ou ouvrir Tekkil ma.</p>
+</article>
+
+<article class="shot">
+  <div class="appshot chatshot">
+    <div class="status"><span>00:00 ◢</span><span>▮▮▮ ◉ ▰</span></div>
+    <div class="chathead"><span>‹</span><span>Discussion</span></div>
+    <div class="chatbody">
+      <div class="msg user"><div class="docpreview"><b>DEVIS</b>Mon Commerce<div class="docline"></div><div class="docline"></div><div class="docline" style="width:72%"></div></div>📎 Devis_MonCommerce.jpg<br><br>Peux-tu m’aider avec ce document ?</div>
+      <div class="msg bia">Bien sûr. Je peux lire vos documents, expliquer une ordonnance ou un SMS, et vous répondre en français ou en wolof.</div>
+      <div class="msg user">Et pour mon activité ?</div>
+      <div class="msg bia">Je peux aussi rédiger vos messages, préparer vos devis et factures, suivre vos dettes et votre stock, ou ouvrir <b>Tekkil ma</b> pour parler avec un client dans une autre langue.</div>
+    </div>
+    <div class="chatinput"><div class="plus">＋</div><div class="field">Écris ici</div><div class="send">➤</div></div>
+  </div>
+  <h3>Messages & documents</h3><p>Bia lit, explique, rédige et accompagne aussi les besoins professionnels.</p>
+</article>
+
+<article class="shot">
+  <div class="appshot tekkilshot">
+    <div class="status"><span>00:00 ◢</span><span>▮▮▮ ◉ ▰</span></div>
+    <div class="backbox">← Revenir à Bia Xarit</div>
+    <div style="font-size:10px;color:#0879ee">← Tekkil ma</div>
+    <div class="screenh">Tekkil ma <span style="font-family:Inter;color:#0879ee;font-size:14px">— interprète</span></div>
+    <div class="formcard">
+      <div class="label">Ma langue</div><div class="selectbox"><span>中文（普通话）</span><span>⌃⌄</span></div>
+      <div class="label">Langue de l’invité</div><div class="selectbox"><span>Wolof</span><span>⌃⌄</span></div>
+      <div class="label">Ma voix traduite</div><div class="selectbox"><span>Voix de femme</span><span>⌃⌄</span></div>
+      <div class="bluebtn">Ouvrir le salon</div><div class="softbtn">Reprendre le salon KBBBJW</div>
+    </div>
+  </div>
+  <h3>Tekkil ma</h3><p>Deux personnes parlent chacune dans leur langue, à distance et à la voix.</p>
+</article>
+
+<article class="shot">
+  <div class="appshot settingsshot">
+    <div class="status"><span>00:00 ◢</span><span>▮▮▮ ◉ ▰</span></div>
+    <div class="backbox">← Revenir à Bia Xarit</div>
+    <div class="screenh">Réglages</div><div class="subtitle">Ton expérience avec Bia, simplement.</div>
+    <div class="setcard"><div class="settitle">🌐 Langue</div><div class="setrow">Wolof · Français (par défaut)</div><div class="subtitle">Bia Xarit parle français (version gratuite)</div></div>
+    <div class="setcard"><div class="settitle">✧ Personnage et voix</div><div class="setrow">✧ Changer de personnage ›</div><div class="setrow"><b>○ Personnage animé — désactivé</b></div><div class="subtitle">Le personnage animé a un coût pour KHALAM ; la voix et l’écoute restent gratuites.</div><div class="setrow" style="text-align:center">Homme &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>Femme</b></div><div class="setrow">🔊 Écouter la voix choisie</div><div class="green">✓ Version gratuite (français) — activée</div></div>
+    <div class="done">Terminé</div>
+  </div>
+  <h3>Réglages</h3><p>Langue, voix et personnage sont accessibles depuis un seul écran.</p>
+</article>
+
+<article class="shot">
+  <div class="appshot">
+    <div class="status"><span>00:00 ◢</span><span>▮▮▮ ◉ ▰</span></div>
+    <div class="apphead"><div class="apptitle">Bia Xarit<small>par KHALAM</small></div><div class="gear">⚙</div></div>
+    <div class="stage close"><img src="/bia-media/bia-visage.webp" alt="Bia Xarit en écoute"></div>
+    <div class="listenlabel" style="margin-top:10px">Un instant…</div><div class="langlabel">Français</div>
+    <div class="actionsbar"><div class="appact"><i>💬</i>Messages</div><div class="appact main"><i>≋</i>En écoute</div><div class="appact"><i>文</i>Tekkil ma</div></div>
+  </div>
+  <h3>Bia en écoute</h3><p>Le personnage s’anime pendant la conversation et accompagne la voix.</p>
+</article>
+
+<article class="shot">
+  <div class="appshot">
+    <div class="status"><span>00:00</span><span>▮▮▮ ◉ ▰</span></div>
+    <div class="apphead"><div class="apptitle">Bia Xarit<small>par KHALAM</small></div><div class="gear">⚙</div></div>
+    <div class="stage"><img src="/bia-media/bia-visage.webp" alt="Personnage Bia Xarit"></div>
+    <div class="listenlabel" style="margin-top:10px">Parlez, je vous écoute</div><div class="langlabel">Français</div>
+    <div class="actionsbar"><div class="appact"><i>💬</i>Messages</div><div class="appact main"><i>≋</i>Parler</div><div class="appact"><i>文</i>Tekkil ma</div></div>
+  </div>
+  <h3>Personnage Bia</h3><p>Une présence visuelle qui donne un visage à la conversation.</p>
+</article>
+</div>
   <div class="actions" style="margin-top:28px"><a class="btn" href="/bia">Voir la vraie application Bia</a></div>
 </section>
 
