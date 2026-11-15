@@ -155,6 +155,35 @@ body{
 @media(max-width:980px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.gallery{grid-template-columns:1fr}.shot{padding:14px}.appshot{max-width:380px;margin:auto}}
 
+
+/* Hiérarchie commerciale des pass : prix dominant, durée secondaire mais lisible */
+.pricing .price{display:flex;flex-direction:column;align-items:flex-start}
+.pricing .price h3{margin-bottom:18px}
+.pricing .amount{
+  order:2;
+  font-size:clamp(38px,4.5vw,58px);
+  line-height:1;
+  font-weight:950;
+  letter-spacing:-.035em;
+  color:var(--bia-blue)!important;
+  margin:0 0 12px;
+}
+.pricing .mins{
+  order:3;
+  font-size:12px;
+  line-height:1.25;
+  font-weight:650;
+  letter-spacing:.02em;
+  color:#6784a5;
+  margin:0 0 18px;
+}
+.pricing .mins::before{content:"Temps d’utilisation : ";font-weight:500}
+.pricing .valid{order:4;font-size:12px}
+@media(max-width:640px){
+  .pricing .amount{font-size:48px}
+  .pricing .mins{font-size:11px}
+}
+
 </style>
 </head>
 <body>
@@ -364,9 +393,9 @@ body{
       <p>Les pass et l’accès sont gérés exclusivement depuis la page officielle Bia.</p>
     </div>
     <div class="pricing">
-      <article class="price"><h3>Découverte</h3><div class="mins">20 min</div><div class="amount">500 F</div><div class="valid">Valable pendant un mois.</div></article>
-      <article class="price best"><h3>Xarit</h3><div class="mins">50 min</div><div class="amount">1 000 F</div><div class="valid">Valable pendant un mois.</div></article>
-      <article class="price"><h3>Xarit+</h3><div class="mins">120 min</div><div class="amount">2 000 F</div><div class="valid">Valable pendant un mois.</div></article>
+      <article class="price"><h3>Découverte</h3><div class="amount">500 F</div><div class="mins">20 min</div><div class="valid">Valable pendant un mois.</div></article>
+      <article class="price best"><h3>Xarit</h3><div class="amount">1 000 F</div><div class="mins">50 min</div><div class="valid">Valable pendant un mois.</div></article>
+      <article class="price"><h3>Xarit+</h3><div class="amount">2 000 F</div><div class="mins">120 min</div><div class="valid">Valable pendant un mois.</div></article>
     </div>
     <div class="note">
       Vos minutes sont comptées pendant l’utilisation active. Le temps où Bia reste ouverte sans être utilisée ne consomme pas le pass. Avec un pass, vous accédez à l’expérience Bia Xarit. Quand le pass se termine, Bia termine ce qu’elle faisait et peut assurer une courte continuité gratuite en français avec ses fonctions légères. Les informations de secours et la recherche de la pharmacie ou de l’hôpital le plus proche restent accessibles.
