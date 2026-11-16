@@ -33,7 +33,9 @@ button:focus-visible{outline:2px solid #f5d694;outline-offset:3px}
 .disc.i{background:radial-gradient(circle at 33% 20%,#fff9e9,#d2bb8a);color:#7a5a24}.disc.e{background:radial-gradient(circle at 33% 20%,#514e40,#111610 80%);color:#e6cc93}
 .disc>svg{width:58%;height:58%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .disc.roi{outline:2px solid #e8c066;outline-offset:-5px}.disc.reine{outline:2px dotted #e8c066;outline-offset:-5px}
-.disc.heritier{width:66%;height:66%;border-style:dashed}
+.disc.princesse{width:68%;height:68%;outline:2px solid #7fc6b0;outline-offset:-6px}.disc.prince{width:68%;height:68%;border-style:dashed;border-width:2px}
+.disc .role{position:absolute;bottom:-3px;right:-3px;width:15px;height:15px;border-radius:50%;font:700 9px/15px system-ui,sans-serif;text-align:center;background:#16150f;color:#f5d694;border:1px solid #d2b275}
+.cell.escorte::before{content:'';position:absolute;inset:9%;border-radius:50%;border:2px solid #7fc6b0aa;z-index:4;pointer-events:none}
 .disc.porteur{box-shadow:0 0 0 3px #f5d27a99,0 4px 4px #0007}
 .couronne-sol{position:absolute;width:56%;height:56%;z-index:2;pointer-events:none;filter:drop-shadow(0 2px 2px #0008)}
 .couronne-sol.avec-piece{width:34%;height:34%;right:2%;bottom:2%;z-index:4}
@@ -81,7 +83,7 @@ dialog p,dialog li{font-size:13px;line-height:1.65;color:#d6cab2}dialog ul{paddi
 <div class="carte"><div class="eyebrow">Derniers coups</div><ol id="historique"></ol></div>
 </aside>
 </main>
-<footer>PYLO COURONNE — prototype v0.2.1 · Deux royaumes</footer>
+<footer>PYLO COURONNE — prototype v0.3 · Deux royaumes · Héritiers à deux rôles</footer>
 </div>
 
 <dialog id="menu"><div class="eyebrow">Nouvelle partie</div><h2>Deux royaumes, deux couronnes</h2>
@@ -91,23 +93,25 @@ dialog p,dialog li{font-size:13px;line-height:1.65;color:#d6cab2}dialog ul{paddi
 <div class="choix"><button data-mode="deux">À deux sur cet écran<small>Chacun son tour, sur le même téléphone</small></button><button data-mode="apprenti">Contre Apprenti<small>Regarde un coup devant</small></button><button data-mode="gardien">Contre Gardien<small>Regarde deux coups devant</small></button><button data-mode="maitre">Contre Maître<small>Regarde trois coups devant</small></button></div>
 </dialog>
 
-<dialog id="regles"><button class="fermer" data-fermer="regles" aria-label="Fermer">×</button><div class="eyebrow">Règle v0.2.1</div><h2>Pylo Couronne</h2>
+<dialog id="regles"><button class="fermer" data-fermer="regles" aria-label="Fermer">×</button><div class="eyebrow">Règle v0.3</div><h2>Pylo Couronne</h2>
 <h3>Le plateau</h3><p>Deux royaumes : <b>Ivoire</b> en bas (rangées 1–4 : Santé et Argent), <b>Ébène</b> en haut (rangées 5–8 : Spiritualité et Amour). Les quartiers ne sont qu’un décor : seule compte la frontière entre les rangées 4 et 5. Palais d’Ivoire : D1 E1 D2 E2 ; palais d’Ébène : D7 E7 D8 E8.</p>
 <h3>Les pièces (un pas, sauf indication)</h3><ul>
 <li><b>Roi</b> : en avant, droit ou en diagonale. Dans le royaume adverse, il peut aussi reculer, sans repasser la frontière. Jamais de côté.</li>
 <li><b>Reine</b> : un pas dans les huit directions. Seule à pouvoir corrompre un Héritier.</li>
 <li><b>Garde</b> : en avant ou en arrière sur sa colonne. <b>Sentinelle</b> : à gauche ou à droite sur sa ligne.</li>
-<li><b>Sauteur</b> : exactement deux cases en diagonale, par-dessus n’importe quoi (un seul pas en diagonale quand il porte une couronne).</li>
-<li><b>Héritier</b> (Princesse ou Prince) : un pas en diagonale. Placé au hasard sur la rangée 4 (Ivoire) ou 5 (Ébène).</li></ul>
-<h3>Prendre</h3><p>On saute par-dessus un adversaire voisin, dans une direction permise, vers la case vide juste derrière ; le Sauteur prend ce qu’il survole. Une prise par tour, jamais obligatoire.</p>
+<li><b>Sauteur</b> : exactement deux cases en diagonale, par-dessus n’importe quoi (un seul pas en diagonale quand il porte une couronne).</li></ul>
+<h3>Les Héritiers : Princesse et Prince</h3><p>Chaque camp reçoit un Héritier (valeur 2), placé au hasard sur sa rangée frontière (rangée 4 pour Ivoire, 5 pour Ébène). Si l’un a la Princesse, l’autre a le Prince ; les rôles s’inversent à la manche suivante. Les deux se prennent par saut, comme les autres pièces.</p><ul>
+<li><b>Princesse — elle protège</b> : un pas dans les huit directions. <b>Escorte</b> : une pièce amie à côté d’elle (huit directions) ne peut pas être prise. La Princesse elle-même peut l’être : prends-la, ou attends qu’elle s’éloigne. Une Reine adverse ne la corrompt que si elle est <b>isolée</b>.</li>
+<li><b>Prince — il attaque</b> : saute exactement deux cases dans les huit directions (lignes droites et diagonales), par-dessus le vide, un ami, ou un ennemi qu’il prend. <b>Éclaireur</b> : seule pièce qui garde son saut quand elle porte une couronne (sans prendre). Une Reine adverse qui termine à côté de lui le corrompt <b>même s’il est entouré</b>.</li></ul>
+<h3>Prendre</h3><p>On saute par-dessus un adversaire voisin, dans une direction permise, vers la case vide juste derrière ; le Sauteur et le Prince prennent ce qu’ils survolent. Une prise par tour, jamais obligatoire. Une pièce escortée par sa Princesse ne se prend pas.</p>
 <h3>Honneur et palais</h3><p>On ne laisse jamais son roi capturable. Roi menacé sans parade : <b>roi piégé</b>, défaite. Plus aucun coup sans menace : pat, nulle. Jamais plus de deux de ses pièces dans son propre palais ; l’adversaire y entre librement.</p>
 <h3>Les couronnes</h3><ul>
 <li>Une pièce libre qui <b>termine</b> son coup sur une couronne la ramasse (jamais en passant). Sur sa propre couronne dans son propre palais, on choisit : entrer, ou entrer et ramasser.</li>
-<li><b>Une couronne pèse</b> : tout porteur avance d’un seul pas dans ses directions habituelles (le Sauteur porteur : un pas en diagonale, plus de saut).</li>
+<li><b>Une couronne pèse</b> : tout porteur avance d’un seul pas dans ses directions habituelles (le Sauteur porteur : un pas en diagonale, plus de saut). Seul le Prince garde son saut (éclaireur).</li>
 <li>Un porteur ne prend jamais. Porteur pris : la couronne reste au sol sur sa case.</li>
 <li>Un porteur qui entre dans son propre palais y dépose la couronne.</li></ul>
 <h3>Gagner</h3><p><b>Conquête</b> : la couronne adverse ET la tienne se trouvent dans ton palais à la fin de ton coup. Une couronne est dans ton palais si elle est au sol sur une de ses quatre cases, ou portée par une de <b>tes</b> pièces qui s’y tient ; portée par une pièce ennemie, elle n’y est pas. Ou <b>roi piégé</b> chez l’adversaire.</p>
-<h3>Corruption</h3><p>Quand une Reine termine un déplacement sans prise à côté d’un Héritier ennemi <b>isolé</b> (aucun allié autour de lui), l’Héritier change de camp, avec la couronne qu’il porte.</p>
+<h3>Corruption</h3><p>Quand une Reine termine un déplacement sans prise à côté d’un Héritier ennemi — la Princesse si elle est <b>isolée</b> (aucun allié autour d’elle), le Prince <b>toujours</b> — l’Héritier change de camp, avec la couronne qu’il porte.</p>
 <h3>Nulles</h3><p>Même position trois fois ; pat ; ou 40 demi-coups sans aucun de ces événements : une prise, un ramassage de couronne, un dépôt dans un palais, une corruption, un progrès d’une couronne portée vers son palais, ou la première entrée d’une pièce dans le royaume adverse (une fois par pièce).</p>
 </dialog>
 
@@ -115,7 +119,7 @@ dialog p,dialog li{font-size:13px;line-height:1.65;color:#d6cab2}dialog ul{paddi
 
 <dialog id="dialogFin"><div class="eyebrow">Fin de partie</div><h2 id="finTitre"></h2><p id="finTexte"></p><div class="choix"><button class="primary" id="finRejouer">Rejouer</button><button id="finVoir">Voir le plateau</button></div></dialog>
 
-<script src="moteur.js"></script>
+<script src="moteur.js?v=0.3"></script>
 <script>
 /* La page n'a aucune règle : tout vient de moteur.js (window.PyloCouronne). */
 (function () {
@@ -127,14 +131,14 @@ const ICONES = {
   2: '<path d="M20 5l13 5v10c0 8-7 13-13 16C14 33 7 28 7 20V10z"/><path d="M20 11v16m-5-11l5-5 5 5m-10 6l5 5 5-5"/>',
   3: '<path d="M10 6v9h20V6h-6v4h-8V6zM13 15l-2 19h18l-2-19M8 34h24"/><path d="M13 24h14m-10-4l-4 4 4 4m6-8l4 4-4 4"/>',
   4: '<path d="M8 29c0-20 24-20 24-2m-6-5l6 5 3-7"/><circle cx="10" cy="34" r="2"/><circle cx="22" cy="34" r="2"/>',
-  5: '<path d="M11 17l4-6 5 5 5-5 4 6"/><circle cx="20" cy="25" r="6"/><path d="M14 36c1-4 3-5 6-5s5 1 6 5"/>',
-  6: '<path d="M12 17V10l4 4 4-6 4 6 4-4v7z"/><circle cx="20" cy="25" r="5"/><path d="M13 36c1-4 3-5 7-5s6 1 7 5"/>',
+  5: '<path d="M13 11l3-4 4 3 4-3 3 4"/><circle cx="20" cy="17" r="4.5"/><path d="M20 23c-6 0-10 3-11 5 3 2 3 6 3 8h16c0-2 0-6 3-8-1-2-5-5-11-5z"/><path d="M15 29h10"/>',
+  6: '<path d="M20 4l4 6h-8z"/><path d="M20 10v8"/><path d="M8 26c3-7 21-7 24 0"/><path d="M27 21l5 5-6 2"/><circle cx="20" cy="31" r="4"/>',
 };
 const COURONNE = '<svg viewBox="0 0 40 30" aria-hidden="true"><path d="M4 9l8 7 8-13 8 13 8-7-3 17H7z" stroke-width="2"/></svg>';
 const couronneSvg = (k, classe) => COURONNE.replace('<svg', `<svg class="${classe} ${k === 1 ? 'or' : 'argent'}"`);
 const nomPiece = (v) => P.NOMS[P.sorte(v)] + (P.camp(v) === 1 ? ' d’Ivoire' : ' d’Ébène');
 
-let partie, mode = 'deux', humain = 1, sel = null, hasard = Math.random, reflexion = null, retournes = [], audio = null;
+let partie, mode = 'deux', humain = 1, sel = null, hasard = Math.random, reflexion = null, retournes = [], audio = null, manche = 0;
 
 function refus() {
   try {
@@ -146,14 +150,18 @@ function refus() {
   } catch {}
 }
 
+/* v0.3 : d'une manche à l'autre, Princesse et Prince changent de camp
+   (manche paire : Princesse à Ivoire ; impaire : Prince à Ivoire). */
 function nouvelle(m, couleur) {
   mode = m; humain = couleur; sel = null; clearTimeout(reflexion);
   const graine = Date.now() % 2147483647;
   hasard = P.mulberry32(graine);
-  partie = P.creerPartie({ graine, heritiers: true });
-  partie.graine = graine;
+  partie = P.creerPartie({ graine, heritiers: true, inverse: ((graine & 1) === 1) !== ((manche & 1) === 1) });
+  partie.graine = graine; partie.manche = ++manche;
   $('mode').textContent = { deux: 'À DEUX', apprenti: 'CONTRE APPRENTI', gardien: 'CONTRE GARDIEN', maitre: 'CONTRE MAÎTRE' }[mode];
   rendre(); faireJouerIA();
+  const iv = P.heritiers(P.etatActuel(partie)).find((x) => x.camp === 1);
+  if (iv) aide(`Manche ${manche} : Ivoire a ${iv.sorte === P.PRINCESSE ? 'la Princesse' : 'le Prince'}, Ébène ${iv.sorte === P.PRINCESSE ? 'le Prince' : 'la Princesse'}.`);
 }
 const ordiAuTrait = () => mode !== 'deux' && !partie.resultat && P.etatActuel(partie).tour !== humain;
 
@@ -162,6 +170,7 @@ function rendre() {
   const dernier = partie.coups[partie.coups.length - 1];
   const destinations = new Map();
   if (sel !== null) for (const m of legaux) if (m.de === sel) destinations.set(m.a, (destinations.get(m.a) || []).concat(m));
+  const escorte = new Set([...P.escortees(s, 1), ...P.escortees(s, 2)]);
   const menaces = new Set();
   for (const p of [1, 2]) if (P.roiPrenable(s, p)) for (let i = 0; i < 64; i++) if (s.b[i] === P.jeton(p, P.ROI)) menaces.add(i);
   let html = '';
@@ -176,6 +185,7 @@ function rendre() {
     if (dernier && (dernier.de === i || dernier.a === i)) cls.push('dernier');
     if (menaces.has(i)) cls.push('menace');
     if (retournes.includes(i)) cls.push('retourne');
+    if (escorte.has(i)) cls.push('escorte');
     let dedans = `<span class="tint" style="background:${q.couleur}"></span>`;
     if (ligne === 7) dedans += `<span class="coord f">${'ABCDEFGH'[c]}</span>`;
     if (col === 0) dedans += `<span class="coord r">${rang}</span>`;
@@ -183,10 +193,11 @@ function rendre() {
     for (const k of sol) dedans += couronneSvg(k, 'couronne-sol' + (v ? ' avec-piece' : ''));
     if (v) {
       const t = P.sorte(v), porte = P.porteePar(s, i);
-      const pc = ['disc', P.camp(v) === 1 ? 'i' : 'e', t === P.ROI ? 'roi' : t === P.REINE ? 'reine' : P.estHeritier(t) ? 'heritier' : '', porte ? 'porteur' : ''].join(' ');
-      dedans += `<span class="${pc}"><svg viewBox="0 0 40 40" aria-hidden="true">${ICONES[t]}</svg>${porte ? couronneSvg(porte, 'couronne-portee') : ''}</span>`;
+      const pc = ['disc', P.camp(v) === 1 ? 'i' : 'e', t === P.ROI ? 'roi' : t === P.REINE ? 'reine' : t === P.PRINCESSE ? 'princesse' : t === P.PRINCE ? 'prince' : '', porte ? 'porteur' : ''].join(' ');
+      const role = t === P.PRINCESSE ? '<span class="role" aria-hidden="true">E</span>' : t === P.PRINCE ? '<span class="role" aria-hidden="true">⤢</span>' : '';
+      dedans += `<span class="${pc}"><svg viewBox="0 0 40 40" aria-hidden="true">${ICONES[t]}</svg>${role}${porte ? couronneSvg(porte, 'couronne-portee') : ''}</span>`;
     }
-    const etiquette = P.nomCase(i) + (v ? ', ' + nomPiece(v) : '') + (sol.length ? ', couronne ' + sol.map((k) => (k === 1 ? 'd’Ivoire' : 'd’Ébène')).join(' et ') : '');
+    const etiquette = P.nomCase(i) + (v ? ', ' + nomPiece(v) : '') + (escorte.has(i) ? ', escortée' : '') + (sol.length ? ', couronne ' + sol.map((k) => (k === 1 ? 'd’Ivoire' : 'd’Ébène')).join(' et ') : '');
     html += `<button class="${cls.join(' ')}" data-i="${i}" role="gridcell" aria-label="${etiquette}">${dedans}</button>`;
   }
   $('plateau').innerHTML = html;
@@ -219,7 +230,14 @@ function rendreEtat(s) {
   const h = P.heritiers(s);
   if (h.length) {
     html += '<div class="eyebrow" style="margin-top:10px">Héritiers</div>';
-    for (const x of h) html += `<div class="etat-ligne"><span class="camp-dot ${x.camp === 1 ? 'i' : 'e'}"></span><span>${P.NOMS[x.sorte]} (${x.camp === 1 ? 'Ivoire' : 'Ébène'}) en ${P.nomCase(x.sq)} : <b>${x.protege ? 'protégé' : 'isolé'}</b></span></div>`;
+    for (const x of h) {
+      const camp = x.camp === 1 ? 'Ivoire' : 'Ébène';
+      const role = x.sorte === P.PRINCESSE
+        ? `<b>Princesse : ${x.escorte.length ? 'escorte ' + x.escorte.map(P.nomCase).join(', ') : 'n’escorte personne'}</b>`
+        : `<b>Prince : éclaireur</b>${x.porte ? ' — porte une couronne et garde son saut' : ''}`;
+      const risque = x.sorte === P.PRINCE ? 'corruptible même entouré' : x.corruptible ? 'isolée, corruptible' : 'entourée, à l’abri de la Reine';
+      html += `<div class="etat-ligne"><span class="camp-dot ${x.camp === 1 ? 'i' : 'e'}"></span><span>${role}<br>${camp}, en ${P.nomCase(x.sq)} · ${risque}</span></div>`;
+    }
   }
   $('etats').innerHTML = html;
   $('historique').innerHTML = partie.coups.map((m, n) => `<li>${n % 2 ? '…' : ''}${P.notation(m)}</li>`).slice(-12).join('');
@@ -333,7 +351,7 @@ $('finRejouer').onclick = () => { $('dialogFin').close(); $('menu').showModal();
 $('finVoir').onclick = () => $('dialogFin').close();
 $('menu').addEventListener('cancel', (e) => { if (!partie) e.preventDefault(); });
 
-nouvelle('deux', 1);
+nouvelle('deux', 1); manche = 0; // la partie derrière le menu ne compte pas : la 1re manche donne la Princesse à Ivoire
 $('menu').showModal();
 window.__pyloCouronne = { get partie() { return partie; }, nouvelle, appliquer };
 })();
