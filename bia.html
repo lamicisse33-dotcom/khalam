@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#09121d">
 <title>Bia Xarit — l’IA qui parle wolof et comprend votre quotidien | KHALAM</title>
-<meta name="description" content="Bia Xarit, l’intelligence artificielle de KHALAM créée à Dakar. Wolof, français, Tekkil ma, documents, recherche, carnet, carte, conseils, histoires, compagnie. Pass à partir de 500 F, valables 30 jours.">
+<meta name="description" content="Bia Xarit, l’intelligence artificielle de KHALAM créée à Dakar. Wolof, français, Tekkil ma, documents, recherche, carnet, carte, conseils, histoires, compagnie. Pass à partir de 500 F, des minutes qui ne disparaissent pas.">
 <link rel="canonical" href="https://khalam.app/bia">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KHALAM">
 <meta property="og:title" content="Bia Xarit — Parlez. Elle s’occupe du reste.">
-<meta property="og:description" content="L’IA de KHALAM qui parle wolof et français, vous aide au quotidien et vous accompagne comme une amie. Pass à partir de 500 F, valables 30 jours.">
+<meta property="og:description" content="L’IA de KHALAM qui parle wolof et français, vous aide au quotidien et vous accompagne comme une amie. Pass à partir de 500 F, des minutes qui ne disparaissent pas.">
 <meta property="og:url" content="https://khalam.app/bia">
 <meta property="og:image" content="https://khalam.app/bia-media/bia-visage.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://khalam.app/#org","name":"KHALAM","url":"https://khalam.app/","address":{"@type":"PostalAddress","addressLocality":"Dakar","addressCountry":"SN"}},
 {"@type":"SoftwareApplication","@id":"https://khalam.app/bia#app","name":"Bia Xarit","url":"https://khalam.app/bia","applicationCategory":"UtilitiesApplication","operatingSystem":"Web, Android, iOS","inLanguage":["wo","fr","en","ar","es","de"],"description":"Assistante IA vocale créée à Dakar par KHALAM : conversation wolof-français, traduction, Tekkil ma, documents, recherche, carte, carnet de commerce, rappels et accompagnement du quotidien.","offers":[
-{"@type":"Offer","name":"Pass Découverte","price":"500","priceCurrency":"XOF","description":"20 minutes d’utilisation active, valables 30 jours."},
-{"@type":"Offer","name":"Pass Xarit","price":"1000","priceCurrency":"XOF","description":"50 minutes d’utilisation active, valables 30 jours."},
-{"@type":"Offer","name":"Pass Xarit+","price":"2000","priceCurrency":"XOF","description":"120 minutes d’utilisation active, valables 30 jours."}
+{"@type":"Offer","name":"Pass Découverte","price":"500","priceCurrency":"XOF","description":"20 minutes d’utilisation active ; les minutes ne disparaissent pas."},
+{"@type":"Offer","name":"Pass Xarit","price":"1000","priceCurrency":"XOF","description":"50 minutes d’utilisation active ; les minutes ne disparaissent pas."},
+{"@type":"Offer","name":"Pass Xarit+","price":"2000","priceCurrency":"XOF","description":"120 minutes d’utilisation active ; les minutes ne disparaissent pas."}
 ],"author":{"@id":"https://khalam.app/#org"}}
 ]}
 </script>
@@ -67,12 +67,28 @@
   .pricing .valid{font-size:9px}
 }
 
+
+/* Écrans fidèles à l'application (16 nov. 2026) */
+.ecran-accueil{background:linear-gradient(180deg,#eaf6ff,#cfe7ff 60%,#bfe0ff)}
+.appbar small{display:block;font-weight:500;font-size:10px;color:#4a6a92}
+.orbe{width:150px;height:150px;border-radius:50%;margin:10px auto 14px;background:radial-gradient(circle at 35% 30%,#b7edff,#549ff5 55%,#034bcc);box-shadow:0 14px 40px rgba(3,75,204,.28);position:relative;overflow:hidden}
+.orbe:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(170deg,transparent 0 9px,rgba(255,255,255,.22) 9px 11px);mix-blend-mode:screen;opacity:.7}
+.orbe.gris{background:radial-gradient(circle at 35% 30%,#e8eef4,#b8c4d2 55%,#8e9cad);box-shadow:none}
+.status small{display:block;font-size:11px;color:#5f7897;margin-top:4px}
+.cmds{position:absolute;left:14px;right:14px;bottom:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:6px;text-align:center;font-size:10px;color:#214b7a}
+.cmds span{flex:1}.cmds i{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 4px;border-radius:50%;background:#fff;border:1px solid #c6dcf2;font-style:normal;font-size:18px}
+.cmds .parler i{width:66px;height:66px;background:linear-gradient(145deg,#1d8cf4,#034bcc);color:#fff;border:0;box-shadow:0 10px 26px rgba(3,75,204,.35)}
+.menu-card .ligne{padding:6px 0;border-bottom:1px solid #e3eef8;font-size:12px}
+.menu-card .seg{display:flex;margin:8px 0;border:1px solid #c8def1;border-radius:10px;overflow:hidden;font-size:12px}.menu-card .seg span{flex:1;text-align:center;padding:6px}.menu-card .seg span:first-child{border-right:1px solid #c8def1}
+.toggle.gris .sw{background:#c4ced8}.toggle.gris .sw:after{right:auto;left:3px}
+.btn-ok{margin-top:6px;text-align:center;background:#0b71dc;color:#fff;border-radius:12px;padding:9px;font-weight:700}
+.bullets{margin-top:18px;display:grid;gap:10px}.bullet{border:1px solid #2b4964;border-radius:14px;padding:12px 14px;color:#c8d4de;font-size:14px}.bullet strong{color:var(--gold2)}
 </style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
 <a class="brand" href="/"><span class="mark">K</span><span>KHALAM</span></a>
-<nav class="links"><a href="#services">Services</a><a href="#amie">Une vraie amie</a><a href="#application">L’application</a><a href="#pass">Les pass</a></nav>
+<nav class="links"><a href="#services">Services</a><a href="#amie">Une vraie amie</a><a href="#publics">Pour qui</a><a href="#application">L’application</a><a href="#pass">Les pass</a></nav>
 <a class="cta" href="#demander">Demander un pass</a>
 </div></header>
 
@@ -82,7 +98,7 @@
 <div class="eyebrow">Créée à Dakar · Wolof · Français · Voix · Vision</div>
 <h1>Bia Xarit.<br><em>Parlez. Elle s’occupe du reste.</em></h1>
 <p class="lead">Bia Xarit est l’intelligence artificielle de KHALAM pensée pour la vraie vie. Vous lui parlez comme à une personne. Elle vous écoute, vous répond à la voix, vous aide à comprendre, écrire, traduire, chercher, vous déplacer, gérer votre activité — ou simplement discuter quand vous en avez envie.</p>
-<div class="actions"><a class="btn" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a><a class="btn alt" href="/bia-presentation">Présentation de Bia</a></div>
+<div class="actions"><a class="btn" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a></div>
 <p class="microcopy">Pas besoin de connaître l’informatique. Votre voix suffit.</p>
 </div>
 <div class="hero-art"><div class="orb"></div>
@@ -94,13 +110,13 @@
 
 <div class="wrap strip">
 <div><strong>Tekkil ma</strong>Deux personnes. Deux langues.</div>
-<div><strong>Une vingtaine de services</strong>Dans une seule Bia.</div>
+<div><strong>Un pass, toute Bia</strong>Conversation, documents, carnet, Tekkil ma…</div>
 <div><strong>À partir de 500 F</strong>Vous payez le temps utilisé.</div>
-<div><strong>30 jours</strong>Chaque pass est valable un mois.</div>
+<div><strong>Vos minutes restent</strong>Elles ne disparaissent pas.</div>
 </div>
 
 <section class="section wrap" id="services">
-<div class="head"><div class="eyebrow">Ce que Bia fait pour vous</div><h2>Une seule Bia. Une vingtaine de services.</h2><p>Pas de menus compliqués : vous dites ce que vous voulez faire. Bia comprend la demande et vous accompagne.</p></div>
+<div class="head"><div class="eyebrow">Ce que Bia fait pour vous</div><h2>Une seule Bia. Tout votre quotidien.</h2><p>Pas de menus compliqués : vous dites ce que vous voulez faire. Bia comprend la demande et vous accompagne.</p></div>
 <div class="service-grid">
 <article class="card"><div class="ico">🌍</div><h3>Tekkil ma</h3><p>Ouvrez un salon, envoyez le lien par WhatsApp et parlez chacun dans votre langue : wolof, français, anglais, arabe, espagnol ou chinois mandarin.</p><p class="quote">Deux personnes. Deux langues. Une conversation.</p></article>
 <article class="card"><div class="ico">📄</div><h3>Lire vos documents</h3><p>Ordonnance, facture, courrier, contrat ou document photographié : Bia le lit et vous l’explique en wolof ou en français. Si une ligne est illisible, elle le dit au lieu de deviner.</p></article>
@@ -117,6 +133,12 @@
 </div>
 </section>
 
+<section class="section friend" id="quotidien"><div class="wrap friend-grid">
+<div class="friend-copy"><div class="eyebrow">Votre quotidien</div><h2>Une assistante, une conseillère, une Xarit.</h2><p>Bia n’est pas un logiciel compliqué. Vous lui parlez comme à une personne. Elle passe d’une tâche pratique à une conversation, puis revient à votre document ou à votre recherche.</p>
+<div class="bullets"><div class="bullet"><strong>Comprendre :</strong> documents, messages, leçons, informations.</div><div class="bullet"><strong>Faire :</strong> écrire, traduire, chercher, guider, organiser.</div><div class="bullet"><strong>Gérer :</strong> dettes, caisse, commandes, stock — et vos devis et factures.</div><div class="bullet"><strong>Accompagner :</strong> conseils, réflexion, histoires, humour et compagnie.</div></div></div>
+<div class="story-card"><blockquote>« Bia, explique-moi ça en wolof. Ensuite rappelle-moi demain matin, et avant de partir cherche-moi la pharmacie la plus proche. »</blockquote><small>Une seule conversation enchaîne plusieurs besoins, sans changer d’application.</small></div>
+</div></section>
+
 <section class="section friend" id="amie"><div class="wrap friend-grid">
 <div class="friend-copy"><div class="eyebrow">Plus qu’un outil</div><h2>Une vraie amie au quotidien.</h2><p>Parfois, vous avez quelque chose à faire. Parfois, vous avez simplement besoin de parler. Bia sait faire les deux.</p><p>Une question de couple. Une situation familiale. Une idée à réfléchir. Un moment de stress ou de solitude. Une envie de rire. Une histoire avant de dormir. Bia est là pour échanger avec vous, sans jugement.</p><div class="chips"><span class="chip">Conseillère</span><span class="chip">Confidente</span><span class="chip">Compagne de discussion</span><span class="chip">Histoires & contes</span><span class="chip">Blagues</span><span class="chip">Wolof & français</span></div></div>
 <div class="story-card"><blockquote>« Parle avec moi un peu. »<br>« Donne-moi ton avis. »<br>« Raconte-moi un conte. »<br>« Fais-moi rire. »</blockquote><small>Une IA utile quand vous avez quelque chose à faire. Une amie quand vous avez simplement envie de parler.</small></div>
@@ -125,9 +147,9 @@
 <section class="section gallery" id="application"><div class="wrap">
 <div class="head"><div class="eyebrow">L’application aujourd’hui</div><h2>Découvrez Bia Xarit écran par écran.</h2><p>Les aperçus ci-dessous reprennent les principales vues actuellement présentes dans l’application : accueil, réglages, Tekkil ma, carte, documents, carnet, photo et mode gratuit.</p></div>
 <div class="shots">
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Bia Xarit</span><span class="gear">⚙</span></div><div class="wave"></div><div class="mic">🎙️</div><div class="status">Je t’écoute</div><div class="bottom"><span>Clavier</span><span>Moi</span><span>Services</span></div></div></div><h3>Accueil vocal</h3><p>Le cœur de Bia : vous parlez, elle écoute et répond à la voix.</p></article>
+<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="orbe"></div><div class="status">Parlez, je vous écoute<small>Wolof · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekilma</span></div></div></div><h3>Accueil vocal</h3><p>Une interface simple : parler, écrire ou ouvrir Tekkil ma.</p></article>
 
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Moi</span><span>×</span></div><div class="menu-card"><strong>Langue</strong><div class="select">Wolof · Français (par défaut) ▾</div></div><div class="menu-card"><strong>Personnage et voix</strong><div class="toggle"><span>Personnage animé</span><span class="sw"></span></div></div><div class="menu-card"><strong>Version gratuite</strong><div class="toggle"><span>Français</span><span class="sw"></span></div></div><div class="menu-card"><strong>Options</strong><span>Conversation écrite · À relire · Réglages</span></div></div></div><h3>Moi / Réglages</h3><p>L’engrenage ouvre les langues, le personnage, la voix, la version gratuite et les préférences.</p></article>
+<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Réglages<small>Ton expérience avec Bia, simplement.</small></span></div><div class="menu-card"><strong>🌐 Langue</strong><div class="select">Wolof · Français (par défaut)</div></div><div class="menu-card"><strong>✧ Personnage et voix</strong><div class="ligne">Changer de personnage ›</div><div class="ligne">○ Personnage animé — désactivé</div><div class="seg"><span>Homme</span><span>Femme</span></div><div class="ligne">🔊 Écouter la voix choisie</div><div class="toggle gris"><span>Version gratuite (français)</span><span class="sw"></span></div></div><div class="btn-ok">Terminé</div></div></div><h3>Réglages</h3><p>Langue, voix et personnage sur un seul écran, derrière l’engrenage.</p></article>
 
 <article class="shot"><div class="phone"><div class="screen"><div class="tek-head">Tekkil ma — interprète</div><div class="tkcard"><b>Ma langue</b><div class="select">Wolof ▾</div><br><b>Langue de l’invité</b><div class="select">English ▾</div></div><div class="tkbtn">Ouvrir le salon</div><div class="chatline"><b>Vous :</b> Dama bëgg wax ak yaw.</div><div class="chatline"><b>Traduction :</b> I would like to speak with you.</div></div></div><h3>Tekkil ma</h3><p>Salon partagé, six langues, conversation vocale dans les deux sens.</p></article>
 
@@ -139,20 +161,31 @@
 
 <article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Photo</span><span>×</span></div><div class="camera"><img src="https://app.khalam.app/reperes/bia.jpg" alt=""><div class="count">3</div></div><div class="cam-actions"><span>Garder</span><span>Refaire</span></div></div></div><h3>Photo à la voix</h3><p>Bia ouvre l’appareil photo, compte puis vous laisse garder ou refaire la photo.</p></article>
 
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Bia Xarit</span><span>⚙</span></div><span class="free-badge">Mode continuité gratuit · FR</span><div class="freebox"><b>Je reste avec vous en français.</b><p>Conversation et fonctions légères restent disponibles après la fin du pass, pendant quelques minutes.</p></div><div class="mic">🎙️</div><div class="status">Français · voix légère</div></div></div><h3>Continuité gratuite</h3><p>Après expiration du temps payant, Bia termine la tâche en cours puis reste quelques minutes en français avec ses fonctions légères.</p></article>
+<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="orbe gris"></div><div class="status">Je vous écoute<small class="free-badge">Mode continuité gratuit · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekilma</span></div></div></div><h3>Continuité gratuite</h3><p>Quand le pass se termine, Bia finit ce qu’elle faisait puis reste quelques minutes en français, avec ses fonctions légères.</p></article>
 
 <article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Langues</span><span>×</span></div><div class="menu-card"><strong>Bia Xarit</strong><p>Wolof · Français</p></div><div class="menu-card"><strong>Autres langues</strong><p>Anglais · Arabe · Espagnol · Allemand</p></div><div class="menu-card"><strong>Tekkil ma</strong><p>Wolof · Français · Anglais · Arabe · Espagnol · Chinois mandarin</p></div></div></div><h3>Langues</h3><p>Le wolof et le français au cœur de Bia, avec d’autres langues dans le menu et Tekkil ma.</p></article>
 </div>
 </div></section>
 
+<section class="section wrap" id="publics">
+<div class="head"><div class="eyebrow">Pour qui</div><h2>Une IA utile dans la vraie vie.</h2></div>
+<div class="service-grid">
+<article class="card"><div class="ico">👨🏾‍👩🏾‍👧🏾</div><h3>Les familles</h3><p>Comprendre une ordonnance, ne plus oublier un médicament, trouver la pharmacie, obtenir une explication simplement.</p></article>
+<article class="card"><div class="ico">🛍️</div><h3>Les commerçants</h3><p>Clients étrangers avec Tekkil ma, devis, factures, carnet : dettes, caisse, commandes et stock.</p></article>
+<article class="card"><div class="ico">✈️</div><h3>Les voyageurs</h3><p>Traduction en direct, carte, direction et distance, numéros utiles.</p></article>
+<article class="card"><div class="ico">🎓</div><h3>Pour apprendre</h3><p>Wolof, français, explications, traductions, conversation.</p></article>
+<article class="card"><div class="ico">🌍</div><h3>Tout le monde</h3><p>Réfléchir, demander conseil, raconter, discuter, rire — ou simplement avoir une présence disponible, en wolof ou en français.</p></article>
+</div>
+</section>
+
 <section class="section pass" id="pass"><div class="wrap">
 <div class="head"><div class="eyebrow">Les pass Bia Xarit</div><h2>Vous payez seulement quand vous utilisez Bia.</h2><p>Le temps où vous laissez l’application ouverte sans l’utiliser ne consomme pas votre pass.</p></div>
 <div class="pricing">
-<div class="price"><h3>Découverte</h3><div class="amount">500 F</div><div class="mins">20 min</div><div class="valid">Valable 30 jours à partir de l’activation.</div></div>
-<div class="price best"><h3>Xarit</h3><div class="amount">1 000 F</div><div class="mins">50 min</div><div class="valid">Valable 30 jours à partir de l’activation.</div></div>
-<div class="price"><h3>Xarit+</h3><div class="amount">2 000 F</div><div class="mins">120 min</div><div class="valid">Valable 30 jours à partir de l’activation.</div></div>
+<div class="price"><h3>Découverte</h3><div class="amount">500 F</div><div class="mins">20 min</div><div class="valid">Vos minutes ne disparaissent pas.</div></div>
+<div class="price best"><h3>Xarit</h3><div class="amount">1 000 F</div><div class="mins">50 min</div><div class="valid">Vos minutes ne disparaissent pas.</div></div>
+<div class="price"><h3>Xarit+</h3><div class="amount">2 000 F</div><div class="mins">120 min</div><div class="valid">Vos minutes ne disparaissent pas.</div></div>
 </div>
-<div class="pass-note"><strong>Chaque pass est valable pendant 30 jours.</strong> Les minutes non utilisées expirent à la fin de cette période. Lorsque le pass se termine, Bia finit ce qu’elle faisait puis reste encore quelques minutes avec vous gratuitement, en français, avec ses fonctions légères.</div>
+<div class="pass-note"><strong>Vos minutes ne disparaissent pas : vous les utilisez quand vous voulez.</strong> Seul le temps d’utilisation active est compté. Avec un pass, vous accédez à toute l’expérience Bia Xarit. Lorsque le pass se termine, Bia finit ce qu’elle faisait puis reste encore quelques minutes avec vous gratuitement, en français, avec ses fonctions légères.</div>
 <div class="always"><div><strong>Urgences toujours accessibles</strong><br>Police · Gendarmerie · Pompiers · SAMU.</div><div><strong>Pharmacie / hôpital proche</strong><br>La recherche de la structure la plus proche reste disponible, pass ou pas.</div></div>
 </div></section>
 
