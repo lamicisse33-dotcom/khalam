@@ -1,4 +1,4 @@
-/* ── PYLO COURONNE v0.2.1 — LE MOTEUR UNIQUE ─────────────────────────────────
+/* ── PYLO COURONNE v0.3 — LE MOTEUR UNIQUE ─────────────────────────────────
    Un seul fichier pour la page (window.PyloCouronne) et pour Node
    (require / import) : la page, les tests et la simulation jouent avec les
    mêmes règles. Aucune règle n'existe ailleurs.
@@ -20,7 +20,19 @@
    de 40 demi-coups repart à zéro sur toute prise, progression, ramassage,
    dépôt au palais, corruption, et sur la première entrée de chaque pièce dans
    le royaume adverse (une fois par pièce).
-   v0.2.1 : règle 8 précisée (voir dansPalais). */
+   v0.2.1 : règle 8 précisée (voir dansPalais).
+   v0.3 (16 nov. 2026) : HÉRITIERS À DEUX RÔLES, valeur 2 chacun, capturables.
+   - PRINCESSE (protège) : un pas dans les 8 directions, prise par saut dans
+     ses directions. ESCORTE : toute pièce amie adjacente à la Princesse ne
+     peut pas être prise (le coup de prise n'est pas généré) ; la Princesse
+     elle-même ne l'est pas. Corruptible seulement isolée.
+   - PRINCE (attaque) : saut de deux cases dans les 8 directions, case survolée
+     vide, amie ou ennemie (prise). ÉCLAIREUR : seul porteur qui garde son saut
+     (sans prise, donc sans survoler d'ennemi). Corruptible MÊME entouré.
+   - Cartes : Princesse = roi-8-directions ; Prince porteur = saut de 2 en 8
+     directions ; Sauteur porteur = un pas en diagonale (inchangé).
+   - Option d'étude (simulation seulement) : eclaireur:false retire au Prince
+     porteur son saut (il avance alors d'un pas, comme les autres porteurs). */
 (function (racine, fabrique) {
   const api = fabrique();
   if (typeof module === 'object' && module && module.exports) module.exports = api;
@@ -28,7 +40,7 @@
 })(typeof self !== 'undefined' ? self : globalThis, function () {
 'use strict';
 
-const VERSION = '0.2.1';
+const VERSION = '0.3';
 const IVOIRE = 1, EBENE = 2;
 const ROI = 0, REINE = 1, GARDE = 2, SENTINELLE = 3, SAUTEUR = 4, PRINCESSE = 5, PRINCE = 6, NT = 7;
 const NOMS = ['Roi', 'Reine', 'Garde', 'Sentinelle', 'Sauteur', 'Princesse', 'Prince'];
@@ -57,7 +69,9 @@ const palaisDe = (i) => (i >= 0 ? PALAIS_DE[i] : 0);
 
 const D8 = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
 const DIAG = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
-const DIRECTIONS = [D8, D8, [[-1, 0], [1, 0]], [[0, -1], [0, 1]], DIAG, DIAG, DIAG];
+const DIRECTIONS = [D8, D8, [[-1, 0], [1, 0]], [[0, -1], [0, 1]], DIAG, D8, D8];
+const PAS_DIAG = NT; // pseudo-sorte des cartes : un pas en diagonale (Sauteur porteur)
+const sauteDeux = (t) => t === SAUTEUR || t === PRINCE;
 const dans = (r, c) => r >= 0 && r < 8 && c >= 0 && c < 8;
 const VOISINS = Array.from({ length: 64 }, (_, i) => D8.map(([dr, dc]) => [(i >> 3) + dr, (i & 7) + dc]).filter(([r, c]) => dans(r, c)).map(([r, c]) => r * 8 + c));
 
@@ -76,8 +90,8 @@ const sautRoi = (de, a, dr, p) => dr === avant(p) || (dr === -avant(p) && !dansR
 function pas(t, p, i) {
   const r = i >> 3, c = i & 7, out = [];
   if (t === SENTINELLE) { for (const dc of [-1, 1]) if (dans(r, c + dc)) out.push(i + dc); return out; }
-  for (const [dr, dc] of DIRECTIONS[t]) {
-    const n = t === SAUTEUR ? 2 : 1, rr = r + n * dr, cc = c + n * dc;
+  for (const [dr, dc] of (t === PAS_DIAG ? DIAG : DIRECTIONS[t])) {
+    const n = sauteDeux(t) ? 2 : 1, rr = r + n * dr, cc = c + n * dc;
     if (!dans(rr, cc)) continue;
     const a = rr * 8 + cc;
     if (t === ROI && !pasRoi(i, a, p)) continue;
@@ -94,7 +108,7 @@ function pas(t, p, i) {
    PORTEE[t][p][a*64+b] : déplacements de a à b (pour l'IA). 255 = jamais.
    (v0.2 : le Sauteur porteur prend la carte de l'Héritier, voir plus bas.) */
 const DIST = [], PORTEE = [];
-for (let t = 0; t < NT; t++) {
+for (let t = 0; t <= PAS_DIAG; t++) {
   DIST[t] = [null]; PORTEE[t] = [null];
   for (const p of [1, 2]) {
     const portee = new Uint8Array(64 * 64).fill(255);
@@ -108,11 +122,14 @@ for (let t = 0; t < NT; t++) {
     DIST[t][p] = d;
   }
 }
-/* v0.2 : le Sauteur porteur se déplace comme un Héritier (un pas en
-   diagonale). DIST ne sert qu'aux couronnes portées : sa carte est celle de
-   l'Héritier. PORTEE (aller vers une couronne, sans la porter) garde le saut. */
-for (const p of [1, 2]) DIST[SAUTEUR][p] = DIST[PRINCESSE][p];
-const distance = (t, p, i) => (t === SENTINELLE ? Infinity : DIST[t][p][i]);
+/* v0.2 : le Sauteur porteur fait un pas en diagonale. DIST ne sert qu'aux
+   couronnes portées : sa carte est celle du pas diagonal. PORTEE (aller vers
+   une couronne, sans la porter) garde le saut.
+   v0.3 : Princesse = roi-8-directions ; Prince porteur = saut de 2 en 8
+   directions (éclaireur). Avec l'option d'étude eclaireur:false (passer l'état
+   en 4e argument), le Prince porteur prend la carte d'un pas en 8 directions. */
+for (const p of [1, 2]) DIST[SAUTEUR][p] = DIST[PAS_DIAG][p];
+const distance = (t, p, i, s) => (t === SENTINELLE ? Infinity : DIST[t === PRINCE && s && s.eclaireur === false ? PRINCESSE : t][p][i]);
 const portee = (t, p, a, b) => { const v = PORTEE[t][p][a * 64 + b]; return v === 255 ? Infinity : v; };
 
 /* ── HASARD À GRAINE ─────────────────────────────────────────────────────── */
@@ -128,7 +145,7 @@ function mulberry32(graine) {
    la case du porteur ; au sol, la case où elle est posée. */
 function vide() {
   /* entre[i] : la pièce de la case i est déjà entrée une fois dans le royaume adverse. */
-  return { b: new Array(64).fill(0), c: [null, { sq: -1, porte: false, trajet: null }, { sq: -1, porte: false, trajet: null }], tour: 1, ply: 0, calme: 0, heritiers: false, entre: new Array(64).fill(false), ev: null };
+  return { b: new Array(64).fill(0), c: [null, { sq: -1, porte: false, trajet: null }, { sq: -1, porte: false, trajet: null }], tour: 1, ply: 0, calme: 0, heritiers: false, eclaireur: true, entre: new Array(64).fill(false), ev: null };
 }
 function initial(opts = {}) {
   const s = vide(), mettre = (p, t, x) => { s.b[caseDe(x)] = jeton(p, t); };
@@ -138,11 +155,14 @@ function initial(opts = {}) {
   s.c[1].sq = caseDe('E2'); s.c[2].sq = caseDe('D7');
   const graine = opts.graine ?? 1;
   s.heritiers = opts.heritiers !== false;
+  s.eclaireur = opts.eclaireur !== false;
   if (s.heritiers) {
     /* Princesse pour Ivoire et Prince pour Ébène, inversés quand la graine
        est impaire ; colonne tirée au sort, indépendante pour chaque camp,
-       sur une case libre de la rangée 4 (Ivoire) et 5 (Ébène). */
-    const hasard = mulberry32(graine * 7919 + 17), inverse = (graine & 1) === 1;
+       sur une case libre de la rangée 4 (Ivoire) et 5 (Ébène).
+       v0.3 : opts.inverse échange encore les rôles SANS changer les colonnes
+       (manche suivante d'une même graine : mêmes cases, rôles inversés). */
+    const hasard = mulberry32(graine * 7919 + 17), inverse = ((graine & 1) === 1) !== !!opts.inverse;
     for (const p of [1, 2]) {
       const t = (p === 1) !== inverse ? PRINCESSE : PRINCE, rangee = p === 1 ? 4 : 5;
       const libres = [0, 1, 2, 3, 4, 5, 6, 7].map((c) => (8 - rangee) * 8 + c).filter((i) => !s.b[i] && s.c[1].sq !== i && s.c[2].sq !== i);
@@ -163,8 +183,15 @@ function piecesAuPalais(s, p) { let n = 0; for (const i of PALAIS[p]) if (camp(s
 
 /* ── GÉNÉRATION BRUTE (sans la règle d'honneur) ─────────────────────────────
    Coup : { de, a, prise: case|null, pris, piece, ramasse: 0|1|2 }. */
+/* v0.3 — ESCORTE : les cases des pièces du camp q adjacentes à une Princesse
+   de q (la Princesse elle-même n'est protégée que par une autre Princesse). */
+function escortees(s, q) {
+  const out = new Set();
+  for (let i = 0; i < 64; i++) if (s.b[i] === jeton(q, PRINCESSE)) for (const n of VOISINS[i]) if (camp(s.b[n]) === q) out.add(n);
+  return out;
+}
 function brut(s, p = s.tour, seulementPrises = false) {
-  const out = [], b = s.b, auPalais = piecesAuPalais(s, p), f = avant(p);
+  const out = [], b = s.b, auPalais = piecesAuPalais(s, p), f = avant(p), escorte = escortees(s, 3 - p);
   function pousser(de, a, prise, piece, porte) {
     if (PALAIS_DE[a] === p && PALAIS_DE[de] !== p && auPalais >= 2) return; // palais petit
     const pris = prise === null ? 0 : b[prise];
@@ -180,17 +207,21 @@ function brut(s, p = s.tour, seulementPrises = false) {
     if (camp(v) !== p) continue;
     const t = sorte(v), r = i >> 3, c = i & 7, porte = porteePar(s, i) !== 0;
     for (const [dr, dc] of DIRECTIONS[t]) {
-      if (t === SAUTEUR && porte) { // v0.2 : la couronne pèse, un pas en diagonale
+      /* v0.2 : la couronne pèse, un pas — le Sauteur porteur en diagonale ;
+         v0.3, option d'étude eclaireur:false : le Prince porteur aussi. */
+      if (porte && (t === SAUTEUR || (t === PRINCE && s.eclaireur === false))) {
         const rr = r + dr, cc = c + dc;
         if (!seulementPrises && dans(rr, cc) && !b[rr * 8 + cc]) pousser(i, rr * 8 + cc, null, v, porte);
         continue;
       }
-      if (t === SAUTEUR) {
+      if (sauteDeux(t)) {
         const rr = r + 2 * dr, cc = c + 2 * dc;
         if (!dans(rr, cc)) continue;
         const a = rr * 8 + cc, mi = (r + dr) * 8 + c + dc;
         if (b[a]) continue;
         const prend = camp(b[mi]) === 3 - p;
+        // v0.3 : le Prince porteur (éclaireur) saute, mais un porteur ne prend jamais : il ne survole pas d'ennemi.
+        if (prend && (porte || escorte.has(mi))) continue;
         if (seulementPrises && !prend) continue;
         pousser(i, a, prend ? mi : null, v, porte);
         continue;
@@ -199,7 +230,7 @@ function brut(s, p = s.tour, seulementPrises = false) {
       if (!dans(rr, cc)) continue;
       const a = rr * 8 + cc;
       if (!b[a]) { if (!seulementPrises && (t !== ROI || pasRoi(i, a, p))) pousser(i, a, null, v, porte); continue; }
-      if (porte || camp(b[a]) !== 3 - p) continue; // règle 5 : un porteur ne prend jamais
+      if (porte || camp(b[a]) !== 3 - p || escorte.has(a)) continue; // règle 5 : un porteur ne prend jamais ; v0.3 : escorte
       const jr = r + 2 * dr, jc = c + 2 * dc;
       if (!dans(jr, jc)) continue;
       const j = jr * 8 + jc;
@@ -228,31 +259,38 @@ function jouer(s, m) {
     if (!(c[k].porte && c[k].sq === m.de)) continue;
     c[k].sq = m.a;
     if (k === p && PALAIS_DE[m.de] === p && PALAIS_DE[m.a] !== p) ev.sortie = k;
-    const d = PALAIS_DE[m.a] === p && t !== SENTINELLE ? 0 : distance(t, p, m.a);
+    const d = PALAIS_DE[m.a] === p && t !== SENTINELLE ? 0 : distance(t, p, m.a, s);
     if (PALAIS_DE[m.a] === p && PALAIS_DE[m.de] !== p) { c[k].porte = false; ev.depot = k; } // règle 7
     if (c[k].trajet && d < c[k].trajet.record) { c[k].trajet = { camp: c[k].trajet.camp, record: d }; ev.progres = k; }
   }
   if (m.ramasse) {
-    const k = m.ramasse, d = distance(t, p, m.a), tr = c[k].trajet;
+    const k = m.ramasse, d = distance(t, p, m.a, s), tr = c[k].trajet;
     c[k].porte = true; c[k].sq = m.a; ev.ramasse = k;
     if (!tr || tr.camp !== p) { c[k].trajet = { camp: p, record: d }; ev.nouveauTrajet = k; if (k !== p) ev.vol = k; }
     else if (d < tr.record) { c[k].trajet = { camp: p, record: d }; ev.progres = k; }
   }
   /* Corruption : la Reine qui termine un déplacement SANS prise à côté d'un
-     Héritier ennemi isolé (aucun allié à lui dans les 8 directions) le fait
-     changer de camp, sur sa case, avec sa couronne éventuelle (nouveau trajet). */
+     Héritier ennemi le fait changer de camp, sur sa case, avec sa couronne
+     éventuelle (nouveau trajet). v0.3 : la Princesse seulement si elle est
+     isolée (aucun allié à elle dans les 8 directions) ; le Prince MÊME entouré. */
   if (t === REINE && m.prise === null) {
-    const cibles = VOISINS[m.a].filter((n) => camp(b[n]) === 3 - p && estHeritier(sorte(b[n])) && !VOISINS[n].some((x) => camp(b[x]) === 3 - p));
+    const cibles = VOISINS[m.a].filter((n) => camp(b[n]) === 3 - p && corruptible(b, n));
     for (const n of cibles) {
       b[n] = jeton(p, sorte(b[n])); ev.corrompus.push(n);
       const k = porteePar({ c }, n);
-      if (k) { c[k].trajet = { camp: p, record: distance(sorte(b[n]), p, n) }; if (k !== p) ev.vol = k; ev.nouveauTrajet = k; }
+      if (k) { c[k].trajet = { camp: p, record: distance(sorte(b[n]), p, n, s) }; if (k !== p) ev.vol = k; ev.nouveauTrajet = k; }
     }
   }
   const calme = m.prise !== null || ev.progres || ev.ramasse || ev.depot || ev.corrompus.length || ev.premiereEntree ? 0 : s.calme + 1;
-  return { b, c, tour: 3 - s.tour, ply: s.ply + 1, calme, heritiers: s.heritiers, entre, ev };
+  return { b, c, tour: 3 - s.tour, ply: s.ply + 1, calme, heritiers: s.heritiers, eclaireur: s.eclaireur, entre, ev };
 }
 
+/* L'Héritier de la case n peut-il être corrompu par une Reine adverse voisine ? */
+function corruptible(b, n) {
+  const v = b[n], t = sorte(v), q = camp(v);
+  if (!v || !estHeritier(t)) return false;
+  return t === PRINCE || !VOISINS[n].some((x) => camp(b[x]) === q);
+}
 function roiPrenable(s, p) {
   for (const m of brut(s, 3 - p, true)) if (m.pris && sorte(m.pris) === ROI && camp(m.pris) === p) return true;
   return false;
@@ -285,17 +323,21 @@ const cle = (s) => s.b.join(',') + '|' + s.c[1].sq + (s.c[1].porte ? '*' : '') +
 function etatCouronne(s, k) {
   const C = s.c[k], porteur = C.porte ? camp(s.b[C.sq]) : 0, tr = C.trajet;
   const base = { sq: C.sq, porte: C.porte, porteur: C.porte ? s.b[C.sq] : 0, trajet: tr, distance: null };
-  if (C.porte) base.distance = PALAIS_DE[C.sq] === porteur ? 0 : distance(sorte(s.b[C.sq]), porteur, C.sq);
+  if (C.porte) base.distance = PALAIS_DE[C.sq] === porteur ? 0 : distance(sorte(s.b[C.sq]), porteur, C.sq, s);
   if (dansPalais(s, k, k)) return { ...base, etat: 'chez-elle' };
   if (!C.porte && palaisDe(C.sq) === 3 - k) return { ...base, etat: 'deposee' };
   if (C.porte) return { ...base, etat: porteur === k ? 'retour' : 'vol' };
   return { ...base, etat: tr && tr.camp !== k ? 'vol-au-sol' : 'au-sol' };
 }
+/* Les Héritiers, pour le bandeau : protege = un allié à côté ; corruptible
+   (Prince toujours, Princesse isolée) ; escorte = cases des pièces amies
+   que la Princesse rend imprenables ; eclaireur = le Prince garde son saut en portant. */
 function heritiers(s) {
   const out = [];
   for (let i = 0; i < 64; i++) if (s.b[i] && estHeritier(sorte(s.b[i]))) {
-    const p = camp(s.b[i]);
-    out.push({ sq: i, camp: p, sorte: sorte(s.b[i]), protege: VOISINS[i].some((x) => camp(s.b[x]) === p) });
+    const p = camp(s.b[i]), t = sorte(s.b[i]);
+    out.push({ sq: i, camp: p, sorte: t, protege: VOISINS[i].some((x) => camp(s.b[x]) === p), corruptible: corruptible(s.b, i),
+      escorte: t === PRINCESSE ? VOISINS[i].filter((x) => camp(s.b[x]) === p) : [], eclaireur: t === PRINCE && s.eclaireur !== false, porte: porteePar(s, i) !== 0 });
   }
   return out;
 }
@@ -371,6 +413,7 @@ function depuisTexte(texte) {
     } else if ((m = l.match(/^trajets\s*:\s*(.+)$/i))) {
       for (const [, qui, cp, rec] of m[1].matchAll(/(ivoire|ebene|ébène)\s*=\s*([12])\s*:\s*(\d+|inf)/gi)) trajets[/^i/i.test(qui) ? 1 : 2] = { camp: Number(cp), record: rec === 'inf' ? Infinity : Number(rec) };
     } else if ((m = l.match(/^tour\s*:\s*(\S+)/i))) s.tour = /^i/i.test(m[1]) ? 1 : 2;
+    else if ((m = l.match(/^eclaireur\s*:\s*(\S+)/i))) s.eclaireur = !/^(non|false|0)$/i.test(m[1]);
     else if ((m = l.match(/^calme\s*:\s*(\d+)/i))) s.calme = Number(m[1]);
     else if (/^[A-H\s]+$/.test(l)) continue;
     else throw new Error('ligne incomprise : ' + l);
@@ -379,7 +422,7 @@ function depuisTexte(texte) {
   for (let i = 0; i < 64; i++) if (s.b[i] && !dansRoyaume(i, camp(s.b[i]))) s.entre[i] = true;
   for (const k of [1, 2]) {
     if (trajets[k]) s.c[k].trajet = trajets[k];
-    else if (s.c[k].porte) { const v = s.b[s.c[k].sq]; if (!v) throw new Error('couronne portée sans porteur'); s.c[k].trajet = { camp: camp(v), record: distance(sorte(v), camp(v), s.c[k].sq) }; }
+    else if (s.c[k].porte) { const v = s.b[s.c[k].sq]; if (!v) throw new Error('couronne portée sans porteur'); s.c[k].trajet = { camp: camp(v), record: distance(sorte(v), camp(v), s.c[k].sq, s) }; }
   }
   return s;
 }
@@ -400,6 +443,7 @@ const NIVEAUX = { apprenti: { profondeur: 1, beam: 8 }, gardien: { profondeur: 2
 const GAGNE = 100000;
 const CHEZ_MOI = 240;                                       // une couronne dans mon palais
 const valeurPortee = (d) => 60 + 22 * (8 - Math.min(d, 8)); // une couronne que je porte, à d de mon palais
+const BONUS_ESCORTE = 30, MALUS_PRINCESSE_PRENABLE = 60, MALUS_PRINCESSE_ISOLEE = 8; // v0.3
 
 /* Les deux couronnes à un coup du palais de q (dans le palais, ou portées
    par une pièce de q à une case). */
@@ -407,7 +451,7 @@ function imminente(s, q) {
   for (const k of [1, 2]) {
     const C = s.c[k];
     if (dansPalais(s, k, q)) continue;
-    if (!(C.porte && camp(s.b[C.sq]) === q && distance(sorte(s.b[C.sq]), q, C.sq) <= 1)) return false;
+    if (!(C.porte && camp(s.b[C.sq]) === q && distance(sorte(s.b[C.sq]), q, C.sq, s) <= 1)) return false;
   }
   return true;
 }
@@ -453,10 +497,12 @@ function cote(s, p, prises, reglages = {}) {
     }
     if (palaisDe(C.sq) === p) { v += CHEZ_MOI; continue; }
     if (C.porte && !chezEllePortee) {
-      v += valeurPortee(distance(sorte(b[C.sq]), p, C.sq));
+      v += valeurPortee(distance(sorte(b[C.sq]), p, C.sq, s));
+      // v0.3 : porteur escorté par ma Princesse (imprenable tant qu'elle reste à côté).
+      if (VOISINS[C.sq].some((x) => b[x] === jeton(p, PRINCESSE))) v += BONUS_ESCORTE;
       // (d) mon porteur prenable au prochain coup ; protégé si un allié reprend l'intercepteur.
       if (menaces.has(C.sq)) {
-        const perte = valeurPortee(distance(sorte(b[C.sq]), p, C.sq)) + (k === p ? 120 : 0);
+        const perte = valeurPortee(distance(sorte(b[C.sq]), p, C.sq, s)) + (k === p ? 120 : 0);
         // À mon tour, un porteur qui a une case de fuite sûre n'est presque pas en danger.
         v -= (protege(s, C.sq, p, prises[e]) ? 0.35 : 0.7) * perte * (monTour ? (sortieSure(s, C.sq, p) ? 0.1 : 0.4) : 1);
       }
@@ -467,7 +513,7 @@ function cote(s, p, prises, reglages = {}) {
     for (const i of miennes) {
       const t = sorte(b[i]);
       if (t === SENTINELLE || porteePar(s, i)) continue;
-      const aller = portee(t, p, i, C.sq), retour = distance(t, p, C.sq);
+      const aller = portee(t, p, i, C.sq), retour = distance(t, p, C.sq, s);
       if (aller + retour < meilleur) meilleur = aller + retour;
     }
     const pression = k === e ? 7 : 9; // (a) aller voler ; (c) récupérer la mienne
@@ -483,7 +529,10 @@ function cote(s, p, prises, reglages = {}) {
   }
   // Pièces menacées (le camp qui n'est pas au trait les perd).
   if (!monTour) { let pire = 0; for (const i of menaces) if (camp(b[i]) === p) pire = Math.max(pire, VALEUR[sorte(b[i])]); v -= 70 * pire; }
-  // Héritiers : protégé (+), isolé à portée de la Reine adverse (−) ; ma Reine vers un Héritier ennemi isolé.
+  /* Héritiers : protégé (+), corruptible à portée de la Reine adverse (−) ; ma
+     Reine vers un Héritier ennemi corruptible. v0.3 : le Prince est corruptible
+     même entouré (la Reine est incitée à l'approcher) ; ma Princesse exposée
+     (prenable, ou isolée) coûte. */
   if (s.heritiers) {
     let reineAdverse = -1;
     for (let i = 0; i < 64; i++) if (b[i] === jeton(e, REINE)) reineAdverse = i;
@@ -491,11 +540,12 @@ function cote(s, p, prises, reglages = {}) {
     let cible = Infinity;
     for (let i = 0; i < 64; i++) {
       if (!b[i] || !estHeritier(sorte(b[i]))) continue;
-      const q = camp(b[i]), isole = !VOISINS[i].some((x) => camp(b[x]) === q);
+      const q = camp(b[i]), isole = !VOISINS[i].some((x) => camp(b[x]) === q), prenable = corruptible(b, i);
       if (q === p) {
         if (!isole) v += 12;
-        else if (reineAdverse >= 0 && cheb(reineAdverse, i) <= 2) v -= monTour ? 40 : 320;
-      } else if (isole && maReine >= 0) cible = Math.min(cible, cheb(maReine, i));
+        if (prenable && reineAdverse >= 0 && cheb(reineAdverse, i) <= 2) v -= monTour ? 40 : 320;
+        if (sorte(b[i]) === PRINCESSE) { if (menaces.has(i)) v -= MALUS_PRINCESSE_PRENABLE; if (isole) v -= MALUS_PRINCESSE_ISOLEE; }
+      } else if (prenable && maReine >= 0) cible = Math.min(cible, cheb(maReine, i) - (sorte(b[i]) === PRINCE ? 0.5 : 0));
     }
     if (cible < Infinity) v -= 8 * cible;
     if (maReine >= 0 && menaces.has(maReine)) v -= monTour ? 30 : 150;
@@ -512,7 +562,8 @@ function menaceSur(s, sq, e) {
    qu'aucune pièce adverse n'atteint au coup suivant ? */
 function sortieSure(s, sq, p) {
   const t = sorte(s.b[sq]), e = 3 - p;
-  return pas(t === SAUTEUR ? PRINCESSE : t, p, sq).some((n) => !s.b[n] && PALAIS_DE[n] !== p &&
+  const carte = t === SAUTEUR || (t === PRINCE && s.eclaireur === false) ? (t === SAUTEUR ? PAS_DIAG : PRINCESSE) : t;
+  return pas(carte, p, sq).some((n) => !s.b[n] && PALAIS_DE[n] !== p &&
     !s.b.some((w, j) => camp(w) === e && portee(sorte(w), e, j, n) <= 1));
 }
 
@@ -574,6 +625,6 @@ return {
   VERSION, IVOIRE, EBENE, ROI, REINE, GARDE, SENTINELLE, SAUTEUR, PRINCESSE, PRINCE, NOMS, CAMPS, LETTRES, VALEUR, QUARTIERS, PALAIS, NIVEAUX, RAISONS,
   jeton, camp, sorte, estHeritier, nomCase, caseDe, avant, dansRoyaume, quartier, palaisDe, pasRoi, distance, portee, mulberry32,
   initial, depuisTexte, versTexte, brut, jouer, coupsLegaux, roiPrenable, conquete, dansPalais, piecesAuPalais, fin, cle, etatCouronne, heritiers, porteePar, auSol, notation,
-  creerPartie, etatActuel, jouerCoup, annuler, evaluer, analyser, imminente, menaceSur, sortieSure,
+  creerPartie, etatActuel, jouerCoup, annuler, evaluer, analyser, imminente, menaceSur, sortieSure, escortees, corruptible,
 };
 });

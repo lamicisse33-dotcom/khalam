@@ -1,4 +1,4 @@
-/* PYLO COURONNE v0.1 — les règles, une par une (node --test tests/pylo-couronne/). */
+/* PYLO COURONNE v0.1 → v0.3 — les règles, une par une (node --test tests/pylo-couronne/). */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { P, c, pos, coups, depuis, trouver, apres } from './charger.mjs';
@@ -37,7 +37,7 @@ test('Héritiers : rangée 4 (Ivoire) et 5 (Ébène), case libre, Princesse/Prin
   assert.equal(P.heritiers(P.initial({ graine: 3, heritiers: false })).length, 0);
 });
 
-test('déplacements : Reine 8 directions, Garde colonne, Sentinelle ligne, Sauteur (sans couronne) deux cases en diagonale, Héritier diagonale', () => {
+test('déplacements : Reine 8 directions, Garde colonne, Sentinelle ligne, Sauteur (sans couronne) deux cases en diagonale, Princesse 8 directions (v0.3)', () => {
   const s = pos(`
     8 . . . . . . . r
     4 . . Q . . G . .
@@ -51,7 +51,7 @@ test('déplacements : Reine 8 directions, Garde colonne, Sentinelle ligne, Saute
   const s2 = apres(s, 'C4-B4', 'H8-H7');
   assert.deepEqual(depuis(s2, 'A2'), ['A2-C4'], 'il survole B3 (vide) ; la case survolée ne compte pas');
   assert.deepEqual(depuis(apres(s, 'C4-B3', 'H8-H7'), 'A2'), ['A2-C4'], 'il survole une pièce amie');
-  assert.deepEqual(depuis(s, 'H2'), ['H2-G1', 'H2-G3']);
+  assert.deepEqual(depuis(s, 'H2'), ['H2-G1', 'H2-G2', 'H2-G3', 'H2-H1', 'H2-H3']);
 });
 
 test('Roi : avant droit ou diagonal, jamais de côté ; recul seulement dans le royaume adverse, sans repasser la frontière', () => {
@@ -413,14 +413,14 @@ test('v0.2 : le compteur repart à zéro sur ramassage, dépôt et première ent
   assert.equal(init.entre.filter(Boolean).length, 0, 'au départ, personne n’est entré');
 });
 
-test('v0.2 : carte de distance du Sauteur porteur = celle de l’Héritier (un pas en diagonale)', () => {
+test('v0.2 : carte de distance du Sauteur porteur = un pas en diagonale (égale, sur ce palais 2×2, à celle de la Princesse)', () => {
   for (const p of [1, 2]) for (let i = 0; i < 64; i++) assert.equal(P.distance(P.SAUTEUR, p, i), P.distance(P.PRINCESSE, p, i));
   assert.equal(P.distance(P.SAUTEUR, 1, c('A5')), 3, 'A5 → B4 → C3 → D2');
   assert.equal(P.portee(P.SAUTEUR, 1, c('A3'), c('C5')), 1, 'sans couronne, il saute toujours deux cases');
 });
 
 /* ── HÉRITIERS ─────────────────────────────────────────────────────────── */
-test('Héritier : un pas en diagonale, prise par saut diagonal, capturé il disparaît', () => {
+test('Princesse (v0.3) : un pas dans les 8 directions, prise par saut, capturée elle disparaît', () => {
   const s = pos(`
     8 . . . . . . . r
     6 . . . . . . . .
@@ -428,7 +428,7 @@ test('Héritier : un pas en diagonale, prise par saut diagonal, capturé il disp
     4 . . . F . . . .
     1 R . . . . . . .
     couronnes: ivoire=H1 ebene=A8`);
-  assert.deepEqual(depuis(s, 'D4'), ['D4-C3', 'D4-C5', 'D4-E3', 'D4xF6']);
+  assert.deepEqual(depuis(s, 'D4'), ['D4-C3', 'D4-C4', 'D4-C5', 'D4-D3', 'D4-D5', 'D4-E3', 'D4-E4', 'D4xF6']);
   const pris = pos(`
     8 . . . . . . . r
     6 . . . . . . . .
@@ -453,20 +453,20 @@ test('corruption : la Reine qui s’arrête à côté d’un Héritier ennemi is
   const n = apres(s, 'C4-D4~E5');
   assert.deepEqual(piece(n, 'E5'), [1, 'Prince']);
   assert.deepEqual(n.ev.corrompus, [c('E5')]); assert.equal(n.calme, 0, 'compte comme une prise');
-  // L'Héritier corrompu est une pièce ordinaire d'Ivoire : il bouge pour Ivoire.
+  // L'Héritier corrompu est une pièce ordinaire d'Ivoire : il bouge pour Ivoire (v0.3 : le Prince saute).
   const m = apres(n, 'H8-H7');
-  assert.ok(depuis(m, 'E5').includes('E5-F6'));
+  assert.ok(depuis(m, 'E5').includes('E5-G7'));
 });
 
-test('pas de corruption si l’Héritier a un voisin ami, ni par une autre pièce que la Reine, ni en prenant', () => {
+test('pas de corruption d’une Princesse qui a un voisin ami (v0.3 : le Prince, si), ni par une autre pièce que la Reine, ni en prenant', () => {
   const voisin = pos(`
     8 . . . . . . . r
     6 . . . . . g . .
-    5 . . . . p . . .
+    5 . . . . f . . .
     4 . . Q . . . . .
     1 R . . . . . . .
     couronnes: ivoire=H1 ebene=A8`);
-  assert.deepEqual(piece(apres(voisin, 'C4-D4'), 'E5'), [2, 'Prince']);
+  assert.deepEqual(piece(apres(voisin, 'C4-D4'), 'E5'), [2, 'Princesse']);
   const garde = pos(`
     8 . . . . . . . r
     5 . . . . p . . .
@@ -474,12 +474,14 @@ test('pas de corruption si l’Héritier a un voisin ami, ni par une autre pièc
     1 R . . . . . . .
     couronnes: ivoire=H1 ebene=A8`);
   assert.deepEqual(piece(apres(garde, 'D3-D4'), 'E5'), [2, 'Prince'], 'une Garde ne corrompt pas');
+  /* v0.3 : le Prince (et la Princesse) prennent par saut — le Roi s'arrête en
+     D4, le saut E5×D4 retombe sur C3, occupée : le coup reste légal. */
   const roi = pos(`
     8 . . . . . . . r
-    5 . . . . p . . .
-    3 . . . R . . . .
+    5 . . . . f . . .
+    3 . . S R . . . .
     couronnes: ivoire=H1 ebene=A8`);
-  assert.deepEqual(piece(apres(roi, 'D3-E4'), 'E5'), [2, 'Prince'], 'le Roi ne corrompt pas');
+  assert.deepEqual(piece(apres(roi, 'D3-D4'), 'E5'), [2, 'Princesse'], 'le Roi ne corrompt pas');
   const prise = pos(`
     8 . . . . . . . r
     5 . . . . p . . .
