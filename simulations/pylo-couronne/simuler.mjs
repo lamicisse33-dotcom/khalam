@@ -5,6 +5,9 @@
    couronne menacée dans son palais, scénario 9)  --jsonl oui|non  --beam-maitre 8
    --travailleurs N  --nom serie  --eclaireur oui|non (oui : v0.3, le Prince porteur
    garde son saut ; non : option d'étude, il avance d'un pas comme les autres)
+   Essais avant v0.4 (éteints par défaut ; « --x » seul vaut « --x oui ») :
+   --prince-pas (A : saut de deux OU pas droit)  --couronne-centre (B : couronnes
+   en D4 / E5)  --compteur 60 (C : nulle après N demi-coups sans progrès)
 
    Parties APPARIÉES : chaque graine est jouée deux fois, l'IA « blanc » avec
    Ivoire (premier joueur) puis avec Ébène. Mêmes cases de départ (Héritiers
@@ -28,8 +31,12 @@ const P = require('../../jeux/pylo/couronne/moteur.js');
 const PLAFOND = 300;
 
 function opts(argv) {
-  const o = { blanc: 'maitre', noir: 'maitre', parties: 20, graine: 1, sortie: 'simulations/pylo-couronne/resultats/v0.3/', heritiers: 'oui', 'garde-couronne': 'oui', jsonl: 'oui', 'beam-maitre': 8, travailleurs: Math.max(1, cpus().length - 2), nom: '', eclaireur: 'oui' };
-  for (let i = 0; i < argv.length; i += 2) o[argv[i].replace(/^--/, '')] = argv[i + 1];
+  const o = { blanc: 'maitre', noir: 'maitre', parties: 20, graine: 1, sortie: 'simulations/pylo-couronne/resultats/v0.3/', heritiers: 'oui', 'garde-couronne': 'oui', jsonl: 'oui', 'beam-maitre': 8, travailleurs: Math.max(1, cpus().length - 2), nom: '', eclaireur: 'oui', 'prince-pas': 'non', 'couronne-centre': 'non', compteur: 40 };
+  for (let i = 0; i < argv.length; i++) {
+    const k = argv[i].replace(/^--/, ''), v = argv[i + 1];
+    if (v === undefined || v.startsWith('--')) o[k] = 'oui'; else { o[k] = v; i++; }
+  }
+  o.compteur = Number(o.compteur) || 40;
   o.parties = Number(o.parties); o.graine = Number(o.graine); o['beam-maitre'] = Number(o['beam-maitre']); o.travailleurs = Number(o.travailleurs);
   if (o.parties % 2) throw new Error('--parties doit être pair (parties appariées)');
   return o;
@@ -39,7 +46,8 @@ const reglage = (niveau, o) => ({ niveau, beam: niveau === 'maitre' ? o['beam-ma
 /* Une partie, avec son journal d'observations. */
 function jouerPartie(graine, manche, o) {
   const iaIvoire = manche === 0 ? o.blanc : o.noir, iaEbene = manche === 0 ? o.noir : o.blanc;
-  const partie = P.creerPartie({ graine, heritiers: o.heritiers !== 'non', plafond: PLAFOND, inverse: manche === 1, eclaireur: o.eclaireur !== 'non' });
+  const partie = P.creerPartie({ graine, heritiers: o.heritiers !== 'non', plafond: PLAFOND, inverse: manche === 1, eclaireur: o.eclaireur !== 'non',
+    princePas: o['prince-pas'] === 'oui', couronneCentre: o['couronne-centre'] === 'oui', compteur: o.compteur });
   const depart = P.heritiers(P.etatActuel(partie)), roleDe = (camp) => { const h = depart.find((x) => x.camp === camp); return h ? (h.sorte === P.PRINCESSE ? 'princesse' : 'prince') : null; };
   /* v0.3 — trajets de vol : du ramassage (ou de la corruption) qui donne la couronne
      adverse au voleur, jusqu'au dépôt, à la perte (porteur pris) ou à la reprise. */
@@ -144,10 +152,11 @@ function resume(R, o, nom, secondes) {
   l.push(`# Pylo Couronne v${P.VERSION} — série ${nom}`, '');
   l.push(`- IA « blanc » : **${o.blanc}** · IA « noir » : **${o.noir}** · Héritiers : **${o.heritiers}** · Garde de sa couronne (scénario 9) : **${o['garde-couronne']}** · beam du Maître : ${o['beam-maitre']}`);
   l.push(`- ${n} parties appariées (${n / 2} graines × 2, camps inversés), graines ${o.graine} à ${o.graine + n / 2 - 1} · plafond ${PLAFOND} demi-coups`);
+  l.push(`- Essais : Prince avec pas droit (A) **${o['prince-pas']}** · couronnes au centre D4/E5 (B) **${o['couronne-centre']}** · compteur (C) **${o.compteur}**`);
   l.push(`- Temps : ${secondes.toFixed(0)} s au total, ${(msMoy / 1000).toFixed(2)} s par partie en moyenne (un cœur)`, '');
   l.push('## Issues', '', '| Issue | Parties | % |', '|---|---:|---:|');
   l.push(`| Victoire par conquête | ${conq} | ${pc(conq)} |`, `| Victoire par roi piégé | ${piege} | ${pc(piege)} |`);
-  for (const [x, t] of [['calme', 'Nulle — 40 demi-coups sans progrès'], ['repetition', 'Nulle — triple répétition'], ['pat', 'Nulle — pat']]) l.push(`| ${t} | ${parRaison(x)} | ${pc(parRaison(x))} |`);
+  for (const [x, t] of [['calme', `Nulle — ${o.compteur} demi-coups sans progrès`], ['repetition', 'Nulle — triple répétition'], ['pat', 'Nulle — pat']]) l.push(`| ${t} | ${parRaison(x)} | ${pc(parRaison(x))} |`);
   l.push(`| **Nulles (total)** | ${nulles.length} | ${pc(nulles.length)} |`, `| Non terminées (plafond, à part) | ${nt.length} | ${pc(nt.length)} |`, '');
   l.push('## Longueur (demi-coups)', '');
   l.push(`- Toutes les parties : médiane **${q(0.5)}**, quartiles ${q(0.25)} – ${q(0.75)} (min ${L[0]}, max ${L[L.length - 1]})`);

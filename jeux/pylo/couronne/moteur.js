@@ -32,7 +32,13 @@
    - Cartes : Princesse = roi-8-directions ; Prince porteur = saut de 2 en 8
      directions ; Sauteur porteur = un pas en diagonale (inchangé).
    - Option d'étude (simulation seulement) : eclaireur:false retire au Prince
-     porteur son saut (il avance alors d'un pas, comme les autres porteurs). */
+     porteur son saut (il avance alors d'un pas, comme les autres porteurs).
+   ESSAIS AVANT v0.4 (16 nov. 2026, simulation seulement, tous éteints par
+   défaut : la page joue la v0.3 telle quelle) :
+   A princePas      : le Prince saute de deux OU avance d'un pas en ligne droite
+                      (sans prise par le pas) ; porteur : idem (saut sans prise).
+   B couronneCentre : couronnes de départ en D4 (Ivoire) et E5 (Ébène).
+   C compteur       : nulle après N demi-coups sans progrès (40 par défaut). */
 (function (racine, fabrique) {
   const api = fabrique();
   if (typeof module === 'object' && module && module.exports) module.exports = api;
@@ -71,6 +77,8 @@ const D8 = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]
 const DIAG = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
 const DIRECTIONS = [D8, D8, [[-1, 0], [1, 0]], [[0, -1], [0, 1]], DIAG, D8, D8];
 const PAS_DIAG = NT; // pseudo-sorte des cartes : un pas en diagonale (Sauteur porteur)
+const PRINCE_PAS = NT + 1; // pseudo-sorte (essai A) : saut de deux en 8 directions OU pas droit
+const DROIT = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 const sauteDeux = (t) => t === SAUTEUR || t === PRINCE;
 const dans = (r, c) => r >= 0 && r < 8 && c >= 0 && c < 8;
 const VOISINS = Array.from({ length: 64 }, (_, i) => D8.map(([dr, dc]) => [(i >> 3) + dr, (i & 7) + dc]).filter(([r, c]) => dans(r, c)).map(([r, c]) => r * 8 + c));
@@ -90,6 +98,7 @@ const sautRoi = (de, a, dr, p) => dr === avant(p) || (dr === -avant(p) && !dansR
 function pas(t, p, i) {
   const r = i >> 3, c = i & 7, out = [];
   if (t === SENTINELLE) { for (const dc of [-1, 1]) if (dans(r, c + dc)) out.push(i + dc); return out; }
+  if (t === PRINCE_PAS) { for (const [dr, dc] of DROIT) if (dans(r + dr, c + dc)) out.push(i + dr * 8 + dc); t = PRINCE; }
   for (const [dr, dc] of (t === PAS_DIAG ? DIAG : DIRECTIONS[t])) {
     const n = sauteDeux(t) ? 2 : 1, rr = r + n * dr, cc = c + n * dc;
     if (!dans(rr, cc)) continue;
@@ -108,7 +117,7 @@ function pas(t, p, i) {
    PORTEE[t][p][a*64+b] : déplacements de a à b (pour l'IA). 255 = jamais.
    (v0.2 : le Sauteur porteur prend la carte de l'Héritier, voir plus bas.) */
 const DIST = [], PORTEE = [];
-for (let t = 0; t <= PAS_DIAG; t++) {
+for (let t = 0; t <= PRINCE_PAS; t++) {
   DIST[t] = [null]; PORTEE[t] = [null];
   for (const p of [1, 2]) {
     const portee = new Uint8Array(64 * 64).fill(255);
@@ -129,8 +138,10 @@ for (let t = 0; t <= PAS_DIAG; t++) {
    directions (éclaireur). Avec l'option d'étude eclaireur:false (passer l'état
    en 4e argument), le Prince porteur prend la carte d'un pas en 8 directions. */
 for (const p of [1, 2]) DIST[SAUTEUR][p] = DIST[PAS_DIAG][p];
-const distance = (t, p, i, s) => (t === SENTINELLE ? Infinity : DIST[t === PRINCE && s && s.eclaireur === false ? PRINCESSE : t][p][i]);
-const portee = (t, p, a, b) => { const v = PORTEE[t][p][a * 64 + b]; return v === 255 ? Infinity : v; };
+const carteDe = (t, s) => (t !== PRINCE || !s ? t : s.eclaireur === false ? PRINCESSE : s.princePas ? PRINCE_PAS : t);
+const distance = (t, p, i, s) => (t === SENTINELLE ? Infinity : DIST[carteDe(t, s)][p][i]);
+/* Sans porter (aller vers une couronne) : le Prince de l'essai A a aussi son pas droit. */
+const portee = (t, p, a, b, s) => { const v = PORTEE[t === PRINCE && s && s.princePas ? PRINCE_PAS : t][p][a * 64 + b]; return v === 255 ? Infinity : v; };
 
 /* ── HASARD À GRAINE ─────────────────────────────────────────────────────── */
 function mulberry32(graine) {
@@ -145,14 +156,15 @@ function mulberry32(graine) {
    la case du porteur ; au sol, la case où elle est posée. */
 function vide() {
   /* entre[i] : la pièce de la case i est déjà entrée une fois dans le royaume adverse. */
-  return { b: new Array(64).fill(0), c: [null, { sq: -1, porte: false, trajet: null }, { sq: -1, porte: false, trajet: null }], tour: 1, ply: 0, calme: 0, heritiers: false, eclaireur: true, entre: new Array(64).fill(false), ev: null };
+  return { b: new Array(64).fill(0), c: [null, { sq: -1, porte: false, trajet: null }, { sq: -1, porte: false, trajet: null }], tour: 1, ply: 0, calme: 0, heritiers: false, eclaireur: true, princePas: false, compteur: 40, entre: new Array(64).fill(false), ev: null };
 }
 function initial(opts = {}) {
   const s = vide(), mettre = (p, t, x) => { s.b[caseDe(x)] = jeton(p, t); };
   for (const [t, x] of [[ROI, 'D1'], [REINE, 'E1'], [GARDE, 'C2'], [GARDE, 'F2'], [SENTINELLE, 'B3'], [SENTINELLE, 'G3'], [SAUTEUR, 'A3'], [SAUTEUR, 'H3']]) {
     mettre(1, t, x); mettre(2, t, nomCase(63 - caseDe(x))); // symétrie 180°
   }
-  s.c[1].sq = caseDe('E2'); s.c[2].sq = caseDe('D7');
+  s.c[1].sq = caseDe(opts.couronneCentre ? 'D4' : 'E2'); s.c[2].sq = caseDe(opts.couronneCentre ? 'E5' : 'D7');
+  s.princePas = !!opts.princePas; s.compteur = Number(opts.compteur) || 40;
   const graine = opts.graine ?? 1;
   s.heritiers = opts.heritiers !== false;
   s.eclaireur = opts.eclaireur !== false;
@@ -214,6 +226,8 @@ function brut(s, p = s.tour, seulementPrises = false) {
         if (!seulementPrises && dans(rr, cc) && !b[rr * 8 + cc]) pousser(i, rr * 8 + cc, null, v, porte);
         continue;
       }
+      // Essai A : le Prince avance aussi d'un pas en ligne droite (sans prise), porteur ou non.
+      if (t === PRINCE && s.princePas && (dr === 0 || dc === 0) && !seulementPrises && dans(r + dr, c + dc) && !b[(r + dr) * 8 + c + dc]) pousser(i, (r + dr) * 8 + c + dc, null, v, porte);
       if (sauteDeux(t)) {
         const rr = r + 2 * dr, cc = c + 2 * dc;
         if (!dans(rr, cc)) continue;
@@ -282,7 +296,7 @@ function jouer(s, m) {
     }
   }
   const calme = m.prise !== null || ev.progres || ev.ramasse || ev.depot || ev.corrompus.length || ev.premiereEntree ? 0 : s.calme + 1;
-  return { b, c, tour: 3 - s.tour, ply: s.ply + 1, calme, heritiers: s.heritiers, eclaireur: s.eclaireur, entre, ev };
+  return { b, c, tour: 3 - s.tour, ply: s.ply + 1, calme, heritiers: s.heritiers, eclaireur: s.eclaireur, princePas: s.princePas, compteur: s.compteur, entre, ev };
 }
 
 /* L'Héritier de la case n peut-il être corrompu par une Reine adverse voisine ? */
@@ -312,7 +326,7 @@ function fin(s, coups) {
   if (conquete(s, j)) return { gagnant: j, raison: 'conquete' };
   coups = coups || coupsLegaux(s);
   if (!coups.length) return roiPrenable(s, s.tour) ? { gagnant: j, raison: 'piege' } : { gagnant: 0, raison: 'pat' };
-  if (s.calme >= 40) return { gagnant: 0, raison: 'calme' };
+  if (s.calme >= (s.compteur || 40)) return { gagnant: 0, raison: 'calme' };
   return null;
 }
 const RAISONS = { conquete: 'Conquête', piege: 'Roi piégé', pat: 'Nulle — pat', calme: 'Nulle — 40 demi-coups sans prise, ramassage, dépôt, corruption, progrès ni première entrée', repetition: 'Nulle — même position trois fois', plafond: 'Non terminée (plafond de 300 demi-coups)' };
@@ -414,6 +428,7 @@ function depuisTexte(texte) {
       for (const [, qui, cp, rec] of m[1].matchAll(/(ivoire|ebene|ébène)\s*=\s*([12])\s*:\s*(\d+|inf)/gi)) trajets[/^i/i.test(qui) ? 1 : 2] = { camp: Number(cp), record: rec === 'inf' ? Infinity : Number(rec) };
     } else if ((m = l.match(/^tour\s*:\s*(\S+)/i))) s.tour = /^i/i.test(m[1]) ? 1 : 2;
     else if ((m = l.match(/^eclaireur\s*:\s*(\S+)/i))) s.eclaireur = !/^(non|false|0)$/i.test(m[1]);
+    else if ((m = l.match(/^prince-pas\s*:\s*(\S+)/i))) s.princePas = /^(oui|true|1)$/i.test(m[1]);
     else if ((m = l.match(/^calme\s*:\s*(\d+)/i))) s.calme = Number(m[1]);
     else if (/^[A-H\s]+$/.test(l)) continue;
     else throw new Error('ligne incomprise : ' + l);
@@ -460,7 +475,7 @@ function evaluer(s, p, reglages = {}) {
   const j = 3 - s.tour; // le camp qui vient de jouer
   if (conquete(s, j)) return j === p ? GAGNE - s.ply : -GAGNE + s.ply;
   if (roiPrenable(s, s.tour) && !coupsLegaux(s).length) return s.tour === p ? -GAGNE + s.ply : GAGNE - s.ply;
-  if (s.calme >= 40) return 0;
+  if (s.calme >= (s.compteur || 40)) return 0;
   const prises = [null, brut(s, 1, true), brut(s, 2, true)];
   return cote(s, p, prises, reglages) - cote(s, 3 - p, prises, reglages);
 }
@@ -513,7 +528,7 @@ function cote(s, p, prises, reglages = {}) {
     for (const i of miennes) {
       const t = sorte(b[i]);
       if (t === SENTINELLE || porteePar(s, i)) continue;
-      const aller = portee(t, p, i, C.sq), retour = distance(t, p, C.sq, s);
+      const aller = portee(t, p, i, C.sq, s), retour = distance(t, p, C.sq, s);
       if (aller + retour < meilleur) meilleur = aller + retour;
     }
     const pression = k === e ? 7 : 9; // (a) aller voler ; (c) récupérer la mienne
@@ -555,16 +570,16 @@ function cote(s, p, prises, reglages = {}) {
 
 /* Une pièce libre du camp e à deux déplacements au plus de la case sq (plateau vide). */
 function menaceSur(s, sq, e) {
-  for (let i = 0; i < 64; i++) if (camp(s.b[i]) === e && !porteePar(s, i) && portee(sorte(s.b[i]), e, i, sq) <= 2) return true;
+  for (let i = 0; i < 64; i++) if (camp(s.b[i]) === e && !porteePar(s, i) && portee(sorte(s.b[i]), e, i, sq, s) <= 2) return true;
   return false;
 }
 /* Le porteur de sq (camp p) a-t-il un pas vers une case libre hors de son palais
    qu'aucune pièce adverse n'atteint au coup suivant ? */
 function sortieSure(s, sq, p) {
   const t = sorte(s.b[sq]), e = 3 - p;
-  const carte = t === SAUTEUR || (t === PRINCE && s.eclaireur === false) ? (t === SAUTEUR ? PAS_DIAG : PRINCESSE) : t;
+  const carte = t === SAUTEUR ? PAS_DIAG : carteDe(t, s);
   return pas(carte, p, sq).some((n) => !s.b[n] && PALAIS_DE[n] !== p &&
-    !s.b.some((w, j) => camp(w) === e && portee(sorte(w), e, j, n) <= 1));
+    !s.b.some((w, j) => camp(w) === e && portee(sorte(w), e, j, n, s) <= 1));
 }
 
 /* Après la prise de mon porteur en sq, un allié peut-il reprendre l'intercepteur ? */
@@ -588,7 +603,7 @@ function analyser(s, opts = {}) {
   function terminal(q) {
     const j = 3 - q.tour;
     if (conquete(q, j)) return j === p ? GAGNE - q.ply : -GAGNE + q.ply;
-    if (q.calme >= 40) return 0;
+    if (q.calme >= (q.compteur || 40)) return 0;
     return null;
   }
   function chercher(q, d, alpha, beta) {
