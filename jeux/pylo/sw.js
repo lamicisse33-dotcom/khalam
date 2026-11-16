@@ -1,6 +1,6 @@
 /* PYLO — service worker. VERSION suit le moteur (Pilo.VERSION) : la changer
    à chaque mise en ligne, sinon les téléphones gardent l'ancienne page. */
-const VERSION = 'pylo-1.5.1';
+const VERSION = 'pylo-1.5.2';
 const FICHIERS = ['./', './index.html', './manifest.webmanifest', './icone.svg', './icone-192.png', './icone-512.png', './icone-maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
@@ -15,6 +15,10 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  /* La portée '/jeux/pylo/' est un préfixe : elle couvre aussi /jeux/pylo/couronne/.
+     Pylo Couronne n'est pas l'affaire de ce service worker : le navigateur la sert
+     seul (sinon sa page remplaçait celle de Pylo 1.5 dans le cache hors ligne). */
+  if (new URL(req.url).pathname.includes('/couronne/')) return;
   if (req.mode === 'navigate') {
     // La page : le réseau d'abord (toujours la dernière version), le cache hors ligne.
     e.respondWith(fetch(req).then((r) => { const c = r.clone(); caches.open(VERSION).then((x) => x.put('./index.html', c)).catch(() => {}); return r; })
