@@ -1,0 +1,33 @@
+{
+ "marque": "DD SKIN",
+ "slogan": "Le rituel de beauté de votre peau",
+ "whatsapp": "+221781170287",
+ "commande": "https://wa.me/221781170287",
+ "page": "https://khalam.app/ddskin",
+ "produits": [
+  {
+   "nom": "DD Black Soap",
+   "categorie": "Corps",
+   "description": "Savon noir corps",
+   "benefices": "Nettoie · Purifie · Adoucit",
+   "image": "https://khalam.app/ddskin/produits/black-soap.webp",
+   "page": "https://khalam.app/ddskin"
+  },
+  {
+   "nom": "DD Face Soap",
+   "categorie": "Visage",
+   "description": "Savon visage",
+   "benefices": "Nettoie · Équilibre · Sublime",
+   "image": "https://khalam.app/ddskin/produits/face-soap.webp",
+   "page": "https://khalam.app/ddskin"
+  },
+  {
+   "nom": "DD Cleansing Lotion",
+   "categorie": "Visage",
+   "description": "Lotion nettoyante visage",
+   "benefices": "Nettoie · Rafraîchit · Apaise",
+   "image": "https://khalam.app/ddskin/produits/cleansing-lotion.webp",
+   "page": "https://khalam.app/ddskin"
+  }
+ ]
+}
