@@ -71,9 +71,10 @@
 /* Écrans fidèles à l'application (16 nov. 2026) */
 .ecran-accueil{background:linear-gradient(180deg,#eaf6ff,#cfe7ff 60%,#bfe0ff)}
 .appbar small{display:block;font-weight:500;font-size:10px;color:#4a6a92}
-.orbe{width:150px;height:150px;border-radius:50%;margin:10px auto 14px;background:radial-gradient(circle at 35% 30%,#b7edff,#549ff5 55%,#034bcc);box-shadow:0 14px 40px rgba(3,75,204,.28);position:relative;overflow:hidden}
-.orbe:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(170deg,transparent 0 9px,rgba(255,255,255,.22) 9px 11px);mix-blend-mode:screen;opacity:.7}
-.orbe.gris{background:radial-gradient(circle at 35% 30%,#e8eef4,#b8c4d2 55%,#8e9cad);box-shadow:none}
+.ondes{height:120px;margin:34px 0 18px;position:relative;overflow:hidden}
+.ondes:before,.ondes:after{content:"";position:absolute;left:-10%;right:-10%;top:50%;height:46px;border-radius:50%;border-top:3px solid rgba(0,84,226,.75);border-bottom:2px solid rgba(94,188,255,.6);transform:translateY(-50%) rotate(-4deg)}
+.ondes:after{height:30px;border-top-color:rgba(255,255,255,.95);border-bottom-color:rgba(0,91,219,.5);transform:translateY(-40%) rotate(3deg)}
+.ondes.gris:before,.ondes.gris:after{border-top-color:#9aa8b8;border-bottom-color:#c4ced8}
 .status small{display:block;font-size:11px;color:#5f7897;margin-top:4px}
 .cmds{position:absolute;left:14px;right:14px;bottom:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:6px;text-align:center;font-size:10px;color:#214b7a}
 .cmds span{flex:1}.cmds i{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 4px;border-radius:50%;background:#fff;border:1px solid #c6dcf2;font-style:normal;font-size:18px}
@@ -116,7 +117,7 @@
 </div>
 
 <section class="section wrap" id="services">
-<div class="head"><div class="eyebrow">Ce que Bia fait pour vous</div><h2>Une seule Bia. Tout votre quotidien.</h2><p>Pas de menus compliqués : vous dites ce que vous voulez faire. Bia comprend la demande et vous accompagne.</p></div>
+<div class="head"><div class="eyebrow">Ce que Bia fait pour vous</div><h2>Une seule Bia. Des capacités et des services infinis.</h2><p>Vous imaginez ce que vous voulez faire, Bia vous accompagne. Pas de menus compliqués : vous le dites, elle comprend.</p></div>
 <div class="service-grid">
 <article class="card"><div class="ico">🌍</div><h3>Tekkil ma</h3><p>Ouvrez un salon, envoyez le lien par WhatsApp et parlez chacun dans votre langue : wolof, français, anglais, arabe, espagnol ou chinois mandarin.</p><p class="quote">Deux personnes. Deux langues. Une conversation.</p></article>
 <article class="card"><div class="ico">📄</div><h3>Lire vos documents</h3><p>Ordonnance, facture, courrier, contrat ou document photographié : Bia le lit et vous l’explique en wolof ou en français. Si une ligne est illisible, elle le dit au lieu de deviner.</p></article>
@@ -147,7 +148,7 @@
 <section class="section gallery" id="application"><div class="wrap">
 <div class="head"><div class="eyebrow">L’application aujourd’hui</div><h2>Découvrez Bia Xarit écran par écran.</h2><p>Les aperçus ci-dessous reprennent les principales vues actuellement présentes dans l’application : accueil, réglages, Tekkil ma, carte, documents, carnet, photo et mode gratuit.</p></div>
 <div class="shots">
-<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="orbe"></div><div class="status">Parlez, je vous écoute<small>Wolof · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekilma</span></div></div></div><h3>Accueil vocal</h3><p>Une interface simple : parler, écrire ou ouvrir Tekkil ma.</p></article>
+<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="ondes"></div><div class="status">Parlez, je vous écoute<small>Wolof · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekkil ma</span></div></div></div><h3>Accueil vocal</h3><p>Une interface simple : parler, écrire ou ouvrir Tekkil ma.</p></article>
 
 <article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Réglages<small>Ton expérience avec Bia, simplement.</small></span></div><div class="menu-card"><strong>🌐 Langue</strong><div class="select">Wolof · Français (par défaut)</div></div><div class="menu-card"><strong>✧ Personnage et voix</strong><div class="ligne">Changer de personnage ›</div><div class="ligne">○ Personnage animé — désactivé</div><div class="seg"><span>Homme</span><span>Femme</span></div><div class="ligne">🔊 Écouter la voix choisie</div><div class="toggle gris"><span>Version gratuite (français)</span><span class="sw"></span></div></div><div class="btn-ok">Terminé</div></div></div><h3>Réglages</h3><p>Langue, voix et personnage sur un seul écran, derrière l’engrenage.</p></article>
 
@@ -161,7 +162,7 @@
 
 <article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Photo</span><span>×</span></div><div class="camera"><img src="https://app.khalam.app/reperes/bia.jpg" alt=""><div class="count">3</div></div><div class="cam-actions"><span>Garder</span><span>Refaire</span></div></div></div><h3>Photo à la voix</h3><p>Bia ouvre l’appareil photo, compte puis vous laisse garder ou refaire la photo.</p></article>
 
-<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="orbe gris"></div><div class="status">Je vous écoute<small class="free-badge">Mode continuité gratuit · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekilma</span></div></div></div><h3>Continuité gratuite</h3><p>Quand le pass se termine, Bia finit ce qu’elle faisait puis reste quelques minutes en français, avec ses fonctions légères.</p></article>
+<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="ondes gris"></div><div class="status">Je vous écoute<small class="free-badge">Mode continuité gratuit · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekkil ma</span></div></div></div><h3>Continuité gratuite</h3><p>Quand le pass se termine, Bia finit ce qu’elle faisait puis reste quelques minutes en français, avec ses fonctions légères.</p></article>
 
 <article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Langues</span><span>×</span></div><div class="menu-card"><strong>Bia Xarit</strong><p>Wolof · Français</p></div><div class="menu-card"><strong>Autres langues</strong><p>Anglais · Arabe · Espagnol · Allemand</p></div><div class="menu-card"><strong>Tekkil ma</strong><p>Wolof · Français · Anglais · Arabe · Espagnol · Chinois mandarin</p></div></div></div><h3>Langues</h3><p>Le wolof et le français au cœur de Bia, avec d’autres langues dans le menu et Tekkil ma.</p></article>
 </div>
