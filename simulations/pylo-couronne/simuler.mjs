@@ -3,11 +3,14 @@
         --parties 1000 --graine 1 --sortie simulations/pylo-couronne/resultats/
    Options : --heritiers oui|non (oui)  --garde-couronne oui|non (oui : l'IA ramasse sa
    couronne menacée dans son palais, scénario 9)  --jsonl oui|non  --beam-maitre 8
-   --travailleurs N  --nom serie
+   --travailleurs N  --nom serie  --eclaireur oui|non (oui : v0.3, le Prince porteur
+   garde son saut ; non : option d'étude, il avance d'un pas comme les autres)
 
    Parties APPARIÉES : chaque graine est jouée deux fois, l'IA « blanc » avec
-   Ivoire (premier joueur) puis avec Ébène. Même position de départ (Héritiers
-   tirés de la graine) ; le hasard des IA (±1 %) vient de la graine et de la
+   Ivoire (premier joueur) puis avec Ébène. Mêmes cases de départ (Héritiers
+   tirés de la graine) ; v0.3 : la 2e manche INVERSE les rôles (Princesse ↔
+   Prince), si bien que chaque graine est jouée avec les rôles dans les deux
+   sens, chacun une fois en premier joueur. Le hasard des IA (±1 %) vient de la graine et de la
    manche, sinon deux IA de même niveau rejoueraient deux fois la même partie.
    Une graine et une manche rejouent toujours la même partie, quel que soit le
    nombre de travailleurs. Plafond technique : 300 demi-coups → « non terminée ».
@@ -18,13 +21,14 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { cpus } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { v03 } from './mesures-v03.mjs';
 
 const require = createRequire(import.meta.url);
 const P = require('../../jeux/pylo/couronne/moteur.js');
 const PLAFOND = 300;
 
 function opts(argv) {
-  const o = { blanc: 'maitre', noir: 'maitre', parties: 20, graine: 1, sortie: 'simulations/pylo-couronne/resultats/', heritiers: 'oui', 'garde-couronne': 'oui', jsonl: 'oui', 'beam-maitre': 8, travailleurs: Math.max(1, cpus().length - 2), nom: '' };
+  const o = { blanc: 'maitre', noir: 'maitre', parties: 20, graine: 1, sortie: 'simulations/pylo-couronne/resultats/v0.3/', heritiers: 'oui', 'garde-couronne': 'oui', jsonl: 'oui', 'beam-maitre': 8, travailleurs: Math.max(1, cpus().length - 2), nom: '', eclaireur: 'oui' };
   for (let i = 0; i < argv.length; i += 2) o[argv[i].replace(/^--/, '')] = argv[i + 1];
   o.parties = Number(o.parties); o.graine = Number(o.graine); o['beam-maitre'] = Number(o['beam-maitre']); o.travailleurs = Number(o.travailleurs);
   if (o.parties % 2) throw new Error('--parties doit être pair (parties appariées)');
@@ -35,7 +39,13 @@ const reglage = (niveau, o) => ({ niveau, beam: niveau === 'maitre' ? o['beam-ma
 /* Une partie, avec son journal d'observations. */
 function jouerPartie(graine, manche, o) {
   const iaIvoire = manche === 0 ? o.blanc : o.noir, iaEbene = manche === 0 ? o.noir : o.blanc;
-  const partie = P.creerPartie({ graine, heritiers: o.heritiers !== 'non', plafond: PLAFOND });
+  const partie = P.creerPartie({ graine, heritiers: o.heritiers !== 'non', plafond: PLAFOND, inverse: manche === 1, eclaireur: o.eclaireur !== 'non' });
+  const depart = P.heritiers(P.etatActuel(partie)), roleDe = (camp) => { const h = depart.find((x) => x.camp === camp); return h ? (h.sorte === P.PRINCESSE ? 'princesse' : 'prince') : null; };
+  /* v0.3 — trajets de vol : du ramassage (ou de la corruption) qui donne la couronne
+     adverse au voleur, jusqu'au dépôt, à la perte (porteur pris) ou à la reprise. */
+  const voyages = [], enCours = [null, null, null];
+  const finir = (k, issue) => { if (enCours[k]) { voyages.push({ ...enCours[k], issue }); enCours[k] = null; } };
+  const corrPrince = [0, 0, 0];
   const hasard = P.mulberry32((graine * 2654435761 + manche * 97 + 13) >>> 0);
   const t0 = Date.now();
   const obs = { vols: 0, sorties: 0, blocages: 0, solGarde: 0, corruptions: 0, corruptionsParCamp: [0, 0, 0], heritiersPris: 0, deuxVolees: false };
@@ -44,7 +54,16 @@ function jouerPartie(graine, manche, o) {
     const s = P.etatActuel(partie);
     const a = P.analyser(s, { ...reglage(s.tour === 1 ? iaIvoire : iaEbene, o), hasard, vus: partie.vus });
     const n = P.jouerCoup(partie, a.coup);
-    const ev = n.ev;
+    const ev = n.ev, m = a.coup;
+    for (const k of [1, 2]) {
+      const avant = s.c[k], apres = n.c[k];
+      if (ev.vol === k) { finir(k, 'reprise'); enCours[k] = { prince: P.sorte(n.b[apres.sq]) === P.PRINCE, coups: 0 }; continue; }
+      if (!enCours[k]) continue;
+      if (avant.porte && m.prise === avant.sq) finir(k, 'perdue');
+      else if (avant.porte && m.de === avant.sq) { enCours[k].coups++; if (!apres.porte) finir(k, ev.depot === k ? 'depot' : 'autre'); }
+      else if (ev.nouveauTrajet === k) finir(k, 'reprise');
+    }
+    for (const x of ev.corrompus) if (P.sorte(n.b[x]) === P.PRINCE) corrPrince[s.tour]++;
     if (ev.vol) obs.vols++;
     if (ev.sortie) obs.sorties++;
     if (ev.corrompus.length) { obs.corruptions += ev.corrompus.length; obs.corruptionsParCamp[s.tour] += ev.corrompus.length; }
@@ -62,6 +81,8 @@ function jouerPartie(graine, manche, o) {
     if (n.c[1].porte && n.c[2].porte && P.camp(n.b[n.c[1].sq]) === 2 && P.camp(n.b[n.c[2].sq]) === 1) obs.deuxVolees = true;
   }
   const r = partie.resultat;
+  for (const k of [1, 2]) finir(k, 'fin');
+  const fin = P.etatActuel(partie);
   const gagnantIA = r.gagnant === 0 ? null : (r.gagnant === 1) === (manche === 0) ? 'blanc' : 'noir';
   return {
     graine, manche, ivoire: iaIvoire, ebene: iaEbene, heritiers: o.heritiers !== 'non',
@@ -70,6 +91,9 @@ function jouerPartie(graine, manche, o) {
     vols: obs.vols, sorties: obs.sorties, blocages: obs.blocages, solGarde: obs.solGarde,
     corruptions: obs.corruptions, heritiersPris: obs.heritiersPris, deuxVolees: obs.deuxVolees,
     corruptionAvantVictoire: r.gagnant ? obs.corruptionsParCamp[r.gagnant] > 0 : false,
+    roleIvoire: roleDe(1), roleGagnant: r.gagnant ? roleDe(r.gagnant) : null, eclaireur: o.eclaireur !== 'non',
+    corruptionPrinceAvantVictoire: r.gagnant ? corrPrince[r.gagnant] > 0 : false, corruptionsPrince: corrPrince[1] + corrPrince[2],
+    princesseFin: fin.b.some((v) => v && P.sorte(v) === P.PRINCESSE), voyages,
     ms: Date.now() - t0,
     coups: partie.coups.map((m) => P.notation(m)).join(' '),
   };
@@ -141,9 +165,21 @@ function resume(R, o, nom, secondes) {
   l.push(`- Corruptions : ${(corr / n).toFixed(2)} par partie (${pc(compte((r) => r.corruptions > 0))} des parties en ont au moins une)`);
   l.push(`- Captures d’Héritier : ${(hp / n).toFixed(2)} par partie`);
   l.push(`- Victoires précédées d’une corruption par le vainqueur : ${victoires.filter((r) => r.corruptionAvantVictoire).length}/${victoires.length} (${pc(victoires.filter((r) => r.corruptionAvantVictoire).length, victoires.length)})`, '');
+  if (o.heritiers !== 'non') {
+    const v3 = v03(R);
+    l.push('## v0.3 — Princesse contre Prince', '');
+    l.push(`- Prince porteur : **${o.eclaireur === 'non' ? 'SANS son saut (option d’étude)' : 'garde son saut (éclaireur)'}**`);
+    l.push(`- Score du camp avec la Princesse contre le camp avec le Prince : **${v3.scorePrincesse}/${n} = ${pc(v3.scorePrincesse)}** (victoire 1, nulle ou non terminée ½) — parties appariées : chaque graine jouée avec les rôles dans les deux sens`);
+    l.push(`- Parties décisives : Princesse ${v3.gPrincesse}, Prince ${v3.gPrince} → **le Prince gagne ${pc(v3.gPrince, v3.gPrincesse + v3.gPrince)} des parties décisives**`);
+    l.push(`- Trajets de vol (coups du porteur, du ramassage au dépôt) : avec le Prince porteur **${v3.moyPrince}** coups en moyenne (${v3.nPrince} trajets, ${v3.depotsPrince} déposés) ; avec un autre porteur **${v3.moyAutres}** (${v3.nAutres} trajets, ${v3.depotsAutres} déposés)`);
+    l.push(`- Trajets déposés seulement : Prince ${v3.moyPrinceDepot}, autres ${v3.moyAutresDepot}`);
+    l.push(`- Corruptions du Prince : ${(v3.corrPrince / n).toFixed(2)} par partie ; parties où une corruption du Prince par le vainqueur précède la victoire : **${v3.corrPrinceVict}/${n} = ${pc(v3.corrPrinceVict)}** des parties (${pc(v3.corrPrinceVict, victoires.length)} des victoires)`);
+    l.push(`- Nulles quand la Princesse est encore sur le plateau à la fin : **${pc(v3.nullesAvec, v3.avec)}** (${v3.nullesAvec}/${v3.avec}) ; quand elle n’y est plus (prise) : **${pc(v3.nullesSans, v3.sans)}** (${v3.nullesSans}/${v3.sans})`, '');
+  }
   l.push('## Les 5 parties non terminées les plus courtes', '');
   if (!courtes.length) l.push('Aucune partie non terminée.');
   for (const r of courtes) l.push(`- graine ${r.graine}, manche ${r.manche} (Ivoire ${r.ivoire}, Ébène ${r.ebene}), ${r.longueur} demi-coups :`, '', '  `' + r.coups + '`', '');
   l.push('', `Notation : D1-D2 déplacement, C3xE5 prise, +Ci/+Ce ramasse la couronne d’Ivoire/d’Ébène, ↓ dépôt au palais, ~F5 corruption de l’Héritier en F5.`);
   return l.join('\n') + '\n';
 }
+
