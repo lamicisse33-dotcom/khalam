@@ -14,7 +14,7 @@
    graines : le hasard (±1 %) ne doit jamais changer la décision. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { P, pos, coups } from './charger.mjs';
+import { P, pos, coups, apres } from './charger.mjs';
 
 const GRAINES = [1, 2, 3, 4, 5];
 function choix(s, graine = 1) {
@@ -221,4 +221,59 @@ test('11. mon Héritier isolé, la Reine ennemie à un coup → le protéger ou 
     const a = P.analyser(s, { niveau: 'gardien', hasard: P.mulberry32(g) });
     assert.ok(!corruptible(a.coup.suite), `graine ${g} : ${P.notation(a.coup)} laisse l’Héritier corruptible`);
   }
+});
+
+/* ── v0.3 : HÉRITIERS À DEUX RÔLES ─────────────────────────────────────── */
+test('12. porteur ennemi adjacent à sa Princesse → ne pas tenter la prise, viser la Princesse', () => {
+  const s = pos(`
+    8 . . . . r . . .
+    7 . . . . . . . .
+    4 . . . f g . . .
+    3 . . . G G . . .
+    1 . . . R Q . . .
+    couronnes: ivoire=E4* ebene=D7
+    trajets: ivoire=2:3`);
+  assert.ok(!coups(s).includes('E3xE5'), 'escorte : la prise du porteur n’existe pas');
+  attendu(s, 'D3xD5');
+  // La Princesse prise, le porteur n'est plus escorté : sa prise redevient possible.
+  assert.ok(coups(apres(s, 'D3xD5', 'E8-E7')).includes('E3xE5'));
+});
+
+test('13. Prince porteur à un saut du palais → rentrer', () => {
+  // a) Sa couronne est chez lui : le saut F4-D2 (par-dessus son Garde E3) gagne.
+  const gagne = pos(`
+    8 . . . . r . . .
+    6 . . . . g . . .
+    4 . . . . . P . .
+    3 . . . . G . . .
+    1 . . . R . . . .
+    couronnes: ivoire=E2 ebene=F4*
+    trajets: ebene=1:1`);
+  attendu(gagne, 'F4-D2↓');
+  // b) Sa couronne est dehors (au sol en A1) : rentrer quand même, plutôt que la prise offerte.
+  const depose = pos(`
+    8 . . . . r . . .
+    6 . . . . . . . .
+    4 . . . . g P . .
+    3 . . . . G . . .
+    2 . . . . . . . .
+    1 R . . . . . . .
+    couronnes: ivoire=A1 ebene=F4*
+    trajets: ebene=1:1`);
+  assert.ok(coups(depose).includes('E3xE5'), 'une prise est offerte');
+  attendu(depose, 'F4-D2↓');
+});
+
+test('14. Reine à un pas du Prince ennemi entouré → le corrompre', () => {
+  const s = pos(`
+    8 . . . . r . . .
+    7 . . g . . . . .
+    6 . . . . . g . .
+    5 . . . . . p . .
+    4 . . . . . S . .
+    3 . . . Q . . . .
+    1 . . . R . . . .
+    couronnes: ivoire=E2 ebene=D7`);
+  assert.equal(P.heritiers(s).find((h) => h.camp === 2).protege, true, 'il est entouré');
+  attendu(s, 'D3-E4~F5');
 });
