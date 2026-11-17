@@ -27,3 +27,36 @@ La page officielle unique `bia.html` a été conservée dans sa structure unifi�
 
 ### Origine
 Modification réalisée par ChatGPT sur instruction directe du propriétaire de Bia.
+
+
+## 17 novembre 2026 — Présentation fidèle de l’application dans la page officielle
+
+### Instruction du propriétaire
+Le propriétaire a demandé de reprendre la présentation de Bia sur sa page officielle, en s’inspirant du réalisme de la galerie Afiyah fournie : couleurs nettes, téléphones lisibles, menus et fenêtres actuels, vraie carte de Dakar avec ses repères. Il a demandé d’entrer dans l’application pour vérifier l’état réel de son interface et a réalisé la connexion nécessaire.
+
+### Modification effectuée
+- Remplacement des neuf représentations schématiques de la section `#application` par six vues de l’interface actuelle : Accueil, Carte, Messages, Réglages, Ondulations et Tekkil ma.
+- Vues au format 390 × 844, issues du DOM visible et des styles publiés de Bia ; images réelles des animations de l’accueil. Aucun compte ni échange privé n’est montré.
+- Carte OpenStreetMap réelle de Dakar, avec la place de l’Indépendance comme exemple fixe de destination et attribution conservée. Le navigateur de vérification ne disposant pas de WebGL2, le fond a été rendu localement à partir des tuiles géographiques. Aucun trajet, point utilisateur, distance ni statut d’ouverture fictif n’a été ajouté.
+- Cadres de téléphone, galerie défilante, navigation clavier, agrandissement et affichage mobile.
+- CSS et JavaScript spécifiques à la galerie. Formulaire, pass, anciens scripts, liens hors galerie et autres sections conservés. Aucune modification du dépôt applicatif ni de ses fonctions vocales.
+
+### Fichiers
+- `bia.html`
+- `bia-media/ecrans-2026-11-17/accueil.jpg`
+- `bia-media/ecrans-2026-11-17/carte.jpg`
+- `bia-media/ecrans-2026-11-17/messages.jpg`
+- `bia-media/ecrans-2026-11-17/reglages.jpg`
+- `bia-media/ecrans-2026-11-17/ondulations.jpg`
+- `bia-media/ecrans-2026-11-17/tekilma.jpg`
+- `bia-media/ecrans-2026-11-17/README.md`
+- `INTERVENTIONS-CHATGPT.md`
+
+### Vérifications
+Comparaison confirmant l’identité du contenu hors galerie ; six images présentes au bon format ; JavaScript valide ; identifiants et relations accessibles cohérents ; rendu ordinateur et téléphone vérifié ; défilement, agrandissement, navigation entre images, fermeture par Échap et retour du focus vérifiés.
+
+### Commit de la modification
+- `8e5b16c966dd134aecd7d2985b5a010539715f2d`
+
+### Origine
+Modification réalisée par ChatGPT sur instruction directe du propriétaire de Bia.
