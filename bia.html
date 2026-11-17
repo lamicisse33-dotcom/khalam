@@ -220,6 +220,64 @@ body{
 
 .deja-code{grid-column:1/-1;margin-top:26px;padding-top:22px;border-top:1px solid #294860;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.deja-code p{margin:0;font-weight:700}.deja-code small{flex-basis:100%;color:#8fa0af;font-size:12px}
 </style>
+<!-- BEGIN BIA REAL SCREEN GALLERY CSS -->
+<style>
+/* Bia — galerie de captures réelles. Styles limités à cette section. */
+#application.bia-app-gallery{background:linear-gradient(180deg,#e2f3ff 0%,#f5fbff 55%,#e5f3ff 100%);border-color:#9ed2f5;overflow:hidden}
+#application .bia-gallery-heading-row{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:18px}
+#application .bia-gallery-heading{margin:0;max-width:740px}
+#application .bia-gallery-heading .eyebrow{color:#0761c7}
+#application .bia-gallery-heading h2{color:#093669}
+#application .bia-gallery-heading p{max-width:610px;color:#3c638c;font-size:16px}
+#application .bia-gallery-controls{display:flex;gap:10px;flex:none;padding-bottom:5px}
+#application .bia-gallery-arrow{width:50px;height:50px;display:grid;place-items:center;border:1px solid #86bcec;border-radius:50%;background:#fff;color:#095fbf;cursor:pointer;box-shadow:0 3px 10px #0c4f9110;transition:background .18s,color .18s,transform .18s}
+#application .bia-gallery-arrow svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#application .bia-gallery-arrow:hover:not(:disabled){background:#0868d5;color:#fff;border-color:#0868d5;transform:translateY(-1px)}
+#application .bia-gallery-arrow:disabled{color:#8eaac2;border-color:#c8deed;background:#edf5fa;cursor:default;box-shadow:none}
+#application .bia-gallery-help{font-size:12px;color:#466b90;margin:0 0 8px}
+#application .bia-screen-track{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:280px;gap:28px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:8px;overscroll-behavior-inline:contain;padding:26px 8px 16px;margin:0 -8px;scrollbar-width:thin;scrollbar-color:#2b7bd0 #c9e4f8;-webkit-overflow-scrolling:touch}
+#application .bia-screen-track::-webkit-scrollbar{height:6px}
+#application .bia-screen-track::-webkit-scrollbar-track{background:#c9e4f8;border-radius:6px}
+#application .bia-screen-track::-webkit-scrollbar-thumb{background:#2b7bd0;border-radius:6px}
+#application .bia-screen-card{width:100%;min-width:0;margin:0;scroll-snap-align:start}
+#application .bia-screen-open{display:block;width:100%;padding:0;border:0;border-radius:39px 39px 14px 14px;background:transparent;text-align:inherit;cursor:zoom-in;color:#0a559e;appearance:none;-webkit-tap-highlight-color:transparent}
+#application .bia-device{position:relative;display:block;width:100%;padding:10px 9px 12px;border:2px solid #76818c;border-radius:39px;background:linear-gradient(105deg,#7f8992 0%,#303840 2%,#141a22 5%,#202832 50%,#0b1119 94%,#55616c 98%,#8a949b 100%);box-shadow:0 14px 28px #082c4c2b,0 3px 6px #071f3533,inset 0 0 0 2px #070c13,inset 0 0 0 3px #49535f;transition:transform .22s,box-shadow .22s}
+#application .bia-device:before{content:"";position:absolute;left:-4px;top:92px;width:3px;height:49px;border-radius:3px 0 0 3px;background:linear-gradient(90deg,#3b4550,#87929a);box-shadow:0 57px 0 #4b5661}
+#application .bia-device:after{content:"";position:absolute;right:-4px;top:122px;width:3px;height:68px;border-radius:0 3px 3px 0;background:linear-gradient(90deg,#818c96,#36414b)}
+#application .bia-device-screen{display:block;overflow:hidden;border:1px solid #070d15;border-radius:28px;background:#101c2c}
+#application .bia-device-screen img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:contain;object-position:center;opacity:1;filter:none;mix-blend-mode:normal}
+#application .bia-screen-enlarge{display:flex;align-items:center;justify-content:center;gap:7px;margin:15px 0 0;color:#0b60b4;font-size:11px;font-weight:700;letter-spacing:.02em}
+#application .bia-screen-enlarge svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#application .bia-screen-card figcaption{position:relative;padding:13px 5px 6px 36px;min-height:100px}
+#application .bia-screen-number{position:absolute;top:18px;left:4px;color:#2474c4;font-size:10px;font-weight:800;letter-spacing:.04em}
+#application .bia-screen-card h3{margin:0 0 5px;color:#093869;font:750 18px/1.3 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#application .bia-screen-card p{margin:0;color:#476989;font-size:13px;line-height:1.5}
+#application .bia-gallery-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:24px}
+#application .bia-gallery-bottom p{margin:0;color:#476989;font-size:12px}
+#application .bia-gallery-link{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:46px;padding:10px 20px;border-radius:999px;border:1px solid #0758bd;background:#0868d5;color:#fff;font-weight:750;font-size:13px;box-shadow:0 6px 18px #0764ca20}
+#application .bia-gallery-link:hover{background:#0759b8}
+#application :is(.bia-gallery-arrow,.bia-screen-open,.bia-gallery-link,.bia-screen-close,.bia-screen-dialog-nav):focus-visible,#application .bia-screen-track:focus-visible,#application .bia-screen-dialog-media:focus-visible{outline:3px solid #005bca;outline-offset:5px}
+#application .bia-screen-dialog{width:min(660px,calc(100vw - 32px));max-width:none;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);padding:0;border:1px solid #7fb7e4;border-radius:24px;background:#edf7ff;color:#153e68;box-shadow:0 30px 120px #020c1aaa;overflow:hidden}
+#application .bia-screen-dialog:not([open]){display:none}
+#application .bia-screen-dialog::backdrop{background:rgba(3,15,32,.82);backdrop-filter:blur(5px)}
+#application .bia-screen-dialog-inner{display:flex;flex-direction:column;max-height:calc(100vh - 34px);max-height:calc(100dvh - 34px)}
+#application .bia-screen-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border-bottom:1px solid #bdd9ee;flex-shrink:0}
+#application .bia-screen-dialog-head h3{margin:0;font:750 19px/1.3 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#0c3562}
+#application .bia-screen-dialog-head p{margin:4px 0 0;font-size:11px;line-height:1.4;color:#52708c}
+#application .bia-screen-close{display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:8px 12px;border:1px solid #b2cfe4;border-radius:999px;background:#fff;color:#164e83;cursor:pointer;font-size:12px;flex-shrink:0}
+#application .bia-screen-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+#application .bia-screen-dialog-media{min-height:0;overflow:auto;overscroll-behavior:contain;padding:20px;background:#0d2037;scrollbar-color:#6c9bc4 #152f4d;scrollbar-width:thin}
+#application .bia-screen-dialog-media img{display:block;width:min(100%,390px);height:auto;max-width:100%;margin:0 auto;border-radius:15px;opacity:1;filter:none;mix-blend-mode:normal;box-shadow:0 9px 35px #0005}
+#application .bia-screen-dialog-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;border-top:1px solid #bdd9ee;flex-shrink:0}
+#application .bia-screen-dialog-footer p{margin:0;font-size:12px;color:#4a6d90;font-variant-numeric:tabular-nums}
+#application .bia-screen-dialog-nav{display:inline-flex;align-items:center;gap:9px;min-height:40px;padding:8px 12px;border:1px solid #98c4e7;border-radius:11px;background:#fff;color:#095cae;font-size:12px;font-weight:700;cursor:pointer}
+#application .bia-screen-dialog-nav:disabled{color:#879fb4;background:#e9f2f8;border-color:#c8dce9;cursor:default}
+@media(hover:hover){#application .bia-screen-open:hover .bia-device{transform:translateY(-4px);box-shadow:0 19px 34px #082c4c36,0 3px 6px #071f3533,inset 0 0 0 2px #070c13,inset 0 0 0 3px #49535f}}
+@media(max-width:900px){#application .bia-gallery-heading-row{gap:20px}#application .bia-screen-track{grid-auto-columns:265px;gap:24px}}
+@media(max-width:580px){#application.bia-app-gallery{scroll-margin-top:24px}#application .bia-gallery-heading-row{align-items:flex-start;gap:12px;flex-wrap:wrap}#application .bia-gallery-heading{flex:1 1 100%}#application .bia-gallery-heading p{font-size:14px}#application .bia-gallery-controls{margin-left:auto;padding:0}#application .bia-gallery-arrow{width:44px;height:44px}#application .bia-gallery-help{margin-top:-39px;max-width:calc(100% - 115px);min-height:39px;display:flex;align-items:center}#application .bia-screen-track{grid-auto-columns:min(330px,calc((100% - 20px)/1.1));gap:20px;padding-top:22px}#application .bia-screen-card figcaption{min-height:92px}#application .bia-gallery-bottom{margin-top:20px;gap:12px}#application .bia-gallery-link{padding-inline:17px}#application .bia-screen-dialog{width:calc(100vw - 16px);max-height:calc(100vh - 16px);max-height:calc(100dvh - 16px);border-radius:18px}#application .bia-screen-dialog-inner{max-height:calc(100vh - 18px);max-height:calc(100dvh - 18px)}#application .bia-screen-dialog-head{padding:14px 12px;gap:10px}#application .bia-screen-dialog-head h3{font-size:18px}#application .bia-screen-dialog-head p{max-width:210px;font-size:10px}#application .bia-screen-close{padding:8px;min-width:42px;justify-content:center}#application .bia-screen-close span{display:none}#application .bia-screen-dialog-media{padding:12px}#application .bia-screen-dialog-footer{padding:12px;gap:8px}#application .bia-screen-dialog-nav{gap:6px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){#application .bia-gallery-arrow,#application .bia-device{transition:none}#application .bia-screen-track{scroll-behavior:auto}#application .bia-screen-open:hover .bia-device{transform:none}}
+</style>
+<!-- END BIA REAL SCREEN GALLERY CSS -->
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
@@ -280,28 +338,77 @@ body{
 <div class="story-card"><blockquote>« Parle avec moi un peu. »<br>« Donne-moi ton avis. »<br>« Raconte-moi un conte. »<br>« Fais-moi rire. »</blockquote><small>Une IA utile quand vous avez quelque chose à faire. Une amie quand vous avez simplement envie de parler.</small></div>
 </div></section>
 
-<section class="section gallery" id="application"><div class="wrap">
-<div class="head"><div class="eyebrow">L’application aujourd’hui</div><h2>Découvrez Bia Xarit écran par écran.</h2><p>Les aperçus ci-dessous reprennent les principales vues actuellement présentes dans l’application : accueil, réglages, Tekkil ma, carte, documents, carnet, photo et mode gratuit.</p></div>
-<div class="shots">
-<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="ondes"></div><div class="status">Parlez, je vous écoute<small>Wolof · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekkil ma</span></div></div></div><h3>Accueil vocal</h3><p>Une interface simple : parler, écrire ou ouvrir Tekkil ma.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Réglages<small>Ton expérience avec Bia, simplement.</small></span></div><div class="menu-card"><strong>🌐 Langue</strong><div class="select">Wolof · Français (par défaut)</div></div><div class="menu-card"><strong>✧ Personnage et voix</strong><div class="ligne">Changer de personnage ›</div><div class="ligne">○ Personnage animé — désactivé</div><div class="seg"><span>Homme</span><span>Femme</span></div><div class="ligne">🔊 Écouter la voix choisie</div><div class="toggle gris"><span>Version gratuite (français)</span><span class="sw"></span></div></div><div class="btn-ok">Terminé</div></div></div><h3>Réglages</h3><p>Langue, voix et personnage sur un seul écran, derrière l’engrenage.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen"><div class="tek-head">Tekkil ma — interprète</div><div class="tkcard"><b>Ma langue</b><div class="select">Wolof ▾</div><br><b>Langue de l’invité</b><div class="select">English ▾</div></div><div class="tkbtn">Ouvrir le salon</div><div class="chatline"><b>Vous :</b> Dama bëgg wax ak yaw.</div><div class="chatline"><b>Traduction :</b> I would like to speak with you.</div></div></div><h3>Tekkil ma</h3><p>Salon partagé, six langues, conversation vocale dans les deux sens.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Direction : Almadies</span><span>×</span></div><div class="map"><div class="road"></div><div class="route"></div><span class="pin"></span><span class="dest"></span></div><div class="routebox"><b>Almadies</b><br>Direction : nord-ouest<br>Distance : 6,7 km</div></div></div><h3>Carte et déplacement</h3><p>Votre position, la destination, la direction et la distance, dans une vue dédiée.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Devis</span><span>×</span></div><div class="doc"><h4>DEVIS</h4><div class="line"></div><div class="line short"></div><div class="line"></div><div class="line"></div><div class="line short"></div><div class="total">Total : 3 000 000 F</div></div><div class="bottom"><span>Corriger</span><span>Faire le PDF</span></div></div></div><h3>Documents en plein écran</h3><p>Messages, emails, devis et factures s’affichent proprement et peuvent être conservés.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Mon carnet</span><span>×</span></div><div class="carnet-tabs"><span>Dettes</span><span>Caisse</span><span>Stock</span><span>Commandes</span></div><div class="ledger"><div class="ledger-row"><span>Moussa</span><b>15 000 F</b></div><div class="ledger-row"><span>Fatou</span><b>8 000 F</b></div><div class="ledger-row"><span>Total dû</span><b>23 000 F</b></div></div></div></div><h3>Carnet du commerce</h3><p>Dettes, caisse, commandes et stock réunis dans une vue simple.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Photo</span><span>×</span></div><div class="camera"><img src="https://app.khalam.app/reperes/bia.jpg" alt=""><div class="count">3</div></div><div class="cam-actions"><span>Garder</span><span>Refaire</span></div></div></div><h3>Photo à la voix</h3><p>Bia ouvre l’appareil photo, compte puis vous laisse garder ou refaire la photo.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen ecran-accueil"><div class="appbar"><span>Bia Xarit<small>par KHALAM</small></span><span class="gear">⚙</span></div><div class="ondes gris"></div><div class="status">Je vous écoute<small class="free-badge">Mode continuité gratuit · Français</small></div><div class="cmds"><span><i>💬</i>Messages</span><span class="parler"><i>≋</i>Parler</span><span><i>文</i>Tekkil ma</span></div></div></div><h3>Continuité gratuite</h3><p>Quand le pass se termine, Bia finit ce qu’elle faisait puis reste quelques minutes en français, avec ses fonctions légères.</p></article>
-
-<article class="shot"><div class="phone"><div class="screen"><div class="appbar"><span>Langues</span><span>×</span></div><div class="menu-card"><strong>Bia Xarit</strong><p>Wolof · Français</p></div><div class="menu-card"><strong>Autres langues</strong><p>Anglais · Arabe · Espagnol · Allemand</p></div><div class="menu-card"><strong>Tekkil ma</strong><p>Wolof · Français · Anglais · Arabe · Espagnol · Chinois mandarin</p></div></div></div><h3>Langues</h3><p>Le wolof et le français au cœur de Bia, avec d’autres langues dans le menu et Tekkil ma.</p></article>
-</div>
-</div></section>
+<section class="section gallery bia-app-gallery" id="application" aria-labelledby="bia-gallery-heading">
+  <div class="wrap">
+    <div class="bia-gallery-heading-row">
+      <div class="head bia-gallery-heading">
+        <div class="eyebrow">Vues de l’interface actuelle de Bia</div>
+        <h2 id="bia-gallery-heading">Bia, écran par écran.</h2>
+        <p>Parcourez l’accueil, les messages et les outils de Bia. Touchez un écran pour le regarder de plus près.</p>
+      </div>
+      <div class="bia-gallery-controls" role="group" aria-label="Faire défiler les écrans">
+        <button class="bia-gallery-arrow" type="button" data-bia-gallery-prev aria-label="Voir les écrans précédents" aria-controls="bia-screen-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6"/></svg></button>
+        <button class="bia-gallery-arrow" type="button" data-bia-gallery-next aria-label="Voir les écrans suivants" aria-controls="bia-screen-track"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m10 6 6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <p class="bia-gallery-help" id="bia-gallery-help">Faites glisser les écrans ou utilisez les flèches.</p>
+    <div class="bia-screen-track" id="bia-screen-track" tabindex="0" role="region" aria-roledescription="galerie" aria-label="Vues de l’interface actuelle de Bia" aria-describedby="bia-gallery-help">
+      <figure class="bia-screen-card">
+        <button class="bia-screen-open" type="button" data-bia-screen="0" aria-label="Agrandir l’écran Accueil" aria-haspopup="dialog" aria-controls="bia-screen-dialog">
+          <span class="bia-device"><span class="bia-device-screen"><img src="/bia-media/ecrans-2026-11-17/accueil.jpg" alt="Vue de l’écran d’accueil de Bia" width="390" height="844" loading="lazy" decoding="async"></span></span>
+          <span class="bia-screen-enlarge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Agrandir</span>
+        </button>
+        <figcaption><span class="bia-screen-number">01</span><h3>Accueil</h3><p>L’écran principal pour parler avec Bia.</p></figcaption>
+      </figure>
+      <figure class="bia-screen-card">
+        <button class="bia-screen-open" type="button" data-bia-screen="1" aria-label="Agrandir l’écran Carte" aria-haspopup="dialog" aria-controls="bia-screen-dialog">
+          <span class="bia-device"><span class="bia-device-screen"><img src="/bia-media/ecrans-2026-11-17/carte.jpg" alt="Carte de Dakar avec la place de l’Indépendance et les commandes de Bia" width="390" height="844" loading="lazy" decoding="async"></span></span>
+          <span class="bia-screen-enlarge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Agrandir</span>
+        </button>
+        <figcaption><span class="bia-screen-number">02</span><h3>Carte</h3><p>Dakar, ses rues et ses repères. Exemple de destination.</p></figcaption>
+      </figure>
+      <figure class="bia-screen-card">
+        <button class="bia-screen-open" type="button" data-bia-screen="2" aria-label="Agrandir l’écran Messages" aria-haspopup="dialog" aria-controls="bia-screen-dialog">
+          <span class="bia-device"><span class="bia-device-screen"><img src="/bia-media/ecrans-2026-11-17/messages.jpg" alt="Vue de l’espace Messages de Bia" width="390" height="844" loading="lazy" decoding="async"></span></span>
+          <span class="bia-screen-enlarge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Agrandir</span>
+        </button>
+        <figcaption><span class="bia-screen-number">03</span><h3>Messages</h3><p>La conversation, dans l’espace Messages.</p></figcaption>
+      </figure>
+      <figure class="bia-screen-card">
+        <button class="bia-screen-open" type="button" data-bia-screen="3" aria-label="Agrandir l’écran Réglages" aria-haspopup="dialog" aria-controls="bia-screen-dialog">
+          <span class="bia-device"><span class="bia-device-screen"><img src="/bia-media/ecrans-2026-11-17/reglages.jpg" alt="Vue des réglages de l’application Bia" width="390" height="844" loading="lazy" decoding="async"></span></span>
+          <span class="bia-screen-enlarge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Agrandir</span>
+        </button>
+        <figcaption><span class="bia-screen-number">04</span><h3>Réglages</h3><p>Les options pour personnaliser votre expérience.</p></figcaption>
+      </figure>
+      <figure class="bia-screen-card">
+        <button class="bia-screen-open" type="button" data-bia-screen="4" aria-label="Agrandir l’écran Ondulations" aria-haspopup="dialog" aria-controls="bia-screen-dialog">
+          <span class="bia-device"><span class="bia-device-screen"><img src="/bia-media/ecrans-2026-11-17/ondulations.jpg" alt="Vue des choix d’ondulations dans les réglages de Bia" width="390" height="844" loading="lazy" decoding="async"></span></span>
+          <span class="bia-screen-enlarge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Agrandir</span>
+        </button>
+        <figcaption><span class="bia-screen-number">05</span><h3>Ondulations</h3><p>Les apparences de l’onde proposées dans les réglages.</p></figcaption>
+      </figure>
+      <figure class="bia-screen-card">
+        <button class="bia-screen-open" type="button" data-bia-screen="5" aria-label="Agrandir l’écran Tekkil ma" aria-haspopup="dialog" aria-controls="bia-screen-dialog">
+          <span class="bia-device"><span class="bia-device-screen"><img src="/bia-media/ecrans-2026-11-17/tekilma.jpg" alt="Vue de l’espace Tekkil ma dans Bia" width="390" height="844" loading="lazy" decoding="async"></span></span>
+          <span class="bia-screen-enlarge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Agrandir</span>
+        </button>
+        <figcaption><span class="bia-screen-number">06</span><h3>Tekkil ma</h3><p>L’espace de traduction et d’interprétation.</p></figcaption>
+      </figure>
+    </div>
+    <div class="bia-gallery-bottom"><p id="bia-gallery-status" aria-live="polite" aria-atomic="true">6 écrans à découvrir</p><a class="bia-gallery-link" href="https://app.khalam.app">Ouvrir Bia <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <dialog class="bia-screen-dialog" id="bia-screen-dialog" aria-labelledby="bia-screen-dialog-title" aria-describedby="bia-screen-dialog-description">
+    <div class="bia-screen-dialog-inner">
+      <header class="bia-screen-dialog-head">
+        <div><h3 id="bia-screen-dialog-title">Accueil</h3><p id="bia-screen-dialog-description">Vue de l’interface actuelle de Bia · écran 1 sur 6</p></div>
+        <button class="bia-screen-close" type="button" data-bia-dialog-close aria-label="Fermer l’aperçu agrandi" autofocus><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg><span>Fermer</span></button>
+      </header>
+      <div class="bia-screen-dialog-media" tabindex="0" aria-label="Capture agrandie ; faites défiler pour voir l’écran entier"><img id="bia-screen-dialog-image" alt="" width="390" height="844" decoding="async"></div>
+      <footer class="bia-screen-dialog-footer"><button type="button" class="bia-screen-dialog-nav" data-bia-dialog-prev aria-label="Afficher l’écran précédent"><span aria-hidden="true">←</span> Précédent</button><p id="bia-screen-dialog-count" aria-live="polite" aria-atomic="true">1 / 6</p><button type="button" class="bia-screen-dialog-nav" data-bia-dialog-next aria-label="Afficher l’écran suivant">Suivant <span aria-hidden="true">→</span></button></footer>
+    </div>
+  </dialog>
+</section>
 
 <section class="section wrap" id="publics">
 <div class="head"><div class="eyebrow">Pour qui</div><h2>Une IA utile dans la vraie vie.</h2></div>
@@ -361,4 +468,141 @@ body{
  });
 })();
 </script>
+<!-- BEGIN BIA REAL SCREEN GALLERY JS -->
+<script>
+/* Bia — navigation et agrandissement des captures, sans dépendance ni suivi. */
+(function(){
+  'use strict';
+  var gallery=document.getElementById('application');
+  if(!gallery)return;
+  var track=gallery.querySelector('#bia-screen-track');
+  var cards=Array.from(gallery.querySelectorAll('.bia-screen-card'));
+  var openers=Array.from(gallery.querySelectorAll('[data-bia-screen]'));
+  var previous=gallery.querySelector('[data-bia-gallery-prev]');
+  var next=gallery.querySelector('[data-bia-gallery-next]');
+  var status=gallery.querySelector('#bia-gallery-status');
+  var dialog=gallery.querySelector('#bia-screen-dialog');
+  var dialogImage=gallery.querySelector('#bia-screen-dialog-image');
+  var dialogTitle=gallery.querySelector('#bia-screen-dialog-title');
+  var dialogDescription=gallery.querySelector('#bia-screen-dialog-description');
+  var dialogCount=gallery.querySelector('#bia-screen-dialog-count');
+  var dialogMedia=gallery.querySelector('.bia-screen-dialog-media');
+  var dialogPrevious=gallery.querySelector('[data-bia-dialog-prev]');
+  var dialogNext=gallery.querySelector('[data-bia-dialog-next]');
+  var closeButton=gallery.querySelector('[data-bia-dialog-close]');
+  if(!track||!cards.length||!dialog)return;
+  var current=0;
+  var opener=null;
+  var previousOverflow='';
+  var scrollFrame=0;
+  var announceTimer=0;
+  var motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var screens=cards.map(function(card){
+    var image=card.querySelector('img');
+    return{src:image.getAttribute('src'),alt:image.alt,title:card.querySelector('h3').textContent};
+  });
+
+  function behavior(){return motion.matches?'auto':'smooth';}
+  function step(){
+    return cards.length>1?cards[1].offsetLeft-cards[0].offsetLeft:cards[0].getBoundingClientRect().width;
+  }
+  function announceVisible(){
+    var bounds=track.getBoundingClientRect();
+    var visible=[];
+    cards.forEach(function(card,index){
+      var box=card.getBoundingClientRect();
+      var intersection=Math.min(box.right,bounds.right)-Math.max(box.left,bounds.left);
+      if(intersection>=Math.min(50,box.width*.25))visible.push(index+1);
+    });
+    if(!visible.length)return;
+    var first=visible[0],last=visible[visible.length-1];
+    status.textContent=first===last?'Écran '+first+' sur '+cards.length:'Écrans '+first+' à '+last+' sur '+cards.length;
+  }
+  function updateControls(){
+    previous.disabled=track.scrollLeft<=2;
+    next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2;
+    window.clearTimeout(announceTimer);
+    announceTimer=window.setTimeout(announceVisible,160);
+  }
+  function moveGallery(direction){track.scrollBy({left:direction*step(),behavior:behavior()});}
+  previous.addEventListener('click',function(){moveGallery(-1);});
+  next.addEventListener('click',function(){moveGallery(1);});
+  track.addEventListener('scroll',function(){
+    if(scrollFrame)return;
+    scrollFrame=window.requestAnimationFrame(function(){scrollFrame=0;updateControls();});
+  },{passive:true});
+  track.addEventListener('keydown',function(event){
+    if(event.altKey||event.ctrlKey||event.metaKey)return;
+    var focused=openers.indexOf(event.target);
+    if(focused!==-1&&['ArrowLeft','ArrowRight','Home','End'].indexOf(event.key)!==-1){
+      event.preventDefault();
+      var target=event.key==='Home'?0:event.key==='End'?openers.length-1:focused+(event.key==='ArrowLeft'?-1:1);
+      target=Math.max(0,Math.min(openers.length-1,target));
+      openers[target].focus({preventScroll:true});
+      cards[target].scrollIntoView({behavior:behavior(),block:'nearest',inline:'nearest'});
+      return;
+    }
+    if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+      event.preventDefault();moveGallery(event.key==='ArrowLeft'?-1:1);
+    }else if(event.key==='Home'||event.key==='End'){
+      event.preventDefault();track.scrollTo({left:event.key==='Home'?0:track.scrollWidth,behavior:behavior()});
+    }
+  });
+
+  function displayScreen(index){
+    current=Math.max(0,Math.min(screens.length-1,index));
+    var screen=screens[current];
+    dialogImage.src=screen.src;
+    dialogImage.alt=screen.alt;
+    dialogTitle.textContent=screen.title;
+    dialogDescription.textContent='Vue de l’interface actuelle de Bia · écran '+(current+1)+' sur '+screens.length;
+    dialogCount.textContent=(current+1)+' / '+screens.length;
+    dialogPrevious.disabled=current===0;
+    dialogNext.disabled=current===screens.length-1;
+    dialogMedia.scrollTop=0;
+    dialogMedia.scrollLeft=0;
+  }
+  function openScreen(index,button){
+    if(typeof dialog.showModal!=='function'){
+      window.open(screens[index].src,'_blank','noopener');
+      return;
+    }
+    opener=button;
+    displayScreen(index);
+    if(!dialog.open){
+      previousOverflow=document.body.style.overflow;
+      dialog.showModal();
+      document.body.style.overflow='hidden';
+    }
+    closeButton.focus({preventScroll:true});
+  }
+  function closeScreen(){if(dialog.open)dialog.close();}
+  openers.forEach(function(button,index){button.addEventListener('click',function(){openScreen(index,button);});});
+  closeButton.addEventListener('click',closeScreen);
+  dialogPrevious.addEventListener('click',function(){displayScreen(current-1);});
+  dialogNext.addEventListener('click',function(){displayScreen(current+1);});
+  dialog.addEventListener('cancel',function(event){event.preventDefault();closeScreen();});
+  dialog.addEventListener('close',function(){
+    document.body.style.overflow=previousOverflow;
+    if(opener&&opener.isConnected)opener.focus({preventScroll:true});
+  });
+  dialog.addEventListener('click',function(event){
+    if(event.target!==dialog)return;
+    var box=dialog.getBoundingClientRect();
+    if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)closeScreen();
+  });
+  dialog.addEventListener('keydown',function(event){
+    if(event.altKey||event.ctrlKey||event.metaKey)return;
+    if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+      event.preventDefault();displayScreen(current+(event.key==='ArrowLeft'?-1:1));
+    }else if(event.key==='Home'||event.key==='End'){
+      event.preventDefault();displayScreen(event.key==='Home'?0:screens.length-1);
+    }
+  });
+  if('ResizeObserver' in window)new ResizeObserver(updateControls).observe(track);
+  else window.addEventListener('resize',updateControls);
+  updateControls();
+})();
+</script>
+<!-- END BIA REAL SCREEN GALLERY JS -->
 </body></html>
