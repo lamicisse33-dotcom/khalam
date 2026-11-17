@@ -60,3 +60,37 @@ Comparaison confirmant l’identité du contenu hors galerie ; six images prése
 
 ### Origine
 Modification réalisée par ChatGPT sur instruction directe du propriétaire de Bia.
+
+## 17 novembre 2026 — Exemples commerciaux et langues visibles dans la galerie
+
+### Instruction du propriétaire
+Après validation de la nouvelle présentation, le propriétaire a demandé de supprimer les mots « en tenue bleu nuit » du visuel Réglages, d’ajouter un écran Tekkil ma montrant toutes les langues et de présenter Messages, Devis et Lecture d’ordonnance avec des exemples concrets dans leurs fenêtres.
+
+### Modification effectuée
+- Galerie portée de six à neuf vues, en conservant la présentation approuvée et l’agrandissement des écrans.
+- Réglages : libellé « Personnage animé de Bia Xarit — désactivé » dans le visuel.
+- Tekkil ma : vue supplémentaire montrant Wolof, Français, English, 中文（普通话）, العربية et Español. La liste native est déployée dans la présentation fixe pour rendre les six options visibles ; le sélecteur applicatif n’est pas modifié.
+- Messages : exemple de demande pour annoncer des sacs à 15 000 F avec livraison à Dakar, suivi d’un texte commercial proposé par Bia.
+- Devis : document fictif « Boutique Démo — client fictif », avec 20 T-shirts à 3 500 F, 10 polos à 6 000 F et une livraison à 5 000 F, soit 135 000 F CFA.
+- Ordonnance : document de démonstration joint et transcription illustrative de deux noms. Aucune donnée médicale réelle, identité de patient, prescription ou posologie n’est publiée.
+- Exemples rendus dans les fenêtres et styles correspondants de Bia ; données fictives signalées dans les visuels, sous la galerie et dans les aperçus agrandis.
+- Changements limités à la galerie, ses styles et son script, ses images et sa documentation. Aucune modification du dépôt applicatif, des pass, du formulaire ou des autres sections.
+
+### Fichiers
+- `bia.html`
+- `bia-media/ecrans-2026-11-17/messages-v2.jpg`
+- `bia-media/ecrans-2026-11-17/devis.jpg`
+- `bia-media/ecrans-2026-11-17/ordonnance.jpg`
+- `bia-media/ecrans-2026-11-17/reglages-v2.jpg`
+- `bia-media/ecrans-2026-11-17/tekilma-langues.jpg`
+- `bia-media/ecrans-2026-11-17/README.md`
+- `INTERVENTIONS-CHATGPT.md`
+
+### Vérifications
+Neuf vues et indices cohérents ; cinq nouvelles images au format 390 × 844 ; contenu hors galerie et anciens scripts inchangés ; JavaScript valide ; identifiants et relations accessibles vérifiés. Rendu de la galerie et des nouveaux exemples vérifié sur ordinateur, navigation entre aperçus et compteurs sur neuf vérifiés. Aperçu mobile à 390 pixels vérifié, avec les six langues entièrement visibles et sans débordement horizontal de la fenêtre. Calcul du devis vérifié.
+
+### Commit de la modification
+- `0914598e46ca07aa82e8625dfd7e897024bfcba4`
+
+### Origine
+Modification réalisée par ChatGPT sur instruction directe du propriétaire de Bia.
