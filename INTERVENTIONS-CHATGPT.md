@@ -152,6 +152,8 @@ Lamine a demandé d'enrichir la section « Pour qui », jugée trop légère com
 
 Capacités vérifiées en lecture seule dans `bia-render`, révision `cf566228b22d3600ab34359cc6e6e954d77418fc` : registre des capacités, consignes, vision, documents/PDF, carnet, Tekkil ma et catégories Jaayal ma. Dix cartes et dix exemples ; identifiants uniques. Comparaison confirmant que le contenu de `bia.html` hors `#publics` et hors son nouveau bloc CSS est identique à la révision publiée `b593859fa07429b7b996b736e2dae2bb14ccdd4c`.
 
+Rendu publié vérifié sur ordinateur : deux cartes principales et quatre colonnes pour les huit autres publics. Largeurs de navigateur vérifiées : 337, 449, 899 et 1348 pixels. Aucun débordement horizontal ; une colonne pour les cartes sur téléphone et deux sur tablette. L'équilibrage des lignes du titre évite de laisser un mot seul sur la dernière ligne.
+
 ### Périmètre
 
 Fichiers : `bia.html` et ce journal. Intervention réalisée par ChatGPT sur instruction directe du propriétaire, dans le dépôt de la vitrine `khalam`.
