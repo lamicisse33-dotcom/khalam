@@ -94,3 +94,39 @@ Neuf vues et indices cohérents ; cinq nouvelles images au format 390 × 844 ; c
 
 ### Origine
 Modification réalisée par ChatGPT sur instruction directe du propriétaire de Bia.
+
+## 18 novembre 2026 — Jaayal ma dans les captures et la présentation de Bia
+
+### Instruction du propriétaire
+
+Le propriétaire a demandé d'ajouter Jaayal ma aux captures de la vitrine Bia, avec une vue du catalogue permettant de découvrir le service d'annonces. L'adaptation du site Jaayal ma aux téléphones, ordinateurs et grands écrans est traitée dans son propre dépôt.
+
+### Modification effectuée
+
+- Ajout de Jaayal ma en troisième position, après Accueil et Carte, dans la galerie `#application`. La galerie comporte désormais dix captures.
+- Conservation des neuf captures existantes, de leurs images, légendes et mentions de démonstration ; mise à jour des indices et compteurs.
+- Capture réelle de la rubrique Électroménager et maison en affichage téléphone, à une largeur d'environ 449 pixels, recadrée sous l'en-tête pour montrer le catalogue.
+- Description spécifique dans l'agrandissement : « Vue du site Jaayal ma — rubrique Électroménager & maison ». Un lien permet d'ouvrir la rubrique photographiée.
+- Ajout d'un aperçu réel en affichage ordinateur, de 1348 × 926 pixels, dans la section `#jaayalma`, avec un lien vers le même catalogue.
+- Annonces d'exemple conservées dans les captures. Cette intervention ne constitue pas la publication de vraies annonces ni l'ouverture du site hors de son mode préparation.
+- Intervention limitée à la vitrine du dépôt `khalam`, aux deux images et à leur documentation. Aucune modification de `bia-render`.
+
+### Source
+
+[Rubrique Électroménager et maison de Jaayal ma](https://jaayalma.khalam.app/r/electromenager.html).
+
+### Fichiers
+
+- `bia.html`
+- `bia-media/ecrans-2026-11-18/jaayalma-telephone.jpg`
+- `bia-media/ecrans-2026-11-18/jaayalma-ordinateur.jpg`
+- `bia-media/ecrans-2026-11-18/README.md`
+- `INTERVENTIONS-CHATGPT.md`
+
+### Vérifications
+
+Revue statique : dix captures, indices de 0 à 9 et numéros de 01 à 10 cohérents ; conservation des neuf anciennes images, textes alternatifs et légendes ; liens et relations accessibles cohérents ; absence d'identifiants dupliqués ; syntaxe JavaScript valide. Les scripts antérieurs sont conservés, avec l'ajout de la description spécifique au site dans le script de la galerie.
+
+### Origine
+
+Modification réalisée par ChatGPT sur instruction directe du propriétaire de Bia.
