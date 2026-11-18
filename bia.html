@@ -292,6 +292,40 @@ body{
 @media(max-width:580px){#jaayalma .jaayalma-preview{border-radius:18px}#jaayalma .jaayalma-preview figcaption{padding:12px 14px;flex-wrap:wrap}}
 </style>
 <!-- END BIA REAL SCREEN GALLERY CSS -->
+<style>
+/* Pour qui : usages concrets, dans l'identité bleue de Bia. */
+#publics{scroll-margin-top:72px}
+#publics .head{max-width:900px;margin-bottom:30px}
+#publics .head h2{max-width:860px}
+#publics .head p{max-width:800px;font-size:17px;line-height:1.75}
+#publics .audience-modes{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 0;padding:0;list-style:none}
+#publics .audience-modes li{padding:7px 13px;border:1px solid #9ed6ff;border-radius:999px;background:#ffffffb8;color:#164875;font-size:13px;font-weight:650}
+#publics .audience-featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-bottom:20px}
+#publics .audience-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+#publics .audience-card{min-width:0;display:flex;flex-direction:column;padding:24px;border:1px solid #9ed6ff;border-radius:22px;background:linear-gradient(180deg,#fff,#f1faff);box-shadow:0 14px 36px #1f6ca510;overflow-wrap:anywhere}
+#publics .audience-card--featured{padding:30px;border-color:#72b9ee;background:linear-gradient(145deg,#fff 28%,#e5f5ff)}
+#publics .audience-card--enterprise{background:linear-gradient(145deg,#f5fcff,#dcefff)}
+#publics .audience-icon{display:grid;place-items:center;flex:none;width:44px;height:44px;margin-bottom:16px;border-radius:14px;background:#dff2ff;color:#075da9}
+#publics .audience-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#publics .audience-card h3{margin:0 0 9px;color:#08265b;font:500 23px/1.2 Georgia,serif}
+#publics .audience-card--featured h3{font-size:30px}
+#publics .audience-promise{display:block;margin-bottom:12px;color:#0969b6;font-size:14px;line-height:1.5;font-weight:750}
+#publics .audience-card p{margin:0 0 20px;color:#436384;font-size:14.5px;line-height:1.75}
+#publics .audience-card--featured p{font-size:16px;margin-bottom:18px}
+#publics .audience-benefits{display:grid;gap:12px;list-style:none;margin:0 0 22px;padding:0;color:#436384;font-size:15px;line-height:1.65}
+#publics .audience-benefits li{position:relative;padding-left:18px}
+#publics .audience-benefits li:before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:#1387e8}
+#publics .audience-benefits strong{color:#103d6c}
+#publics .audience-example{margin:auto 0 0;padding:15px 16px;border-left:3px solid #2393e9;border-radius:0 12px 12px 0;background:#e3f3ff;color:#133d68;font-size:14px;line-height:1.65}
+#publics .audience-example span{display:block;margin-bottom:5px;color:#316992;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+#publics .audience-everyone{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:24px;padding:30px 32px;border:1px solid #72b9ee;border-radius:24px;background:linear-gradient(120deg,#e3f4ff,#fff);box-shadow:0 14px 36px #1f6ca510}
+#publics .audience-everyone h3{margin:0 0 10px;color:#08265b;font:500 30px/1.2 Georgia,serif}
+#publics .audience-everyone p{max-width:740px;margin:0;color:#436384;font-size:16px;line-height:1.75}
+#publics .audience-everyone .btn{flex:none;min-height:48px;white-space:nowrap}
+@media(max-width:1100px){#publics .audience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){#publics .audience-featured{grid-template-columns:1fr}#publics .audience-card--featured{padding:25px}#publics .audience-everyone{align-items:flex-start;flex-direction:column;padding:26px}}
+@media(max-width:580px){#publics .audience-grid{grid-template-columns:1fr}#publics .head p{font-size:16px}#publics .audience-card{padding:23px}#publics .audience-card h3{font-size:25px}#publics .audience-card--featured h3{font-size:29px}#publics .audience-card p{font-size:15px}#publics .audience-modes{gap:7px}#publics .audience-modes li{font-size:12px;padding:6px 10px}#publics .audience-everyone h3{font-size:28px}}
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
@@ -470,15 +504,104 @@ body{
   </dialog>
 </section>
 
-<section class="section wrap" id="publics">
-<div class="head"><div class="eyebrow">Pour qui</div><h2>Une IA utile dans la vraie vie.</h2></div>
-<div class="service-grid">
-<article class="card"><div class="ico">👨🏾‍👩🏾‍👧🏾</div><h3>Les familles</h3><p>Comprendre une ordonnance, ne plus oublier un médicament, trouver la pharmacie, obtenir une explication simplement.</p></article>
-<article class="card"><div class="ico">🛍️</div><h3>Les commerçants</h3><p>Clients étrangers avec Tekkil ma, devis, factures, carnet : dettes, caisse, commandes et stock.</p></article>
-<article class="card"><div class="ico">✈️</div><h3>Les voyageurs</h3><p>Traduction en direct, carte, direction et distance, numéros utiles.</p></article>
-<article class="card"><div class="ico">🎓</div><h3>Pour apprendre</h3><p>Wolof, français, explications, traductions, conversation.</p></article>
-<article class="card"><div class="ico">🌍</div><h3>Tout le monde</h3><p>Réfléchir, demander conseil, raconter, discuter, rire — ou simplement avoir une présence disponible, en wolof ou en français.</p></article>
-</div>
+<section class="section wrap" id="publics" aria-labelledby="bia-publics-heading">
+  <div class="head">
+    <div class="eyebrow">Pour qui</div>
+    <h2 id="bia-publics-heading">Au champ, au marché, au bureau, à la maison.</h2>
+    <p>Vous cultivez, vous entreprenez, vous vendez, vous apprenez, vous prenez soin des autres. Bia vous accompagne dans ce que vous faites, avec des conseils, des explications et des outils concrets. Parlez-lui de votre besoin ou montrez-lui ce que vous avez sous les yeux.</p>
+    <ul class="audience-modes" aria-label="Comment échanger avec Bia"><li>À la voix</li><li>En wolof ou en français</li><li>Avec une photo ou un document</li></ul>
+  </div>
+
+  <div class="audience-featured">
+    <article class="audience-card audience-card--featured">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21v-9M12 15C5 15 3 11 3 5c6 0 9 3 9 8M12 12c0-6 3-9 9-9 0 6-3 9-9 9M7 9l5 5M17 7l-5 5"/></svg></div>
+      <h3>Les agriculteurs et maraîchers</h3>
+      <strong class="audience-promise">Un conseil jusque dans votre champ.</strong>
+      <p>Des feuilles qui jaunissent, des taches sur une plante, une culture qui vous inquiète ? Prenez une photo, montrez-la à Bia et expliquez ce qui se passe.</p>
+      <ul class="audience-benefits">
+        <li><strong>Comprendre les signes visibles.</strong> Bia vous aide à examiner la photo et à rechercher les causes possibles du problème.</li>
+        <li><strong>Savoir quelles pistes suivre.</strong> Échangez sur l’arrosage, l’entretien, la protection des plantes et les traitements à faire confirmer pour votre culture.</li>
+        <li><strong>Préparer votre activité.</strong> Consultez la météo, organisez vos achats et préparez des messages pour présenter votre production aux acheteurs.</li>
+      </ul>
+      <blockquote class="audience-example"><span>Dites-lui, par exemple</span>« Bia, regarde mes feuilles de tomate. Pourquoi jaunissent-elles et quels soins faut-il envisager ? »</blockquote>
+    </article>
+    <article class="audience-card audience-card--featured audience-card--enterprise">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 12c5 3 13 3 18 0M10 12h4v4h-4z"/></svg></div>
+      <h3>Les entreprises, PME et associations</h3>
+      <strong class="audience-promise">Une assistante pour faire avancer votre travail.</strong>
+      <p>Un devis à préparer, un courrier à rédiger, un fournisseur à comprendre ou une idée à présenter ? Expliquez votre besoin à Bia et avancez avec un résultat concret.</p>
+      <ul class="audience-benefits">
+        <li><strong>Préparer vos documents.</strong> Devis et factures avec calcul des montants, puis PDF à relire et à partager à partir de vos informations.</li>
+        <li><strong>Soigner vos échanges.</strong> Mails, courriers, messages commerciaux, résumés de documents et préparation d’une réponse à un client.</li>
+        <li><strong>Travailler au-delà des langues.</strong> Avec Tekkil ma, échangez avec vos partenaires en wolof, français, anglais, chinois mandarin, arabe ou espagnol.</li>
+      </ul>
+      <blockquote class="audience-example"><span>Dites-lui, par exemple</span>« Bia, explique-moi ce devis fournisseur et aide-moi à préparer notre réponse. »</blockquote>
+    </article>
+  </div>
+
+  <div class="audience-grid">
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10h18l-2-6H5zM4 10v11h16V10M8 21v-7h5v7M2 10c0 4 5 4 5 0 0 4 5 4 5 0 0 4 5 4 5 0 0 4 5 4 5 0"/></svg></div>
+      <h3>Les commerçants et boutiques</h3>
+      <strong class="audience-promise">Votre commerce, à portée de voix.</strong>
+      <p>Dictez une vente, une commande ou une somme à récupérer. Bia vous aide à suivre vos dettes clients, votre caisse et votre stock dans le carnet de commerce. Préparez aussi vos messages de relance et vos annonces Jaayal ma.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« Awa me doit 15 000 francs. Note-le dans mon carnet. »</blockquote>
+    </article>
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 5 5 5M9 10l5-5 6-2 1 1-2 6-5 5M9 10l5 5-7 7-5-5zM4 7l3-3 3 3-3 3z"/></svg></div>
+      <h3>Les artisans et indépendants</h3>
+      <strong class="audience-promise">Vous créez. Bia vous aide à présenter.</strong>
+      <p>Couturier, menuisier, maçon, mécanicien, coiffeuse : donnez vos prestations, vos quantités et vos prix. Bia prépare un devis ou une facture, vous aide à répondre aux clients et à présenter vos services dans une annonce.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« Prépare un devis pour dix tenues à 12 000 francs chacune. »</blockquote>
+    </article>
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17h18M5 17a7 7 0 0 1 14 0M12 10V7M10 7h4M4 21h16M7 3v2M17 3v2"/></svg></div>
+      <h3>Les restaurants, hôtels et traiteurs</h3>
+      <strong class="audience-promise">Des clients mieux informés.</strong>
+      <p>Rédigez un menu, préparez un devis pour un groupe, notez une commande ou composez un message de confirmation. Avec Tekkil ma, facilitez aussi la conversation avec les clients étrangers et expliquez vos prestations dans leur langue.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« Prépare un message pour présenter notre menu du jour aux clients. »</blockquote>
+    </article>
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8h18l-2 13H5zM7 8l5-6 5 6M9 12v5M15 12v5"/></svg></div>
+      <h3>Les éleveurs, pêcheurs et producteurs</h3>
+      <strong class="audience-promise">Faites connaître ce que vous vendez.</strong>
+      <p>Bia vous aide à préparer une annonce Jaayal ma pour vos animaux et des messages de vente pour le poisson ou les produits locaux. Décrivez vos offres, répondez aux acheteurs et retrouvez vos commandes ou les sommes à recevoir.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« Bia, jaayal ma : aide-moi à présenter mes moutons avec leurs photos. »</blockquote>
+    </article>
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m2 8 10-5 10 5-10 5zM6 10v7c4 3 8 3 12 0v-7M22 8v8"/></svg></div>
+      <h3>Les élèves, étudiants et apprentis</h3>
+      <strong class="audience-promise">Comprendre, puis progresser.</strong>
+      <p>Photographiez un exercice ou une leçon. Bia vous aide à comprendre la consigne, reprend les explications étape par étape et donne des exemples. Travaillez votre français, votre wolof ou préparez votre programme de révision à votre rythme.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« Explique-moi cet exercice simplement, puis donne-moi un autre exemple. »</blockquote>
+    </article>
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H5v20h14V7zM14 2v5h5M8 15h8M8 18h6"/><circle cx="10" cy="10" r="2"/></svg></div>
+      <h3>Les salariés et candidats à l’emploi</h3>
+      <strong class="audience-promise">Mettez vos compétences en mots.</strong>
+      <p>Présentez votre expérience pour préparer le texte d’un CV ou d’une candidature. Bia vous aide à comprendre une offre, rédiger un mail professionnel et vous entraîner aux questions d’un entretien, en parlant naturellement.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« J’ai travaillé trois ans en boutique. Aide-moi à préparer ma candidature. »</blockquote>
+    </article>
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m2 11 8 2 3 9 3-19zM10 13l6-10M5 19l-2 2"/></svg></div>
+      <h3>Les voyageurs, chauffeurs et la diaspora</h3>
+      <strong class="audience-promise">Trouvez vos repères et les bons mots.</strong>
+      <p>Cherchez une adresse, préparez un trajet et demandez les informations utiles avant de partir. Avec Tekkil ma, échangez avec un interlocuteur qui parle une autre langue. Bia vous aide à comprendre sa demande et à vous faire comprendre.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« Trouve cette adresse et aide-moi à l’expliquer à mon client en anglais. »</blockquote>
+    </article>
+    <article class="audience-card">
+      <div class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8M5 10v11h14V10M9 21v-7h6v7"/></svg></div>
+      <h3>Les familles, parents et aînés</h3>
+      <strong class="audience-promise">Un coup de main au quotidien.</strong>
+      <p>Faites lire un courrier, une facture ou une ordonnance et demandez une explication dans votre langue. Programmez un rappel de médicament, cherchez une pharmacie ou accompagnez un enfant dans ses leçons. Bia peut aussi raconter une histoire et tenir compagnie.</p>
+      <blockquote class="audience-example"><span>Dites-lui</span>« Lis-moi ce courrier en wolof et explique-moi ce que je dois faire. »</blockquote>
+    </article>
+  </div>
+
+  <div class="audience-everyone">
+    <div><h3>Et pour chacun, une Xarit.</h3><p>Réfléchir à une décision, préparer un projet, écrire à un proche, demander conseil ou simplement discuter : commencez par ce qui compte pour vous. À l’aise avec l’écrit ou non, vous pouvez parler à Bia.</p></div>
+    <a class="btn" href="https://app.khalam.app">Parler à Bia <span aria-hidden="true">&nbsp;↗</span></a>
+  </div>
 </section>
 
 <section class="section pass" id="pass"><div class="wrap">

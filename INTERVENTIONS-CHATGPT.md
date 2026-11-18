@@ -130,3 +130,28 @@ Revue statique : dix captures, indices de 0 à 9 et numéros de 01 à 10 cohére
 ### Origine
 
 Modification réalisée par ChatGPT sur instruction directe du propriétaire de Bia.
+
+
+## 18 novembre 2026 — Une présentation concrète des publics de Bia
+
+### Instruction du propriétaire
+
+Lamine a demandé d'enrichir la section « Pour qui », jugée trop légère commercialement, en montrant notamment l'utilité de Bia pour les paysans à partir d'une photo de plante, pour les entreprises et pour le grand public. Sa capture confirme la section `#publics` de la vitrine officielle.
+
+### Modification effectuée
+
+- Remplacement des cinq brèves cartes par dix publics, chacun avec des usages concrets et un exemple de demande à Bia.
+- Mise en avant des agriculteurs/maraîchers et des entreprises/PME/associations dans deux cartes plus développées.
+- Ajout des artisans, métiers de restauration et d'accueil, éleveurs/pêcheurs/producteurs, candidats à l'emploi ; développement des usages commerce, apprentissage, déplacements et famille.
+- Agriculture : photo et discussion des signes visibles, causes possibles, entretien et pistes de traitement à faire confirmer. Aucun diagnostic certain ni dosage automatique de pesticide promis.
+- Entreprise : documents, devis/factures calculés et PDF à relire, messages, échanges avec Tekkil ma. Aucun envoi autonome ni logiciel de comptabilité complète promis.
+- Annonces Jaayal ma réservées aux catégories existantes ; messages commerciaux pour les récoltes, poissons et produits locaux.
+- Conservation de l'identité bleue. Styles limités à `#publics`, disposition en une, deux ou quatre colonnes selon la largeur ; conclusion ouverte à tous et lien « Parler à Bia ».
+
+### Vérifications
+
+Capacités vérifiées en lecture seule dans `bia-render`, révision `cf566228b22d3600ab34359cc6e6e954d77418fc` : registre des capacités, consignes, vision, documents/PDF, carnet, Tekkil ma et catégories Jaayal ma. Dix cartes et dix exemples ; identifiants uniques. Comparaison confirmant que le contenu de `bia.html` hors `#publics` et hors son nouveau bloc CSS est identique à la révision publiée `b593859fa07429b7b996b736e2dae2bb14ccdd4c`.
+
+### Périmètre
+
+Fichiers : `bia.html` et ce journal. Intervention réalisée par ChatGPT sur instruction directe du propriétaire, dans le dépôt de la vitrine `khalam`.
