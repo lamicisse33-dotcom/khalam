@@ -326,12 +326,40 @@ body{
 @media(max-width:760px){#publics .audience-featured{grid-template-columns:1fr}#publics .audience-card--featured{padding:25px}#publics .audience-everyone{align-items:flex-start;flex-direction:column;padding:26px}}
 @media(max-width:580px){#publics .audience-grid{grid-template-columns:1fr}#publics .head p{font-size:16px}#publics .audience-card{padding:23px}#publics .audience-card h3{font-size:25px}#publics .audience-card--featured h3{font-size:29px}#publics .audience-card p{font-size:15px}#publics .audience-modes{gap:7px}#publics .audience-modes li{font-size:12px;padding:6px 10px}#publics .audience-everyone h3{font-size:28px}}
 </style>
+<style>
+/* En-tête compact et partage de la page officielle. */
+.nav-in{gap:18px}
+.nav-actions{display:flex;align-items:center;gap:10px;flex:none}
+.nav-actions .cta{width:auto;white-space:nowrap;flex:none}
+.bia-page-share{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;padding:9px 13px;border:1px solid #78bff1;border-radius:999px;background:#f5fcff;color:#0b477d;font:700 12px/1.3 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;white-space:nowrap;flex:none}
+.bia-page-share svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bia-page-share:focus-visible,.bia-share-dialog button:focus-visible,.bia-share-dialog a:focus-visible{outline:3px solid #005bca;outline-offset:3px}
+.hero .mobile-pass{display:none}
+.footer .bia-page-share{font-size:12px}
+.bia-share-dialog{width:min(470px,calc(100vw - 28px));max-height:calc(100dvh - 28px);padding:0;border:1px solid #87c7f4;border-radius:22px;background:#f3fbff;color:#0b2d60;box-shadow:0 22px 80px #092c5359;overflow:auto}
+.bia-share-dialog:not([open]){display:none}
+.bia-share-dialog::backdrop{background:#09284399;backdrop-filter:blur(4px)}
+.bia-share-inner{padding:24px}
+.bia-share-head{display:flex;align-items:flex-start;gap:12px;justify-content:space-between;margin-bottom:12px}
+.bia-share-head h2{font:500 27px/1.2 Georgia,serif;margin:2px 0 0;color:#08265b}
+.bia-share-close{display:grid;place-items:center;min-width:44px;min-height:44px;padding:0;border:1px solid #b0d8f3;border-radius:50%;background:#fff;color:#164875;font-size:24px;cursor:pointer}
+.bia-share-dialog p{color:#436384;font-size:14px;line-height:1.65;margin:0 0 18px}
+.bia-share-whatsapp,.bia-share-copy{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:12px 16px;border-radius:12px;font-weight:750;font-size:15px;cursor:pointer}
+.bia-share-whatsapp{border:1px solid #087b47;background:#087b47;color:#fff;margin-bottom:20px}
+.bia-share-dialog label{display:block;font-size:12px;font-weight:750;margin-bottom:7px;color:#365c7e}
+.bia-share-dialog input{display:block;width:100%;min-width:0;min-height:48px;padding:10px 12px;border:1px solid #a2cdea;border-radius:10px;background:#fff;color:#133d68;font-size:16px}
+.bia-share-copy{margin-top:10px;border:1px solid #096ac0;background:#0879ee;color:#fff}
+.bia-share-dialog .bia-share-status{min-height:23px;margin:12px 0 0;color:#145f3d}
+@media(min-width:901px) and (max-width:1100px){.nav-in{gap:12px}.nav .links{gap:16px;font-size:12px}.nav .bia-page-share .share-label{display:none}.nav .bia-page-share{padding:9px;width:44px}}
+@media(max-width:900px){.nav-in{height:60px;gap:12px}.nav .brand{flex:none}.nav-actions .cta{display:none}.nav .bia-page-share{padding:9px 12px}.hero .mobile-pass{display:inline-flex}.hero .desktop-pass{display:none}}
+@media(max-width:580px){.bia-share-inner{padding:20px}.bia-share-head h2{font-size:25px}}
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
 <a class="brand" href="/"><span class="mark">K</span><span>KHALAM</span></a>
 <nav class="links"><a href="#services">Services</a><a href="#jaayalma">Jaayal ma</a><a href="#amie">Une vraie amie</a><a href="#publics">Pour qui</a><a href="#application">L’application</a><a href="#pass">Les pass</a></nav>
-<a class="cta" href="#demander">Demander un pass</a>
+<div class="nav-actions"><button class="bia-page-share" type="button" data-bia-page-share aria-label="Partager la page officielle de Bia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"/></svg><span class="share-label">Partager Bia</span></button><a class="cta" href="#demander">Demander un pass</a></div>
 </div></header>
 
 <main>
@@ -340,7 +368,7 @@ body{
 <div class="eyebrow">Créée à Dakar · Wolof · Français · Voix · Vision</div>
 <h1>Bia Xarit.<br><em>Parlez. Elle s’occupe du reste.</em></h1>
 <p class="lead">Bia Xarit est l’intelligence artificielle de KHALAM pensée pour la vraie vie. Vous lui parlez comme à une personne. Elle vous écoute, vous répond à la voix, vous aide à comprendre, écrire, traduire, chercher, vous déplacer, gérer votre activité — ou simplement discuter quand vous en avez envie.</p>
-<div class="actions"><a class="btn" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a></div>
+<div class="actions"><a class="btn mobile-pass" href="#demander">Demander un pass</a><a class="btn desktop-pass" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a></div>
 <p class="microcopy">Pas besoin de connaître l’informatique. Votre voix suffit.</p>
 </div>
 <div class="hero-art"><div class="orb"></div>
@@ -627,7 +655,62 @@ body{
 </div></section>
 </main>
 
-<footer class="wrap footer"><span>KHALAM · Dakar, Sénégal</span><span>Bia Xarit — Parlez. Elle s’occupe du reste.</span><span>© 2026 KHALAM</span></footer>
+<footer class="wrap footer"><span>KHALAM · Dakar, Sénégal</span><span>Bia Xarit — Parlez. Elle s’occupe du reste.</span><button class="bia-page-share" type="button" data-bia-page-share aria-label="Partager la page officielle de Bia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"/></svg><span>Partager Bia</span></button><span>© 2026 KHALAM</span></footer>
+
+<dialog class="bia-share-dialog" id="bia-share-dialog" aria-labelledby="bia-share-title" aria-describedby="bia-share-description">
+  <div class="bia-share-inner">
+    <div class="bia-share-head"><h2 id="bia-share-title">Partager la page officielle de Bia</h2><button class="bia-share-close" type="button" aria-label="Fermer le partage" autofocus>×</button></div>
+    <p id="bia-share-description">Faites découvrir Bia à vos proches, à vos clients ou à vos collègues.</p>
+    <a class="bia-share-whatsapp" id="bia-share-whatsapp" href="https://wa.me/?text=D%C3%A9couvrez%20Bia%20Xarit%2C%20l%E2%80%99assistante%20qui%20parle%20wolof%20et%20fran%C3%A7ais.%0Ahttps%3A%2F%2Fkhalam.app%2Fbia" target="_blank" rel="noopener noreferrer">Partager sur WhatsApp</a>
+    <label for="bia-share-url">Lien de la page officielle</label>
+    <input id="bia-share-url" type="url" value="https://khalam.app/bia" readonly spellcheck="false" aria-label="Lien de la page officielle de Bia à copier">
+    <button class="bia-share-copy" type="button">Copier le lien</button>
+    <p class="bia-share-status" id="bia-share-status" role="status" aria-live="polite"></p>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  const pageUrl='https://khalam.app/bia';
+  const shareData={title:'Bia Xarit — page officielle',text:'Découvrez Bia Xarit, l’assistante qui parle wolof et français.',url:pageUrl};
+  const dialog=document.getElementById('bia-share-dialog');
+  const closeButton=dialog.querySelector('.bia-share-close');
+  const copyButton=dialog.querySelector('.bia-share-copy');
+  const urlInput=document.getElementById('bia-share-url');
+  const status=document.getElementById('bia-share-status');
+  let opener=null,sharing=false;
+  function openOptions(button){
+    if(typeof dialog.showModal!=='function'){window.prompt('Lien de la page officielle de Bia à copier :',pageUrl);return;}
+    opener=button;status.textContent='';
+    if(!dialog.open)dialog.showModal();
+  }
+  document.querySelectorAll('[data-bia-page-share]').forEach(button=>{
+    button.addEventListener('click',async()=>{
+      if(sharing)return;
+      if(typeof navigator.share==='function'){
+        sharing=true;
+        try{await navigator.share(shareData);return;}
+        catch(error){if(error&&error.name==='AbortError')return;}
+        finally{sharing=false;}
+      }
+      openOptions(button);
+    });
+  });
+  closeButton.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+  dialog.addEventListener('close',()=>{status.textContent='';if(opener)opener.focus();});
+  copyButton.addEventListener('click',async()=>{
+    try{
+      if(!navigator.clipboard||typeof navigator.clipboard.writeText!=='function')throw new Error('copy-unavailable');
+      await navigator.clipboard.writeText(pageUrl);
+      status.textContent='Lien de la page officielle copié.';
+    }catch(error){
+      urlInput.focus();urlInput.select();
+      status.textContent='Sélectionnez et copiez ce lien pour partager la page.';
+    }
+  });
+})();
+</script>
 
 <script>
 (function(){

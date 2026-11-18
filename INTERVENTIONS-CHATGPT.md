@@ -157,3 +157,26 @@ Rendu publié vérifié sur ordinateur : deux cartes principales et quatre colon
 ### Périmètre
 
 Fichiers : `bia.html` et ce journal. Intervention réalisée par ChatGPT sur instruction directe du propriétaire, dans le dépôt de la vitrine `khalam`.
+
+
+## 18 novembre 2026 — En-tête mobile allégé et partage de la page officielle
+
+### Instruction du propriétaire
+
+Le bouton bleu « Demander un pass » prend trop de place dans l'en-tête sur téléphone. Lamine demande de le repositionner et d'ajouter le partage de la page officielle de présentation, avec confirmation explicite que la cible est `https://khalam.app/bia`.
+
+### Modification effectuée
+
+- Jusqu'à 900 pixels, retrait du bouton de demande de l'en-tête fixe et déplacement dans les actions de l'introduction, à la place de « Voir les pass ». En-tête réduit à 60 pixels avec le logo et un bouton de partage compact.
+- Sur ordinateur, conservation de « Demander un pass » dans l'en-tête ; espacement adapté au seuil de réapparition du menu.
+- Boutons « Partager Bia » dans l'en-tête et le pied de page. Partage natif depuis le clic lorsque disponible ; sinon choix WhatsApp, copie du lien ou copie manuelle.
+- Cible fixe : `https://khalam.app/bia`, sans fragment ni paramètre. L'application `app.khalam.app` n'est jamais utilisée comme cible du partage.
+- Annulation du partage natif sans effet secondaire ; confirmation de copie uniquement après réussite ; dialogue accessible et retour du focus à la fermeture.
+
+### Vérifications avant publication
+
+Syntaxe JavaScript valide, identifiants uniques, deux boutons de partage. Sections « Pour qui », galerie, pass et formulaire identiques à la révision `12bde4ccf2d062f9854fdf104b029d163db73a90`.
+
+### Périmètre
+
+Fichiers : `bia.html` et ce journal. Modification de la vitrine uniquement, réalisée par ChatGPT sur instruction directe du propriétaire.
