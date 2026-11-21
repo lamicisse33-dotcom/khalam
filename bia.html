@@ -593,6 +593,77 @@ body{
   .hero-art .bia-safe-waves,.hero-art .bia-safe-rings{animation:none!important}
 }
 </style>
+
+<style>
+/* BIA WAVES ENHANCEMENT 2026-11-21 — amplifie UNIQUEMENT les ondes, aucune règle de layout générale. */
+.hero-art .bia-ambient-safe{
+  inset:-11% -13%;
+  width:126%;height:122%;
+  opacity:1;
+  overflow:visible;
+  filter:drop-shadow(0 0 7px rgba(225,186,113,.45))
+         drop-shadow(0 0 14px rgba(103,166,230,.28));
+}
+/* Les tracés restent derrière le portrait; aucun panneau ne recouvre le visage. */
+.hero-art .bia-ambient-safe .bia-safe-waves path{
+  stroke-width:3.2px;
+  opacity:.72;
+  vector-effect:non-scaling-stroke;
+}
+.hero-art .bia-ambient-safe .bia-safe-waves path:nth-child(3n){
+  stroke-width:2.5px;opacity:.58;
+}
+.hero-art .bia-ambient-safe .bia-safe-rings ellipse{
+  stroke-width:2.3px;
+  opacity:.68;
+  vector-effect:non-scaling-stroke;
+}
+.hero-art .bia-ambient-safe .bia-safe-rings ellipse:nth-child(2n){
+  stroke-width:1.6px;opacity:.52;
+}
+.hero-art .bia-safe-waves{
+  transform-box:view-box;transform-origin:center;
+  animation:bia-waves-moving 5.8s ease-in-out infinite alternate,
+            bia-waves-brightness 8s ease-in-out infinite;
+}
+.hero-art .bia-safe-rings{
+  transform-box:view-box;transform-origin:center;
+  animation:bia-rings-moving 4.8s ease-in-out infinite alternate;
+}
+.hero-art>.portrait{z-index:3}
+.hero-art>.bubble{z-index:4}
+@keyframes bia-waves-moving{
+  0%{transform:translate(-26px,12px) scale(1.02) skewY(-3deg)}
+  25%{transform:translate(2px,-8px) scale(1.065) skewY(2deg)}
+  50%{transform:translate(28px,10px) scale(1.11) skewY(-2deg)}
+  75%{transform:translate(1px,-14px) scale(1.07) skewY(3deg)}
+  100%{transform:translate(-23px,6px) scale(1.035) skewY(-2deg)}
+}
+@keyframes bia-waves-brightness{
+  0%,100%{opacity:.58}
+  35%,65%{opacity:1}
+}
+@keyframes bia-rings-moving{
+  0%{transform:scale(.96) rotate(-2.5deg);opacity:.66}
+  50%{transform:scale(1.055) rotate(1deg);opacity:1}
+  100%{transform:scale(1.085) rotate(3deg);opacity:.78}
+}
+@media(max-width:580px){
+  .hero-art .bia-ambient-safe{
+    inset:-8% -8%;width:116%;height:116%;
+    opacity:.88;
+  }
+  .hero-art .bia-ambient-safe .bia-safe-waves path{
+    stroke-width:2.5px;opacity:.7;
+  }
+  .hero-art .bia-ambient-safe .bia-safe-rings ellipse{
+    stroke-width:1.8px;opacity:.62;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-art .bia-safe-waves,.hero-art .bia-safe-rings{animation:none!important}
+}
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
