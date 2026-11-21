@@ -1,0 +1,33 @@
+name: Import approved official Bia media
+on:
+  push:
+    paths:
+      - .github/workflows/import-bia-official-images.yml
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download approved user-supplied originals and verify SHA256
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p medias-officiels/images
+          curl -fL --retry 3 --max-time 90 "https://d2jqrm6oza8nb6.cloudfront.net/datasets/0ff85af5-e055-4a9a-994c-08cbc0b4a422.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMWRjZGY0NmQ3MjAyMTBmZSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NTM0NTUxN30.KOlTrx7FNi-UR37DQQOfPyLvBS_-HivIue_N8eVfBiw" -o "medias-officiels/images/bia-xarit-icone-officielle.png"
+          echo "3db5c0c136b9011de28342040c5fcbc02c0b228c9b2885cceea797249a0896a8  medias-officiels/images/bia-xarit-icone-officielle.png" | sha256sum --check --status
+          curl -fL --retry 3 --max-time 90 "https://d2jqrm6oza8nb6.cloudfront.net/datasets/e71baff9-cd4d-41e4-808b-d05decf8c9ff.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiM2JkNGI4M2VkNzc5MWExYSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NTM5MzM0Mn0.OnLBbE3uKoQ3nTtoiN01kaEOX3vpJkdX25828z7GUyM" -o "medias-officiels/images/bia-xarit-personnage-officiel.png"
+          echo "9501b8107e50ac2ac9bfbda0c6b687bf69da3dc2a31201481821ad617d7718ba  medias-officiels/images/bia-xarit-personnage-officiel.png" | sha256sum --check --status
+          curl -fL --retry 3 --max-time 90 "https://d2jqrm6oza8nb6.cloudfront.net/datasets/0632e269-b543-412e-9882-14daed07eb2c.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjAzZWEyN2M0MTYxODk0ZiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NTMzMzI0NH0.i_WcmhmPXe4BmNw7xy5RqKxsLO1O4gCxQG0lPUVbpBc" -o "medias-officiels/images/bia-xarit-interface-mobile-officielle.png"
+          echo "cc1b922a93be9f3a4f11ea565bd36c643320fb0301f5a388abb669ed1a88ae54  medias-officiels/images/bia-xarit-interface-mobile-officielle.png" | sha256sum --check --status
+      - name: Commit verified images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add medias-officiels/images/*.png
+          git diff --cached --quiet || { git commit -m "Assets officiels Bia : trois images fournies et vérifiées"; git push; }
