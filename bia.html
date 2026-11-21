@@ -356,6 +356,37 @@ body{
 @media(max-width:900px){.nav-in{height:60px;gap:12px}.nav .brand{flex:none}.nav-actions .cta{display:none}.nav .bia-page-share{padding:9px 12px}.hero .mobile-pass{display:inline-flex}.hero .desktop-pass{display:none}}
 @media(max-width:580px){.bia-share-inner{padding:20px}.bia-share-head h2{font-size:25px}}
 </style>
+
+<!-- Thème blanc et bleu, présentation officielle Bia Xarit (21 novembre 2026) -->
+<style id="bia-theme-blanc">
+:root{--bg:#ffffff;--bg2:#f8fbff;--panel:#ffffff;--panel2:#f7faff;--line:#c8dcf2;--text:#092b54;--muted:#4d6885;--bia-sky:#ffffff;--bia-sky2:#ffffff;--bia-white:#fff;--bia-ink:#0c315c;--bia-muted:#4d698b;--bia-line:#b6d4f0}
+html{background:#fff;color-scheme:light}
+body{background:#fff!important;color:#0b3058}
+.nav{background:rgba(255,255,255,.96);border-bottom:1px solid #c4dbf2;box-shadow:0 6px 22px #1b599a0a}
+.hero,.hero-art,.section,.section.friend,.gallery,.pass,#application.bia-app-gallery{background:#fff}
+.section.friend,.gallery,.pass,#application.bia-app-gallery{border-top:1px solid #d6e6f5;border-bottom:1px solid #d6e6f5}
+#application.bia-app-gallery{background:#fff}
+.strip{background:#fff;border:1px solid #bed7f0;box-shadow:0 12px 32px rgba(23,91,150,.06)}
+.strip div{border-color:#c8def3}
+.card,.story-card,.shot,.price,.pass-note,.always div,.form,.bullet,.audience-card,#publics .audience-card,#publics .audience-card--featured,#publics .audience-card--enterprise,#publics .audience-everyone{
+ background:#fff;border-color:#bfd8f1;box-shadow:0 10px 28px rgba(29,97,160,.055);color:#123a66
+}
+.card .ico{background:#e9f4ff;border:1px solid #cde4fa;color:#0e6dcb}
+.chip,#publics .audience-modes li{background:#f0f7ff;color:#124b8b;border-color:#b6d5f2}
+.hero h1,.head h2,.friend-copy h2,.request h2,.card h3,.story-card blockquote{color:#082b56}
+.lead,.microcopy,.head p,.friend-copy p,.card p,.story-card small,.price .mins,.pass-note{color:#456587}
+.bubble{background:#fff;border-color:#b9d9f6;color:#143b69}
+.bubble b,.eyebrow{color:#0a69c3}
+.orb{border-color:#b4dafa;box-shadow:0 0 90px rgba(8,121,238,.07)}
+.form{background:#fff}
+.form input,.form select{background:#fff;border-color:#accdee;color:#143b69}
+.price.best{border:2px solid #1380e6}
+.footer{border-color:#d4e4f5;color:#567392}
+#jaayalma .story-card,#amie .story-card{background:#fff}
+#application .bia-screen-dialog-media{background:#f4f8ff}
+#application .bia-screen-dialog{background:#fff}
+@media(prefers-color-scheme:dark){html{color-scheme:light}body{background:#fff!important}}
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
@@ -369,10 +400,8 @@ body{
 <div>
 <div class="eyebrow">Créée à Dakar · Wolof · Français · Voix · Vision</div>
 <h1>Bia Xarit.<br><em>Parlez. Elle s’occupe du reste.</em></h1>
-<p class="microcopy" style="font-size:15px;color:#c3d8ec">Assistante vocale intelligente en wolof et en français, créée à Dakar par KHALAM.</p>
-<p class="lead">Bia Xarit est l’intelligence artificielle de KHALAM pensée pour la vraie vie. Vous lui parlez comme à une personne. Elle vous écoute, vous répond à la voix, vous aide à comprendre, écrire, traduire, chercher, vous déplacer, gérer votre activité — ou simplement discuter quand vous en avez envie.</p>
+<p class="lead">Bia Xarit est une IA vocale créée à Dakar par KHALAM. En wolof ou en français, demandez-lui de vous expliquer une leçon, de préparer un document, de retrouver une information ou de vous accompagner au quotidien.</p>
 <div class="actions"><a class="btn mobile-pass" href="#demander">Demander un pass</a><a class="btn desktop-pass" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a></div>
-<p class="microcopy">Pas besoin de connaître l’informatique. Votre voix suffit.</p>
 </div>
 <div class="hero-art"><div class="orb"></div>
 <div class="bubble b1"><b>Wolof · Français</b>Une IA qui parle votre langue.</div>
@@ -382,27 +411,25 @@ body{
 </section>
 
 <div class="wrap strip">
-<div><strong>Jaayal Ma Lii</strong>Vendez vite, en toute discrétion.</div>
+<div><strong>Jaayal Ma Lii</strong>Petites annonces au Sénégal.</div>
 <div><strong>Tekkil ma</strong>Deux personnes. Deux langues.</div>
-<div><strong>Un pass, toute Bia</strong>Conversation, documents, carnet, Tekkil ma…</div>
-<div><strong>À partir de 500 F</strong>Vous payez le temps utilisé.</div>
+<div><strong>Bia Professeur</strong>Du CI à la Terminale.</div>
+<div><strong>À partir de 500 F</strong>Pass à la durée d’utilisation.</div>
 </div>
 
 <section class="section wrap" id="services">
-<div class="head"><div class="eyebrow">Ce que Bia fait pour vous</div><h2>Une seule Bia. Des capacités et des services infinis.</h2><p>Vous imaginez ce que vous voulez faire, Bia vous accompagne. Pas de menus compliqués : vous le dites, elle comprend.</p></div>
+<div class="head"><div class="eyebrow">Ce que Bia fait pour vous</div><h2>Découvrez les services de Bia.</h2><p>Une IA vocale en wolof et en français pour apprendre, travailler et vous organiser.</p></div>
 <div class="service-grid">
 <article class="card" id="professeur"><div class="ico">🧑🏾‍🏫</div><h3>Bia Professeur — nouveau</h3><p>« Bia Professeur, je suis en 4e : explique-moi les fractions. » L’écran devient un tableau d’école : Bia écrit chaque étape en parlant, les formules s’affichent proprement, chaque calcul est vérifié avant d’être écrit, et elle corrige les réponses de l’élève. Du CI à la Terminale, BFEM et Bac, en maths, sciences, français et plus.</p><p>Elle enseigne aussi l’<strong>arabe</strong>, l’<strong>anglais</strong> et l’<strong>espagnol</strong> à ceux qui partent de zéro : l’alphabet arabe lettre par lettre, de droite à gauche avec les voyelles, la prononciation, les mots du quotidien, expliqués en wolof ou en français. Et elle se souvient où l’élève s’est arrêté.</p><p class="quote">Un professeur patient, à toute heure. « Jàngal ma. »</p></article>
 <article class="card"><div class="ico">🌍</div><h3>Tekkil ma</h3><p>Ouvrez un salon, envoyez le lien par WhatsApp et parlez chacun dans votre langue : wolof, français, anglais, arabe, espagnol ou chinois mandarin. Chaque échange est gardé par écrit dans « Mes conversations », avec recherche et PDF : la trace d’une commande, d’un prix ou d’un accord.</p><p class="quote">Deux personnes. Deux langues. Une conversation.</p></article>
 <article class="card"><div class="ico">📄</div><h3>Lire vos documents</h3><p>Ordonnance, facture, courrier, contrat ou document photographié : Bia le lit et vous l’explique en wolof ou en français. Si une ligne est illisible, elle le dit au lieu de deviner.</p></article>
 <article class="card"><div class="ico">⏰</div><h3>Rappels et santé pratique</h3><p>« Rappelle-moi mon médicament à 8 h. » Bia programme le rappel, retrouve la pharmacie ou l’hôpital le plus proche et donne les numéros de secours utiles.</p></article>
-<article class="card"><div class="ico">🏷️</div><h3>Jaayal Ma Lii — vendre et acheter</h3><p>« Bia, jaayal ma lii. » Dites ce que vous vendez, ajoutez une photo, c’est en ligne après vérification par KHALAM. Et quand vous cherchez une voiture, une chambre ou un frigo, Bia vous lit les annonces et vous met en contact.</p><p class="quote">Vendez vite. Vendez discret. Vendez vérifié.</p></article>
 <article class="card"><div class="ico">🔎</div><h3>Recherche</h3><p>Prix, météo, horaire, actualité, adresse : vous demandez, elle cherche et vous présente clairement ce qu’elle trouve.</p></article>
 <article class="card"><div class="ico">🗺️</div><h3>Vous guider</h3><p>Bia ouvre la carte, utilise votre position pour le trajet et vous indique destination, direction, distance et temps restant ; votre point avance avec vous sur le trajet. Votre position n’est pas conservée.</p></article>
 <article class="card"><div class="ico">✍🏾</div><h3>Vous parlez. Elle écrit.</h3><p>Message WhatsApp, email, devis ou facture : vous dictez, Bia rédige. Vos devis et factures peuvent devenir des PDF prêts à partager.</p></article>
 <article class="card"><div class="ico">📒</div><h3>Carnet du commerce</h3><p>Dettes, caisse, commandes et stock. « Moussa me doit 15 000. » Bia enregistre, calcule et vous relit vos chiffres sans en inventer.</p></article>
 <article class="card"><div class="ico">🧠</div><h3>Elle se souvient</h3><p>Bia retient ce que vous choisissez de lui confier et peut s’en servir la prochaine fois pour vous répondre avec plus de continuité.</p></article>
 <article class="card"><div class="ico">📸</div><h3>Images, vidéos et photo</h3><p>« Montre-moi le Lac Rose. » Bia affiche des images ou une vidéo. « Prends-moi une photo. » Elle ouvre l’appareil, compte 3-2-1 et la photo reste sur votre téléphone.</p></article>
-<article class="card"><div class="ico">📚</div><h3>Apprendre et comprendre</h3><p>Une leçon, un SMS en wolof, un nombre, une traduction, une explication : demandez à Bia de reprendre simplement avec vous.</p></article>
 <article class="card"><div class="ico">💬</div><h3>Conseils du quotidien</h3><p>Couple, famille, travail, décision difficile, organisation personnelle : Bia écoute, échange, aide à prendre du recul et donne un avis sans remplacer un professionnel quand il en faut un.</p></article>
 <article class="card"><div class="ico">🎭</div><h3>Histoires, contes et humour</h3><p>Demandez-lui une histoire, un conte, une blague ou simplement de parler avec vous. Bia peut aussi tenir compagnie et vous accompagner comme une vraie amie.</p></article>
 <article class="card"><div class="ico">🎨</div><h3>Votre Bia, à votre goût</h3><p>Huit personnages au choix (Bia Wax, Bia Soleil, Bia Ocre, Bia Saphir, Bia Portrait, Bia Perle, Bia Lune, Bia Étoile) ou l’écran aux ondulations ; une voix de femme ou d’homme. « Mets Bia Lune » : elle change à la voix.</p></article>
@@ -410,7 +437,7 @@ body{
 </section>
 
 <section class="section friend" id="jaayalma"><div class="wrap friend-grid">
-<div class="friend-copy"><div class="eyebrow">Nouveau · Jaayal Ma Lii</div><h2>Vous avez quelque chose à vendre ? Dites-le à Bia.</h2><p>Jaayal Ma Lii, c’est le marché de KHALAM, dans votre poche. Une voiture, une chambre à louer, un frigo, un mouton, un bijou : vous le dites à Bia, en wolof ou en français, vous ajoutez une ou deux photos, et votre annonce part chez KHALAM. Nous la vérifions, puis elle est en ligne sur <a href="https://jaayalma.khalam.app" style="text-decoration:underline;font-weight:600">jaayalma.khalam.app</a>, dans sa rubrique, avec votre WhatsApp. Les acheteurs la trouvent ; Bia la leur lit.</p>
+<div class="friend-copy"><div class="eyebrow">Nouveau · Jaayal Ma Lii</div><h2>Vous avez quelque chose à vendre ? Dites-le à Bia.</h2><p>Pour déposer une annonce, décrivez votre bien à Bia et joignez une photo. Après vérification par KHALAM, elle est publiée sur <a href="https://jaayalma.khalam.app" style="text-decoration:underline;font-weight:600">jaayalma.khalam.app</a>, où les acheteurs peuvent la consulter. Bia peut aussi vous aider à chercher un bien.</p>
 <div class="bullets">
 <div class="bullet"><strong>Vendre gratuitement :</strong> l’annonce simple est gratuite, 30 jours en ligne. Vous la dictez, KHALAM la vérifie, elle est publiée.</div>
 <div class="bullet"><strong>Vendre vite :</strong> la Vente rapide (2 000 F) garde votre annonce en tête de sa rubrique pendant 30 jours. Pour ceux qui ont besoin de l’argent maintenant, pas le mois prochain.</div>
@@ -419,22 +446,16 @@ body{
 <div class="bullet"><strong>Acheter tranquille :</strong> six rubriques, des annonces vraies, le vendeur joignable. Et si vous dites « Bia, cherche-moi une Corolla à Pikine », elle vous lit ce qu’il y a.</div>
 </div>
 <div class="actions"><a class="btn" href="https://jaayalma.khalam.app">Voir les annonces</a><a class="btn alt" href="#pass">Déposer avec Bia</a></div>
-<p class="microcopy">Annonce simple : gratuite, 30 jours en ligne. Vente rapide : 2 000 F, en tête 30 jours. Vente rapide + discrétion : 3 000 F.</p></div>
+</div>
 <div class="jaayalma-visual">
 <figure class="jaayalma-preview"><a href="https://jaayalma.khalam.app/r/electromenager.html" aria-label="Voir les annonces Électroménager et maison sur Jaayal Ma Lii"><img src="/bia-media/ecrans-2026-11-18/jaayalma-ordinateur.jpg" alt="Le site Jaayal Ma Lii et ses annonces dans la rubrique Électroménager et maison" width="1348" height="926" loading="lazy" decoding="async"></a><figcaption>Jaayal Ma Lii, les annonces de KHALAM <a href="https://jaayalma.khalam.app/r/electromenager.html">Voir le site ↗</a></figcaption></figure>
 <div class="story-card"><blockquote>« Bia, jaayal ma lii : je vends ma montre, 25 000, Plateau. Urgent, et discret. »<br><br>« C’est noté. Ajoute une photo et touche Envoyer : KHALAM vérifie, et ton annonce passe en tête pendant 30 jours. Personne ne verra ton numéro. »</blockquote><small>Une annonce dictée en trente secondes. Vérifiée par des humains. En ligne le jour même.</small></div>
 </div>
 </div></section>
 
-<section class="section friend" id="quotidien"><div class="wrap friend-grid">
-<div class="friend-copy"><div class="eyebrow">Votre quotidien</div><h2>Une assistante, une conseillère, une Xarit.</h2><p>Bia n’est pas un logiciel compliqué. Vous lui parlez comme à une personne. Elle passe d’une tâche pratique à une conversation, puis revient à votre document ou à votre recherche.</p>
-<div class="bullets"><div class="bullet"><strong>Comprendre :</strong> documents, messages, leçons, informations.</div><div class="bullet"><strong>Faire :</strong> écrire, traduire, chercher, guider, organiser.</div><div class="bullet"><strong>Gérer :</strong> dettes, caisse, commandes, stock — et vos devis et factures.</div><div class="bullet"><strong>Accompagner :</strong> conseils, réflexion, histoires, humour et compagnie.</div></div></div>
-<div class="story-card"><blockquote>« Bia, explique-moi ça en wolof. Ensuite rappelle-moi demain matin, et avant de partir cherche-moi la pharmacie la plus proche. »</blockquote><small>Une seule conversation enchaîne plusieurs besoins, sans changer d’application.</small></div>
-</div></section>
-
 <section class="section friend" id="amie"><div class="wrap friend-grid">
-<div class="friend-copy"><div class="eyebrow">Plus qu’un outil</div><h2>Une vraie amie au quotidien.</h2><p>Parfois, vous avez quelque chose à faire. Parfois, vous avez simplement besoin de parler. Bia sait faire les deux.</p><p>Une question de couple. Une situation familiale. Une idée à réfléchir. Un moment de stress ou de solitude. Une envie de rire. Une histoire avant de dormir. Bia est là pour échanger avec vous, sans jugement.</p><div class="chips"><span class="chip">Conseillère</span><span class="chip">Confidente</span><span class="chip">Compagne de discussion</span><span class="chip">Histoires & contes</span><span class="chip">Blagues</span><span class="chip">Wolof & français</span></div></div>
-<div class="story-card"><blockquote>« Parle avec moi un peu. »<br>« Donne-moi ton avis. »<br>« Raconte-moi un conte. »<br>« Fais-moi rire. »</blockquote><small>Une IA utile quand vous avez quelque chose à faire. Une amie quand vous avez simplement envie de parler.</small></div>
+<div class="friend-copy"><div class="eyebrow">L’accompagnement</div><h2>Une Xarit à votre écoute.</h2><p>Parfois, on a simplement besoin d’échanger. Bia peut écouter une question personnelle, aider à réfléchir ou raconter une histoire, avec une conversation naturelle.</p><div class="chips"><span class="chip">Conseillère</span><span class="chip">Confidente</span><span class="chip">Compagne de discussion</span><span class="chip">Histoires & contes</span><span class="chip">Blagues</span><span class="chip">Wolof & français</span></div></div>
+<div class="story-card"><blockquote>« Parle avec moi un peu. »<br>« Donne-moi ton avis. »<br>« Raconte-moi un conte. »<br>« Fais-moi rire. »</blockquote><small>Des échanges en wolof et en français.</small></div>
 </div></section>
 
 <section class="section gallery bia-app-gallery" id="application" aria-labelledby="bia-gallery-heading">
@@ -648,11 +669,11 @@ body{
 <section class="section pass" id="pass"><div class="wrap">
 <div class="head"><div class="eyebrow">Les pass Bia Xarit</div><h2>Vous payez seulement quand vous utilisez Bia.</h2><p>Le temps où vous laissez l’application ouverte sans l’utiliser ne consomme pas votre pass.</p></div>
 <div class="pricing">
-<div class="price"><h3>Découverte</h3><div class="amount">500 F</div><div class="mins">20 min</div><div class="valid">Vos minutes ne disparaissent pas.</div></div>
-<div class="price best"><h3>Xarit</h3><div class="amount">1 000 F</div><div class="mins">50 min</div><div class="valid">Vos minutes ne disparaissent pas.</div></div>
-<div class="price"><h3>Xarit+</h3><div class="amount">2 000 F</div><div class="mins">120 min</div><div class="valid">Vos minutes ne disparaissent pas.</div></div>
+<div class="price"><h3>Découverte</h3><div class="amount">500 F</div><div class="mins">20 min</div></div>
+<div class="price best"><h3>Xarit</h3><div class="amount">1 000 F</div><div class="mins">50 min</div></div>
+<div class="price"><h3>Xarit+</h3><div class="amount">2 000 F</div><div class="mins">120 min</div></div>
 </div>
-<div class="pass-note"><strong>Vos minutes ne disparaissent pas : vous les utilisez quand vous voulez.</strong> Seul le temps d’utilisation active est compté. Avec un pass, vous accédez à toute l’expérience Bia Xarit. Lorsque le pass se termine, Bia finit ce qu’elle faisait puis reste encore quelques minutes avec vous gratuitement, en français, avec ses fonctions légères.</div>
+<div class="pass-note"><strong>Vos minutes sont conservées jusqu’à utilisation.</strong> Seul le temps d’utilisation active est compté. Chaque pass donne accès aux services Bia Xarit selon ses conditions.</div>
 <div class="always"><div><strong>Urgences toujours accessibles</strong><br>Police · Gendarmerie · Pompiers · SAMU.</div><div><strong>Pharmacie / hôpital proche</strong><br>La recherche de la structure la plus proche reste disponible, pass ou pas.</div></div>
 </div></section>
 
