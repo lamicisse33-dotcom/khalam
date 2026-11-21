@@ -359,6 +359,187 @@ body{
 @media(max-width:900px){.nav-in{height:60px;gap:12px}.nav .brand{flex:none}.nav-actions .cta{display:none}.nav .bia-page-share{padding:9px 12px}.hero .mobile-pass{display:inline-flex}.hero .desktop-pass{display:none}}
 @media(max-width:580px){.bia-share-inner{padding:20px}.bia-share-head h2{font-size:25px}}
 </style>
+
+<style>
+/* BIA PAGE OFFICIELLE — THEME NUIT ET OR — 2026-11-21 18:20:52 Dakar.
+   Restauration : branche restore-bia-page-2026-11-21-182052-dakar.
+   Visuel seulement : pas de modification des textes, liens, scripts ou écrans internes. */
+:root{
+  --bg:#080f23;--bg2:#111e37;--panel:#182745;--panel2:#1c304e;
+  --line:#394764;--gold:#d9b45f;--gold2:#efd39a;--text:#f7f5ee;
+  --muted:#c8d1df;--bia-navy:#f7f5ee;--bia-ink:#f7f5ee;
+  --bia-muted:#c8d1df;--bia-blue:#d9b45f;--bia-blue2:#efd39a;
+  --bia-line:#445879;
+}
+html{scroll-padding-top:76px}
+body{
+  color:#f7f5ee;
+  background:radial-gradient(ellipse at 88% 3%,rgba(38,67,111,.43),transparent 28%),
+             radial-gradient(ellipse at 5% 35%,rgba(174,134,65,.07),transparent 30%),
+             linear-gradient(180deg,#080f23 0%,#101d35 46%,#080f23 100%);
+}
+.nav{
+  background:rgba(8,15,35,.94);
+  border-bottom:1px solid rgba(217,180,95,.24);
+  box-shadow:0 10px 32px rgba(0,0,0,.18);
+}
+.brand,.links{color:#f5f1e7}
+.brand:hover,.links a:hover{color:#efd39a}
+.mark{
+  color:#efd39a;background:#15213b;border-color:#d9b45f;
+  box-shadow:inset 0 0 18px rgba(217,180,95,.12);
+}
+.cta,.btn,.form button{
+  color:#10182a;border-color:#d9b45f;
+  background:linear-gradient(135deg,#f0d79f,#d4a84e);
+  box-shadow:0 10px 28px rgba(185,139,52,.19);
+}
+.cta:hover,.btn:hover,.form button:hover{filter:brightness(1.06)}
+.btn.alt{
+  color:#f4e5bd;background:rgba(21,32,55,.78);
+  border-color:rgba(217,180,95,.63);
+}
+.hero{gap:44px}
+.hero h1,.head h2,.friend-copy h2,.request h2{color:#fffaf0}
+.hero h1 em{color:#e9c77a}
+.eyebrow{color:#e7bd64}
+.lead,.microcopy,.head p,.friend-copy p{color:#c8d1df}
+.hero .microcopy[style]{color:#d0d9e6!important}
+.hero-art:before{
+  content:"";position:absolute;inset:1% -4%;
+  background:radial-gradient(circle,rgba(200,163,87,.13),transparent 64%);
+  pointer-events:none
+}
+.orb{
+  border-color:rgba(218,185,112,.38);
+  box-shadow:0 0 100px rgba(54,96,165,.18),inset 0 0 90px rgba(219,178,89,.08);
+}
+.portrait{
+  border-color:rgba(233,199,122,.82);
+  box-shadow:0 25px 90px rgba(0,0,0,.52),0 0 45px rgba(217,180,95,.12);
+}
+.bubble{
+  background:rgba(18,31,55,.95);border-color:#5b5570;color:#e5e9f1;
+  box-shadow:0 18px 42px rgba(0,0,0,.32);
+}
+.bubble b{color:#edc979}
+.strip{
+  background:linear-gradient(135deg,#15233e,#1b2c4b);
+  border:1px solid rgba(217,180,95,.28);
+  box-shadow:0 22px 55px rgba(0,0,0,.23);
+}
+.strip div{border-color:#344462;color:#c4cddd}
+.strip strong{color:#f0d495}
+.section.friend,.gallery,.pass{
+  background:linear-gradient(155deg,rgba(22,37,63,.90),rgba(10,20,39,.92));
+  border-color:rgba(217,180,95,.20);
+}
+#services,.section.wrap,#publics{scroll-margin-top:80px}
+.card,.story-card,.shot,.price,.pass-note,.always div,.form,.bullet{
+  background:linear-gradient(155deg,rgba(29,46,76,.98),rgba(18,31,53,.98));
+  border:1px solid #3b4b68;
+  box-shadow:0 17px 45px rgba(0,0,0,.19);
+  color:#f7f3e9;
+}
+.card,.price,.shot,.story-card{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+@media(hover:hover){
+ .card:hover,.price:hover,.shot:hover,.story-card:hover{
+   transform:translateY(-3px);border-color:#9a8559;box-shadow:0 24px 46px rgba(0,0,0,.28)
+ }
+}
+.card .ico{background:#2b3b58;color:#ecc777}
+.card h3,.shot h3,.price h3,.story-card blockquote,.bullet strong{color:#fff8e9}
+.card p,.shot p,.story-card small,.pass-note,.always div,.bullet{color:#c8d1df}
+.quote{color:#eed197!important}
+.chip{border-color:#766e60;background:rgba(217,180,95,.075);color:#f3e7ca}
+.pricing .amount{color:#f0cf88!important}
+.pricing .mins{color:#b9c8da!important}
+.pricing .valid{color:#aebbd0!important}
+.pass .price .mins{color:#eed197!important}
+.price.best{
+  border-color:#d9b45f;
+  box-shadow:0 0 0 1px rgba(217,180,95,.42) inset,0 18px 50px rgba(0,0,0,.20);
+}
+.form label{color:#d2dbea}
+.form input,.form select{
+  border-color:#62708a;background:#0c182e;color:#f9f6ef;
+}
+.form input:focus,.form select:focus{outline:2px solid #e5c173;outline-offset:2px}
+.footer{border-color:#3c4963;color:#bdc8db}
+.deja-code{border-color:#47546d}
+.deja-code small{color:#b5c0d2}
+.bia-page-share{
+  border-color:#786642;background:#182640;color:#f4dfad;
+}
+.bia-page-share:focus-visible,.btn:focus-visible,.cta:focus-visible{
+  outline:3px solid #edce86;outline-offset:4px;
+}
+/* La galerie garde ses VRAIES captures et l'intérieur des téléphones inchangés.
+   Seul son environnement extérieur adopte la palette premium. */
+#application.bia-app-gallery{
+  background:linear-gradient(180deg,#121f37 0%,#1b2943 55%,#111d34 100%);
+  border-color:#46536a;
+}
+#application .bia-gallery-heading .eyebrow{color:#ebc779}
+#application .bia-gallery-heading h2{color:#fff8eb}
+#application .bia-gallery-heading p,
+#application .bia-gallery-help,
+#application .bia-gallery-bottom p{color:#c6d1e0}
+#application .bia-gallery-arrow{
+  color:#e8cf93;background:#21324f;border-color:#766b56;
+}
+#application .bia-gallery-arrow:hover:not(:disabled){
+  background:#d9b45f;color:#10182a;border-color:#d9b45f;
+}
+#application .bia-gallery-arrow:disabled{
+  color:#8290a7;background:#17253d;border-color:#43506a;
+}
+#application .bia-screen-card figcaption h3{color:#fff2d8}
+#application .bia-screen-card figcaption p{color:#bfcbdb}
+#application .bia-screen-number,.bia-screen-enlarge{color:#edd08c!important}
+#application .bia-screen-service-link{color:#f1ce83}
+#application .bia-gallery-link{
+  background:#d9b45f;color:#111b2c;border-color:#d9b45f;
+}
+#publics .audience-modes li{
+  background:#203450;border-color:#5b6579;color:#e1e9f1;
+}
+#publics .audience-card,
+#publics .audience-card--featured,
+#publics .audience-card--enterprise,
+#publics .audience-everyone{
+  background:linear-gradient(145deg,#1b2c49,#13213a);
+  border-color:#485875;
+  box-shadow:0 16px 38px rgba(0,0,0,.2);
+}
+#publics .audience-icon{background:#30415c;color:#ebca7d}
+#publics .audience-card h3,#publics .audience-everyone h3{color:#fff7e7}
+#publics .audience-promise{color:#edce8e}
+#publics .audience-card p,#publics .audience-benefits,
+#publics .audience-everyone p{color:#c7d2e2}
+#publics .audience-benefits strong{color:#f7e9c4}
+#publics .audience-benefits li:before{background:#d9b45f}
+#publics .audience-example{
+  color:#e4e9f2;background:#243754;border-color:#d9b45f;
+}
+#publics .audience-example span{color:#ebce91}
+#jaayalma .jaayalma-preview{border-color:#6b6d72;box-shadow:0 18px 48px rgba(0,0,0,.23)}
+#jaayalma .jaayalma-preview figcaption{
+  background:#1b2b45;color:#f5e8c7;border-color:#45516a;
+}
+#jaayalma .jaayalma-preview figcaption a{color:#edc979}
+@media(max-width:580px){
+  .hero{gap:20px}
+  .section{padding-block:64px}
+  .card,.price,.story-card{border-radius:18px}
+  .hero-art{min-height:340px}
+  .bubble{max-width:160px}
+}
+@media(prefers-reduced-motion:reduce){
+  .card,.price,.shot,.story-card{transition:none}
+  .card:hover,.price:hover,.shot:hover,.story-card:hover{transform:none}
+}
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
