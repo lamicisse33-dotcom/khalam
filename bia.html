@@ -542,280 +542,55 @@ body{
 </style>
 
 <style>
-/* BIA STRUCTURAL REDESIGN 2026-11-21 — page publique uniquement.
- * Point de restauration : restore-bia-page-2026-11-21-182052-dakar.
- * Aucun changement de texte, d'URL, de code JS ou d'image de BIA. */
-:root{--max:1220px}
-.wrap{width:min(var(--max),calc(100% - 46px))}
-body{background:radial-gradient(ellipse at 90% 2%,rgba(63,97,146,.3),transparent 35%),linear-gradient(180deg,#080f23 0%,#111e35 45%,#081126 100%)}
-.nav-in{height:82px}
-.nav .brand{font-size:15px;letter-spacing:.11em;gap:13px}
-.nav .mark{width:42px;height:42px;font-size:23px}
-.nav .links{gap:18px}
-.bia-showcase{
- display:flex;flex-direction:column;gap:0;
- padding:26px 0 72px;min-height:0;position:relative
+/* BIA SAFE AMBIENCE 2026-11-21 : décor non intrusif, portrait et navigation inchangés.
+   Point de restauration initial : restore-bia-page-2026-11-21-182052-dakar. */
+.hero{grid-template-columns:1.05fr .95fr;min-height:720px;gap:60px;align-items:center}
+.hero-art{position:relative;isolation:isolate}
+.hero-art .bia-ambient-safe{
+  position:absolute;inset:0;width:100%;height:100%;
+  display:block;z-index:0;pointer-events:none;
+  overflow:visible;opacity:.85;
 }
-.bia-showcase-stage{
- order:-1;position:relative;isolation:isolate;
- height:560px;border-radius:30px;overflow:hidden;
- border:1px solid rgba(227,191,107,.38);
- background:
- radial-gradient(ellipse 420px 320px at 50% 45%,rgba(68,112,167,.3),transparent 78%),
- radial-gradient(ellipse 500px 160px at 50% 85%,rgba(217,180,95,.17),transparent 80%),
- linear-gradient(130deg,#091329,#172947 55%,#0a142a);
- box-shadow:0 30px 90px #0005,inset 0 1px #ffffff17
+.hero-art .bia-safe-waves{
+  transform-origin:center;
+  animation:bia-safe-drift 15s ease-in-out infinite alternate,
+            bia-safe-appear 17s ease-in-out infinite;
 }
-.bia-showcase-stage:before{
- content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
- background:
- repeating-linear-gradient(113deg,transparent 0 95px,rgba(217,180,95,.08) 96px,transparent 98px 170px),
- radial-gradient(circle at 15% 20%,#e7c67b 0 1px,transparent 2px),
- radial-gradient(circle at 75% 65%,#e7c67b 0 1px,transparent 2px);
- background-size:auto,190px 170px,260px 190px
+.hero-art .bia-safe-rings{
+  transform-origin:50% 50%;
+  animation:bia-safe-pulse 8s ease-in-out infinite alternate;
 }
-.bia-showcase .hero-art{height:100%;width:100%;min-height:0;isolation:isolate}
-.bia-showcase .orb{
- width:min(490px,66vw);border-color:#a08a61;
- box-shadow:0 0 120px rgba(70,116,182,.21),inset 0 0 110px rgba(217,180,95,.09)
+.hero-art>.orb{z-index:1;pointer-events:none}
+.hero-art>.portrait{z-index:3;position:relative;overflow:hidden}
+.hero-art>.portrait video,.hero-art>.portrait img{position:relative;z-index:1}
+.hero-art>.bubble{z-index:4;pointer-events:none}
+.hero-art>.b1{top:18px;left:0}
+.hero-art>.b2{bottom:8px;right:0}
+@keyframes bia-safe-drift{
+  from{transform:translateX(-12px) translateY(5px) scale(1)}
+  to{transform:translateX(14px) translateY(-8px) scale(1.03)}
 }
-.bia-showcase .orb:before,.bia-showcase .orb:after{
- content:"";position:absolute;inset:-22px;border:1px solid #b99c5540;
- border-radius:50%;transform:rotate(-19deg) scaleX(1.19)
+@keyframes bia-safe-appear{
+  0%,18%,100%{opacity:.25}
+  38%,64%{opacity:.9}
 }
-.bia-showcase .orb:after{inset:-51px;border-color:#a4bde327;transform:rotate(23deg) scaleX(.86)}
-.bia-showcase .portrait{
- width:325px;height:415px;border-radius:46% 46% 35% 35%;
- border:2px solid #dfbe78;box-shadow:0 30px 85px #0009,0 0 65px #cba54e30
-}
-.bia-showcase .bubble{
- max-width:238px;background:#101f35e8;border:1px solid #a18b5c;
- color:#e6eaf2;padding:16px 18px;font-size:14px;line-height:1.55;
- backdrop-filter:blur(8px)
-}
-.bia-showcase .bubble b{color:#f1ce83;margin-bottom:6px}
-.bia-showcase .b1{top:23%;left:8%}
-.bia-showcase .b2{bottom:21%;right:8%}
-.bia-showcase-copy{
- padding:50px 5% 0;display:grid;align-items:start;
- grid-template-columns:minmax(0,1.08fr) minmax(260px,.92fr);
- column-gap:7%
-}
-.bia-showcase-copy>div{display:contents}
-.bia-showcase-copy .eyebrow,
-.bia-showcase-copy h1,
-.bia-showcase-copy .actions,
-.bia-showcase-copy .microcopy:last-child{grid-column:1}
-.bia-showcase-copy .microcopy[style],.bia-showcase-copy .lead{grid-column:2}
-.bia-showcase-copy .eyebrow{grid-row:1;font-size:12px;letter-spacing:.18em}
-.bia-showcase-copy h1{
- grid-row:2;margin:13px 0 0;font-size:clamp(46px,5.4vw,74px);
- letter-spacing:-.045em;line-height:1.04
-}
-.bia-showcase-copy h1 em{display:block;margin-top:12px;font-size:.61em;line-height:1.19}
-.bia-showcase-copy .microcopy[style]{
- grid-row:1;margin:0!important;font-size:15px!important;line-height:1.65
-}
-.bia-showcase-copy .lead{grid-row:2 / span 2;margin:15px 0 0;font-size:17px;line-height:1.85}
-.bia-showcase-copy .actions{grid-row:3;margin:27px 0 0}
-.bia-showcase-copy .microcopy:last-child{grid-row:4;margin:17px 0 0}
-.bia-showcase-copy .btn{border-radius:14px;min-height:50px;padding-inline:24px}
-.strip{margin-top:0;border-radius:20px;grid-template-columns:repeat(4,minmax(0,1fr))}
-.strip div{padding:26px 20px;font-size:13px;line-height:1.6}
-.strip strong{font-size:15px;margin-bottom:6px;line-height:1.35}
-#services{padding-top:115px}
-.section>.head{max-width:890px;margin-bottom:42px}
-.head h2{font-size:clamp(36px,4.4vw,58px)}
-.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.service-grid .card{
- min-height:0;padding:28px;border-radius:23px;position:relative;
- transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease
-}
-.service-grid .card:first-child,.service-grid .card:nth-child(2){
- background:linear-gradient(150deg,#263b5b,#16253f);
- border-color:#bd9c5c;min-height:430px
-}
-.service-grid .card .ico{
- width:53px;height:53px;border-radius:16px;font-size:25px;
- border:1px solid #d9b45f3d;background:linear-gradient(130deg,#394762,#243853);
- margin-bottom:19px
-}
-.service-grid .card h3{font-size:clamp(21px,2vw,26px);line-height:1.25;margin-bottom:13px}
-.service-grid .card p{font-size:14px;line-height:1.78}
-@media(hover:hover){
- .service-grid .card:hover{transform:translateY(-3px);border-color:#ccae75;box-shadow:0 24px 44px #0004}
-}
-.friend-grid{gap:clamp(30px,5vw,75px)}
-.friend.section{padding-block:110px}
-.friend-copy h2{font-size:clamp(38px,4.5vw,60px)}
-.friend-copy p{font-size:16px;line-height:1.85}
-.story-card{padding:36px;border-radius:28px}
-.story-card blockquote{font-size:clamp(22px,2.5vw,30px)}
-#application.bia-app-gallery{padding-block:110px}
-#application .bia-screen-track{grid-auto-columns:295px;gap:30px;padding-block:30px 23px}
-#application .bia-gallery-heading h2{font-size:clamp(40px,5vw,62px)}
-#application .bia-device{box-shadow:0 20px 44px #0005}
-#application .bia-screen-card figcaption{padding-top:19px}
-#publics .audience-card{border-radius:24px}
-#publics .audience-grid{gap:21px}
-.pricing{gap:22px}
-.price{padding:32px;border-radius:25px}
-.price.best{background:linear-gradient(145deg,#2a3a55,#14213a)}
-@media(max-width:1100px){
- .nav .links{gap:12px;font-size:11px}
- .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .service-grid .card:first-child,.service-grid .card:nth-child(2){min-height:0}
+@keyframes bia-safe-pulse{
+  from{transform:scale(.98);opacity:.65}
+  to{transform:scale(1.025);opacity:1}
 }
 @media(max-width:900px){
- .wrap{width:calc(100% - 32px)}
- .nav-in{height:66px}
- .bia-showcase-stage{height:500px}
- .bia-showcase-copy{grid-template-columns:1fr;padding:35px 2% 0}
- .bia-showcase-copy .eyebrow,.bia-showcase-copy h1,.bia-showcase-copy .actions,
- .bia-showcase-copy .microcopy:last-child,.bia-showcase-copy .microcopy[style],
- .bia-showcase-copy .lead{grid-column:1;grid-row:auto}
- .bia-showcase-copy .lead{max-width:720px;margin-top:9px}
- .bia-showcase-copy .microcopy[style]{margin-top:17px!important}
- .bia-showcase-copy .actions{margin-top:23px}
- .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
- .strip div:nth-child(2){border-right:0}
- .friend.section{padding-block:85px}
+  .hero{grid-template-columns:1fr;gap:20px}
+  .hero-art>.b1{top:0}
+  .hero-art>.b2{bottom:0}
 }
 @media(max-width:580px){
- .wrap{width:calc(100% - 26px)}
- .nav .brand{font-size:12px}.nav .mark{width:34px;height:34px;font-size:19px}
- .bia-showcase{padding:14px 0 45px}
- .bia-showcase-stage{height:405px;border-radius:22px}
- .bia-showcase .hero-art{min-height:0;height:100%}
- .bia-showcase .orb{width:258px}
- .bia-showcase .portrait{width:194px;height:266px}
- .bia-showcase .bubble{max-width:136px;padding:10px;font-size:10px;border-radius:13px}
- .bia-showcase .bubble b{font-size:9px;letter-spacing:.06em}
- .bia-showcase .b1{top:9%;left:3%}
- .bia-showcase .b2{bottom:8%;right:3%}
- .bia-showcase-copy{padding:27px 2px 0}
- .bia-showcase-copy .eyebrow{font-size:10px;letter-spacing:.12em}
- .bia-showcase-copy h1{font-size:clamp(38px,9vw,52px);margin-top:13px}
- .bia-showcase-copy h1 em{font-size:.59em}
- .bia-showcase-copy .lead{font-size:15px;line-height:1.75}
- .bia-showcase-copy .microcopy[style]{font-size:13px!important}
- .bia-showcase-copy .actions{display:flex;flex-direction:column}
- .bia-showcase-copy .btn{width:100%}
- .strip{grid-template-columns:repeat(2,minmax(0,1fr));border-radius:17px}
- .strip div{padding:15px 12px;border-bottom:1px solid #344462;font-size:11px}
- .strip strong{font-size:13px}
- .strip div:nth-child(n+3){border-bottom:0}
- #services{padding-top:75px}
- .service-grid{grid-template-columns:1fr;gap:14px}
- .service-grid .card,.service-grid .card:first-child,.service-grid .card:nth-child(2){
-  grid-column:auto;min-height:0;padding:23px
- }
- .service-grid .card h3{font-size:22px}
- .friend.section{padding-block:66px}
- .story-card{padding:25px}
- #application.bia-app-gallery{padding-block:68px}
- #application .bia-screen-track{grid-auto-columns:min(300px,calc(100vw - 64px));gap:18px}
- .price{padding:26px}
-}
-@media(prefers-reduced-motion:reduce){.service-grid .card{transition:none}.service-grid .card:hover{transform:none}}
-</style>
-
-<style>
-/* BIA ANIMATED WAVE LAYER 2026-11-21
-   Uniquement page publique Bia : décor sans changement fonctionnel.
-   Le rendu de l'avatar (vidéo et image) reste strictement identique. */
-.bia-showcase-stage{
-  isolation:isolate;
-  background:
-    radial-gradient(ellipse at 48% 48%,rgba(73,119,165,.30),transparent 58%),
-    radial-gradient(ellipse at 83% 68%,rgba(171,109,201,.13),transparent 52%),
-    linear-gradient(130deg,#081329,#152641 57%,#091328);
-}
-.bia-showcase-stage .bia-ambient-waves{
-  display:block;position:absolute;inset:-8% -7%;width:114%;height:116%;
-  z-index:0;pointer-events:none;overflow:visible;
-  opacity:.8;filter:drop-shadow(0 0 12px rgba(221,177,105,.25));
-  animation:bia-wave-drift 18s ease-in-out infinite alternate,
-            bia-wave-breathe 15s ease-in-out infinite;
-}
-.bia-ambient-waves .bia-wave-line{vector-effect:non-scaling-stroke}
-.bia-ambient-waves .bia-wave-line-0{animation:bia-line-float 9s ease-in-out infinite alternate}
-.bia-ambient-waves .bia-wave-line-1{animation:bia-line-float 13s ease-in-out -3s infinite alternate-reverse}
-.bia-ambient-waves .bia-wave-line-2{animation:bia-line-float 16s ease-in-out -6s infinite alternate}
-.bia-ambient-waves .bia-wave-shimmer{animation:bia-shimmer 12s ease-in-out infinite}
-.bia-showcase .hero-art{z-index:1}
-.bia-showcase .hero-art .bubble{z-index:5}
-.bia-showcase .hero-art .portrait{z-index:4}
-.bia-showcase .hero-art .orb{
-  z-index:1;
-  border-color:rgba(232,196,117,.55);
-  box-shadow:0 0 75px rgba(91,152,218,.24),inset 0 0 45px rgba(229,184,95,.10);
-}
-.bia-showcase .bia-energy-rings{
-  position:absolute;inset:0;display:grid;place-items:center;
-  z-index:2;pointer-events:none;overflow:visible
-}
-.bia-showcase .bia-energy-ring{
-  position:absolute;display:block;width:calc(335px + var(--ring)*24px);
-  height:calc(425px + var(--ring)*18px);
-  max-width:none;border:1.5px solid var(--ring-color);
-  border-radius:46% 46% 36% 36% / 40% 40% 36% 36%;
-  opacity:calc(.56 - var(--ring)*.042);
-  box-shadow:0 0 14px color-mix(in srgb,var(--ring-color),transparent 77%);
-  animation:bia-ring-flow calc(7s + var(--ring)*.8s) ease-in-out infinite alternate;
-  animation-delay:calc(var(--ring)*-.85s);
-}
-.bia-showcase .bia-energy-ring:nth-child(even){transform:rotate(-5deg)}
-.bia-showcase .portrait{
-  box-shadow:0 28px 85px #0009,0 0 56px rgba(234,190,102,.25);
-}
-@keyframes bia-wave-drift{
-  0%{transform:translate3d(-2%,2%,0) scale(1)}
-  50%{transform:translate3d(3%,-2%,0) scale(1.035)}
-  100%{transform:translate3d(-1%,1%,0) scale(1.015)}
-}
-@keyframes bia-wave-breathe{
-  0%,16%,100%{opacity:.28}
-  38%,61%{opacity:.9}
-  77%{opacity:.49}
-}
-@keyframes bia-line-float{
-  from{transform:translateY(-12px)}
-  to{transform:translateY(15px)}
-}
-@keyframes bia-shimmer{
-  0%,20%,100%{opacity:.05}
-  40%,65%{opacity:.40}
-}
-@keyframes bia-ring-flow{
-  0%{transform:scale(.985) rotate(-3deg);filter:brightness(.9)}
-  50%{transform:scale(1.018) rotate(1.2deg);filter:brightness(1.3)}
-  100%{transform:scale(1.01) rotate(3deg);filter:brightness(.95)}
-}
-/* Vagues d'ambiance très légères dans le fond des sections, loin du texte. */
-#services,.friend,#publics,#application,.pass{
-  background-image:
-    radial-gradient(ellipse at 92% 8%,rgba(116,183,224,.055),transparent 45%),
-    radial-gradient(ellipse at 6% 87%,rgba(209,156,228,.045),transparent 45%);
-}
-@media(max-width:900px){
-  .bia-showcase .bia-energy-ring{
-    width:calc(285px + var(--ring)*18px);
-    height:calc(365px + var(--ring)*15px);
-  }
-}
-@media(max-width:580px){
-  .bia-showcase-stage .bia-ambient-waves{opacity:.54}
-  .bia-showcase .bia-energy-ring{
-    width:calc(201px + var(--ring)*11px);
-    height:calc(272px + var(--ring)*10px);
-  }
+  .hero{min-height:0}
+  .hero-art .bia-ambient-safe{opacity:.55}
+  .hero-art>.b1{top:0}
+  .hero-art>.b2{bottom:0}
 }
 @media(prefers-reduced-motion:reduce){
-  .bia-showcase-stage .bia-ambient-waves,
-  .bia-ambient-waves .bia-wave-line,
-  .bia-ambient-waves .bia-wave-shimmer,
-  .bia-showcase .bia-energy-ring{animation:none!important}
+  .hero-art .bia-safe-waves,.hero-art .bia-safe-rings{animation:none!important}
 }
 </style>
 </head>
@@ -827,31 +602,20 @@ body{background:radial-gradient(ellipse at 90% 2%,rgba(63,97,146,.3),transparent
 </div></header>
 
 <main>
-<section class="wrap hero bia-showcase" aria-label="Présentation Bia Xarit">
-<div class="bia-showcase-copy"><div>
+<section class="wrap hero">
+<div>
 <div class="eyebrow">Créée à Dakar · Wolof · Français · Voix · Vision</div>
 <h1>Bia Xarit.<br><em>Parlez. Elle s’occupe du reste.</em></h1>
 <p class="microcopy" style="font-size:15px;color:#c3d8ec">Assistante vocale intelligente en wolof et en français, créée à Dakar par KHALAM.</p>
 <p class="lead">Bia Xarit est l’intelligence artificielle de KHALAM pensée pour la vraie vie. Vous lui parlez comme à une personne. Elle vous écoute, vous répond à la voix, vous aide à comprendre, écrire, traduire, chercher, vous déplacer, gérer votre activité — ou simplement discuter quand vous en avez envie.</p>
 <div class="actions"><a class="btn mobile-pass" href="#demander">Demander un pass</a><a class="btn desktop-pass" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a></div>
 <p class="microcopy">Pas besoin de connaître l’informatique. Votre voix suffit.</p>
-</div></div>
-<div class="bia-showcase-stage"><svg class="bia-ambient-waves" aria-hidden="true" focusable="false" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bia-wave-glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#edc16d" stop-opacity="0"/><stop offset=".35" stop-color="#83c9ee" stop-opacity=".55"/><stop offset=".7" stop-color="#d5a8e9" stop-opacity=".5"/><stop offset="1" stop-color="#edc16d" stop-opacity="0"/></linearGradient></defs><g fill="none" stroke-linecap="round"><path class="bia-wave-line bia-wave-line-0" d="M -160 190 C 100 25, 320 395, 570 228 S 1000 30, 1250 180 S 1570 345, 1800 155" stroke="#EBC979" stroke-width="2.5" opacity="0.16"/>
-<path class="bia-wave-line bia-wave-line-1" d="M -160 208 C 100 43, 320 413, 570 246 S 1000 48, 1250 198 S 1570 363, 1800 173" stroke="#69C7F5" stroke-width="1.15" opacity="0.21"/>
-<path class="bia-wave-line bia-wave-line-2" d="M -160 226 C 100 61, 320 431, 570 264 S 1000 66, 1250 216 S 1570 381, 1800 191" stroke="#AA91F1" stroke-width="1.15" opacity="0.27"/>
-<path class="bia-wave-line bia-wave-line-0" d="M -160 244 C 100 79, 320 449, 570 282 S 1000 84, 1250 234 S 1570 399, 1800 209" stroke="#71E4D0" stroke-width="1.15" opacity="0.33"/>
-<path class="bia-wave-line bia-wave-line-1" d="M -160 262 C 100 97, 320 467, 570 300 S 1000 102, 1250 252 S 1570 417, 1800 227" stroke="#ECC4A4" stroke-width="2.5" opacity="0.16"/>
-<path class="bia-wave-line bia-wave-line-2" d="M -160 280 C 100 115, 320 485, 570 318 S 1000 120, 1250 270 S 1570 435, 1800 245" stroke="#93B7F9" stroke-width="1.15" opacity="0.21"/>
-<path class="bia-wave-line bia-wave-line-0" d="M -160 298 C 100 133, 320 503, 570 336 S 1000 138, 1250 288 S 1570 453, 1800 263" stroke="#EBC979" stroke-width="1.15" opacity="0.27"/>
-<path class="bia-wave-line bia-wave-line-1" d="M -160 316 C 100 151, 320 521, 570 354 S 1000 156, 1250 306 S 1570 471, 1800 281" stroke="#69C7F5" stroke-width="1.15" opacity="0.33"/>
-<path class="bia-wave-line bia-wave-line-2" d="M -160 334 C 100 169, 320 539, 570 372 S 1000 174, 1250 324 S 1570 489, 1800 299" stroke="#AA91F1" stroke-width="2.5" opacity="0.16"/>
-<path class="bia-wave-line bia-wave-line-0" d="M -160 352 C 100 187, 320 557, 570 390 S 1000 192, 1250 342 S 1570 507, 1800 317" stroke="#71E4D0" stroke-width="1.15" opacity="0.21"/>
-<path class="bia-wave-line bia-wave-line-1" d="M -160 370 C 100 205, 320 575, 570 408 S 1000 210, 1250 360 S 1570 525, 1800 335" stroke="#ECC4A4" stroke-width="1.15" opacity="0.27"/>
-<path class="bia-wave-line bia-wave-line-2" d="M -160 388 C 100 223, 320 593, 570 426 S 1000 228, 1250 378 S 1570 543, 1800 353" stroke="#93B7F9" stroke-width="1.15" opacity="0.33"/><path class="bia-wave-shimmer" d="M-160 420 C100 255 320 625 570 458 S1000 260 1250 410 S1570 575 1800 375" stroke="url(#bia-wave-glow)" stroke-width="17" opacity=".26"/></g></svg><div class="hero-art"><div class="bia-energy-rings" aria-hidden="true"><span class="bia-energy-ring" style="--ring:0;--ring-color:#EBC979"></span><span class="bia-energy-ring" style="--ring:1;--ring-color:#7CCCF2"></span><span class="bia-energy-ring" style="--ring:2;--ring-color:#A997EC"></span><span class="bia-energy-ring" style="--ring:3;--ring-color:#EBC979"></span><span class="bia-energy-ring" style="--ring:4;--ring-color:#7CCCF2"></span><span class="bia-energy-ring" style="--ring:5;--ring-color:#A997EC"></span><span class="bia-energy-ring" style="--ring:6;--ring-color:#EBC979"></span><span class="bia-energy-ring" style="--ring:7;--ring-color:#7CCCF2"></span><span class="bia-energy-ring" style="--ring:8;--ring-color:#A997EC"></span></div><div class="orb"></div>
+</div>
+<div class="hero-art"><svg class="bia-ambient-safe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><g class="bia-safe-waves" fill="none" stroke-linecap="round"><path d="M -100 140 C 40 50, 145 250, 290 155 S 510 50, 660 145" stroke="#D9B45F" stroke-width="2" opacity="0.15"/><path d="M -100 158 C 40 68, 145 268, 290 173 S 510 68, 660 163" stroke="#9CCBF1" stroke-width="1.1" opacity="0.20"/><path d="M -100 176 C 40 86, 145 286, 290 191 S 510 86, 660 181" stroke="#AF9FEB" stroke-width="1.1" opacity="0.26"/><path d="M -100 194 C 40 104, 145 304, 290 209 S 510 104, 660 199" stroke="#68D5BE" stroke-width="1.1" opacity="0.32"/><path d="M -100 212 C 40 122, 145 322, 290 227 S 510 122, 660 217" stroke="#E2B66D" stroke-width="1.1" opacity="0.15"/><path d="M -100 230 C 40 140, 145 340, 290 245 S 510 140, 660 235" stroke="#7CB4DD" stroke-width="2" opacity="0.20"/><path d="M -100 248 C 40 158, 145 358, 290 263 S 510 158, 660 253" stroke="#D9B45F" stroke-width="1.1" opacity="0.26"/><path d="M -100 266 C 40 176, 145 376, 290 281 S 510 176, 660 271" stroke="#9CCBF1" stroke-width="1.1" opacity="0.32"/><path d="M -100 284 C 40 194, 145 394, 290 299 S 510 194, 660 289" stroke="#AF9FEB" stroke-width="1.1" opacity="0.15"/><path d="M -100 302 C 40 212, 145 412, 290 317 S 510 212, 660 307" stroke="#68D5BE" stroke-width="1.1" opacity="0.20"/><path d="M -100 320 C 40 230, 145 430, 290 335 S 510 230, 660 325" stroke="#E2B66D" stroke-width="2" opacity="0.26"/><path d="M -100 338 C 40 248, 145 448, 290 353 S 510 248, 660 343" stroke="#7CB4DD" stroke-width="1.1" opacity="0.32"/><path d="M -100 356 C 40 266, 145 466, 290 371 S 510 266, 660 361" stroke="#D9B45F" stroke-width="1.1" opacity="0.15"/></g><g class="bia-safe-rings" fill="none"><ellipse cx="280" cy="260" rx="151" ry="181" stroke="#D9B45F" stroke-width="1.6" opacity="0.42"/><ellipse cx="280" cy="260" rx="162" ry="189" stroke="#9CCBF1" stroke-width="0.9" opacity="0.39"/><ellipse cx="280" cy="260" rx="173" ry="197" stroke="#AF9FEB" stroke-width="0.9" opacity="0.36"/><ellipse cx="280" cy="260" rx="184" ry="205" stroke="#68D5BE" stroke-width="1.6" opacity="0.32"/><ellipse cx="280" cy="260" rx="195" ry="213" stroke="#E2B66D" stroke-width="0.9" opacity="0.29"/><ellipse cx="280" cy="260" rx="206" ry="221" stroke="#7CB4DD" stroke-width="0.9" opacity="0.26"/><ellipse cx="280" cy="260" rx="217" ry="229" stroke="#D9B45F" stroke-width="1.6" opacity="0.23"/><ellipse cx="280" cy="260" rx="228" ry="237" stroke="#9CCBF1" stroke-width="0.9" opacity="0.20"/><ellipse cx="280" cy="260" rx="239" ry="245" stroke="#AF9FEB" stroke-width="0.9" opacity="0.16"/></g></svg><div class="orb"></div>
 <div class="bubble b1"><b>Wolof · Français</b>Une IA qui parle votre langue.</div>
 <div class="portrait"><video src="/bia-media/bia-visage.mp4" poster="/bia-media/bia-visage.webp" autoplay muted loop playsinline preload="auto"></video></div>
 <div class="bubble b2"><b>À votre écoute</b>Une assistante. Une conseillère. Une amie.</div>
-</div></div>
+</div>
 </section>
 
 <div class="wrap strip">
