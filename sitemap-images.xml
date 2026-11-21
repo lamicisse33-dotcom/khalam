@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url><loc>https://khalam.app/</loc>
+<image:image><image:loc>https://khalam.app/icone-512.png</image:loc></image:image>
+<image:image><image:loc>https://khalam.app/partage.png</image:loc></image:image></url>
+<url><loc>https://khalam.app/images/</loc>
+<image:image><image:loc>https://khalam.app/logo-khalam.svg</image:loc></image:image>
+<image:image><image:loc>https://khalam.app/bia-media/bia-visage.webp</image:loc></image:image></url>
+<url><loc>https://khalam.app/bia</loc>
+<image:image><image:loc>https://khalam.app/bia-media/bia-visage.webp</image:loc></image:image>
+<image:image><image:loc>https://khalam.app/bia-media/ecrans-2026-11-17/accueil.jpg</image:loc></image:image>
+<image:image><image:loc>https://khalam.app/bia-media/ecrans-2026-11-17/tekilma-langues.jpg</image:loc></image:image>
+<image:image><image:loc>https://khalam.app/bia-media/ecrans-2026-11-17/devis.jpg</image:loc></image:image>
+<image:image><image:loc>https://khalam.app/bia-media/ecrans-2026-11-17/messages-v2.jpg</image:loc></image:image>
+<image:image><image:loc>https://khalam.app/bia-media/ecrans-2026-11-17/ordonnance.jpg</image:loc></image:image></url>
+<url><loc>https://khalam.app/applications/</loc>
+<image:image><image:loc>https://khalam.app/bia-media/bia-visage.webp</image:loc></image:image></url>
+<url><loc>https://khalam.app/jeux/</loc>
+<image:image><image:loc>https://khalam.app/jeux/pylo/icone-512.png</image:loc></image:image></url>
+<url><loc>https://khalam.app/jeux/pylo/</loc>
+<image:image><image:loc>https://khalam.app/jeux/pylo/icone-512.png</image:loc></image:image></url>
+</urlset>

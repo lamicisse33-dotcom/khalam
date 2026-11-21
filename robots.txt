@@ -4,3 +4,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://khalam.app/sitemap.xml
+Sitemap: https://khalam.app/sitemap-images.xml
