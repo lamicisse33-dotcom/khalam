@@ -540,6 +540,185 @@ body{
   .card:hover,.price:hover,.shot:hover,.story-card:hover{transform:none}
 }
 </style>
+
+<style>
+/* BIA STRUCTURAL REDESIGN 2026-11-21 — page publique uniquement.
+ * Point de restauration : restore-bia-page-2026-11-21-182052-dakar.
+ * Aucun changement de texte, d'URL, de code JS ou d'image de BIA. */
+:root{--max:1220px}
+.wrap{width:min(var(--max),calc(100% - 46px))}
+body{background:radial-gradient(ellipse at 90% 2%,rgba(63,97,146,.3),transparent 35%),linear-gradient(180deg,#080f23 0%,#111e35 45%,#081126 100%)}
+.nav-in{height:82px}
+.nav .brand{font-size:15px;letter-spacing:.11em;gap:13px}
+.nav .mark{width:42px;height:42px;font-size:23px}
+.nav .links{gap:18px}
+.bia-showcase{
+ display:flex;flex-direction:column;gap:0;
+ padding:26px 0 72px;min-height:0;position:relative
+}
+.bia-showcase-stage{
+ order:-1;position:relative;isolation:isolate;
+ height:560px;border-radius:30px;overflow:hidden;
+ border:1px solid rgba(227,191,107,.38);
+ background:
+ radial-gradient(ellipse 420px 320px at 50% 45%,rgba(68,112,167,.3),transparent 78%),
+ radial-gradient(ellipse 500px 160px at 50% 85%,rgba(217,180,95,.17),transparent 80%),
+ linear-gradient(130deg,#091329,#172947 55%,#0a142a);
+ box-shadow:0 30px 90px #0005,inset 0 1px #ffffff17
+}
+.bia-showcase-stage:before{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+ background:
+ repeating-linear-gradient(113deg,transparent 0 95px,rgba(217,180,95,.08) 96px,transparent 98px 170px),
+ radial-gradient(circle at 15% 20%,#e7c67b 0 1px,transparent 2px),
+ radial-gradient(circle at 75% 65%,#e7c67b 0 1px,transparent 2px);
+ background-size:auto,190px 170px,260px 190px
+}
+.bia-showcase .hero-art{height:100%;width:100%;min-height:0;isolation:isolate}
+.bia-showcase .orb{
+ width:min(490px,66vw);border-color:#a08a61;
+ box-shadow:0 0 120px rgba(70,116,182,.21),inset 0 0 110px rgba(217,180,95,.09)
+}
+.bia-showcase .orb:before,.bia-showcase .orb:after{
+ content:"";position:absolute;inset:-22px;border:1px solid #b99c5540;
+ border-radius:50%;transform:rotate(-19deg) scaleX(1.19)
+}
+.bia-showcase .orb:after{inset:-51px;border-color:#a4bde327;transform:rotate(23deg) scaleX(.86)}
+.bia-showcase .portrait{
+ width:325px;height:415px;border-radius:46% 46% 35% 35%;
+ border:2px solid #dfbe78;box-shadow:0 30px 85px #0009,0 0 65px #cba54e30
+}
+.bia-showcase .bubble{
+ max-width:238px;background:#101f35e8;border:1px solid #a18b5c;
+ color:#e6eaf2;padding:16px 18px;font-size:14px;line-height:1.55;
+ backdrop-filter:blur(8px)
+}
+.bia-showcase .bubble b{color:#f1ce83;margin-bottom:6px}
+.bia-showcase .b1{top:23%;left:8%}
+.bia-showcase .b2{bottom:21%;right:8%}
+.bia-showcase-copy{
+ padding:50px 5% 0;display:grid;align-items:start;
+ grid-template-columns:minmax(0,1.08fr) minmax(260px,.92fr);
+ column-gap:7%
+}
+.bia-showcase-copy>div{display:contents}
+.bia-showcase-copy .eyebrow,
+.bia-showcase-copy h1,
+.bia-showcase-copy .actions,
+.bia-showcase-copy .microcopy:last-child{grid-column:1}
+.bia-showcase-copy .microcopy[style],.bia-showcase-copy .lead{grid-column:2}
+.bia-showcase-copy .eyebrow{grid-row:1;font-size:12px;letter-spacing:.18em}
+.bia-showcase-copy h1{
+ grid-row:2;margin:13px 0 0;font-size:clamp(46px,5.4vw,74px);
+ letter-spacing:-.045em;line-height:1.04
+}
+.bia-showcase-copy h1 em{display:block;margin-top:12px;font-size:.61em;line-height:1.19}
+.bia-showcase-copy .microcopy[style]{
+ grid-row:1;margin:0!important;font-size:15px!important;line-height:1.65
+}
+.bia-showcase-copy .lead{grid-row:2 / span 2;margin:15px 0 0;font-size:17px;line-height:1.85}
+.bia-showcase-copy .actions{grid-row:3;margin:27px 0 0}
+.bia-showcase-copy .microcopy:last-child{grid-row:4;margin:17px 0 0}
+.bia-showcase-copy .btn{border-radius:14px;min-height:50px;padding-inline:24px}
+.strip{margin-top:0;border-radius:20px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.strip div{padding:26px 20px;font-size:13px;line-height:1.6}
+.strip strong{font-size:15px;margin-bottom:6px;line-height:1.35}
+#services{padding-top:115px}
+.section>.head{max-width:890px;margin-bottom:42px}
+.head h2{font-size:clamp(36px,4.4vw,58px)}
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.service-grid .card{
+ min-height:0;padding:28px;border-radius:23px;position:relative;
+ transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease
+}
+.service-grid .card:first-child,.service-grid .card:nth-child(2){
+ background:linear-gradient(150deg,#263b5b,#16253f);
+ border-color:#bd9c5c;min-height:430px
+}
+.service-grid .card .ico{
+ width:53px;height:53px;border-radius:16px;font-size:25px;
+ border:1px solid #d9b45f3d;background:linear-gradient(130deg,#394762,#243853);
+ margin-bottom:19px
+}
+.service-grid .card h3{font-size:clamp(21px,2vw,26px);line-height:1.25;margin-bottom:13px}
+.service-grid .card p{font-size:14px;line-height:1.78}
+@media(hover:hover){
+ .service-grid .card:hover{transform:translateY(-3px);border-color:#ccae75;box-shadow:0 24px 44px #0004}
+}
+.friend-grid{gap:clamp(30px,5vw,75px)}
+.friend.section{padding-block:110px}
+.friend-copy h2{font-size:clamp(38px,4.5vw,60px)}
+.friend-copy p{font-size:16px;line-height:1.85}
+.story-card{padding:36px;border-radius:28px}
+.story-card blockquote{font-size:clamp(22px,2.5vw,30px)}
+#application.bia-app-gallery{padding-block:110px}
+#application .bia-screen-track{grid-auto-columns:295px;gap:30px;padding-block:30px 23px}
+#application .bia-gallery-heading h2{font-size:clamp(40px,5vw,62px)}
+#application .bia-device{box-shadow:0 20px 44px #0005}
+#application .bia-screen-card figcaption{padding-top:19px}
+#publics .audience-card{border-radius:24px}
+#publics .audience-grid{gap:21px}
+.pricing{gap:22px}
+.price{padding:32px;border-radius:25px}
+.price.best{background:linear-gradient(145deg,#2a3a55,#14213a)}
+@media(max-width:1100px){
+ .nav .links{gap:12px;font-size:11px}
+ .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .service-grid .card:first-child,.service-grid .card:nth-child(2){min-height:0}
+}
+@media(max-width:900px){
+ .wrap{width:calc(100% - 32px)}
+ .nav-in{height:66px}
+ .bia-showcase-stage{height:500px}
+ .bia-showcase-copy{grid-template-columns:1fr;padding:35px 2% 0}
+ .bia-showcase-copy .eyebrow,.bia-showcase-copy h1,.bia-showcase-copy .actions,
+ .bia-showcase-copy .microcopy:last-child,.bia-showcase-copy .microcopy[style],
+ .bia-showcase-copy .lead{grid-column:1;grid-row:auto}
+ .bia-showcase-copy .lead{max-width:720px;margin-top:9px}
+ .bia-showcase-copy .microcopy[style]{margin-top:17px!important}
+ .bia-showcase-copy .actions{margin-top:23px}
+ .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .strip div:nth-child(2){border-right:0}
+ .friend.section{padding-block:85px}
+}
+@media(max-width:580px){
+ .wrap{width:calc(100% - 26px)}
+ .nav .brand{font-size:12px}.nav .mark{width:34px;height:34px;font-size:19px}
+ .bia-showcase{padding:14px 0 45px}
+ .bia-showcase-stage{height:405px;border-radius:22px}
+ .bia-showcase .hero-art{min-height:0;height:100%}
+ .bia-showcase .orb{width:258px}
+ .bia-showcase .portrait{width:194px;height:266px}
+ .bia-showcase .bubble{max-width:136px;padding:10px;font-size:10px;border-radius:13px}
+ .bia-showcase .bubble b{font-size:9px;letter-spacing:.06em}
+ .bia-showcase .b1{top:9%;left:3%}
+ .bia-showcase .b2{bottom:8%;right:3%}
+ .bia-showcase-copy{padding:27px 2px 0}
+ .bia-showcase-copy .eyebrow{font-size:10px;letter-spacing:.12em}
+ .bia-showcase-copy h1{font-size:clamp(38px,9vw,52px);margin-top:13px}
+ .bia-showcase-copy h1 em{font-size:.59em}
+ .bia-showcase-copy .lead{font-size:15px;line-height:1.75}
+ .bia-showcase-copy .microcopy[style]{font-size:13px!important}
+ .bia-showcase-copy .actions{display:flex;flex-direction:column}
+ .bia-showcase-copy .btn{width:100%}
+ .strip{grid-template-columns:repeat(2,minmax(0,1fr));border-radius:17px}
+ .strip div{padding:15px 12px;border-bottom:1px solid #344462;font-size:11px}
+ .strip strong{font-size:13px}
+ .strip div:nth-child(n+3){border-bottom:0}
+ #services{padding-top:75px}
+ .service-grid{grid-template-columns:1fr;gap:14px}
+ .service-grid .card,.service-grid .card:first-child,.service-grid .card:nth-child(2){
+  grid-column:auto;min-height:0;padding:23px
+ }
+ .service-grid .card h3{font-size:22px}
+ .friend.section{padding-block:66px}
+ .story-card{padding:25px}
+ #application.bia-app-gallery{padding-block:68px}
+ #application .bia-screen-track{grid-auto-columns:min(300px,calc(100vw - 64px));gap:18px}
+ .price{padding:26px}
+}
+@media(prefers-reduced-motion:reduce){.service-grid .card{transition:none}.service-grid .card:hover{transform:none}}
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
@@ -549,20 +728,20 @@ body{
 </div></header>
 
 <main>
-<section class="wrap hero">
-<div>
+<section class="wrap hero bia-showcase" aria-label="Présentation Bia Xarit">
+<div class="bia-showcase-copy"><div>
 <div class="eyebrow">Créée à Dakar · Wolof · Français · Voix · Vision</div>
 <h1>Bia Xarit.<br><em>Parlez. Elle s’occupe du reste.</em></h1>
 <p class="microcopy" style="font-size:15px;color:#c3d8ec">Assistante vocale intelligente en wolof et en français, créée à Dakar par KHALAM.</p>
 <p class="lead">Bia Xarit est l’intelligence artificielle de KHALAM pensée pour la vraie vie. Vous lui parlez comme à une personne. Elle vous écoute, vous répond à la voix, vous aide à comprendre, écrire, traduire, chercher, vous déplacer, gérer votre activité — ou simplement discuter quand vous en avez envie.</p>
 <div class="actions"><a class="btn mobile-pass" href="#demander">Demander un pass</a><a class="btn desktop-pass" href="#pass">Voir les pass</a><a class="btn alt" href="#application">Voir l’application</a></div>
 <p class="microcopy">Pas besoin de connaître l’informatique. Votre voix suffit.</p>
-</div>
-<div class="hero-art"><div class="orb"></div>
+</div></div>
+<div class="bia-showcase-stage"><div class="hero-art"><div class="orb"></div>
 <div class="bubble b1"><b>Wolof · Français</b>Une IA qui parle votre langue.</div>
 <div class="portrait"><video src="/bia-media/bia-visage.mp4" poster="/bia-media/bia-visage.webp" autoplay muted loop playsinline preload="auto"></video></div>
 <div class="bubble b2"><b>À votre écoute</b>Une assistante. Une conseillère. Une amie.</div>
-</div>
+</div></div>
 </section>
 
 <div class="wrap strip">
