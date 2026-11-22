@@ -663,40 +663,42 @@ body{
 </style>
 
 <style>
-/* BIA — clavier lumineux en arrière-plan, respiration lente et discrète.
-   Portée STRICTEMENT limitée au bloc texte de l'entête. */
+/* BIA — PREMIÈRE ANIMATION CHOISIE (capture fournie par l'utilisateur).
+   Clavier lumineux en perspective limité à la partie HAUTE du texte.
+   Aucun changement au portrait, aux vagues de Bia, aux couleurs ou à la mise en page. */
 .hero>div:first-child{position:relative;isolation:isolate}
 .hero>div:first-child>:not(.bia-keyboard-ambient){position:relative;z-index:1}
 .hero .bia-keyboard-ambient{
   position:absolute;z-index:0;pointer-events:none;
-  inset:-9% -18% -10% -17%;overflow:hidden;
-  opacity:.72;animation:bia-keyboard-breath 18s ease-in-out infinite;
-  -webkit-mask-image:radial-gradient(ellipse at 48% 44%,#000 28%,rgba(0,0,0,.8) 51%,transparent 78%);
-  mask-image:radial-gradient(ellipse at 48% 44%,#000 28%,rgba(0,0,0,.8) 51%,transparent 78%);
+  top:-3%;left:14%;width:112%;height:56%;
+  overflow:hidden;
+  opacity:.60;
+  animation:bia-keyboard-breath 19s ease-in-out infinite;
+  -webkit-mask-image:radial-gradient(ellipse 73% 58% at 52% 47%,#000 20%,rgba(0,0,0,.78) 58%,transparent 100%);
+  mask-image:radial-gradient(ellipse 73% 58% at 52% 47%,#000 20%,rgba(0,0,0,.78) 58%,transparent 100%);
 }
 .hero .bia-keyboard-scene{width:100%;height:100%;display:block}
-.hero .bia-keyboard-beams{transform-origin:50% 48%;animation:bia-keyboard-glow 18s ease-in-out infinite}
-.hero .bia-keyboard-sparks{animation:bia-keyboard-spark-breath 18s ease-in-out infinite}
+.hero .bia-keyboard-beams{transform-origin:50% 48%;animation:bia-keyboard-glow 19s ease-in-out infinite}
+.hero .bia-keyboard-sparks{animation:bia-keyboard-spark-breath 19s ease-in-out infinite}
 @keyframes bia-keyboard-breath{
-  0%,100%{opacity:.60}
-  48%,56%{opacity:.76}
+  0%,100%{opacity:.49}
+  45%,55%{opacity:.64}
 }
 @keyframes bia-keyboard-glow{
-  0%,100%{opacity:.67}
-  48%,56%{opacity:.83}
+  0%,100%{opacity:.58}
+  45%,55%{opacity:.77}
 }
 @keyframes bia-keyboard-spark-breath{
-  0%,100%{opacity:.35}
-  48%,56%{opacity:.50}
+  0%,100%{opacity:.28}
+  45%,55%{opacity:.43}
 }
-/* Seule la brillance de l'ensemble des ondulations existantes augmente de 4 %.
-   Aucune taille, fréquence, position, trajet ou pulsation n'est modifiée. */
+/* Les ondulations autour de Bia restent STRICTEMENT inchangées. */
 .hero-art .bia-ambient-safe{opacity:.56}
 @media(max-width:900px){
-  .hero .bia-keyboard-ambient{inset:-7% -8% -7% -8%}
+  .hero .bia-keyboard-ambient{top:-2%;left:11%;width:100%;height:52%}
 }
 @media(max-width:580px){
-  .hero .bia-keyboard-ambient{inset:-5% -5% -4% -5%}
+  .hero .bia-keyboard-ambient{top:-2%;left:5%;width:100%;height:49%}
   .hero-art .bia-ambient-safe{opacity:.40}
 }
 @media(prefers-reduced-motion:reduce){
