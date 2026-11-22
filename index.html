@@ -345,6 +345,34 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 .contact .chapo{margin:0 auto 40px}
 .contact .actions{justify-content:center}
 
+/* 22 nov. 2026 : nouveautés, services, pied de page en colonnes */
+.nouv{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;margin-top:44px}
+.nouv article{background:var(--noir);box-shadow:0 0 0 1px var(--trait);padding:24px 22px;display:flex;flex-direction:column;gap:8px}
+.nouv .quand{font-family:var(--util);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--indigo-clair)}
+.nouv h3{font-size:clamp(17px,2vw,21px);margin:0}
+.nouv p{margin:0;font-size:14px;color:#A3A1AD;line-height:1.55}
+.nouv a{color:var(--blanc);font-size:13px;text-decoration:none;margin-top:auto;padding-top:6px}
+.nouv a::after{content:" →";color:var(--indigo-clair)}
+.offres{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;margin-top:44px}
+.offre{background:var(--noir-2);padding:28px 24px;box-shadow:0 0 0 1px var(--trait)}
+.offre .num{font-family:var(--util);font-size:11px;letter-spacing:.2em;color:var(--indigo-clair)}
+.offre h3{font-size:clamp(18px,2.1vw,22px);margin:10px 0 8px}
+.offre p{margin:0;font-size:14.5px;color:#A3A1AD;line-height:1.6}
+.pour-qui{margin-top:30px;color:#B0AEBB;font-size:15px}
+.pour-qui b{color:var(--blanc);font-weight:600}
+.btn-wa{background:#1F8F55;color:#fff;border-color:#1F8F55}
+.btn-wa:hover,.btn-wa:focus-visible{background:#25A864;border-color:#25A864;transform:translateY(-2px)}
+.numero{display:block;margin-top:18px;font-family:var(--util);font-size:13px;letter-spacing:.08em;color:#8E8C97}
+.pied-cols{background:#07070A;border-top:1px solid #14151E;padding:46px var(--marge) 10px;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;max-width:var(--lg);margin:0 auto}
+@media(max-width:820px){.pied-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.pied-cols{grid-template-columns:minmax(0,1fr)}}
+.pied-cols h4{font-family:var(--util);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8E8C97;margin:0 0 14px;font-weight:600}
+.pied-cols ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.pied-cols a,.pied-cols li{color:#6E6D78;text-decoration:none;font-size:13.5px;transition:color .3s;overflow-wrap:anywhere}
+.pied-cols a:hover,.pied-cols a:focus-visible{color:var(--indigo-clair)}
+.pied-fond{background:#07070A}
+
 .pied{
   background-color:#07070A;border-top:1px solid #14151E;padding:34px var(--marge);
   display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;
@@ -551,7 +579,8 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
     <a href="#equilibre">ÉQUILIBRE</a>
     <a href="jeux/">Jeux</a>
     <a href="applications/">Applications</a>
-    <a href="#difference">Notre différence</a>
+    <a href="#services">Services</a>
+    <a href="#nouveautes">Nouveautés</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -581,6 +610,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <div><b id="nb-divisions">—</b>Divisions</div>
         <div><b>1</b>Licence originale</div>
         <div><b id="nb-jeux">—</b><span id="mot-jeux">Jeux jouables aujourd'hui</span></div>
+        <div><b id="nb-apps">—</b>Applications en ligne</div>
       </div>
     </div>
   </section>
@@ -673,7 +703,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
     <div class="wrap">
       <div class="rev">
         <p class="oeil">Nos applications</p>
-        <h2 class="titre">Deux outils, faits ici, pour ici.</h2>
+        <h2 class="titre">Des outils faits ici, pour ici.</h2>
         <p class="chapo">Les jeux racontent ; les applications servent. Celles-ci s'ouvrent dans le navigateur, sans rien installer, et parlent la langue de ceux à qui elles s'adressent.</p>
       </div>
       <div class="prods rev rev-2" id="applications-liste"></div>
@@ -684,6 +714,17 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
       <p class="mention-creation rev">Tous les jeux et toutes les applications présentés ici sont des <b>créations originales de KHALAM</b> — imaginées, écrites, dessinées et développées de bout en bout par la maison, à Dakar. Leurs univers, leurs règles, leurs textes, leurs visuels et leur code sont protégés par le droit d'auteur. Toute reproduction, adaptation ou exploitation sans autorisation écrite est interdite.</p>
 
       <a class="btn btn-vide rev" href="applications/" style="margin-top:34px;display:inline-flex">Les applications, avec leurs QR codes</a>
+    </div>
+  </section>
+
+  <!-- ============ nouveautés (22 nov. 2026) ============ -->
+  <section class="borde" id="nouveautes">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Nouveautés</p>
+        <h2 class="titre">Ce qui vient de sortir de l'atelier.</h2>
+      </div>
+      <div class="nouv rev rev-2" id="liste-nouveautes"></div>
     </div>
   </section>
 
@@ -762,8 +803,36 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
         <p>Créer des licences qui voyagent. Développer des applications utilisées partout dans le monde. Produire des œuvres audiovisuelles reconnues. Accompagner les entreprises dans leur transformation numérique.</p>
         <p>Et le faire depuis ici, avec notre vocabulaire, nos couleurs et nos récits — parce qu'une création n'est universelle que si elle vient d'un endroit précis.</p>
         <div class="actions" style="margin-top:26px">
-          <a class="btn btn-vide" href="#contact">Travailler avec nous</a>
+          <a class="btn btn-vide" href="#services">Travailler avec nous</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ services (22 nov. 2026) ============ -->
+  <section class="borde" id="services">
+    <div class="wrap">
+      <div class="rev">
+        <p class="oeil">Travailler avec KHALAM</p>
+        <h2 class="titre">Ce que nous pouvons construire pour vous.</h2>
+        <p class="chapo">Ce que nous faisons pour nous, nous pouvons le faire pour vous : dans vos langues, à vos couleurs, pour les gens que vous voulez toucher.</p>
+      </div>
+      <div class="offres rev rev-2">
+        <article class="offre"><span class="num">01</span><h3>Un assistant vocal en wolof</h3>
+          <p>Il répond à vos clients et à vos usagers, en wolof et en français, à voix haute — comme BIBA et Géwel le font déjà.</p></article>
+        <article class="offre"><span class="num">02</span><h3>Une application sur mesure</h3>
+          <p>Web, Android ou iPhone : de l'idée à la mise en ligne, conçue et construite dans le même atelier, sans intermédiaire.</p></article>
+        <article class="offre"><span class="num">03</span><h3>Un jeu qui fait passer un message</h3>
+          <p>Sensibilisation, formation ou promotion : un jeu original à vos couleurs, qu'on a envie de partager.</p></article>
+        <article class="offre"><span class="num">04</span><h3>Vos contenus pour ceux qui ne lisent pas</h3>
+          <p>Textes traduits en wolof et lus à voix haute, pour toucher aussi ceux que l'écrit laisse de côté.</p></article>
+        <article class="offre"><span class="num">05</span><h3>Vidéo et animation</h3>
+          <p>Films, publicités, habillages et motion design, de l'écriture au montage final.</p></article>
+      </div>
+      <p class="pour-qui rev">Pour les <b>entreprises</b>, les <b>écoles</b>, les <b>ONG</b> et les <b>collectivités</b>.</p>
+      <div class="actions rev" style="margin-top:26px">
+        <a class="btn btn-wa" data-wa href="#">Parlons-en sur WhatsApp</a>
+        <a class="btn btn-vide" href="#contact">Autres moyens de contact</a>
       </div>
     </div>
   </section>
@@ -775,14 +844,40 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
       <h2 class="titre">Dites-nous ce que vous voulez construire.</h2>
       <p class="chapo">Application, jeu, film, campagne ou univers animé : dites-nous où vous en êtes. Nous répondons nous-mêmes, sous 48 heures.</p>
       <div class="actions">
+        <a class="btn btn-wa" data-wa href="#">WhatsApp</a>
         <a class="btn btn-plein" id="lien-mail" href="#">Nous écrire</a>
         <a class="btn btn-vide" id="lien-insta" href="#" rel="me noopener">Instagram</a>
       </div>
+      <span class="numero">WhatsApp : +221 77 372 83 83 · Dakar, Sénégal</span>
     </div>
   </section>
 
 </main>
 
+<div class="pied-fond"><nav class="pied-cols" aria-label="Plan du site">
+  <div><h4>Jeux</h4><ul>
+    <li><a href="https://atoutvie.khalam.app/">ATOUT VIE</a></li>
+    <li><a href="https://tonequilibre.khalam.app/">ÉQUILIBRE</a></li>
+    <li><a href="https://quatredames.khalam.app/">Les Quatre Dames</a></li>
+    <li><a href="https://khalam.app/jeux/pylo/">PYLO</a></li>
+    <li><a href="/jeux/">Tous les jeux</a></li></ul></div>
+  <div><h4>Applications</h4><ul>
+    <li><a href="/bia">Bia Xarit</a></li>
+    <li><a href="https://jaayalmalii.khalam.app/">Jaayal Ma Lii</a></li>
+    <li><a href="https://gewel.khalam.app/">Géwel</a></li>
+    <li><a href="https://wolof.khalam.app/">L'Interprète</a></li>
+    <li><a href="/applications/">Toutes les applications</a></li></ul></div>
+  <div><h4>KHALAM</h4><ul>
+    <li><a href="#histoire">Notre histoire</a></li>
+    <li><a href="#divisions">Nos divisions</a></li>
+    <li><a href="#services">Travailler avec nous</a></li>
+    <li><a href="#nouveautes">Nouveautés</a></li>
+    <li><a href="/medias-officiels/">Médias officiels</a></li></ul></div>
+  <div><h4>Contact</h4><ul>
+    <li><a data-wa href="#">WhatsApp · +221 77 372 83 83</a></li>
+    <li><a href="mailto:khalam3102@gmail.com">khalam3102@gmail.com</a></li>
+    <li>Dakar, Sénégal</li></ul></div>
+</nav></div>
 <footer class="pied">
   <span>© 2014 KHALAM — créations originales, tous droits réservés</span>
   <span class="devise"><a href="/bia">Bia&nbsp;Xarit — IA gratuite en wolof au Sénégal</a></span>
@@ -802,6 +897,8 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
   "slogan":"Créer aujourd'hui les expériences de demain.",
   "description":"Entreprise indépendante de création numérique : applications, jeux vidéo, production audiovisuelle, animation, intelligence artificielle et technologies immersives.",
   "email":"khalam3102@gmail.com",
+  "telephone":"+221773728383",
+  "address":{"@type":"PostalAddress","addressLocality":"Dakar","addressCountry":"SN"},
   "knowsAbout":["Développement d'applications","Jeux vidéo","Production audiovisuelle","Animation 2D et 3D","Intelligence artificielle","Réalité augmentée"]
 }
 </script>
@@ -814,6 +911,7 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
    ========================================================= */
 
 const MAISON = {
+  whatsapp  : "221773728383",   /* sans + ni espace : c'est le format de wa.me */
   email     : "khalam3102@gmail.com",
   instagram : ""   /* vide = le bouton Instagram disparaît. Colle l'URL le jour venu. */
 };
@@ -870,7 +968,26 @@ const APPLICATIONS = [
   { nom:"BIBA", sous:"biba.khalam.app", type:"Intelligence artificielle · KHALAM", dispo:true,
     desc:"L'assistante de la maison. Posez votre question comme vous la diriez à quelqu'un : elle écoute, elle comprend, elle répond en wolof à voix haute. Installable pour votre entreprise, sur demande." },
   { nom:"L'Interprète Français ↔ Wolof", sous:"wolof.khalam.app", type:"Traduction vocale", dispo:true,
-    desc:"Chacun parle sa langue ; le téléphone lit la traduction à voix haute." }
+    desc:"Chacun parle sa langue ; le téléphone lit la traduction à voix haute." },
+  { nom:"Jaayal Ma Lii", sous:"jaayalmalii.khalam.app", type:"Petites annonces · Sénégal", dispo:true,
+    desc:"Vendre et acheter au Sénégal. Chaque annonce est vérifiée par KHALAM avant d'être publiée, et Bia peut la déposer pour vous, à la voix." }
+];
+
+/* Ce qui vient de sortir. Le plus récent en premier ; on ajoute une ligne en haut
+   à chaque nouveauté et on retire la plus ancienne quand il y en a plus de six. */
+const NOUVEAUTES = [
+  { quand:"22 novembre 2026", titre:"Jaayal Ma Lii change d'adresse",
+    texte:"Les petites annonces de KHALAM sont désormais sur jaayalmalii.khalam.app. Les anciens liens mènent toujours à la bonne annonce.",
+    lien:"https://jaayalmalii.khalam.app/", action:"Voir les annonces" },
+  { quand:"22 novembre 2026", titre:"Les Quatre Piliers sur tous les écrans",
+    texte:"Le jeu s'adapte au téléphone, à l'ordinateur et à la télévision : sur grand écran, les piliers à gauche, la main à droite.",
+    lien:"https://equilibre.khalam.app/", action:"Jouer" },
+  { quand:"21 novembre 2026", titre:"Un village pour Les Quatre Dames",
+    texte:"Nouveau plateau peint au coucher du soleil : la rivière coule, le vent passe dans les arbres, les chèvres broutent, et la Dame qui s'en va part en pirogue.",
+    lien:"https://quatredames.khalam.app/", action:"Jouer" },
+  { quand:"Novembre 2026", titre:"Bia devient professeure",
+    texte:"Un tableau où Bia écrit et dessine pour expliquer, pendant qu'elle aide à faire les devoirs.",
+    lien:"https://khalam.app/bia", action:"Découvrir Bia" }
 ];
 
 const VALEURS = [
@@ -1077,6 +1194,7 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   };
   poser("nb-divisions", DIVISIONS.length);
   poser("nb-jeux", jouables);
+  poser("nb-apps", APPLICATIONS.filter(function(p){ return p.dispo; }).length);
   /* Un seul jeu ne prend pas de « x » : le detail se remarque, surtout au
      debut d'un projet ou le chiffre est petit. */
   const mot = document.getElementById("mot-jeux");
@@ -1233,6 +1351,24 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
   const mail = document.getElementById("lien-mail");
   if (mail) mail.href = "mailto:" + MAISON.email;
+  /* Tous les boutons WhatsApp de la page, avec un premier message déjà écrit */
+  const waTexte = encodeURIComponent("Bonjour KHALAM, je viens de votre site.");
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.href = "https://wa.me/" + MAISON.whatsapp + "?text=" + waTexte;
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  /* Les nouveautés */
+  const nv = document.getElementById("liste-nouveautes");
+  if (nv) NOUVEAUTES.forEach(function(n){
+    const el = document.createElement("article");
+    el.innerHTML = '<span class="quand"></span><h3></h3><p></p><a></a>';
+    el.querySelector(".quand").textContent = n.quand;
+    el.querySelector("h3").textContent = n.titre;
+    el.querySelector("p").textContent = n.texte;
+    const a = el.querySelector("a");
+    a.href = n.lien; a.textContent = n.action; a.rel = "noopener";
+    nv.appendChild(el);
+  });
 
   const tete = document.getElementById("tete");
   if (tete){
