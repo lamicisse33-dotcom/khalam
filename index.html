@@ -518,6 +518,136 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
 @media (min-width:2200px){html{zoom:1.6}}
 @media (min-width:3200px){html{zoom:2.1}}
 </style>
+
+<style id="khalam-premium-habillage-20261122">
+/* KHALAM — habillage premium minimal, sans modification des textes et fonctions.
+   Sauvegarde avant refonte : sauvegarde-khalam-avant-refonte-2026-11-22
+   Le mouvement est limité aux anneaux du K, jamais au K lui-même. */
+:root{
+  --noir:#080f1f;
+  --noir-2:#0b172c;
+  --noir-3:#101d33;
+  --trait:#24344c;
+  --indigo:#244b81;
+  --indigo-clair:#8bb6de;
+  --indigo-nuit:#102a50;
+  --blanc:#f5f3ee;
+  --cendre:#b1bdcb;
+  --cendre-2:#93a2b3;
+}
+html{background-color:#080f1f}
+body,main{background-color:#080f1f!important}
+.tete{background:linear-gradient(180deg,rgba(8,15,31,.96),rgba(8,15,31,.9));border-bottom-color:rgba(221,185,109,.14)}
+.tete.pose{background:rgba(8,15,31,.96);border-bottom-color:rgba(221,185,109,.18)}
+.tete .nav a{color:#c0c9d5}
+.tete .nav a:hover,.tete .nav a:focus-visible{color:#f5f3ee}
+.tete .nav a::after{background:#ddb96d}
+.hero{
+  min-height:min(850px,100svh);
+  background:radial-gradient(ellipse 56% 82% at 77% 50%,rgba(21,56,100,.30),transparent 74%),
+             linear-gradient(120deg,#080f1f 8%,#0a1830 70%,#091329);
+}
+.hero .halo{opacity:.10;filter:blur(120px);animation:none}
+.hero .halo-3{display:none}
+.hero>.wrap{width:100%;position:relative;z-index:2;pointer-events:none}
+.hero>.wrap a{pointer-events:auto}
+.hero .oeil{color:#d6b875;letter-spacing:.2em}
+.hero h1{max-width:13.5ch;font-size:clamp(42px,6.4vw,79px);letter-spacing:-.045em}
+.hero h1 span{color:#f5f3ee;font-weight:500}
+.hero h1 strong{color:#ddb96d;font-weight:700}
+.hero-sous{max-width:49ch;color:#c5cfdb}
+.hero .btn-plein{background:#ddb96d;border-color:#ddb96d;color:#101827}
+.hero .btn-plein:hover,.hero .btn-plein:focus-visible{background:#ecd49d;border-color:#ecd49d;box-shadow:0 12px 34px rgba(221,185,109,.11)}
+.hero .btn-vide{border-color:rgba(221,185,109,.58);color:#f5f3ee}
+.hero .btn-vide:hover,.hero .btn-vide:focus-visible{border-color:#ddb96d;color:#ddb96d}
+.hero .compteur{border-top-color:rgba(221,185,109,.16);max-width:705px}
+.hero .compteur b{color:#e9e4d9}
+.hero .compteur div{color:#a5b0bf}
+.borde{border-top-color:#233249}
+.borde .oeil{color:#cbb27e}
+.borde .titre{color:#f5f3ee}
+.borde .chapo{color:#bec9d7}
+.verbe,.nouv article{background:#0e1a2c}
+.division::before{background:linear-gradient(90deg,rgba(30,74,121,.13),transparent)}
+/* L'univers ÉQUILIBRE et ses quatre couleurs restent sous leurs règles d'origine. */
+.khalam-hero-orbit{
+  width:clamp(265px,31vw,475px);
+  height:clamp(265px,31vw,475px);
+  position:absolute;top:50%;right:max(5vw,calc((100vw - 1280px)/2 + 18px));
+  transform:translateY(-50%);
+  z-index:1;
+  display:grid;place-items:center;
+  pointer-events:none;
+}
+.khalam-orbit-aura{
+  position:absolute;inset:7%;border-radius:50%;
+  background:radial-gradient(circle,rgba(21,77,138,.19) 0%,rgba(14,38,76,.11) 43%,transparent 72%);
+  box-shadow:0 0 115px rgba(41,92,154,.10);
+}
+.khalam-hero-monogram{
+  position:relative;z-index:5;
+  font-family:Georgia,"Times New Roman",serif;
+  color:#e8c881;
+  font-size:clamp(130px,19vw,258px);
+  font-weight:400;line-height:1;
+  text-shadow:0 0 35px rgba(221,185,109,.11);
+}
+.khalam-orbit-track{
+  position:absolute;inset:0;
+  border-radius:50%;
+  box-sizing:border-box;
+  border:1px solid rgba(132,183,224,.18);
+  transform-origin:50% 50%;
+  will-change:transform;
+}
+.khalam-orbit-track-one{
+  inset:4%;
+  border-color:rgba(122,184,228,.28);
+  border-top-color:rgba(105,183,252,.8);
+  border-right-color:rgba(133,186,225,.15);
+  box-shadow:0 -2px 14px -9px rgba(90,175,244,.5);
+  animation:khalam-orbit-clockwise 32s linear infinite;
+}
+.khalam-orbit-track-two{
+  inset:12%;
+  border-color:rgba(221,185,109,.27);
+  border-left-color:rgba(221,185,109,.72);
+  border-bottom-color:rgba(221,185,109,.12);
+  animation:khalam-orbit-counter 43s linear infinite;
+}
+.khalam-orbit-track-three{
+  inset:21%;
+  border-color:rgba(118,170,216,.18);
+  border-right-color:rgba(110,188,249,.66);
+  animation:khalam-orbit-clockwise 54s linear infinite;
+}
+.khalam-orbit-track-four{
+  inset:31%;
+  border-color:rgba(221,185,109,.17);
+  border-top-color:rgba(221,185,109,.48);
+  animation:khalam-orbit-counter 66s linear infinite;
+}
+@keyframes khalam-orbit-clockwise{to{transform:rotate(360deg)}}
+@keyframes khalam-orbit-counter{to{transform:rotate(-360deg)}}
+@media (min-width:1020px){
+  .hero>.wrap{padding-right: min(37vw,515px)}
+}
+@media (max-width:1019px){
+  .hero{min-height:0;padding:140px 0 95px}
+  .khalam-hero-orbit{width:270px;height:270px;right:2%;top:47%;opacity:.20}
+  .khalam-hero-monogram{font-size:150px}
+}
+@media (max-width:650px){
+  .hero{padding:125px 0 78px}
+  .hero h1{font-size:clamp(39px,11vw,64px)}
+  .khalam-hero-orbit{width:225px;height:225px;right:-72px;top:38%;opacity:.14}
+  .khalam-hero-monogram{font-size:128px}
+  .hero .compteur{margin-top:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  .khalam-orbit-track{animation:none!important;will-change:auto}
+}
+</style>
 </head>
 <body>
 
@@ -592,6 +722,14 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
     <div class="halo halo-1"></div>
     <div class="halo halo-2"></div>
     <div class="halo halo-3"></div>
+    <div class="khalam-hero-orbit" id="khalam-hero-orbit" aria-hidden="true">
+      <div class="khalam-orbit-aura"></div>
+      <div class="khalam-orbit-track khalam-orbit-track-one"></div>
+      <div class="khalam-orbit-track khalam-orbit-track-two"></div>
+      <div class="khalam-orbit-track khalam-orbit-track-three"></div>
+      <div class="khalam-orbit-track khalam-orbit-track-four"></div>
+      <div class="khalam-hero-monogram">K</div>
+    </div>
     <div class="wrap">
       <p class="oeil">Entreprise indépendante de création numérique</p>
       <h1><span>Nous ne créons pas des produits.</span><strong>Nous créons des univers.</strong></h1>
