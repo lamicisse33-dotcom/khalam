@@ -661,6 +661,48 @@ body{
   .hero-art .bia-safe-waves,.hero-art .bia-safe-rings{animation:none!important}
 }
 </style>
+
+<style>
+/* BIA — clavier lumineux en arrière-plan, respiration lente et discrète.
+   Portée STRICTEMENT limitée au bloc texte de l'entête. */
+.hero>div:first-child{position:relative;isolation:isolate}
+.hero>div:first-child>:not(.bia-keyboard-ambient){position:relative;z-index:1}
+.hero .bia-keyboard-ambient{
+  position:absolute;z-index:0;pointer-events:none;
+  inset:-9% -18% -10% -17%;overflow:hidden;
+  opacity:.28;animation:bia-keyboard-breath 18s ease-in-out infinite;
+  -webkit-mask-image:radial-gradient(ellipse at 48% 44%,#000 28%,rgba(0,0,0,.8) 51%,transparent 78%);
+  mask-image:radial-gradient(ellipse at 48% 44%,#000 28%,rgba(0,0,0,.8) 51%,transparent 78%);
+}
+.hero .bia-keyboard-scene{width:100%;height:100%;display:block}
+.hero .bia-keyboard-beams{transform-origin:50% 48%;animation:bia-keyboard-glow 18s ease-in-out infinite}
+.hero .bia-keyboard-sparks{animation:bia-keyboard-spark-breath 18s ease-in-out infinite}
+@keyframes bia-keyboard-breath{
+  0%,100%{opacity:.18}
+  48%,56%{opacity:.30}
+}
+@keyframes bia-keyboard-glow{
+  0%,100%{opacity:.50}
+  48%,56%{opacity:.79}
+}
+@keyframes bia-keyboard-spark-breath{
+  0%,100%{opacity:.18}
+  48%,56%{opacity:.46}
+}
+/* Seule la brillance de l'ensemble des ondulations existantes augmente de 4 %.
+   Aucune taille, fréquence, position, trajet ou pulsation n'est modifiée. */
+.hero-art .bia-ambient-safe{opacity:.56}
+@media(max-width:900px){
+  .hero .bia-keyboard-ambient{inset:-7% -8% -7% -8%;opacity:.20}
+}
+@media(max-width:580px){
+  .hero .bia-keyboard-ambient{inset:-5% -5% -4% -5%;opacity:.16}
+  .hero-art .bia-ambient-safe{opacity:.40}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .bia-keyboard-ambient,.hero .bia-keyboard-beams,.hero .bia-keyboard-sparks{animation:none!important}
+}
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
@@ -672,6 +714,25 @@ body{
 <main>
 <section class="wrap hero">
 <div>
+<div class="bia-keyboard-ambient" aria-hidden="true">
+<svg class="bia-keyboard-scene" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 590" preserveAspectRatio="xMidYMid slice" focusable="false">
+<defs>
+<radialGradient id="biaKeyboardMist"><stop stop-color="#1c5d9e" stop-opacity=".36"/><stop offset=".6" stop-color="#0a2e60" stop-opacity=".14"/><stop offset="1" stop-color="#071229" stop-opacity="0"/></radialGradient>
+<linearGradient id="biaKeyboardBeam" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0e6eb4" stop-opacity="0"/><stop offset=".23" stop-color="#2d91d9" stop-opacity=".28"/><stop offset=".52" stop-color="#73c9ff" stop-opacity=".75"/><stop offset=".78" stop-color="#2a81c1" stop-opacity=".22"/><stop offset="1" stop-color="#164278" stop-opacity="0"/></linearGradient>
+<filter id="biaKeyboardSoftLight"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<ellipse cx="460" cy="260" rx="485" ry="295" fill="url(#biaKeyboardMist)"/>
+<g transform="translate(90 -36) rotate(-10 470 300) skewX(-12)" opacity=".85"><rect x="-115" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><path d="M -43 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="-24" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><path d="M 48 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="67" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><path d="M 139 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="158" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><path d="M 230 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="249" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><path d="M 321 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="340" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><path d="M 412 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="431" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><path d="M 503 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="522" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><path d="M 594 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="613" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><path d="M 685 166 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="704" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><rect x="795" y="102" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><rect x="-84" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><rect x="7" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><rect x="98" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><rect x="189" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><rect x="280" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><rect x="371" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><rect x="462" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><rect x="553" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><rect x="644" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><rect x="735" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><rect x="826" y="177" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><rect x="-115" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.23" stroke-width="1.2"/><path d="M -43 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="-24" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.30" stroke-width="1.2"/><path d="M 48 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="67" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.23" stroke-width="1.2"/><path d="M 139 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="158" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.30" stroke-width="1.2"/><path d="M 230 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="249" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.23" stroke-width="1.2"/><path d="M 321 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="340" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.30" stroke-width="1.2"/><path d="M 412 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="431" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.23" stroke-width="1.2"/><path d="M 503 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="522" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.30" stroke-width="1.2"/><path d="M 594 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="613" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.23" stroke-width="1.2"/><path d="M 685 316 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="704" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.30" stroke-width="1.2"/><rect x="795" y="252" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.23" stroke-width="1.2"/><rect x="-84" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><rect x="7" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><rect x="98" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><rect x="189" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><rect x="280" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><rect x="371" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><rect x="462" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><rect x="553" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><rect x="644" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><rect x="735" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.18" stroke-width="1.2"/><rect x="826" y="327" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.26" stroke-width="1.2"/><rect x="-115" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><path d="M -43 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="-24" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><path d="M 48 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="67" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><path d="M 139 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="158" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><path d="M 230 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="249" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><path d="M 321 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="340" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><path d="M 412 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="431" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><path d="M 503 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="522" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><path d="M 594 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="613" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/><path d="M 685 466 l 18 0" stroke="#1b7eca" stroke-opacity=".22"/><rect x="704" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.20" stroke-width="1.2"/><rect x="795" y="402" width="78" height="58" rx="11" fill="#092447" fill-opacity=".38" stroke="#378fd6" stroke-opacity="0.28" stroke-width="1.2"/></g>
+<g class="bia-keyboard-beams" fill="none" stroke="url(#biaKeyboardBeam)" stroke-linecap="round">
+<path d="M -80 184 C 130 100, 270 264, 450 188 S 800 80, 1070 208" stroke-width="14" opacity=".23" filter="url(#biaKeyboardSoftLight)"/>
+<path d="M -80 184 C 130 100, 270 264, 450 188 S 800 80, 1070 208" stroke-width="1.4" opacity=".57"/>
+<path d="M -100 393 C 143 245, 288 429, 486 330 S 745 263, 1020 365" stroke-width="13" opacity=".20" filter="url(#biaKeyboardSoftLight)"/>
+<path d="M -100 393 C 143 245, 288 429, 486 330 S 745 263, 1020 365" stroke-width="1.3" opacity=".58"/>
+<path d="M -70 472 C 158 357, 329 533, 531 424 S 816 369, 1040 430" stroke-width="1.2" opacity=".30"/>
+</g>
+<g class="bia-keyboard-sparks" fill="#72ccff" opacity=".62"><circle cx="352" cy="217" r="2.5"/><circle cx="472" cy="194" r="2.2"/><circle cx="604" cy="165" r="2.5"/><circle cx="345" cy="380" r="2.4"/><circle cx="598" cy="309" r="2.1"/></g>
+</svg>
+</div>
 <div class="eyebrow">Créée à Dakar · Wolof · Français · Voix · Vision</div>
 <h1>Bia Xarit.<br><em>Parlez. Elle s’occupe du reste.</em></h1>
 <p class="microcopy" style="font-size:15px;color:#c3d8ec">Assistante vocale intelligente en wolof et en français, créée à Dakar par KHALAM.</p>
