@@ -1107,19 +1107,19 @@ const DIVISIONS = [
 
 const PRODUCTIONS = [
   { nom:"PYLO", sous:"khalam.app/jeux/pylo/", type:"Jeu de plateau · stratégie", dispo:true,
-    desc:"Deux rois à protéger, deux palais à conquérir. Jouez contre l’ordinateur ou à deux sur le même écran, dans les quatre royaumes de la vie." },
+    desc:"Deux rois à protéger. Deux palais à conquérir. Prenez le commandement de vos jetons et traversez les quatre royaumes. Anticipez les sauts, protégez vos deux rois et déjouez les pièges adverses : une conquête brillante peut basculer en un seul coup." },
   { nom:"ATOUT VIE", sous:"atoutvie.khalam.app", type:"Jeu de cartes · 2 ou 4 joueurs", dispo:true,
-    desc:"Le galgal est la prise qui fait perdre l'équilibre à l'adversaire. Trente-deux cartes, et douze qu'on ne verra jamais." },
+    desc:"Gardez vos atouts secrets. Renversez la manche. Inspiré du galgal de la lutte sénégalaise, ce jeu de cartes fait du bluff et du sens tactique vos meilleures armes. Spiritualité, amour, santé et argent : chaque manche impose un pilier, et la carte la plus forte remporte le pli." },
   { nom:"ÉQUILIBRE", sous:"tonequilibre.khalam.app", type:"Jeu complet", dispo:true,
-    desc:"Solo, duel en ligne et La Voie des Quatre Maîtres avec ses quinze Gardiens." },
+    desc:"Votre force se mesure à votre pilier le plus fragile. Construisez votre stratégie autour de quatre piliers de vie. Combinez vos cartes, renforcez vos points faibles et exploitez les cartes spéciales pour reprendre l’avantage. La puissance seule ne suffit pas : il faut savoir répartir ses forces." },
   { nom:"ÉQUILIBRE DES CHOIX", sous:"equilibredeschoix.khalam.app", type:"Jeu complet · solo et duel", dispo:true,
-    desc:"Une invention originale de KHALAM : des dilemmes de vie, des conséquences inattendues, quatre piliers à préserver et des trophées à collectionner. Vos choix écrivent votre histoire." },
+    desc:"Vos choix écrivent votre histoire. Et si une seule décision pouvait bouleverser votre vie ? Affrontez des dilemmes réalistes, choisissez parmi trois cartes et préservez vos quatre piliers : amour, santé, argent et spiritualité. Attention aux réponses séduisantes : leurs véritables conséquences ne sont révélées qu’après votre choix." },
   { nom:"Les Quatre Piliers", sous:"equilibre.khalam.app", type:"Jeu court · 10 min", dispo:true,
-    desc:"Onze cartes, trois au maximum par pilier. Une marge d'une seule carte." },
+    desc:"Ne laissez aucun pilier derrière vous. Un duel de cartes où chaque carte peut renforcer l’un de deux piliers, mais où chacun ne peut accueillir que trois cartes ordinaires. À la fin de la manche, votre pilier le plus faible décide de votre victoire : répartissez vos ressources avec finesse." },
   { nom:"Les Quatre Dames", sous:"quatredames.khalam.app", type:"Jeu mobile", dispo:true,
-    desc:"Modou est maçon et tient quatre foyers. Une Dame à zéro s'en va ; à la troisième, tout s'arrête." },
+    desc:"Quatre foyers, un seul homme, mille défis. Incarnez Modou, un maçon dakarois qui jongle avec son travail, ses revenus et les besoins de ses quatre Dames. Fleurs, soins, prières et argent : les dépenses augmentent au fil des mois, et chaque déplacement compte." },
   { nom:"Les Quatre Cases", sous:"les4case.khalam.app", type:"Jeu pour enfants", dispo:true,
-    desc:"La même balance, à hauteur d'enfant : les piliers deviennent des couleurs. Rara guide la partie, seul, à deux ou en duel." },
+    desc:"Quatre villages à faire grandir, aucun à oublier ! Avec Rara, découvrez un jeu de cartes accessible aux enfants : arrosez quatre villages colorés et regardez pousser leurs arbres, potagers, greniers et enclos. Le plus petit village décide du vainqueur, alors il faut partager intelligemment son eau." },
   { nom:"L'Édition", sous:"edition.khalam.app", type:"Jeu imprimé", dispo:false,
     desc:"Le jeu physique, dos doré et symboles gravés. Première série limitée." }
 ];
@@ -1427,7 +1427,7 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     el.querySelector(".haut span:last-child").textContent = p.dispo ? "Jouable" : "Bientôt";
     el.querySelector("h4").textContent = p.nom;
     el.querySelector("p").textContent = p.desc; const droit=document.createElement("small");droit.className="khalam-creation";droit.textContent="Création originale et exclusive de KHALAM — Tous droits réservés.";el.querySelector("p").after(droit);
-    el.querySelector(".adresse").textContent = p.sous;
+    el.querySelector(".adresse").textContent = p.dispo ? "Jouer à " + p.nom + " → · Gratuit" : p.sous;
     hote.appendChild(el);
   });
 })();
