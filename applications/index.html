@@ -508,7 +508,21 @@ section{padding:clamp(80px,13vh,160px) 0;position:relative}
        Charge en differe : il n'entre jamais dans le chemin d'affichage. -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon='{"token": "c0fcbf2702104952bde345789cb6f1d7"}'></script>
-<style>.produit-visuels{display:flex;gap:14px;align-items:center;flex-shrink:0}.produit-icone{width:180px;height:180px;object-fit:contain;border-radius:12px;display:block}.produit-visuels .qr-eq-visuel{margin:0}@media(max-width:560px){.produit-visuels{gap:10px;width:100%;justify-content:center}.produit-visuels .qr-eq-visuel,.produit-icone{width:min(40vw,150px);height:min(40vw,150px)}}</style></head>
+<style>
+.liste-produits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.liste-produits .qr-eq-carte{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:24px;padding:26px;min-width:0;text-align:left;flex-wrap:nowrap}
+.liste-produits .produit-visuels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;width:100%;align-items:center;justify-items:center;flex-shrink:0}
+.liste-produits .produit-icone,.liste-produits .qr-eq-visuel{display:block;width:100%;max-width:152px;height:auto;aspect-ratio:1;min-width:0;flex:none;margin:0;border-radius:12px;box-shadow:none!important;object-fit:contain;overflow:hidden}
+.liste-produits .produit-visuels .qr-eq-visuel{background:#fff;padding:8px;border:1px solid #ddd}
+.liste-produits .produit-visuels svg,.liste-produits .produit-visuels .qr-eq-visuel img{display:block;width:100%;height:100%;object-fit:contain}
+.liste-produits .produit-visuels svg rect{fill:#fff}
+.liste-produits .produit-visuels svg path{fill:#111}
+.liste-produits .qr-eq-txt{flex:1;min-width:0;width:100%;display:flex;flex-direction:column;text-align:left}
+.liste-produits .qr-eq-txt h2,.liste-produits .qr-eq-txt h3{font-size:23px;line-height:1.2;margin:6px 0 12px}
+.liste-produits .qr-eq-txt .qr-eq-lien{overflow-wrap:anywhere;display:block;margin-top:10px}
+.liste-produits .qr-eq-txt .qr-eq-lien:first-of-type{margin-top:auto;padding-top:14px}
+@media(max-width:760px){.liste-produits{grid-template-columns:1fr;gap:16px}.liste-produits .qr-eq-carte{padding:20px;gap:20px}.liste-produits .produit-visuels{gap:14px}.liste-produits .produit-icone,.liste-produits .qr-eq-visuel{max-width:140px}}
+</style></head>
 <body>
 
 <header class="tete" id="tete">
