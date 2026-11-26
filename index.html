@@ -666,7 +666,7 @@ body,main{background-color:#080f1f!important}
 <style>
 .khalam-rd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:36px 0 24px}.khalam-rd-grid article,.khalam-rd-note{border:1px solid #30334a;background:#10121c;padding:26px;border-radius:12px}.khalam-rd-grid h3,.khalam-rd-note h3{font-size:clamp(21px,2.5vw,28px);margin:0 0 16px}.khalam-rd-grid p,.khalam-rd-note p{color:#c4c2ce}.khalam-rd-grid .rd-status{font-family:var(--util);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#aebaff;margin-bottom:14px}.khalam-rd-note p:last-child,.khalam-rd-grid article p:last-child{margin-bottom:0}@media(max-width:800px){.khalam-rd-grid{grid-template-columns:1fr}}
 </style>
-</head>
+<style>.khalam-creation{display:block;color:#bfa571;font-size:11px;line-height:1.5;margin:10px 0;font-weight:600}</style></head>
 <body>
 
 <!-- ============ intro ============ -->
@@ -868,7 +868,7 @@ body,main{background-color:#080f1f!important}
       <!-- La mention de propriete. Elle ne dit que ce qui est vrai : le droit
            d'auteur naît de la création elle-même, sans dépôt. On ne parle pas
            de marques déposées tant qu'elles ne le sont pas. -->
-      <p class="mention-creation rev">Tous les jeux et toutes les applications présentés ici sont des <b>créations originales de KHALAM</b> — imaginées, écrites, dessinées et développées de bout en bout par la maison, à Dakar. Leurs univers, leurs règles, leurs textes, leurs visuels et leur code sont protégés par le droit d'auteur. Toute reproduction, adaptation ou exploitation sans autorisation écrite est interdite.</p>
+      <p class="mention-creation rev"><b>Création originale et exclusive de KHALAM — Tous droits réservés.</b> Les créations originales de KHALAM, notamment leurs textes, illustrations et codes, sont protégées par le droit d’auteur. Toute reproduction, adaptation ou exploitation sans autorisation est interdite, sous réserve des exceptions prévues par la loi.</p>
 
       <a class="btn btn-vide rev" href="applications/" style="margin-top:34px;display:inline-flex">Les applications, avec leurs QR codes</a> <a class="btn btn-vide rev" href="/bia-fiche-technique/" style="margin-top:34px;display:inline-flex">Qui est Bia ?</a>
     </div>
@@ -1426,7 +1426,7 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     el.querySelector(".type").textContent = p.type;
     el.querySelector(".haut span:last-child").textContent = p.dispo ? "Jouable" : "Bientôt";
     el.querySelector("h4").textContent = p.nom;
-    el.querySelector("p").textContent = p.desc;
+    el.querySelector("p").textContent = p.desc; const droit=document.createElement("small");droit.className="khalam-creation";droit.textContent="Création originale et exclusive de KHALAM — Tous droits réservés.";el.querySelector("p").after(droit);
     el.querySelector(".adresse").textContent = p.sous;
     hote.appendChild(el);
   });
@@ -1448,7 +1448,7 @@ const SOBRE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     el.querySelector(".type").textContent = p.type;
     el.querySelector(".haut span:last-child").textContent = p.dispo ? "Ouvrir" : "Bientôt";
     el.querySelector("h4").textContent = p.nom;
-    el.querySelector("p").textContent = p.desc;
+    el.querySelector("p").textContent = p.desc; const droit=document.createElement("small");droit.className="khalam-creation";droit.textContent="Création originale et exclusive de KHALAM — Tous droits réservés.";el.querySelector("p").after(droit);
     el.querySelector(".adresse").textContent = p.sous;
     hote.appendChild(el);
   });
