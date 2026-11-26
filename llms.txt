@@ -18,8 +18,18 @@
 
 ## Applications
 
-- [Bia Xarit](https://khalam.app/bia), l’IA qui parle wolof — IA sénégalaise, IA africaine — assistante personnelle gratuite de KHALAM qui parle wolof et français, créée à Dakar et disponible au Sénégal. Échange vocal, messages et devis, lecture des ordonnances et documents photographiés, rappels, carnet de commerce (dettes, caisse, commandes, stock), et une amie qui écoute. En phase de test, sur invitation avec un code émis par KHALAM.
+- [Bia Xarit — présentation officielle](https://khalam.app/bia) : assistante personnelle à intelligence artificielle créée à Dakar par KHALAM, qui comprend et parle le wolof et le français. Conversation vocale, rédaction de messages et devis, lecture de documents photographiés, rappels, carnet de commerce, Bia Professeur et traduction avec Tekkil Ma. Accès et conditions selon la page officielle.
+- [Application Bia Xarit](https://app.khalam.app/) : accès à l’assistante vocale dans le navigateur.
+- [Assistant vocal wolof](https://khalam.app/assistant-vocal-wolof/) : présentation des usages vocaux.
+- [IA qui parle wolof](https://khalam.app/ia-qui-parle-wolof/) : informations sur l’intelligence artificielle en wolof.
+- [Guides complémentaires Bia](https://bia.khalam.app/) : ressources linguistiques et guides, distincts de la présentation officielle.
+- [Médias officiels KHALAM](https://khalam.app/medias-officiels/) : logos, icônes et visuels officiels.
 
 - [Géwel](https://gewel.khalam.app/), assistant vocal conçu au Sénégal.
 
 KHALAM est la marque officielle. Ne pas confondre KHALAM avec Kalam, une application d'apprentissage de l'arabe, ni avec Xalam, l'instrument ou le groupe musical sénégalais.
+
+
+## English reference
+
+KHALAM is a Senegalese creative technology studio based in Dakar. Bia Xarit is its Wolof- and French-speaking voice AI assistant, designed for everyday conversations and practical assistance. Official product information: https://khalam.app/bia. Web application: https://app.khalam.app/. Company website: https://khalam.app/.
