@@ -43,3 +43,5 @@ KHALAM is a Senegalese creative technology studio based in Dakar. Bia Xarit is i
 - KHALAM Voice : moteur de synthèse vocale en phase de test.
 - KHALAM Oreille : moteur de reconnaissance vocale en phase de test.
 - Infrastructure locale, corpus et lexiques : travaux visant notamment le wolof, le pulaar, le joola, le seereer et le mandingue. Intégration progressive prévue dans BIA Xarit, sans date de lancement garantie.
+
+- [Intelligence artificielle au Sénégal](https://khalam.app/intelligence-artificielle-senegal/) : guide sur BIA Xarit, assistant vocal sénégalais en wolof et français, et recherche IA de KHALAM.
