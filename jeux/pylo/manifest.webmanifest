@@ -10,11 +10,15 @@
   "background_color": "#17160f",
   "theme_color": "#16150f",
   "lang": "fr",
-  "categories": ["games"],
+  "categories": [
+    "games"
+  ],
   "icons": [
-    { "src": "/jeux/pylo/icone-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/jeux/pylo/icone-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "/jeux/pylo/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
-    { "src": "/jeux/pylo/icone.svg", "sizes": "any", "type": "image/svg+xml" }
+    {
+      "src": "/jeux/pylo/icone-officielle-v3.webp",
+      "sizes": "96x96",
+      "type": "image/webp",
+      "purpose": "any"
+    }
   ]
 }
