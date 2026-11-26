@@ -35,3 +35,11 @@ KHALAM est la marque officielle. Ne pas confondre KHALAM avec Kalam, une applica
 KHALAM is a Senegalese creative technology studio based in Dakar. Bia Xarit is its Wolof- and French-speaking voice AI assistant, designed for everyday conversations and practical assistance. Official product information: https://khalam.app/bia. Web application: https://app.khalam.app/. Company website: https://khalam.app/.
 
 - [Fiche technique officielle BIA Xarit et KHALAM](https://khalam.app/bia-fiche-technique/) : services, comparatif, captures officielles, recherche et créations de jeux.
+
+## Recherche et développement — projets en cours
+
+- [Recherche et développement KHALAM](https://khalam.app/#recherche) : programme de recherche à vocation panafricaine engagé depuis deux ans selon KHALAM.
+- KHALAM Cerveau : intelligence artificielle panafricaniste en développement, adaptée aux cultures et réalités africaines, au service de l’autonomie et du développement.
+- KHALAM Voice : moteur de synthèse vocale en phase de test.
+- KHALAM Oreille : moteur de reconnaissance vocale en phase de test.
+- Infrastructure locale, corpus et lexiques : travaux visant notamment le wolof, le pulaar, le joola, le seereer et le mandingue. Intégration progressive prévue dans BIA Xarit, sans date de lancement garantie.
