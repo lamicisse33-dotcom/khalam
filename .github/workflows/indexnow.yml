@@ -1,0 +1,53 @@
+name: IndexNow gratuit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [sitemap.xml, .github/workflows/indexnow.yml]
+permissions:
+  contents: read
+jobs:
+  notifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Vérifier les pages publiques et notifier IndexNow
+        run: |
+          python3 - <<'PY'
+          import urllib.request, urllib.error, xml.etree.ElementTree as ET, json, time
+          from urllib.parse import urlsplit
+          host = 'khalam.app'
+          key = 'f0a6b13c74e94d59a1c83b7250ed469f'
+          location = 'https://' + host + '/' + key + '.txt'
+          def read(url):
+              with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'KHALAM-IndexNow/1.0'}), timeout=15) as r:
+                  return r.read()
+          for attempt in range(15):
+              try:
+                  if read(location).decode().strip() == key:
+                      break
+              except Exception:
+                  pass
+              time.sleep(12)
+          else:
+              raise SystemExit('Clé publique non accessible : aucune soumission')
+          root = ET.fromstring(read('https://khalam.app/sitemap.xml'))
+          urls = list(dict.fromkeys(e.text.strip() for e in root.findall('{*}url/{*}loc') if e.text and urlsplit(e.text.strip()).netloc == host and urlsplit(e.text.strip()).scheme == 'https'))
+          if not urls:
+              raise SystemExit('Sitemap vide')
+          from concurrent.futures import ThreadPoolExecutor
+          def check(url):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'KHALAM-IndexNow/1.0'}), timeout=12) as r:
+                      return url if r.status == 200 and r.geturl() == url and 'text/html' in r.headers.get('Content-Type','') and 'noindex' not in r.headers.get('X-Robots-Tag','').lower() else None
+              except Exception:
+                  return None
+          with ThreadPoolExecutor(max_workers=5) as pool:
+              valid = [u for u in pool.map(check, urls) if u]
+          print('Pages vérifiées:', len(valid), '/', len(urls))
+          if not valid:
+              raise SystemExit('Aucune page vérifiée')
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=json.dumps({'host':host,'key':key,'keyLocation':location,'urlList':valid}).encode(), headers={'Content-Type':'application/json; charset=utf-8'}, method='POST')
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print('Réponse IndexNow:', r.status, 'URLs:', len(valid))
+          PY
