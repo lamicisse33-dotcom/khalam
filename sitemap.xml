@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://khalam.app/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://khalam.app/jeux/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://khalam.app/jeux-senegalais-en-ligne/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -70,4 +70,10 @@
   <url><loc>https://khalam.app/medias-officiels/</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://khalam.app/medias-officiels/images/bia-xarit-icone-officielle.png</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/khalam-logo-officiel.svg</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/quatre-dames-icone.png</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/atout-vie-icone.png</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/bia-xarit-personnage-officiel.png</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/bia-xarit-interface-mobile-officielle.png</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/quatre-piliers-icone-officielle-2026.webp</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/les-quatre-cases-icone-officielle.png</image:loc></image:image><image:image><image:loc>https://khalam.app/medias-officiels/images/equilibre-quatre-piliers-icone.png</image:loc></image:image></url>
   <url><loc>https://khalam.app/bia-fiche-technique/</loc><lastmod>2026-11-26</lastmod></url>
   <url><loc>https://khalam.app/intelligence-artificielle-senegal/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://khalam.app/jeux/decouvrir-atout-vie/</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://khalam.app/jeux/decouvrir-equilibre/</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://khalam.app/jeux/decouvrir-equilibre-des-choix/</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://khalam.app/jeux/decouvrir-les-quatre-piliers/</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://khalam.app/jeux/decouvrir-les-quatre-dames/</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://khalam.app/jeux/decouvrir-les-quatre-cases/</loc><lastmod>2026-11-27</lastmod></url>
 </urlset>
