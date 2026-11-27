@@ -30,12 +30,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://khalam.app/aide-sans-savoir-lire/</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
   <url>
     <loc>https://khalam.app/applications/</loc>
     <lastmod>2026-11-11</lastmod>
@@ -76,26 +71,5 @@
   <url><loc>https://khalam.app/jeux/decouvrir-les-quatre-piliers/</loc><lastmod>2026-11-27</lastmod></url>
   <url><loc>https://khalam.app/jeux/decouvrir-les-quatre-dames/</loc><lastmod>2026-11-27</lastmod></url>
   <url><loc>https://khalam.app/jeux/decouvrir-les-quatre-cases/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/intelligence-artificielle-afrique/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/wolof-ai-voice-assistant/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/tekkil-ma/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/traducteur-chinois-wolof/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/bia-professeur/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/apprendre-anglais-wolof/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/apprendre-arabe-wolof/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/apprendre-espagnol-wolof/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/apprendre-francais-wolof/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/soutien-scolaire-senegal/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/jaayal-ma-lii/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/devis-facture-vocal/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/carnet-commerce-vocal/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/lecture-documents-wolof/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/rappels-pharmacies-senegal/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/redaction-messages-wolof/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/carte-itineraire-senegal/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/recherche-vocale-senegal/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/bia-compagnon-vocal/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/bia-images-photo/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/bia-personnalisation-memoire/</loc><lastmod>2026-11-27</lastmod></url>
-  <url><loc>https://khalam.app/services-bia/</loc><lastmod>2026-11-27</lastmod></url>
+
 </urlset>
