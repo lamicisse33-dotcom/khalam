@@ -1,0 +1,30 @@
+name: PYLO - laboratoire autonome
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+  push:
+    paths:
+      - '.github/workflows/pylo-laboratoire.yml'
+      - 'jeux/pylo-test/laboratoire.cjs'
+permissions:
+  contents: read
+concurrency:
+  group: pylo-laboratoire
+  cancel-in-progress: false
+jobs:
+  simulations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Simuler les configurations
+        run: node jeux/pylo-test/laboratoire.cjs "${{ github.run_number }}" 12 2 pylo-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pylo-rapport
+          path: pylo-report.json
+          retention-days: 30
