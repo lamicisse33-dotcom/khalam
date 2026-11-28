@@ -1,0 +1,7380 @@
+{
+  "base": "official 1.5 honour",
+  "seed": 19371,
+  "ranking": [
+    {
+      "id": "officiel16",
+      "games": 6,
+      "wins": 6,
+      "firstWins": 2,
+      "ivoryWins": 3,
+      "turns": 38.5,
+      "captures": 4.166666666666667,
+      "threats": 0.6666666666666666,
+      "quiet": 16.333333333333332,
+      "depth": 2
+    },
+    {
+      "id": "20-garde-exterieur",
+      "games": 6,
+      "wins": 3,
+      "firstWins": 1,
+      "ivoryWins": 1,
+      "turns": 53.166666666666664,
+      "captures": 1.8333333333333333,
+      "threats": 0.5,
+      "quiet": 32.666666666666664,
+      "depth": 2
+    },
+    {
+      "id": "20-garde-flanc",
+      "games": 6,
+      "wins": 6,
+      "firstWins": 2,
+      "ivoryWins": 3,
+      "turns": 37.166666666666664,
+      "captures": 2.3333333333333335,
+      "threats": 1.3333333333333333,
+      "quiet": 21.333333333333332,
+      "depth": 2
+    },
+    {
+      "id": "20-garde-centre",
+      "games": 6,
+      "wins": 6,
+      "firstWins": 0,
+      "ivoryWins": 3,
+      "turns": 23.666666666666668,
+      "captures": 4,
+      "threats": 0.3333333333333333,
+      "quiet": 9,
+      "depth": 2
+    },
+    {
+      "id": "20-garde-royal",
+      "games": 6,
+      "wins": 5,
+      "firstWins": 3,
+      "ivoryWins": 3,
+      "turns": 39.166666666666664,
+      "captures": 3.8333333333333335,
+      "threats": 1,
+      "quiet": 21,
+      "depth": 2
+    }
+  ],
+  "rows": [
+    {
+      "id": "officiel16",
+      "first": 1,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 76,
+      "captures": 7,
+      "threats": 2,
+      "maxQuiet": 17,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "D2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "E7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D2",
+          "to": "B4",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "E7",
+          "to": "G5",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "E7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E7",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "D7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "E2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G4",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E2",
+          "to": "D1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D1",
+          "to": "D2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D2",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G7",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "E2",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "H2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "D8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G7",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H2",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D8",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "D8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D8",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "officiel16",
+      "first": 2,
+      "winner": 2,
+      "reason": "piege",
+      "turns": 47,
+      "captures": 6,
+      "threats": 2,
+      "maxQuiet": 17,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "E2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "B5",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "E2",
+          "to": "G4",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "E2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E2",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "D2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D2",
+          "to": "B4",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A6",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "E2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E2",
+          "to": "G4",
+          "taken": 2,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "officiel16",
+      "first": 1,
+      "winner": 2,
+      "reason": "conquest",
+      "turns": 27,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 16,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "C5",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "G2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "officiel16",
+      "first": 2,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 27,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 16,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "C4",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "officiel16",
+      "first": 1,
+      "winner": 2,
+      "reason": "conquest",
+      "turns": 27,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 16,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "C5",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "G2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "officiel16",
+      "first": 2,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 27,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 16,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "C4",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-exterieur",
+      "first": 1,
+      "winner": 0,
+      "reason": "limit_or_repetition",
+      "turns": 90,
+      "captures": 1,
+      "threats": 2,
+      "maxQuiet": 60,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A8",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A8",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "E1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "E7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E1",
+          "to": "E2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-exterieur",
+      "first": 2,
+      "winner": 2,
+      "reason": "piege",
+      "turns": 15,
+      "captures": 0,
+      "threats": 1,
+      "maxQuiet": 14,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-exterieur",
+      "first": 1,
+      "winner": 2,
+      "reason": "conquest",
+      "turns": 17,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 8,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C2",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "B7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "B2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "G2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "A8",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-exterieur",
+      "first": 2,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 17,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 8,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C7",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "B2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "B7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "G7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-exterieur",
+      "first": 1,
+      "winner": 0,
+      "reason": "limit_or_repetition",
+      "turns": 90,
+      "captures": 2,
+      "threats": 0,
+      "maxQuiet": 47,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "B7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A8",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A7",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "H8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H8",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "H8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-exterieur",
+      "first": 2,
+      "winner": 0,
+      "reason": "limit_or_repetition",
+      "turns": 90,
+      "captures": 2,
+      "threats": 0,
+      "maxQuiet": 59,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "B2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "H5",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A8",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "A2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-flanc",
+      "first": 1,
+      "winner": 2,
+      "reason": "conquest",
+      "turns": 41,
+      "captures": 2,
+      "threats": 1,
+      "maxQuiet": 25,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H2",
+          "to": "F4",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "G2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "E7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-flanc",
+      "first": 2,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 61,
+      "captures": 3,
+      "threats": 1,
+      "maxQuiet": 39,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "F5",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G7",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G7",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "G8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "B8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B8",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "B6",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G8",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-flanc",
+      "first": 1,
+      "winner": 2,
+      "reason": "piege",
+      "turns": 42,
+      "captures": 2,
+      "threats": 2,
+      "maxQuiet": 25,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "C4",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "G2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G2",
+          "to": "G1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G1",
+          "to": "G2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G2",
+          "to": "G1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-flanc",
+      "first": 2,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 43,
+      "captures": 3,
+      "threats": 2,
+      "maxQuiet": 21,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "C5",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "H2",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H2",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "H2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H2",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-flanc",
+      "first": 1,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 18,
+      "captures": 2,
+      "threats": 1,
+      "maxQuiet": 9,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "H7",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-flanc",
+      "first": 2,
+      "winner": 2,
+      "reason": "conquest",
+      "turns": 18,
+      "captures": 2,
+      "threats": 1,
+      "maxQuiet": 9,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "H2",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H2",
+          "to": "G3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-centre",
+      "first": 1,
+      "winner": 2,
+      "reason": "piege",
+      "turns": 24,
+      "captures": 5,
+      "threats": 1,
+      "maxQuiet": 7,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "H2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "H2",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "D2",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "D1",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-centre",
+      "first": 2,
+      "winner": 1,
+      "reason": "piege",
+      "turns": 30,
+      "captures": 5,
+      "threats": 1,
+      "maxQuiet": 9,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "D7",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "C5",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "E7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "H7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E7",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-centre",
+      "first": 1,
+      "winner": 2,
+      "reason": "conquest",
+      "turns": 19,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 10,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "C5",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "A7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-centre",
+      "first": 2,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 19,
+      "captures": 3,
+      "threats": 0,
+      "maxQuiet": 10,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "C4",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-centre",
+      "first": 1,
+      "winner": 2,
+      "reason": "conquest",
+      "turns": 25,
+      "captures": 4,
+      "threats": 0,
+      "maxQuiet": 9,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "C5",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G5",
+          "to": "H4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "E7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "H7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H4",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H7",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "G2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-centre",
+      "first": 2,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 25,
+      "captures": 4,
+      "threats": 0,
+      "maxQuiet": 9,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "C4",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "G4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G4",
+          "to": "H5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "E2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "H2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H5",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H2",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "G7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-royal",
+      "first": 1,
+      "winner": 2,
+      "reason": "piege",
+      "turns": 30,
+      "captures": 3,
+      "threats": 1,
+      "maxQuiet": 13,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F4",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F5",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A2",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-royal",
+      "first": 2,
+      "winner": 1,
+      "reason": "piege",
+      "turns": 30,
+      "captures": 3,
+      "threats": 1,
+      "maxQuiet": 13,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F5",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F4",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A7",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-royal",
+      "first": 1,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 30,
+      "captures": 4,
+      "threats": 1,
+      "maxQuiet": 8,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C4",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C5",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "A5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "A2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "E2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "D4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "G7",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A5",
+          "to": "A6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-royal",
+      "first": 2,
+      "winner": 0,
+      "reason": "limit_or_repetition",
+      "turns": 90,
+      "captures": 5,
+      "threats": 0,
+      "maxQuiet": 70,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C5",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C4",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "D5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "A4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A4",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "A7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "B2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "H7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D5",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "B8",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B8",
+          "to": "C7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G3",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "B8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B8",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B6",
+          "to": "B7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "B8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B8",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B7",
+          "to": "B6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "B3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C1",
+          "to": "C2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B3",
+          "to": "A3",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-royal",
+      "first": 1,
+      "winner": 1,
+      "reason": "conquest",
+      "turns": 26,
+      "captures": 4,
+      "threats": 1,
+      "maxQuiet": 11,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "H3",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F4",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F5",
+          "taken": 6,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "E6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E6",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A3",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H6",
+          "to": "F8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C2",
+          "to": "C3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C3",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D3",
+          "to": "D2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "B7",
+          "taken": 7,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C5",
+          "to": "E7",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "G6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "G6",
+          "to": "H6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "id": "20-garde-royal",
+      "first": 2,
+      "winner": 2,
+      "reason": "piege",
+      "turns": 29,
+      "captures": 4,
+      "threats": 2,
+      "maxQuiet": 11,
+      "depth": 2,
+      "trace": [
+        {
+          "from": "H6",
+          "to": "F4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F3",
+          "to": "F5",
+          "taken": 8,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F4",
+          "taken": 2,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "E3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F7",
+          "to": "F6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E3",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F6",
+          "to": "F5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E4",
+          "to": "E5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "C5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "A6",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C7",
+          "to": "C6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E5",
+          "to": "D6",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C6",
+          "to": "B5",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D6",
+          "to": "D7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B5",
+          "to": "B4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "H3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B4",
+          "to": "B2",
+          "taken": 3,
+          "depth": 2
+        },
+        {
+          "from": "H3",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F8",
+          "to": "F7",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "D3",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "C4",
+          "to": "E2",
+          "taken": 4,
+          "depth": 2
+        },
+        {
+          "from": "F2",
+          "to": "F1",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F5",
+          "to": "E4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "F1",
+          "to": "F2",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "E2",
+          "to": "C4",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "D7",
+          "to": "D8",
+          "taken": 0,
+          "depth": 2
+        },
+        {
+          "from": "B2",
+          "to": "B1",
+          "taken": 0,
+          "depth": 2
+        }
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "id": "officiel16",
+      "observation": "6/6 parties décisives; 4.2 captures moyennes"
+    },
+    {
+      "id": "20-garde-exterieur",
+      "observation": "3/6 parties décisives; 1.8 captures moyennes"
+    },
+    {
+      "id": "20-garde-flanc",
+      "observation": "6/6 parties décisives; 2.3 captures moyennes"
+    },
+    {
+      "id": "20-garde-centre",
+      "observation": "6/6 parties décisives; 4.0 captures moyennes"
+    },
+    {
+      "id": "20-garde-royal",
+      "observation": "5/6 parties décisives; 3.8 captures moyennes"
+    }
+  ]
+}
