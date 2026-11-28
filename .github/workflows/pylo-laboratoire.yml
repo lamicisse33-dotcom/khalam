@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/pylo-laboratoire.yml'
       - 'jeux/pylo-test/laboratoire.cjs'
+      - 'jeux/pylo-test/laboratoire-routes.cjs'
 permissions:
   contents: read
 concurrency:
@@ -22,9 +23,11 @@ jobs:
         with:
           node-version: '22'
       - name: Simuler les configurations
-        run: node jeux/pylo-test/laboratoire.cjs "${{ github.run_number }}" 12 2 pylo-report.json
+        run: node jeux/pylo-test/laboratoire-routes.cjs "${{ github.run_number }}" 12 2 pylo-report.json
       - uses: actions/upload-artifact@v4
         with:
           name: pylo-rapport
-          path: pylo-report.json
+          path: |
+            pylo-report.json
+            pylo-propositions.md
           retention-days: 30
