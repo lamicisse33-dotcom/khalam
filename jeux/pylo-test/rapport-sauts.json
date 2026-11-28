@@ -1,0 +1,7249 @@
+{
+  "version": "2.5-sauts",
+  "seedBase": 9231,
+  "ranking": [
+    {
+      "config": {
+        "id": "B32",
+        "pieces": 32,
+        "routes": "scatterB",
+        "jump": 3
+      },
+      "wins": 2,
+      "games": 2,
+      "firstWins": 1,
+      "turns": 46.5,
+      "captures": 13.5,
+      "bribes": 0,
+      "quiet": 14.5,
+      "depth": 1,
+      "mobility": [
+        6.213114754098361,
+        9.898305084745763,
+        5.310714285714286
+      ],
+      "score": 101.9
+    },
+    {
+      "config": {
+        "id": "A32",
+        "pieces": 32,
+        "routes": "scatterA",
+        "jump": 3
+      },
+      "wins": 2,
+      "games": 2,
+      "firstWins": 0,
+      "turns": 37,
+      "captures": 15,
+      "bribes": 0,
+      "quiet": 8,
+      "depth": 1,
+      "mobility": [
+        9.942622950819672,
+        5.9375,
+        5.708333333333333
+      ],
+      "score": 78.6
+    },
+    {
+      "config": {
+        "id": "A4",
+        "pieces": 24,
+        "routes": "scatterA",
+        "jump": 4
+      },
+      "wins": 1,
+      "games": 2,
+      "firstWins": 1,
+      "turns": 58.5,
+      "captures": 19,
+      "bribes": 0,
+      "quiet": 7.5,
+      "depth": 1,
+      "mobility": [
+        0,
+        8.576923076923077,
+        8.648148148148149
+      ],
+      "score": 48
+    },
+    {
+      "config": {
+        "id": "B3",
+        "pieces": 24,
+        "routes": "scatterB",
+        "jump": 3
+      },
+      "wins": 1,
+      "games": 2,
+      "firstWins": 0,
+      "turns": 55,
+      "captures": 16,
+      "bribes": 0,
+      "quiet": 13.5,
+      "depth": 1,
+      "mobility": [
+        6.639705882352941,
+        0,
+        6.337301587301587
+      ],
+      "score": 40.2
+    },
+    {
+      "config": {
+        "id": "A2",
+        "pieces": 24,
+        "routes": "scatterA",
+        "jump": 2
+      },
+      "wins": 1,
+      "games": 2,
+      "firstWins": 0,
+      "turns": 50,
+      "captures": 14,
+      "bribes": 0,
+      "quiet": 12,
+      "depth": 1,
+      "mobility": [
+        0,
+        3.960698689956332,
+        3.816326530612245
+      ],
+      "score": 39.4
+    },
+    {
+      "config": {
+        "id": "libre24",
+        "pieces": 24
+      },
+      "wins": 1,
+      "games": 2,
+      "firstWins": 1,
+      "turns": 46.5,
+      "captures": 13,
+      "bribes": 0,
+      "quiet": 25,
+      "depth": 1,
+      "mobility": [
+        2.9641255605381165,
+        0,
+        4.722222222222222
+      ],
+      "score": 28
+    },
+    {
+      "config": {
+        "id": "A3",
+        "pieces": 24,
+        "routes": "scatterA",
+        "jump": 3
+      },
+      "wins": 0,
+      "games": 2,
+      "firstWins": 0,
+      "turns": 60,
+      "captures": 12.5,
+      "bribes": 0,
+      "quiet": 13.5,
+      "depth": 1,
+      "mobility": [
+        0,
+        6.991803278688525,
+        6.520979020979021
+      ],
+      "score": 1.6999999999999993
+    }
+  ],
+  "proposals": [
+    {
+      "analyst": "Ivoire — offensive",
+      "observations": [
+        "Meilleur score : B32.",
+        "Mobilité la plus faible : Sauteur (5.31 destinations par soldat et tour)."
+      ],
+      "proposal": "Tester une route commune supplémentaire pour Sauteur et mesurer les prises et la durée.",
+      "next": {
+        "id": "B32",
+        "pieces": 32,
+        "routes": "scatterB",
+        "jump": 3,
+        "routeAdjustment": {
+          "family": 3,
+          "action": "add_shared_cells"
+        }
+      }
+    },
+    {
+      "analyst": "Ébène — défense et équilibre",
+      "observations": [
+        "Premier joueur : 1 victoires sur 2 parties décisives.",
+        "Sauts limités à deux cases : 1/2 parties décisives."
+      ],
+      "proposal": "Tester une réduction des cases communes du Sentinelle et vérifier que les autres familles restent mobiles.",
+      "next": {
+        "id": "B32",
+        "pieces": 32,
+        "routes": "scatterB",
+        "jump": 3,
+        "routeAdjustment": {
+          "family": 2,
+          "action": "remove_shared_cells"
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "id": "libre24",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 1,
+      "result": {
+        "winner": 1,
+        "reason": "royal"
+      },
+      "turns": 33,
+      "captures": 14,
+      "bribes": 0,
+      "maxQuiet": 6,
+      "mob": [
+        238,
+        0,
+        227
+      ],
+      "samples": [
+        84,
+        0,
+        48
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "D7",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "A7",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "E2",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "G2",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A7",
+          "to": "B8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "F4",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G2",
+          "to": "G1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "B3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "G6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "C3",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "D3",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "F2",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 3
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "F8",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F2",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "F3",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F3",
+          "to": "F1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B8",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E5",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "E4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "E5",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 1
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "libre24",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 2,
+      "result": {
+        "winner": 0,
+        "reason": "limit"
+      },
+      "turns": 60,
+      "captures": 12,
+      "bribes": 0,
+      "maxQuiet": 44,
+      "mob": [
+        423,
+        0,
+        113
+      ],
+      "samples": [
+        139,
+        0,
+        24
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "D2",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "B2",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "E7",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "G7",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "G4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F4",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "C5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "B7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "G3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "C4",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "F5",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B7",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F7",
+          "to": "F8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "B7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G7",
+          "to": "G8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B7",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "G4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G4",
+          "to": "G3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "B5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B5",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B2",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "F2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "B7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "G3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B7",
+          "to": "A7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "G2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A7",
+          "to": "B8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G2",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "B7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B8",
+          "to": "A7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B7",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "E1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "A5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E1",
+          "to": "F1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A7",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "G1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G1",
+          "to": "G2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 1,
+      "result": {
+        "winner": 2,
+        "reason": "royal"
+      },
+      "turns": 40,
+      "captures": 11,
+      "bribes": 0,
+      "maxQuiet": 8,
+      "mob": [
+        0,
+        353,
+        422
+      ],
+      "samples": [
+        0,
+        93,
+        114
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "G5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B5",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "A3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "G4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G4",
+          "to": "H3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H3",
+          "to": "G1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "D4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G1",
+          "to": "H3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D4",
+          "to": "B4",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 3
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C7",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B4",
+          "to": "A5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D8",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D7",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "A7",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A7",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A5",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 2,
+              "target": 0,
+              "count": 1
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "A5",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 2,
+      "result": {
+        "winner": 0,
+        "reason": "limit"
+      },
+      "turns": 60,
+      "captures": 17,
+      "bribes": 0,
+      "maxQuiet": 16,
+      "mob": [
+        0,
+        554,
+        513
+      ],
+      "samples": [
+        0,
+        136,
+        131
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "G4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "A3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B5",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G4",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A6",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A3",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "G5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "G4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C2",
+          "to": "A3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "B3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C7",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "F4",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "E7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "G7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "H4",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "F7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H4",
+          "to": "G3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D2",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "E5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "F6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E5",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "D6",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G7",
+          "to": "F6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E6",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "H4",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C7",
+          "to": "F7",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H4",
+          "to": "G3",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 1,
+              "target": 3,
+              "count": 4
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G4",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "F6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 3,
+              "target": 1,
+              "count": 3
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H2",
+          "to": "F1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 1,
+      "result": {
+        "winner": 0,
+        "reason": "limit"
+      },
+      "turns": 60,
+      "captures": 14,
+      "bribes": 0,
+      "maxQuiet": 12,
+      "mob": [
+        0,
+        859,
+        787
+      ],
+      "samples": [
+        0,
+        130,
+        119
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A6",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "A3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "C2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "E2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C7",
+          "to": "B8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D8",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D7",
+          "to": "F8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A3",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "G7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B8",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F8",
+          "to": "C5",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D8",
+          "to": "B8",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B8",
+          "to": "B7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C5",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B1",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E3",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D6",
+          "to": "A3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A3",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B7",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "B1",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "A4",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C7",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A4",
+          "to": "B3",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 0,
+              "target": 2,
+              "count": 4
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 2,
+      "result": {
+        "winner": 0,
+        "reason": "limit"
+      },
+      "turns": 60,
+      "captures": 11,
+      "bribes": 0,
+      "maxQuiet": 15,
+      "mob": [
+        0,
+        847,
+        1078
+      ],
+      "samples": [
+        0,
+        114,
+        167
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A6",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "F8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C4",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "E8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F8",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E8",
+          "to": "C6",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E7",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C7",
+          "to": "B8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C5",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C8",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E7",
+          "to": "C5",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "A8",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "E8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E7",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C5",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E7",
+          "to": "C5",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E8",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "F8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D8",
+          "to": "E8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F8",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A8",
+          "to": "B8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "F1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C1",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "E1",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 1,
+      "result": {
+        "winner": 0,
+        "reason": "limit"
+      },
+      "turns": 60,
+      "captures": 17,
+      "bribes": 0,
+      "maxQuiet": 10,
+      "mob": [
+        0,
+        975,
+        1220
+      ],
+      "samples": [
+        0,
+        108,
+        134
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "E7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "H7",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "B2",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E2",
+          "to": "C4",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D6",
+          "to": "G4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "F8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C5",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D2",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G4",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "E8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F7",
+          "to": "G8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E8",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D7",
+          "to": "F5",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "F6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G8",
+          "to": "H6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "D8",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H6",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F7",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D8",
+          "to": "B6",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F8",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "D4",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "E2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D1",
+          "to": "B1",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D4",
+          "to": "C3",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 1,
+              "target": 2,
+              "count": 4
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B1",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "D1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D1",
+          "to": "F3",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D3",
+          "to": "H3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "G2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C3",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G2",
+          "to": "H2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H3",
+          "to": "G1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 2,
+      "result": {
+        "winner": 2,
+        "reason": "royal"
+      },
+      "turns": 57,
+      "captures": 21,
+      "bribes": 0,
+      "maxQuiet": 5,
+      "mob": [
+        0,
+        809,
+        1115
+      ],
+      "samples": [
+        0,
+        100,
+        136
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "E2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "F2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "B7",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "E7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F7",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "D4",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C4",
+          "to": "F1",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F2",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C2",
+          "to": "A3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D4",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A3",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B5",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 2,
+              "target": 0,
+              "count": 4
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D7",
+          "to": "B7",
+          "bribe": false,
+          "taken": 3,
+          "events": [
+            {
+              "kind": "reconquest",
+              "z": 0,
+              "target": 0,
+              "count": 4
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B6",
+          "to": "D8",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D8",
+          "to": "D6",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "H3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B7",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D6",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 2,
+              "target": 0,
+              "count": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A6",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "D4",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C6",
+          "to": "D5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D4",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E5",
+          "to": "G3",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 3
+            },
+            {
+              "kind": "conquest",
+              "z": 0,
+              "target": 3,
+              "count": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G3",
+          "to": "E5",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D5",
+          "to": "F5",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B8",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "G6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 2,
+              "target": 1,
+              "count": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "H5",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "B3",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 1,
+      "result": {
+        "winner": 2,
+        "reason": "royal"
+      },
+      "turns": 50,
+      "captures": 18,
+      "bribes": 0,
+      "maxQuiet": 15,
+      "mob": [
+        956,
+        0,
+        632
+      ],
+      "samples": [
+        152,
+        0,
+        103
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B1",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B4",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "E1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "G4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E1",
+          "to": "C3",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 3,
+              "target": 0,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 3
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "F6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "alliance",
+              "z": 0,
+              "target": 1,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "F8",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E5",
+          "to": "G3",
+          "bribe": false,
+          "taken": 4,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 0,
+              "target": 3,
+              "count": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D1",
+          "to": "B3",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D2",
+          "to": "F4",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F8",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "D5",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D7",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G3",
+          "to": "E5",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D5",
+          "to": "F5",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G4",
+          "to": "F2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "G6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 2,
+              "target": 1,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "H5",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "B3",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 2,
+      "result": {
+        "winner": 0,
+        "reason": "limit"
+      },
+      "turns": 60,
+      "captures": 14,
+      "bribes": 0,
+      "maxQuiet": 12,
+      "mob": [
+        850,
+        0,
+        965
+      ],
+      "samples": [
+        120,
+        0,
+        149
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B1",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "H6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C2",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D1",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B1",
+          "to": "B5",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "C2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E2",
+          "to": "F1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "F8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B5",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H6",
+          "to": "G8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "F6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "D1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C1",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "E1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D6",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E1",
+          "to": "G1",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "G7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G8",
+          "to": "G5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G7",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F8",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D8",
+          "to": "B8",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D1",
+          "to": "D3",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B8",
+          "to": "C7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "F3",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E5",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G5",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E5",
+          "to": "D4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D4",
+          "to": "B6",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C4",
+          "to": "A7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "B32",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 1,
+      "result": {
+        "winner": 2,
+        "reason": "royal"
+      },
+      "turns": 46,
+      "captures": 12,
+      "bribes": 0,
+      "maxQuiet": 13,
+      "mob": [
+        739,
+        850,
+        782
+      ],
+      "samples": [
+        115,
+        89,
+        143
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "B3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B3",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C4",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "D5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D5",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B8",
+          "to": "B4",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C3",
+          "to": "D4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "E4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "H6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D6",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D4",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E4",
+          "to": "E1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "D4",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "G7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H6",
+          "to": "G5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G7",
+          "to": "F7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G5",
+          "to": "D6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "D5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D6",
+          "to": "G8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D5",
+          "to": "F6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "E8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E8",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "H4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C6",
+          "to": "F6",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H4",
+          "to": "E4",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D4",
+          "to": "F4",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "F5",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F4",
+          "to": "F6",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 1
+            },
+            {
+              "kind": "conquest",
+              "z": 3,
+              "target": 1,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "G5",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 3
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "B32",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 2,
+      "result": {
+        "winner": 2,
+        "reason": "royal"
+      },
+      "turns": 47,
+      "captures": 15,
+      "bribes": 0,
+      "maxQuiet": 16,
+      "mob": [
+        777,
+        902,
+        705
+      ],
+      "samples": [
+        129,
+        88,
+        137
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "B6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B6",
+          "to": "C8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B1",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C5",
+          "to": "D2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "D4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "G5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "C1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "D1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C2",
+          "to": "B1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D1",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E2",
+          "to": "E4",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E5",
+          "to": "H5",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E4",
+          "to": "C4",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H5",
+          "to": "E4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E4",
+          "to": "E1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C3",
+          "to": "D5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E3",
+          "to": "E4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E4",
+          "to": "G6",
+          "bribe": false,
+          "taken": 8,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 3,
+              "target": 1,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "H5",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 3
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H5",
+          "to": "G6",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "reconquest",
+              "z": 1,
+              "target": 1,
+              "count": 5
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "C8",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "E3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F5",
+          "to": "E4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D5",
+          "to": "H5",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E4",
+          "to": "C2",
+          "bribe": false,
+          "taken": 2,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 1,
+              "target": 2,
+              "count": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C4",
+          "to": "B3",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "reconquest",
+              "z": 2,
+              "target": 2,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C2",
+          "to": "A4",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A32",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 1,
+      "result": {
+        "winner": 2,
+        "reason": "royal"
+      },
+      "turns": 30,
+      "captures": 15,
+      "bribes": 0,
+      "maxQuiet": 3,
+      "mob": [
+        511,
+        459,
+        464
+      ],
+      "samples": [
+        49,
+        80,
+        88
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E5",
+          "to": "E8",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "A2",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E8",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "E4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D8",
+          "to": "D5",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E4",
+          "to": "E1",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C3",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E5",
+          "to": "E8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E6",
+          "to": "C4",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E8",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "D6",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "B3",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 1,
+              "target": 2,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "F5",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C4",
+          "to": "E2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "D2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "D4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D2",
+          "to": "C3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B3",
+          "to": "D3",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 3
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "id": "A32",
+      "profiles": [
+        "offensive",
+        "defensive"
+      ],
+      "first": 2,
+      "result": {
+        "winner": 1,
+        "reason": "royal"
+      },
+      "turns": 44,
+      "captures": 15,
+      "bribes": 0,
+      "maxQuiet": 13,
+      "mob": [
+        702,
+        776,
+        632
+      ],
+      "samples": [
+        73,
+        128,
+        104
+      ],
+      "depth": 1,
+      "moves": [
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "F4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G3",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F4",
+          "to": "D2",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C2",
+          "to": "E2",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F6",
+          "to": "E4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F5",
+          "to": "D7",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E4",
+          "to": "E1",
+          "bribe": false,
+          "taken": 1,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B3",
+          "to": "C5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "E7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C5",
+          "to": "A7",
+          "bribe": false,
+          "taken": 8,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "H6",
+          "to": "E6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A7",
+          "to": "D7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "C7",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F2",
+          "to": "G1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C6",
+          "to": "D4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A3",
+          "to": "B5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D4",
+          "to": "D1",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F3",
+          "to": "D4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C7",
+          "to": "C6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "B5",
+          "to": "B8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A6",
+          "to": "B4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C3",
+          "to": "E5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F7",
+          "to": "G6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "E5",
+          "to": "D8",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D6",
+          "to": "A3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D3",
+          "to": "A6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "D1",
+          "to": "D5",
+          "bribe": false,
+          "taken": 2,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "A6",
+          "to": "D6",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 0
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "F8",
+          "to": "C5",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "D8",
+          "to": "D4",
+          "bribe": false,
+          "taken": 6,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C5",
+          "to": "E2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "F1",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "B4",
+          "to": "D3",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C4",
+          "to": "F5",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "G6",
+          "to": "E4",
+          "bribe": false,
+          "taken": 4,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "C1",
+          "to": "C4",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "A3",
+          "to": "C2",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H3",
+          "to": "H6",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E4",
+          "to": "F3",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "conquest",
+              "z": 1,
+              "target": 3,
+              "count": 2
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "H6",
+          "to": "D6",
+          "bribe": false,
+          "taken": 7,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "C8",
+          "to": "E7",
+          "bribe": false,
+          "taken": 0,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G1",
+          "to": "G2",
+          "bribe": false,
+          "taken": 0,
+          "events": [
+            {
+              "kind": "reconquest",
+              "z": 3,
+              "target": 3,
+              "count": 4
+            }
+          ],
+          "depth": 1
+        },
+        {
+          "camp": 2,
+          "from": "E7",
+          "to": "C5",
+          "bribe": false,
+          "taken": 3,
+          "events": [],
+          "depth": 1
+        },
+        {
+          "camp": 1,
+          "from": "G2",
+          "to": "E4",
+          "bribe": false,
+          "taken": 5,
+          "events": [
+            {
+              "kind": "fallen",
+              "z": 1
+            }
+          ],
+          "depth": 1
+        }
+      ]
+    }
+  ]
+}
