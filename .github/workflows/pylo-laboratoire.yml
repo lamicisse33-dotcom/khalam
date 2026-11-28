@@ -9,6 +9,7 @@ on:
       - 'jeux/pylo-test/laboratoire.cjs'
       - 'jeux/pylo-test/laboratoire-routes.cjs'
       - 'jeux/pylo-test/laboratoire-graphes.cjs'
+      - 'jeux/pylo-test/laboratoire-classique.cjs'
 permissions:
   contents: read
 concurrency:
@@ -24,7 +25,7 @@ jobs:
         with:
           node-version: '22'
       - name: Simuler les configurations
-        run: node jeux/pylo-test/laboratoire-graphes.cjs "${{ github.run_number }}" 12 2 pylo-report.json
+        run: node jeux/pylo-test/laboratoire-classique.cjs "${{ github.run_number }}" 12 2 pylo-report.json
       - uses: actions/upload-artifact@v4
         with:
           name: pylo-rapport
